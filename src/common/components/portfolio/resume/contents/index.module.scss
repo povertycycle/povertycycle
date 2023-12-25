@@ -1,10 +1,5 @@
-.navTabContainer {
-    animation: build-nav-tabs 2s ease-in-out;
-}
-
 .controllerTab {
     display: flex;
-    height: 100%;
     align-items: center;
     font-size: 1rem;
     padding-bottom: 0.25rem;
@@ -17,6 +12,7 @@
     border-bottom-right-radius: 4px;
     transition-duration: 150ms;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
         scale: 1.1
@@ -27,22 +23,13 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 4rem;
-    padding-right: 4rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
+    width: 15rem;
     justify-content: center;
     position: relative;
-    border-radius: 0.25rem;
-}
-
-@keyframes build-nav-tabs {
-    0% {
-        opacity: 0;
-        width: 0;
-    }
-    100% {
-        opacity: 1;
-        width: 100%;
-    }
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
+    user-select: none;
 }

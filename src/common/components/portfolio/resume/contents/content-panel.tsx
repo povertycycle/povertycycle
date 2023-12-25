@@ -1,0 +1,30 @@
+import { useState } from "react";
+import Codex from "./codex";
+import Skills from "./skills";
+import Map from "./map";
+import Inventory from "./inventory";
+
+export const CONTENTS : {
+    [key: string] : JSX.Element,
+} = {
+    "codex": <Codex />,
+    "skills": <Skills />,
+    "map": <Map />,
+    "inventory": <Inventory />,
+}
+
+const ContentPanel : React.FC<{
+    active: string,
+}> = ({ 
+    active,
+}) => {
+    return (
+        <div className={`w-full h-full flex items-center justify-start p-4 text-[1rem]`}>
+            <div className="w-full h-full">
+                {CONTENTS[active]}
+            </div>
+        </div>
+    )
+}
+
+export default ContentPanel;

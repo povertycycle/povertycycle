@@ -1,25 +1,14 @@
 import { useState } from "react";
 import styles from "./index.module.scss";
+import { CONTENTS } from "./content-panel";
 
-const TABS = {
-    "skills": {
-
-    },
-    "map": {
-
-    },
-    "codex": {
-
-    }
-}
-
-const NavigationTabs : React.FC = () => {
-    const [tabs, setTabs] = useState<boolean>(false);
-
-    const handleGenerateTabs = () => {
-        setTabs(true);
-    }
-
+const NavigationTabs : React.FC<{
+    active: string,
+    setActive: (active: string) => void,
+}> = ({
+    active,
+    setActive
+}) => {
     const ControllerTabbing : React.FC<{ children: React.ReactNode }> = ({ children }) => {
         return (
             <div className={`${styles.controllerTab} bg-sea-green`}>
@@ -29,25 +18,24 @@ const NavigationTabs : React.FC = () => {
     }
 
     return (
-        <div className={`w-full bg-sea-green bg-opacity-10 flex items-center justify-start gap-2 py-2 px-4 text-[1.5rem] ${styles.navTabContainer}`} onAnimationEnd={handleGenerateTabs}>
+        <div className={`w-full bg-sea-green-dark bg-opacity-20 flex items-center justify-start gap-4 px-4 text-[1.5rem]`}>
             <ControllerTabbing>L1</ControllerTabbing>
-            {
-                tabs && Object.keys(TABS).map((key: string, index: number) => {
-                    return (
-                        // TODO : HIGHLIGHT ACTIVE TAB
-                        // TODO : HIGHLIGHT ON HOVER
-                        // TODO : SHORTCUT ICON
-                        <div key={index} className={`bg-sea-green bg-opacity-30 ${styles.navigationTab}`}>
-                            <span>{key.toUpperCase()}</span>
-                            
+            <div className="flex gap-2 ml-[2px]">
+                {
+                    Object.keys(CONTENTS).map((key: string, index: number) => {
+                        const handleChangeTab = () => {
+                            setActive(key);
+                        }
 
-
-
-                            {/* <div className="absolute rounded-full border-2 border-sea-fluorescent w-[60%] bottom-[-4rem] px-4 text-[1.5rem] flex items-center justify-center">{key.charAt(0).toUpperCase()}</div> */}
-                        </div>
-                    )
-                })
-            }
+                        return (
+                            <div key={index} className={`${styles.navigationTab} border-sea-green ml-[-2px] border-2 bg-sea-green ${active === key ? "bg-opacity-100" : "bg-opacity-0 hover:bg-opacity-30"}`} onClick={handleChangeTab}>
+                                <div className={`absolute h-full border-t-[2rem] bottom-0 border-[3rem] bottom-[-4rem] ${active === key ? "border-t-sea-green border-transparent" : "border-transparent"}`}></div>
+                                <span className="z-[2]">{key.toUpperCase()}</span>
+                            </div>
+                        )
+                    })
+                }
+            </div>
             <ControllerTabbing>R1</ControllerTabbing>
         </div>
     )

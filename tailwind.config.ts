@@ -16,6 +16,7 @@ const config: Config = {
       borderColor: {
         'rain': '#A1C6CC',
         'sea-green': '#1a827c',
+        'sea-green-dark': '#0d403d',
         'sea-fluorescent': '#97fffa',
       },
       textColor: {
@@ -27,6 +28,7 @@ const config: Config = {
       },
       backgroundColor: {
         'sea-green': '#1a827c',
+        'sea-green-dark': '#0d403d',
       }
     },
   },
