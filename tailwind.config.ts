@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/common/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -13,7 +13,22 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      borderColor: {
+        'rain': '#A1C6CC'
+      },
+      textColor: {
+        'neon': "#E1F5FF"
+      },
+      fontFamily: {
+        'andes': ['andes']
+      },
     },
+  },
+  variants: {
+    extend: {
+        backgroundColor: ['active'],
+        transform: ['active', 'hover', 'focus'],
+    }
   },
   plugins: [],
 }
