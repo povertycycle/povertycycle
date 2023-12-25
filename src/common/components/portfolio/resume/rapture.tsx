@@ -1,12 +1,12 @@
-import Bubbles from "./bubbles";
-import Buildings from "./buildings";
-import Fishes from "./fishes";
+import Bubbles from "./rapture/bubbles";
+import Buildings from "./rapture/buildings";
+import Fishes from "./rapture/fishes";
 
 const Rapture : React.FC = () => {
     return (
-        <div className="w-full h-full relative">
+        <div className="w-full h-full relative z-[1]">
             <Bubbles />
-            <Fishes />
+            {/* <Fishes /> */}
             <Buildings />
         </div>
     )

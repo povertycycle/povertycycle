@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navigation from "./navigation/navigation";
 import Resume from "./resume/resume";
-import { RaptureContext } from "./rapture-context";
+import { RaptureContext } from "./global-context";
 
 const Directory : React.FC = () => {
     const [dive, setDive] = useState<boolean>(false);

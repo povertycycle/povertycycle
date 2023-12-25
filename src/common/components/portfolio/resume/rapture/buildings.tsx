@@ -2,10 +2,23 @@ import { useState, useEffect, use, useContext } from "react";
 import styles from "./index.module.scss";
 import jsgradient from "@/common/utils/js-gradient"
 import { quadraticEquationProcessor, roundWithDecimals } from "@/common/utils/math";
-import { RaptureContext } from "../rapture-context";
+import { RaptureContext } from "../../global-context";
 
 export const MAX_Z_INDEX = 10;
 export const GRADIENTS = jsgradient.generateGradient("#000000", "#136087", MAX_Z_INDEX);
+
+const Lighthouse : React.FC = () => {
+    return (
+        <div className="absolute bottom-0 h-full flex justify-center" style={{
+            left: "calc(50% - 2.5rem)",
+            zIndex: MAX_Z_INDEX / 2, 
+            animation: `${styles.buildRaptureMain} 3s ease`
+        }}>
+            <div className={`${styles.raptureMain} w-[5rem] h-full rounded-[0.5rem]`} />
+            <div className={styles.raptureBeacon} />
+        </div>
+    )
+}
 
 const Buildings : React.FC = () => {
     const [towers, setTowers] = useState<number>(0);
@@ -43,8 +56,6 @@ const Buildings : React.FC = () => {
         const duration = Math.round(Math.random() * 10) + 1;
         const threshold = Math.round(Math.random() * stacks);
         let boxShadow = `0px -150px 250px 30px #1a827c, ${direction * 150}px 150px 150px 5px #1a827c, ${direction * 250}px 50px 250px 5px #67aba8`
-        // boxShadow += `, ${direction * 50}px 150px 250px 5px #97fffa`;
-        // boxShadow += `, ${direction * 150}px 200px 300px 5px #ffffff`
         const filter = `blur(${Math.floor((MAX_Z_INDEX - z) / 3)}px)`;
 
         return (
@@ -70,14 +81,7 @@ const Buildings : React.FC = () => {
     }
     return (
         <div className={"absolute bottom-0 w-full h-full"}>    
-            <div className="absolute bottom-0 h-full flex justify-center" style={{
-                left: "calc(50% - 2.5rem)",
-                zIndex: MAX_Z_INDEX / 2, 
-                animation: towers === 0 ? undefined : `${styles.buildRaptureMain} 3s ease`
-            }}>
-                <div className={`${styles.raptureMain} w-[5rem] h-full rounded-[0.5rem]`} />
-                <div className={styles.raptureBeacon} />
-            </div>
+            {towers !== 0 && <Lighthouse />}
             <div className="w-full h-[40%] absolute bottom-0">
                 {
                     Array.from({ length: towers }, (_, index: number) => (

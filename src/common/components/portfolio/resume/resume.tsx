@@ -1,12 +1,11 @@
+import Contents from "./contents";
 import Rapture from "./rapture";
 
 const Resume : React.FC = () => {
     return (
-        <div className="w-full h-screen overflow-hidden">
+        <div className="w-full h-screen overflow-hidden relative">
             <Rapture />
-            {/* <AboutContent showHobby={showHobby} /> */}
-
-                {/* <Hobby showRapture={showRapture} hobbyRef={hobbyRef} />*/}
+            <Contents />
         </div>
     )
 }

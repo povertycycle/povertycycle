@@ -14,14 +14,20 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       borderColor: {
-        'rain': '#A1C6CC'
+        'rain': '#A1C6CC',
+        'sea-green': '#1a827c',
+        'sea-fluorescent': '#97fffa',
       },
       textColor: {
-        'neon': "#E1F5FF"
+        'neon': '#E1F5FF',
       },
       fontFamily: {
-        'andes': ['andes']
+        'andes': ['andes'],
+        'market-deoc': ['market-deco'],
       },
+      backgroundColor: {
+        'sea-green': '#1a827c',
+      }
     },
   },
   variants: {

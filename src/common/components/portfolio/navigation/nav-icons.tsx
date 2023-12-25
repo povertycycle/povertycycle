@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import iconStyles from "./icons.module.scss";
 import { animateScroll as scroll } from "react-scroll";
-import { RaptureContext } from "../rapture-context";
+import { RaptureContext } from "../global-context";
 
 const About : React.FC = () => {
     return (
@@ -145,7 +145,7 @@ const ClipboardAlert : React.FC<{
     show
 }) => {
     return (
-        <div className="font-andes text-[#FAFAFA] w-full text-center fixed top-0 p-4 text-[1rem] sm:text-[1.5rem] transition-opacity" style={{
+        <div className="font-andes text-[#FAFAFA] w-full text-center absolute bottom-[-4.5rem] tracking-[2px] p-4 text-[1rem] sm:text-[1.5rem] transition-opacity" style={{
             opacity: show ? 1 : 0
         }}>Copied to clipboard</div>
     )

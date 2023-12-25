@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import styles from "./index.module.scss";
-import { RaptureContext } from "../rapture-context";
+import { RaptureContext } from "../../global-context";
 
 const Bubbles : React.FC = () => {
     const [bubbles, setBubbles] = useState<number>(0);

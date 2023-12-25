@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import { useContext, useEffect, useState } from "react";
-import { RaptureContext } from "../rapture-context";
+import { RaptureContext } from "../../global-context";
 import { pSBC } from "@/common/utils/psbc";
 import jsgradient from "@/common/utils/js-gradient";
 import { GRADIENTS, MAX_Z_INDEX } from "./buildings";
