@@ -27,6 +27,8 @@ const config: Config = {
         'market-deoc': ['market-deco'],
       },
       backgroundColor: {
+        'default-white': '#FAFAFA',
+        'sea-blue-dark': '#136087',
         'sea-green': '#1a827c',
         'sea-green-dark': '#0d403d',
       }

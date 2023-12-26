@@ -1,0 +1,43 @@
+.codexJournalContainer {
+    display: flex;
+    font-size: 1.5rem;
+    gap: 1rem;
+    padding: 1rem;
+    border-top: 3px;
+    border-bottom: 3px;
+    border-color: #FAFAFA;
+    border-style: solid;
+    border-radius: 0.5rem;
+}
+
+.overflowContainer::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.codexArrowUp, .codexArrowDown {
+    background: #FAFAFA;
+    height: 2rem;
+    width: 2rem;
+    flex-shrink: 0;
+    border-radius:0% 100% 100% 100%;
+    cursor: pointer;
+    transition-duration: 100ms;
+}
+
+.codexArrowUp {
+    transform: rotateZ(45deg);
+    
+    &:hover {
+        transform: scale(1.2) rotateZ(45deg);
+    }
+}
+
+.codexArrowDown {
+    transform: rotateZ(-135deg);
+    
+    &:hover {
+        transform: scale(1.2) rotateZ(-135deg);
+    }
+}

@@ -1,7 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import iconStyles from "./icons.module.scss";
 import { animateScroll as scroll } from "react-scroll";
-import { RaptureContext } from "../global-context";
+import { GamepadContext, RaptureContext } from "../global-context";
+import { getEventListeners } from "events";
 
 const About : React.FC = () => {
     return (
@@ -159,6 +160,72 @@ const NavIcons : React.FC<{
     const [show, setShow] = useState<boolean>(false);
     const [menuPos, setMenuPos] = useState<number>(-1);
     const { dive, setDive } = useContext(RaptureContext);
+
+    // useEffect(() => {
+        // const handleGamepadConnected = (event: GamepadEvent) => {
+        //     setGamepad(event.gamepad);
+        // }
+
+        // const handleGamepadDisconnected = (event: GamepadEvent) => {
+        //     setGamepad(null);
+        //     window.clearInterval(interval.current);
+        // }
+
+        // if (dive) {
+        //     console.log("CLEARING MAIN MENU CONTROLLER STATE");
+        //     if (interval.current) window.clearInterval(interval.current);
+        //     window.removeEventListener('gamepadconnected', handleGamepadConnected);
+        //     window.removeEventListener('gamepaddisconnected', handleGamepadDisconnected);
+        //     return;
+        // };
+        // const lowerThreshold = 0;
+        // const upperThreshold = Object.keys(ICONS).length - 1;
+        // interval.current = !gamepad ? undefined : setInterval(() => {
+        //     const control = navigator.getGamepads()[0];
+        //     if (!control) return;
+        //     const xAxis = control.axes[0];
+        //     const padButton = control.buttons;
+        //     if (padButton[0].pressed) {
+        //         setMenuPos(prev => {
+        //             Object.values(ICONS)[prev].click();
+        //             if (prev === 4 || prev === 5) {
+        //                 setShow(true);
+        //                 setTimeout(() => {
+        //                     setShow(false);
+        //                 }, 2000)
+        //             }
+        //             if (prev === 0) {
+        //                 setDive(true);
+        //             }
+        //             return prev;
+        //         })
+        //     };
+        //     if (xAxis) {
+        //         if (xAxis > 0.8) {
+        //             setMenuPos(prev => {
+        //                 const newPos = prev + 1 > upperThreshold ? lowerThreshold : prev + 1
+        //                 handleChangeNeon(Object.keys(ICONS)[newPos]);
+        //                 return newPos;
+        //             });
+        //         } else if (xAxis < -0.8) {
+        //             setMenuPos(prev => {
+        //                 const newPos = prev - 1 < lowerThreshold ? upperThreshold : prev - 1;
+        //                 handleChangeNeon(Object.keys(ICONS)[newPos]);
+        //                 return newPos;
+        //             });
+        //         }
+        //     };
+        // }, 100);
+
+        // window.addEventListener('gamepadconnected', handleGamepadConnected);
+        // window.addEventListener('gamepaddisconnected', handleGamepadDisconnected);
+
+        // return () => {
+        //     window.removeEventListener('gamepadconnected', handleGamepadConnected);
+        //     window.removeEventListener('gamepaddisconnected', handleGamepadDisconnected);
+        //     window.clearInterval(interval.current);
+        // };
+    // }, [gamepad, dive]);
 
     return (
         <div className={`absolute w-full justify-center items-center bottom-[20%] grid grid-cols-3 sm:flex z-[3] p-4 gap-8 ${iconStyles.navIconsContainer}`}>

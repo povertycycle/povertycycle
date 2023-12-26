@@ -1,4 +1,4 @@
-import { useState } from "react";
+import styles from "./index.module.scss";
 import Codex from "./codex";
 import Skills from "./skills";
 import Map from "./map";
@@ -20,7 +20,7 @@ const ContentPanel : React.FC<{
     active,
 }) => {
     return (
-        <div className={`w-full h-full flex items-center justify-start p-4 text-[1rem]`}>
+        <div className={`w-full h-full flex items-center justify-start p-8 text-[1rem] ${styles.contentDisplay}`}>
             <div className="w-full h-full">
                 {CONTENTS[active]}
             </div>

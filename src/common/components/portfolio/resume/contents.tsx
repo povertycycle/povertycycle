@@ -14,10 +14,14 @@ const Contents : React.FC = () => {
         }, 5000);
     }, [dive]);
 
+    const handleSetActive = (active: string) => {
+        setActive(active)
+    }
+
     return (
-        <div className="w-full h-full absolute top-0 z-[2] font-market-deco text-[#FAFAFA] flex flex-col gap-[0.25rem]">
-            {display && <NavigationTabs active={active} setActive={setActive} />}
-            {/* {dive && <ContentPanel active={active} />} */}
+        <div className="w-full h-full absolute top-0 z-[2] font-market-deco text-[#FAFAFA] flex flex-col gap-[1rem] tracking-[-1px]">
+            {display && <NavigationTabs active={active} handleSetActive={handleSetActive} />}
+            {display && <ContentPanel active={active} />}
         </div>
     )
 }
