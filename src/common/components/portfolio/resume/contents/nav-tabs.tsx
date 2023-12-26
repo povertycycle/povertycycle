@@ -11,16 +11,16 @@ const NavigationTabs : React.FC<{
 }) => {
     const ControllerTabbing : React.FC<{ children: React.ReactNode }> = ({ children }) => {
         return (
-            <div className={`${styles.controllerTab} bg-sea-green`}>
+            <button className={`${styles.controllerTab} active:scale-90 px-4 py-[0.15rem] bg-white bg-opacity-90 text-black`}>
                 {children}
-            </div>
+            </button>
         )
     }
 
     return (
-        <div className={`w-full bg-sea-green-dark bg-opacity-20 flex items-center justify-start gap-4 px-4 text-[1.5rem]`}>
+        <div className={`w-full bg-sea-green-dark bg-opacity-20 flex items-center justify-center gap-4 text-[1.5rem] pt-[1.5rem] ${styles.navigationTabContainer}`}>
             <ControllerTabbing>L1</ControllerTabbing>
-            <div className="flex gap-2 ml-[2px]">
+            <div className="flex">
                 {
                     Object.keys(CONTENTS).map((key: string, index: number) => {
                         const handleChangeTab = () => {
@@ -28,8 +28,7 @@ const NavigationTabs : React.FC<{
                         }
 
                         return (
-                            <div key={index} className={`${styles.navigationTab} border-sea-green ml-[-2px] border-2 bg-sea-green ${active === key ? "bg-opacity-100" : "bg-opacity-0 hover:bg-opacity-30"}`} onClick={handleChangeTab}>
-                                <div className={`absolute h-full border-t-[2rem] bottom-0 border-[3rem] bottom-[-4rem] ${active === key ? "border-t-sea-green border-transparent" : "border-transparent"}`}></div>
+                            <div key={index} className={`${styles.navigationTab} tracking-[-1px] px-2 border-b-2 text-white border-white ${active === key ? "opacity-100" : "opacity-40 hover:opacity-80"}`} onClick={handleChangeTab}>
                                 <span className="z-[2]">{key.toUpperCase()}</span>
                             </div>
                         )

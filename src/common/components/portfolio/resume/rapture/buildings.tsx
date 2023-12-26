@@ -9,7 +9,7 @@ export const GRADIENTS = jsgradient.generateGradient("#000000", "#136087", MAX_Z
 
 const Lighthouse : React.FC = () => {
     return (
-        <div className="absolute bottom-0 h-full flex justify-center" style={{
+        <div className="absolute bottom-0 h-[90%] flex justify-center" style={{
             left: "calc(50% - 2.5rem)",
             zIndex: MAX_Z_INDEX / 2, 
             animation: `${styles.buildRaptureMain} 3s ease`

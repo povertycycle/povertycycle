@@ -11,6 +11,7 @@ export const CONTENTS : {
     "skills": <Skills />,
     "map": <Map />,
     "inventory": <Inventory />,
+    "gallery": <></>,
 }
 
 const ContentPanel : React.FC<{

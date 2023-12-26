@@ -63,7 +63,7 @@ const Codex : React.FC = () => {
 
     return (
         <div className="flex w-full h-full gap-2">
-            <div className="w-[30%] h-full text-[2rem] flex flex-col gap-2 py-2 px-2 border-sea-green border-2 backdrop-blur-sm rounded-[0.25rem]">
+            <div className="w-[30%] h-full text-[2rem] flex flex-col gap-2 py-2 px-2 border-sea-green border-2 rounded-[0.25rem]">
                 {
                     Object.values(JOURNALS).map((journal, index: number) => {
                         const handleChangeActive = () => {
@@ -87,7 +87,7 @@ const Codex : React.FC = () => {
             <div className="w-[40%] h-full">
 
             </div>
-            <div className="w-[40%] h-full text-[1rem] flex flex-col gap-2 py-2 px-2 border-sea-green border-2 backdrop-blur-sm rounded-[0.25rem]">
+            <div className="w-[40%] h-full text-[1rem] flex flex-col gap-2 py-2 px-2 border-sea-green border-2 rounded-[0.25rem]">
                 <span className="text-[2rem] rounded-[0.25rem]">{JOURNALS[active].content.heading}</span>
                 {
                     JOURNALS[active].content.description.map((text: string, index: number) => {
