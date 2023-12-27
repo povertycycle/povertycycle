@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    *, ::before, ::after {
+        box-sizing: border-box;
+        border-style: solid;
+    }
+}
+  
 :root {
     --neon-text-glow: #3bb5f2;
     --none-color: #0c3a51;
