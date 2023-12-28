@@ -1,6 +1,7 @@
-import { scrollPercent } from "@/common/utils/scroller";
+import { scrollPercent, scrollerHeightValue } from "@/common/utils/scroller";
 import styles from "./content.module.scss";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import ControlsDescription from "./controls-description";
 
 interface Journal {
     [key: number] : {
@@ -48,20 +49,16 @@ const JOURNALS : Journal = {
     }, {}))
 }
 
-const CodexScroller : React.FC<{ scroll: number }> = ({ scroll }) => {
+const CodexScroller : React.FC<{ height: string, scroll: number }> = ({ height, scroll }) => {
     return (
-        <div className="flex flex-col h-[80%] items-center justify-between py-2 gap-2">
-            <div className={styles.codexArrowUp}></div>
-            <div className="h-[85%] w-[0.25rem] bg-default-white rounded-full flex justify-center relative">
-                <div className="w-4 h-4 bg-default-white rounded-full absolute mt-[-0.5rem]" style={{
-                    top: `${scroll}%`
-                }}/>
-            </div>
-            <div className={styles.codexArrowDown}></div>
-        </div>   
+        <div className="w-[0.25rem] h-full rounded-full flex justify-center relative">
+            <div className="w-1 bg-default-white shadow-[0_0_8px_1px_white] rounded-full absolute " style={{
+                height: height,
+                top: `${scroll}%`
+            }} />
+        </div>
     )
 }
-
 
 const JournalOptions : React.FC<{
     active: number,
@@ -70,24 +67,31 @@ const JournalOptions : React.FC<{
     active,
     setActive
 }) => {
+    const scrollRef = useRef<HTMLDivElement | null>(null);
     const [scroll, setScroll] = useState<number>(0);
+    const [height, setHeight] = useState<string>("100%");
+
+    useEffect(() => {
+        if (scrollRef.current) {
+            setHeight(scrollerHeightValue(scrollRef.current));
+        };
+    }, [])
 
     const handleScroll = (e: any) => {
         setScroll(scrollPercent(e.target));
     };
 
     return (
-        <div className={`${styles.codexJournalContainer} h-full w-[30%] bg-black bg-opacity-50 flex items-center`}>
-            <div className={`flex flex-col gap-2 h-full w-full overflow-y-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
-                <div className="w-full h-full absolute flex flex-col gap-2">
+        <div className={`${styles.codexJournalContainer} h-full w-[30%] bg-gradient-to-r from-black to-transparent flex`}>
+            <div ref={scrollRef} className={`flex flex-col gap-2 h-full w-full overflow-y-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
+                <div className="w-[90%] h-full absolute flex flex-col gap-2">
                     {
                         Object.values(JOURNALS).map((journal, index: number) => {
                             const handleChangeActive = () => {
                                 setActive(index);
                             }
-                            
                             return (
-                                <div className={`flex select-none cursor-pointer gap-8 px-4 py-1 bg-gradient-to-r to-transparent transition-transform ${active == index ? "border-l-4 border-white from-sea-blue-dark/100 translate-x-[2rem]" : "from-sea-blue-dark/50 hover:from-sea-blue-dark/75 hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
+                                <div className={`flex select-none cursor-pointer rounded-[0.25rem] gap-8 px-4 py-1 transition-transform from-60% ${active == index ? "skew-x-[-10deg] bg-gradient-to-r from-white to-transparent text-black translate-x-[2rem]" : "bg-gradient-to-r from-sea-blue-dark/50 hover:from-sea-blue-dark/75 to-transparent hover:skew-x-[-10deg] hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
                                     <span>{index.toString().padStart(3, "0")}</span>
                                     <span>{journal.title}</span>    
                                 </div>
@@ -96,26 +100,34 @@ const JournalOptions : React.FC<{
                     }
                 </div>
             </div>
-            <CodexScroller scroll={scroll} /> 
+            <CodexScroller scroll={scroll} height={height} /> 
         </div>
     )
 }
 
 const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
+    const scrollRef = useRef<HTMLDivElement | null>(null);
     const [scroll, setScroll] = useState<number>(0);
+    const [height, setHeight] = useState<string>("100%");
+
+    useEffect(() => {
+        if (scrollRef.current) {
+            setHeight(scrollerHeightValue(scrollRef.current));
+        };
+    }, [])
 
     const handleScroll = (e: any) => {
         setScroll(scrollPercent(e.target));
     }
 
     return (
-        <div className={`${styles.codexJournalContainer} h-[90%] w-[40%] bg-black bg-opacity-50`}>
+        <div className={`${styles.codexJournalContainer} h-full w-full bg-gradient-to-l from-black to-transparent flex`}>
             <div className="flex flex-col gap-4 w-full">
-                <span className="bg-sea-blue-dark bg-opacity-60 px-4 text-[2rem] rounded-[0.15rem]">{JOURNALS[active].content.heading}</span>
-                <div className={`flex flex-col h-full gap-4 overflow-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
+                <span className="bg-gradient-to-r text-black from-50% from-white to-transparent px-4 py-8 text-[2rem] rounded-[0.15rem]">{JOURNALS[active]?.content.heading}</span>
+                <div ref={scrollRef} className={`flex flex-col h-full gap-4 overflow-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
                     <div className="flex flex-col gap-4 tracking-[0px] h-full w-full absolute">
                         {
-                            JOURNALS[active].content.description.map((text: string, index: number) => {
+                            JOURNALS[active]?.content.description.map((text: string, index: number) => {
                                 return (
                                     <div key={index} className="flex flex-col bg-sea-blue-dark bg-opacity-60 px-4 py-2">
                                         <span className={`${index === 0 && "italic"} text-[1.3rem]`}>{text}</span>
@@ -126,19 +138,22 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
                     </div>
                 </div>
             </div>
-            <CodexScroller scroll={scroll} /> 
+            <CodexScroller scroll={scroll} height={height} /> 
         </div>
 
     )
 }
 
 const Codex : React.FC = () => {
-    const [active, setActive] = useState<number>(0);
+    const [active, setActive] = useState<number>(-1);
 
     return (
         <div className="flex w-full h-full gap-4 justify-between">
             <JournalOptions active={active} setActive={setActive} />
-            <JournalDescription active={active} />
+            <div className="flex flex-col gap-4 w-[40%] h-full">
+                <JournalDescription active={active} />
+                <ControlsDescription />
+            </div>
         </div>
     )
 }

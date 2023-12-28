@@ -20,7 +20,7 @@ const ContentPanel : React.FC<{
     active,
 }) => {
     return (
-        <div className={`w-full h-full flex items-center justify-start p-8 text-[1rem] ${styles.contentDisplay}`}>
+        <div className={`w-full h-full flex items-center justify-start p-8 text-[1rem]`}>
             <div className="w-full h-full">
                 {CONTENTS[active]}
             </div>

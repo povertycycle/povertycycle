@@ -307,7 +307,7 @@ $none-color: #0c3a51;
 
 .emailShape {
     width: 100%;
-    height: 100%;
+    height: 70%;
     overflow: hidden;
     border-radius: 10%;
 
@@ -319,13 +319,13 @@ $none-color: #0c3a51;
         width: 110%;
         background: white;
         padding-bottom: 110%;
-        bottom: -60%;
+        bottom: -90%;
         left: -2px;
         box-shadow: -2px -2px 0 0 black;
     }
 
     &::after {
-        bottom: 45%;
+        bottom: 35%;
         box-shadow: 2px 2px 0 0 black;
     }
 }
