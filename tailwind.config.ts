@@ -17,14 +17,21 @@ const config: Config = {
 				'rain':'#A1C6CC',
 				'neon': '#E1F5FF',
 				'sea-blue-dark': '#136087',
+                'soft-white': '#E6E6E6',
 				'default-white': '#FAFAFA',
 				'sea-green-dark': '#0d403d',
 				'sea-green': '#1a827c',
 			},
 			fontFamily: {
 				'andes': ['andes'],
-				'market-deoc': ['market-deco'],
+				'market-deco': ['market-deco'],
+                'peake': ['peake'],
+                'century-gothic': ['century-gothic'],
 			},
+            transitionProperty: {
+                'height': 'height',
+                'width': 'width'
+            },
 		},
 	},
 	variants: {

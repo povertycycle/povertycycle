@@ -1,12 +1,39 @@
-.codexJournalContainer {
-    display: flex;
-    font-size: 1.5rem;
-    gap: 1rem;
-    padding: 1rem;
-}
-
 .overflowContainer::-webkit-scrollbar {
     height: 0;
     width: 0;
     display: none;
+}
+
+.codexAnimation {
+    animation: build-codex 0.5s ease-in-out
+}
+
+@keyframes build-codex {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.controlsAnimation {
+    animation: build-controls-hint 2s ease-in-out
+}
+
+@keyframes build-controls-hint {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    25% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
 }

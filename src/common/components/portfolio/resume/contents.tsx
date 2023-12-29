@@ -19,7 +19,7 @@ const Contents : React.FC = () => {
     }
 
     return (
-        <div className="w-full h-full absolute top-0 z-[2] font-market-deco text-[#FAFAFA] flex flex-col gap-[1rem] items-center tracking-[-1px]">
+        <div className="w-full h-full absolute top-0 z-[2] font-market-deco text-[#FAFAFA] flex flex-col items-center tracking-[-1px]">
             {display && <NavigationTabs active={active} handleSetActive={handleSetActive} />}
             {display && <ContentPanel active={active} />}
         </div>

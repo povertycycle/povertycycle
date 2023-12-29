@@ -67,7 +67,7 @@ const NavigationTabs : React.FC<{
 
     const ControllerTabbing : React.FC<{ children: React.ReactNode }> = ({ children }) => {
         return (
-            <button className={`${styles.controllerTab} active:scale-90 px-4 py-[0.15rem] bg-white bg-opacity-90 text-black`}>
+            <button className={`${styles.controllerTab} active:scale-90 px-4 py-[0.15rem] bg-soft-white text-black`}>
                 {children}
             </button>
         )
