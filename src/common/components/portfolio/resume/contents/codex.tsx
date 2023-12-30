@@ -30,16 +30,28 @@ const JOURNALS : Journal = {
     1 : {
         title: "Website",
         content: {
-            heading: "A software engineer with a minor in mathematics.",
+            heading: "Software engineer - minor in maths",
             description: [
                 "The time does not matter; what matters is the completion.",
-                "This personal website was designed and developed as a love letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
-                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. The icons and shapes were made purely with CSS; no image files were stored in the repository.",
+                "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
+                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. The icons and shapes were made purely with CSS and Javascript; none were stored in the repository.",
             ]
         }
     },
-    ...(Array.from({ length: 20 }).reduce((acc : Journal, _, index) => {
-        acc[index + 2] = {
+    2: {
+        title: "Future",
+        content: {
+            heading: "Upcoming changes and to-do list",
+            description: [
+                "The best one can do for oneself is to keep learning and improving.",
+                "- Controller supports for website.",
+                "- Mobile supports for website.",
+                "- Gallery contents.",
+            ]
+        }
+    },
+    ...(Array.from({ length: 17 }).reduce((acc : Journal, _, index) => {
+        acc[index + 3] = {
             title: "??????????",
             content: {
                 heading: "??????????",
@@ -122,13 +134,13 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
     }
 
     return (
-        <div className={`${styles.codexAnimation} gap-4 px-8 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black flex flex-col`} onAnimationEnd={handleScrollHeight}>
+        <div className={`${styles.codexAnimation} gap-4 px-8 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
             <LayeredBorder gap="4px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
-                <div className="bg-gradient-to-l from-transparent via-sea-blue-dark text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
+                <div className="bg-gradient-to-l from-transparent via-sea-blue-dark/65 text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
             </LayeredBorder>
             <div className="flex flex gap-4 h-full w-full">
                 <LayeredBorder>
-                    <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative bg-gradient-to-l from-sea-blue-dark/35 ${styles.overflowContainer}`} onScroll={handleScroll}>
+                    <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative bg-gradient-to-l from-sea-blue-dark/45 ${styles.overflowContainer}`} onScroll={handleScroll}>
                         <div className="flex flex-col gap-2 tracking-[0px] h-full absolute">
                             {
                                 JOURNALS[active]?.content.description.map((text: string, index: number) => {

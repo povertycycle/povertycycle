@@ -1,4 +1,5 @@
 export const scrollPercent = (scroller: HTMLElement) => {
+    if (scroller.scrollHeight - scroller.clientHeight === 0) return 0;
     return Math.floor(scroller.scrollTop / (scroller.scrollHeight - scroller.clientHeight) * 100 * (1 - (scroller.clientHeight / scroller.scrollHeight)));
 }
 

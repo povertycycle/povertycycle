@@ -14,7 +14,7 @@ const ActionButton : React.FC<{ tag: string, action: string }> = ({ tag, action 
     }
     return (
         <div className="text-white flex items-center gap-2 text-[1.75rem]">
-            <div className="h-[2.5rem] w-[2.5rem] border-[3px] border-white bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer" style={style}>
+            <div className="active:scale-90 h-[2.5rem] w-[2.5rem] border-[3px] border-white bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer" style={style}>
                 <div className={CONTROLS_STYLES[tag]} />
             </div>
             <span className="select-none">{action}</span>
@@ -33,6 +33,11 @@ const SECTION_CONTROLS : { [key: string] : { control: string, action: string}[] 
     "codex": [
         { control: "X/A", action: "Select" }, 
         { control: "O/B", action: "Back" }, 
+    ],
+    "skills": [
+        { control: "X/A", action: "Select" },
+        { control: "O/B", action: "Back" },
+        { control: "T/Y", action: "Details" },
     ]
 }
 
