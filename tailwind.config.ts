@@ -21,6 +21,7 @@ const config: Config = {
 				'default-white': '#FAFAFA',
 				'sea-green-dark': '#0d403d',
 				'sea-green': '#1a827c',
+                'gold': '#E5B80B',
 			},
 			fontFamily: {
 				'andes': ['andes'],

@@ -22,11 +22,11 @@ const ActionButton : React.FC<{ tag: string, action: string }> = ({ tag, action 
     )
 }
 
-const CONTROLS_ICONS : { [key: string]: (action: string) => JSX.Element } = {
-    "X/A": (action: string) => { return <ActionButton tag={"cross"} action={action} /> },
-    "O/B": (action: string) => { return <ActionButton tag={"circle"} action={action} /> },
-    "T/Y": (action: string) => { return <ActionButton tag={"triangle"} action={action} /> },
-    "S/X": (action: string) => { return <ActionButton tag={"square"} action={action} /> }
+const CONTROLS_ICONS : { [key: string]: (action: string, index: number) => JSX.Element } = {
+    "X/A": (action: string, index: number) => { return <ActionButton key={index} tag={"cross"} action={action} /> },
+    "O/B": (action: string, index: number) => { return <ActionButton key={index} tag={"circle"} action={action} /> },
+    "T/Y": (action: string, index: number) => { return <ActionButton key={index} tag={"triangle"} action={action} /> },
+    "S/X": (action: string, index: number) => { return <ActionButton key={index} tag={"square"} action={action} /> }
 }
 
 const SECTION_CONTROLS : { [key: string] : { control: string, action: string}[] } = {
@@ -46,7 +46,7 @@ const ControlsDescription : React.FC<{ tag: string }> = ( {tag }) => {
         <div className={`w-full bg-gradient-to-l from-black to transparent flex gap-4 justify-end py-2 px-16 ${styles.controlsAnimation}`}>
             {
                 SECTION_CONTROLS[tag].map((control, index: number) => {
-                    return CONTROLS_ICONS[control.control](control.action);
+                    return CONTROLS_ICONS[control.control](control.action, index);
                 })
             }
         </div>

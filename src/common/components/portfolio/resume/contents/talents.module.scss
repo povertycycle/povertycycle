@@ -1,0 +1,16 @@
+.talentArrow {
+    display: flex;
+    justify-content: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-bottom: 0;
+        height: 0;
+        width: 0;
+        border-top: 0.6rem solid #E5B80B;
+        border-left: 0.4rem solid transparent;
+        border-right: 0.4rem solid transparent;
+        bottom: -0.2rem;
+    }
+}

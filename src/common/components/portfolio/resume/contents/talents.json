@@ -1,0 +1,197 @@
+{
+  "version": "1.0",
+  "talents": {
+    "0": {
+      "name": "Data Structure",
+      "active": true
+    },
+    "1": {
+      "name": "Discrete Structure",
+      "active": false
+    },
+    "2": {
+      "name": "Algorithms",
+      "active": false
+    },
+    "3": {
+      "name": "Computer Systems",
+      "active": false
+    },
+    "4": {
+      "name": "Performance",
+      "active": false
+    },
+    "5": {
+      "name": "Design Patterns",
+      "active": false
+    },
+    "6": {
+      "name": "Efficiency",
+      "active": false
+    },
+    "7": {
+      "name": "Software Architecture",
+      "active": false
+    },
+    "8": {
+      "name": "Cleanliness",
+      "active": false
+    },
+    "9": {
+      "name": "Optimization",
+      "active": true
+    },
+    "10": {
+      "name": "Frameworks & Integration",
+      "active": true
+    },
+    "11": {
+      "name": "Dynamic Programming",
+      "active": true
+    },
+    "12": {
+      "name": "Higher-Order Programming",
+      "active": true
+    },
+    "13": {
+      "name": "Maintainable",
+      "active": false
+    },
+    "14": {
+      "name": "Profiling",
+      "active": true
+    },
+    "15": {
+      "name": "Debugging",
+      "active": false
+    },
+    "16": {
+      "name": "Responsiveness",
+      "active": false
+    },
+    "17": {
+      "name": "Asynchronous Programming",
+      "active": true
+    },
+    "18": {
+      "name": "Automation",
+      "active": true
+    },
+    "19": {
+      "name": "Modular Programming",
+      "active": true
+    },
+    "20": {
+      "name": "Version Control",
+      "active": true
+    },
+    "21": {
+      "name": "Monitoring",
+      "active": true
+    },
+    "22": {
+      "name": "Scalability",
+      "active": false
+    },
+    "23": {
+      "name": "Networking",
+      "active": true
+    },
+    "24": {
+      "name": "Cloud Computing",
+      "active": false
+    },
+    "25": {
+      "name": "Parallelization",
+      "active": false
+    },
+    "26": {
+      "name": "Scripting",
+      "active": false
+    },
+    "27": {
+      "name": "Software Testing",
+      "active": true
+    },
+    "28": {
+      "name": "Software Analysis",
+      "active": true
+    },
+    "29": {
+      "name": "Data Handling",
+      "active": false
+    },
+    "30": {
+      "name": "Software Security",
+      "active": false
+    },
+    "31": {
+      "name": "Software Engineering",
+      "active": true
+    },
+    "32": {
+      "name": "Distributed Computing",
+      "active": true
+    },
+    "33": {
+      "name": "Usability",
+      "active": false
+    },
+    "34": {
+      "name": "CI/CD",
+      "active": false
+    },
+    "35": {
+      "name": "Big Data",
+      "active": false
+    },
+    "36": {
+      "name": "Cryptography",
+      "active": true
+    },
+    "37": {
+      "name": "Computer Graphics",
+      "active": false
+    },
+    "38": {
+      "name": "Cybersecurity",
+      "active": true
+    },
+    "39": {
+      "name": "Research",
+      "active": true
+    },
+    "40": {
+      "name": "Artificial Intelligence",
+      "active": false
+    },
+    "41": {
+      "name": "Game Design",
+      "active": false
+    },
+    "42": {
+      "name": "Computer Vision",
+      "active": false
+    },
+    "43": {
+      "name": "Data Science",
+      "active": false
+    },
+    "44": {
+      "name": "Deep Learning",
+      "active": true
+    },
+    "45": {
+      "name": "Simulation",
+      "active": false
+    },
+    "46": {
+      "name": "VR/AR",
+      "active": true
+    },
+    "47": {
+      "name": "Advanced Topics",
+      "active": false
+    }
+  }
+}
