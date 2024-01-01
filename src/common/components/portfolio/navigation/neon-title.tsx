@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import styles from "./index.module.scss";
 
 const NEON_DISPLAY : {
@@ -24,18 +24,12 @@ const BLINKS: {
     5: 3,
 };
 
-const NeonTitle : React.FC<{
-    neon: string,
-    handleShowMenu: () => void,
-}> = ({
-    neon,
-    handleShowMenu,
-}) => {
+const NeonTitle : React.FC<{ neon: string, setMenu: Dispatch<SetStateAction<boolean>> }> = ({ neon, setMenu }) => {
     const [introduced, setIntroduced] = useState<boolean>(false);
 
     const finishIntroduction = (e: any) => {
         setIntroduced(true);
-        handleShowMenu();
+        setMenu(true);
     }
 
     return (

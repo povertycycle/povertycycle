@@ -1,6 +1,6 @@
 import { scrollPercent, scrollerHeightValue } from "@/common/utils/scroller";
 import styles from "./content.module.scss";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
 import ControlsDescription from "./controls-description";
 import { LayeredBorder } from "@/common/components/utils/borders";
 
@@ -73,13 +73,7 @@ const CodexScroller : React.FC<{ height: string, scroll: number }> = ({ height, 
     )
 }
 
-const JournalOptions : React.FC<{
-    active: number,
-    setActive: (active: number) => void
-}> = ({
-    active,
-    setActive
-}) => {
+const JournalOptions : React.FC<{ active: number, setActive: Dispatch<SetStateAction<number>> }> = ({ active, setActive }) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const [scroll, setScroll] = useState<number>(0);
     const [height, setHeight] = useState<string>("0%");
@@ -145,7 +139,7 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
                             {
                                 JOURNALS[active]?.content.description.map((text: string, index: number) => {
                                     return (
-                                        <div key={index} className={`flex px-8 py-4  ${index === 0 ? "" : ""}`}>
+                                        <div key={index} className="flex px-8 py-4">
                                             <span className={`${index === 0 && "text-center italic font-century-gothic text-[1.5rem] tracking-[1px]"} text-[1.25rem]`}>{text}</span>
                                         </div>
                                     )

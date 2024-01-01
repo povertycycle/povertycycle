@@ -3,7 +3,8 @@
   "talents": {
     "0": {
       "name": "Data Structure",
-      "active": true
+      "active": true,
+      "points": "3/5"
     },
     "1": {
       "name": "Discrete Structure",

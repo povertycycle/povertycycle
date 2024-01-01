@@ -3,21 +3,13 @@ import NeonTitle from "./neon-title";
 import NavIcons from "./nav-icons";
 
 const Navigation : React.FC = () => {
-    const [menu, seMenu] = useState<boolean>(false);
+    const [menu, setMenu] = useState<boolean>(false);
     const [neon, setNeon] = useState<string>("name")
-
-    const finishIntroduction = () => {
-        seMenu(true);
-    }
-
-    const changeNeon = (tag: string) => {
-        setNeon(tag);
-    }
 
     return (
         <div className="w-full h-screen">
-            <NeonTitle neon={neon} handleShowMenu={finishIntroduction} />
-            {menu && <NavIcons handleChangeNeon={changeNeon} />}
+            <NeonTitle neon={neon} setMenu={setMenu} />
+            {menu && <NavIcons setNeon={setNeon} />}
         </div>
     )
 }

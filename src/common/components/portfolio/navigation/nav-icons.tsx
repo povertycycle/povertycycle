@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useState, Dispatch, SetStateAction } from "react";
 import iconStyles from "./icons.module.scss";
 import { animateScroll as scroll } from "react-scroll";
-import { GamepadContext, RaptureContext } from "../global-context";
-import { getEventListeners } from "events";
+import { RaptureContext } from "../global-context";
 
 const About : React.FC = () => {
     return (
@@ -152,11 +151,7 @@ const ClipboardAlert : React.FC<{
     )
 }
 
-const NavIcons : React.FC<{
-    handleChangeNeon: (tag: string) => void,
-}> = ({
-    handleChangeNeon
-}) => {
+const NavIcons : React.FC<{ setNeon: Dispatch<SetStateAction<string>> }> = ({ setNeon }) => {
     const [show, setShow] = useState<boolean>(false);
     const [menuPos, setMenuPos] = useState<number>(-1);
     const { dive, setDive } = useContext(RaptureContext);
@@ -233,7 +228,7 @@ const NavIcons : React.FC<{
             {
                 Object.keys(ICONS).map((key : string, index: number) => {
                     const handleMouseEnter = () => {
-                        handleChangeNeon(key);
+                        setNeon(key);
                         setMenuPos(index);
                     }
 
