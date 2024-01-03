@@ -5,7 +5,7 @@
 }
 
 .codexAnimation {
-    animation: build-codex 0.5s ease-in-out
+    animation: build-codex 0.5s ease-in-out;
 }
 
 @keyframes build-codex {
@@ -20,7 +20,7 @@
 }
 
 .controlsAnimation {
-    animation: build-controls-hint 2s ease-in-out
+    animation: build-controls-hint 2s ease-in-out;
 }
 
 @keyframes build-controls-hint {
@@ -35,5 +35,42 @@
     100% {
         width: 100%;
         opacity: 1;
+    }
+}
+
+.skillsAnimation {
+    animation: build-skills-display 0.5s ease-in-out;
+}
+
+@keyframes build-skills-display {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.aspectsNavAnimation {
+    animation: build-aspect-navigator 1s ease-in-out;
+}
+
+@keyframes build-aspect-navigator {
+    0% {
+        height: 0;
+        opacity: 0;
+        color: transparent;
+    }
+    50% {
+        height: 0;
+        opacity: 0;
+        color: transparent;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+        color: white;
     }
 }
