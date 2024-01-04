@@ -7,7 +7,7 @@ export interface TalentIcon {
 
 export const TALENT_TREES : { [key: string] : TalentIcon[] } = {
     "engineering": [], //mobile-development web-development game-development system-engineering
-    "science": [
+    "study": [
         { id: 0, x: 4, y: 0, children: [0.2, 0, 0.2] },
         { id: 1, x: 3, y: 1, children: [0.2, 0] }, { id: 2, x: 4, y: 1, children: [0.2, 0] }, { id: 3, x: 5, y: 1, children: [null, 0, 0.2] },
         { id: 4, x: 2, y: 2, children: [0.1, 1, 0.1] }, { id: 5, x: 3, y: 2, children: [null, 0, 0.1] }, { id: 6, x: 4, y: 2, children: [null, 0] }, { id: 7, x: 5, y: 2, children: [0.1, 0] }, { id: 8, x: 6, y: 2, children: [0.1, null, 0.2] },

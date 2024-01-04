@@ -30,15 +30,28 @@ const JOURNALS : Journal = {
     1 : {
         title: "Website",
         content: {
-            heading: "Software engineer - minor in maths",
+            heading: "Software Engineer - Minor in Maths",
             description: [
                 "The time does not matter; what matters is the completion.",
                 "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
-                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. The icons and shapes were made purely with CSS and Javascript; none were stored in the repository.",
+                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some skill icons were made purely with CSS and Javascript; the repository stores no images files.  Some of the icons in the talent trees are from remixicon.",
             ]
         }
     },
     2: {
+        title: "Updates",
+        content: {
+            heading: "Patch Notes History",
+            description: [
+                "We always can learn something from our past mistakes.",
+                "Version 2.0 (Current):",
+                "- Redesigned the 'about' page and its contents. Reworked the math behaviors of components that use quadratic equations. Refactor all the components to make them more compact.",
+                "Version 1:0:",
+                "- Personal website launched using github pages.",
+            ]
+        }
+    },
+    3: {
         title: "Future",
         content: {
             heading: "Upcoming changes and to-do list",
@@ -47,11 +60,12 @@ const JOURNALS : Journal = {
                 "- Controller supports for website.",
                 "- Mobile supports for website.",
                 "- Gallery contents.",
+                "- Design icons for skills section.",
             ]
         }
     },
     ...(Array.from({ length: 17 }).reduce((acc : Journal, _, index) => {
-        acc[index + 3] = {
+        acc[index + 4] = {
             title: "??????????",
             content: {
                 heading: "??????????",

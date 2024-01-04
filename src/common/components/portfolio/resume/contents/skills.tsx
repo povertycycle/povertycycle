@@ -12,29 +12,41 @@ interface Talent {
     points?: string,
 }
 
+interface Aspect { 
+    description: string,
+    baseColor: string,
+    baseColors: string[],
+    branches: string[],
+}
+
 const TALENTS = talentData.talents as { [key: string] : Talent | undefined };
 const MAX_WIDTH = 9;
-const ASPECTS : {[key: string] : { description: string }} =  {
-    "technical": {
-        description: "An aspect assembled from the uncharted depths of knowledge; none knows the full potential of its reaches."
+const ASPECTS : { [key: string] : Aspect } =  {
+    "science": {
+        description: "An aspect assembled from the uncharted depths of knowledge; the mind revels in its enigmatic concepts.",
+        baseColor: "green",
+        baseColors: ["hover:bg-aspect-green/25", "text-aspect-green", "group-hover/aspects:bg-aspect-green-dark", "from-aspect-green"],
+        branches: ["engineering", "study"],
     }, 
     "arts": {
-        description: "An aspect crafted from the endless well of imagination; all revels in the spread of its beauty."
+        description: "An aspect crafted from the endless well of imagination; the soul wallows in the beauty it evokes.",
+        baseColor: "blue",
+        baseColors: ["hover:bg-aspect-blue/25", "text-aspect-blue", "group-hover/aspects:bg-aspect-blue-dark", "from-aspect-blue"],
+        branches: ["forms", "theory"],
     }, 
-    "physical": {
-        description: "technical"
+    "physique": {
+        description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glory.",
+        baseColor: "red",
+        baseColors: ["hover:bg-aspect-red/25", "text-aspect-red", "group-hover/aspects:bg-aspect-red-dark", "from-aspect-red"],
+        branches: ["sports", "knowledge"],
     }, 
     "general": {
-        description: "technical"
+        description: "An aspect molded from the vast history of men; none knows the full potential of its reaches.",
+        baseColor: "yellow",
+        baseColors: ["hover:bg-aspect-yellow/25", "text-aspect-yellow", "group-hover/aspects:bg-aspect-yellow-dark", "from-aspect-yellow"],
+        branches: ["essence", "application"],
     }
 };
-
-const ASPECT_TREES : { [key: string]: string[] } = {
-    "technical": ["engineering", "science"],
-    "arts": ["forms", "theory"],
-    "physical": ["sports", "knowledge"],
-    "general": ["essence", "application"],
-}
 
 
 const TalentDescription : React.FC<{ highlight: number }> = ({ highlight }) => {
@@ -95,27 +107,39 @@ const TalentTree : React.FC<{ aspect: string }> = ({ aspect }) => {
 
 
 
-const AspectIcon : React.FC = () => {
-    return (
-        <div className="flex gap-4 w-full items-center justify-center">
-            <div className="transition-width group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-l from-white rounded-l-[100%]"></div>
-            <div className=" w-[70px] h-[70px] shrink-0 flex items-center justify-center rounded-full bg-gradient-to-bl from-default-white to-black">
-                <div className="w-[64px] h-[64px] bg-black rounded-full"></div>
-            </div>
-            <div className="transition-width group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-r from-white rounded-r-[100%]"></div>
-        </div>
-    )
-}
-
-
 const AspectDescription : React.FC<{ aspect: string }> = ({ aspect }) => {
     const aspectData = ASPECTS[aspect];
+    const background = `hover:bg-aspect-${aspectData.baseColor}/25`;
+
     return (
-        <div className="flex flex-col items-center gap-[1.5rem] pt-60 w-full p-4">
-            <span className="text-[1.75rem] text-center">{aspect}</span>
-            <AspectIcon />
-            
-            <span className="text-center font-century-gothic">{aspectData.description}</span>
+        <div className={`group/aspects flex flex-col items-center gap-[1.5rem] justify-center w-full p-4 transition-colors ${background}`}>
+
+
+            {/* <div className="relative text-[2rem]">
+                <span className="text-center">{aspect}</span>
+                <span className={`absolute left-0 top-0 w-0 group-hover/aspects:w-full transition-width duration-200 overflow-hidden ${aspectData.baseColor[0]}`}>{aspect}</span>
+            </div>
+
+
+
+            <div className="flex gap-8 w-full items-center justify-center">
+                <div className={`transition-width duration-200 group-hover/aspects:w-full w-0 h-[0.15rem] bg-gradient-to-l ${aspectData.baseColor[2]} rounded-l-[100%]`}></div>
+                <div className=" w-[70px] h-[70px] shrink-0 flex items-center justify-center rounded-full bg-gradient-to-bl from-default-white to black">
+                    <div className={`w-[64px] h-[64px] rounded-full bg-white transition-colors ${aspectData.baseColor[1]}`}>
+                        {}
+                    </div>
+                </div>
+                <div className={`transition-width duration-200 group-hover/aspects:w-full w-0 h-[0.15rem] bg-gradient-to-r ${aspectData.baseColor[2]} rounded-r-[100%]`}></div>
+            </div>
+
+
+
+            <span className="text-center tracking-[0px] font-century-gothic">{aspectData.description}</span>
+            <div className="flex gap-4">
+                {
+
+                }
+            </div> */}
         </div>
     )
 }
@@ -128,7 +152,7 @@ const AspectSection : React.FC<{ aspect: string, active: boolean, setActiveAspec
     }
 
     return (
-        <div className={`flex h-full ${isAspects ? "w-full group/aspects" : (active ? "w-full" : "w-0") } shrink-1 cursor-pointer`} onClick={handleSetActive}>
+        <div className={`flex h-full bg-black/10 ${isAspects ? "w-full" : (active ? "w-full" : "w-0") } shrink-1 cursor-pointer`} onClick={handleSetActive}>
             {
                 isAspects ?
                 <AspectDescription aspect={aspect} /> :
@@ -136,7 +160,7 @@ const AspectSection : React.FC<{ aspect: string, active: boolean, setActiveAspec
                     active ? 
                     <>
                         {
-                            ASPECT_TREES[aspect].map((tree: string, index: number) => {
+                            ASPECTS[aspect].branches.map((tree: string, index: number) => {
                                 return <TalentTree key={index} aspect={tree} />
                             })
                         }
