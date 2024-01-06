@@ -1,6 +1,6 @@
 import styles from "./content.module.scss";
 import talentStyles from "./talents.module.scss";
-import { useState, useContext, Dispatch, SetStateAction } from "react";
+import { useState, useContext, Dispatch, SetStateAction, CSSProperties } from "react";
 import talentData from "./talents.json";
 import ControlsDescription from "./controls-description";
 import { TALENT_TREES, TalentIcon } from "./skill-tree";
@@ -14,8 +14,7 @@ interface Talent {
 
 interface Aspect { 
     description: string,
-    baseColor: string,
-    baseColors: string[],
+    colorBase: string[],
     branches: string[],
 }
 
@@ -24,26 +23,22 @@ const MAX_WIDTH = 9;
 const ASPECTS : { [key: string] : Aspect } =  {
     "science": {
         description: "An aspect assembled from the uncharted depths of knowledge; the mind revels in its enigmatic concepts.",
-        baseColor: "green",
-        baseColors: ["hover:bg-aspect-green/25", "text-aspect-green", "group-hover/aspects:bg-aspect-green-dark", "from-aspect-green"],
+        colorBase: ["from-aspect-green/40", "from-aspect-green via-aspect-green", "group-hover/aspects:bg-aspect-green/50"],
         branches: ["engineering", "study"],
     }, 
     "arts": {
         description: "An aspect crafted from the endless well of imagination; the soul wallows in the beauty it evokes.",
-        baseColor: "blue",
-        baseColors: ["hover:bg-aspect-blue/25", "text-aspect-blue", "group-hover/aspects:bg-aspect-blue-dark", "from-aspect-blue"],
+        colorBase: ["from-aspect-blue/40", "from-aspect-blue via-aspect-blue", "group-hover/aspects:bg-aspect-blue/50"],
         branches: ["forms", "theory"],
     }, 
     "physique": {
         description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glory.",
-        baseColor: "red",
-        baseColors: ["hover:bg-aspect-red/25", "text-aspect-red", "group-hover/aspects:bg-aspect-red-dark", "from-aspect-red"],
+        colorBase: ["from-aspect-red/40", "from-aspect-red via-aspect-red", "group-hover/aspects:bg-aspect-red/50"],
         branches: ["sports", "knowledge"],
     }, 
     "general": {
         description: "An aspect molded from the vast history of men; none knows the full potential of its reaches.",
-        baseColor: "yellow",
-        baseColors: ["hover:bg-aspect-yellow/25", "text-aspect-yellow", "group-hover/aspects:bg-aspect-yellow-dark", "from-aspect-yellow"],
+        colorBase: ["from-aspect-yellow/40", "from-aspect-yellow via-aspect-yellow", "group-hover/aspects:bg-aspect-yellow/50"],
         branches: ["essence", "application"],
     }
 };
@@ -104,37 +99,42 @@ const TalentTree : React.FC<{ aspect: string }> = ({ aspect }) => {
     )
 }
 
+const AspectIcon : React.FC<{ color: string, background: string }> = ({ color, background }) => {
+    const SIZE = 64;
+    const BORDER = 8;
 
-
+    return (
+        <div className="flex gap-2 w-full items-center justify-center relative z-[3]">
+            <div className={`transition-width duration-500 group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-l ${color} rounded-l-[100%]`}></div>
+            <div className="shrink-0 flex items-center justify-center rounded-full bg-gradient-to-bl from-white to-black" style={{ width: `${SIZE + BORDER}px`, height: `${SIZE + BORDER}px` }}>
+                <div className={`rounded-full bg-white ${background} duration-500 transition-colors`}  style={{ width: `${SIZE}px`, height: `${SIZE}px` }}>
+                </div>
+            </div>
+            <div className={`transition-width duration-500 group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-r ${color} rounded-r-[100%]`}></div>
+        </div>
+    )
+}
 
 const AspectDescription : React.FC<{ aspect: string }> = ({ aspect }) => {
     const aspectData = ASPECTS[aspect];
-    const background = `hover:bg-aspect-${aspectData.baseColor}/25`;
 
     return (
-        <div className={`group/aspects flex flex-col items-center gap-[1.5rem] justify-center w-full p-4 transition-colors ${background}`}>
-
-
-            {/* <div className="relative text-[2rem]">
-                <span className="text-center">{aspect}</span>
-                <span className={`absolute left-0 top-0 w-0 group-hover/aspects:w-full transition-width duration-200 overflow-hidden ${aspectData.baseColor[0]}`}>{aspect}</span>
-            </div>
-
-
-
-            <div className="flex gap-8 w-full items-center justify-center">
-                <div className={`transition-width duration-200 group-hover/aspects:w-full w-0 h-[0.15rem] bg-gradient-to-l ${aspectData.baseColor[2]} rounded-l-[100%]`}></div>
-                <div className=" w-[70px] h-[70px] shrink-0 flex items-center justify-center rounded-full bg-gradient-to-bl from-default-white to black">
-                    <div className={`w-[64px] h-[64px] rounded-full bg-white transition-colors ${aspectData.baseColor[1]}`}>
-                        {}
-                    </div>
-                </div>
-                <div className={`transition-width duration-200 group-hover/aspects:w-full w-0 h-[0.15rem] bg-gradient-to-r ${aspectData.baseColor[2]} rounded-r-[100%]`}></div>
-            </div>
+        <div className={"group/aspects flex flex-col items-center relative gap-[1.5rem] justify-center w-full p-4"}>
+            <div className={`absolute z-[0] h-full w-full to-transparent bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] opacity-0 group-hover/aspects:opacity-100 duration-500 ${aspectData.colorBase[0]}`} />
+            <div className={`text-[2rem] relative bg-gradient-to-r ${aspectData.colorBase[1]} via-50% to-white to-50% bg-[length:200%_100%] text-transparent [background-position-x:100%] bg-clip-text duration-500 group-hover/aspects:[background-position:0_100%]`}>{aspect}</div>
+            <AspectIcon color={aspectData.colorBase[0]} background={aspectData.colorBase[2]} />
+            <span className={`relative tracking-[0px] font-century-gothic text-center`}>{aspectData.description}</span>
+            
+            
+            {/* 
 
 
 
-            <span className="text-center tracking-[0px] font-century-gothic">{aspectData.description}</span>
+            
+
+
+
+            
             <div className="flex gap-4">
                 {
 
@@ -152,7 +152,7 @@ const AspectSection : React.FC<{ aspect: string, active: boolean, setActiveAspec
     }
 
     return (
-        <div className={`flex h-full bg-black/10 ${isAspects ? "w-full" : (active ? "w-full" : "w-0") } shrink-1 cursor-pointer`} onClick={handleSetActive}>
+        <div className={`flex h-full ${isAspects ? "w-full" : (active ? "w-full" : "w-0") } shrink-1 cursor-pointer`} onClick={handleSetActive}>
             {
                 isAspects ?
                 <AspectDescription aspect={aspect} /> :
@@ -177,7 +177,7 @@ const AspectsDisplay : React.FC = () => {
     const [activeAspect, setActiveAspect] = useState<string>("");
 
     return (
-        <div className={`w-full h-full flex justify-center px-4 tracking-[0px] bg-black/30 border-y-[3px] border-gold/75 overflow-hidden ${styles.skillsAnimation}`}>
+        <div className={`w-full h-full flex justify-center tracking-[0px] bg-black/40 border-y-[3px] border-gold/75 overflow-hidden ${styles.skillsAnimation}`}>
             {
                 Object.keys(ASPECTS).map((aspect: string, index: number) => {
                     return (
