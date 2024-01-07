@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
-import Codex from "./codex";
-import Skills from "./skills";
+import Codex from "./codex/codex";
+import Skills from "./skills/skills";
 import Map from "./map";
 import Inventory from "./inventory";
 

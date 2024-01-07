@@ -1,4 +1,4 @@
-import styles from "./content.module.scss";
+import styles from "./animations.module.scss";
 import controls from "./controller.module.scss";
 
 const CONTROLS_STYLES : { [key: string] : string } = {

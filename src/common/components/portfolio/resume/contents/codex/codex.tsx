@@ -1,7 +1,7 @@
 import { scrollPercent, scrollerHeightValue } from "@/common/utils/scroller";
-import styles from "./content.module.scss";
+import styles from "../animations.module.scss";
 import React, { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
-import ControlsDescription from "./controls-description";
+import ControlsDescription from "../controls-description";
 import { LayeredBorder } from "@/common/components/utils/borders";
 
 interface Journal {

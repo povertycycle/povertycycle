@@ -9,9 +9,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-conic':
-				'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'gradient-radial': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			colors: {
 				'rain':'#A1C6CC',
@@ -35,7 +34,7 @@ const config: Config = {
 			},
             transitionProperty: {
                 'height': 'height',
-                'width': 'width'
+                'width': 'width',
             },
 		},
 	},
