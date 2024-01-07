@@ -20,10 +20,10 @@ const JOURNALS : Journal = {
         content: {
             heading: "Arts & Music Enthusiast",
             description: [
-                "Nothing is more fascinating than to fully understand the intricacies behind the work of art and music of a game or a piece of cinema.",
+                "Nothing is more fascinating\u2014than to fully understand the intricacies behind the work of art and music of a game or a piece of cinema.",
                 "Your journey started off with the classics--Star Wars, Jurassic Park, Terminator, and many more--not exactly old though gold nonetheless. Yet from the start, that enjoyment for them was however a shallow and unappreciative one, ignorant of their real beauty.",
-                "And with the years of exposure, stumbling across those of which values were burrowed deep within their concepts and designs, the curiosity for their details and techniques grew stronger. Suddenly, the aspiration bloomed, to fully understand the idea behind such celebrated works, and to be able to relish such feelings with the community.",
-                "How amazing it is that we were blessed with such magnificence, for there is a whole world of imagination out there waiting to be explored; the works of art that transcend beyond time and space\u2014those that resonate uniquely to their fans\u2014those that can be appreciated by anyone of any background. And so, it was believed that: to truly appreciate their endless creativity, is to really be a human."
+                "And with the years of exposure, stumbling across those which values were burrowed deep within their concepts and designs, the curiosity for their details and techniques grew stronger. Suddenly, the aspiration bloomed: to fully understand the idea behind such celebrated works, and to be able to relish such feelings with the community.",
+                "How amazing it is that we were blessed with such magnificence, for there is a whole world of imagination out there waiting to be explored; the works of art that transcend beyond time and space--those that resonate uniquely to their fans--those that can be appreciated by anyone of any background. And so, it was believed that: to truly appreciate their endless creativity, is to really be a human."
             ]
         }
     },
@@ -43,11 +43,14 @@ const JOURNALS : Journal = {
         content: {
             heading: "Patch Notes History",
             description: [
-                "We always can learn something from our past mistakes.",
-                "Version 2.0 (Current):",
-                "- Redesigned the 'about' page and its contents. Reworked the math behaviors of components that use quadratic equations. Refactor all the components to make them more compact.",
-                "Version 1:0:",
-                "- Personal website launched using github pages.",
+                "We can always learn something from our past mistakes.",
+                "Version 2.0 - Next Goal:",
+                "- Full new design for the website and its contents. Refactor all the components to make them more compact.",
+                "- Add the remaining missing pages contents.",
+                "Version 1.3.1 - Current:",
+                "- Redesigned the 'about' page. Reworked the math behaviors of components that use quadratic equations.",
+                "Version 1.0:",
+                "- Old personal website was launched using github pages with React and NodeJS.",
             ]
         }
     },
@@ -57,10 +60,14 @@ const JOURNALS : Journal = {
             heading: "Upcoming changes and to-do list",
             description: [
                 "The best one can do for oneself is to keep learning and improving.",
+                "- Complete the Skill conetnts.",
+                "- Complete the Map contents.",
+                "- Complete the Inventory contents.",
+                "- Complete the Gallery contents.",
                 "- Controller supports for website.",
                 "- Mobile supports for website.",
-                "- Gallery contents.",
                 "- Design icons for skills section.",
+                "- Improve fishes algorithms",
             ]
         }
     },

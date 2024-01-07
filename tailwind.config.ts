@@ -29,7 +29,6 @@ const config: Config = {
 			fontFamily: {
 				'andes': ['andes'],
 				'market-deco': ['market-deco'],
-                'peake': ['peake'],
                 'century-gothic': ['century-gothic'],
 			},
             transitionProperty: {

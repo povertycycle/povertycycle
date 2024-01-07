@@ -23,18 +23,18 @@ const Fishes : React.FC = () => {
     const { dive } = useContext(RaptureContext);
 
     useEffect(() => {
-        if (dive) setSchools(Math.round(window.innerWidth / 128));
+        if (dive) setSchools(Math.round(window.innerWidth / 192));
     }, [dive]);
     
     const Fish = () => {
         const direction = Math.random() >= 0.5 ? true : false;
-        const z = 5 + Math.round(Math.random() * 5);
+        const z = 6 + Math.round(Math.random() * 4);
         const opacity = 0.5 + z / 10;
         const top = 50 + Math.random() * 40;
         const scale = 0.2 + z / 20;
-        const delay = Math.random() * 30; 
+        const delay = Math.random() * 5; 
         const duration = (Math.random() * 240) + 90;
-        const fish = Math.round(Math.random() * Math.round(window.innerWidth / 192)) + 1;
+        const fish = Math.round(Math.random() * Math.round(window.innerWidth / 384)) + 1;
         const baseColor = GRADIENTS[z - (2 * (z - MAX_Z_INDEX / 2))];
         const rimColor = FISH_COLORS[Math.round(Math.random() * 10)];
         const ambientOcclusion = pSBC(-0.7, rimColor, false, true);

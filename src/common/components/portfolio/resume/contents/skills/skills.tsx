@@ -2,6 +2,7 @@ import styles from "../animations.module.scss";
 import { useState, useContext, Dispatch, SetStateAction } from "react";
 import ControlsDescription from "../controls-description";
 import { AspectsContext } from "../../../global-context";
+import { TalentTree } from "./talents";
 
 enum AspectColor {
     GREEN = "green",
@@ -84,11 +85,12 @@ const AspectBanner : React.FC<{ aspect: string }> = ({ aspect }) => {
                 <div className={`text-[2rem] bg-gradient-to-r ${colors.title} via-50% to-white to-50% bg-[length:200%_100%] [background-position-x:100%] duration-700 group-hover/aspects:[background-position:0_100%] text-transparent bg-clip-text`}>{aspect}</div>
                 <div className="w-full flex gap-2 justify-center items-center">
                     <div className={`${colors.gleam} transition-width duration-1000 group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-l rounded-l-[100%]`}></div>
-                    <div className="w-[4rem] h-[4rem] bg-black/50 rounded-full shrink-0"></div>
+                    <div className="w-[4rem] h-[4rem] bg-black/25 rounded-full shrink-0"></div>
                     <div className={`${colors.gleam} transition-width duration-1000 group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-r rounded-r-[100%]`}></div>
                 </div>
-                <div className={`transition-width duration-500 h-[8rem] w-0 group-hover/aspects:w-full overflow-hidden tracking-[0px] font-century-gothic text-center italic`}>{aspectData.description}</div>
-
+                <div className={`relative w-full bg-gradient-to-r from-white via-white to-transparent via-50% to-50% bg-[length:200%_100%] [background-position-x:100%] duration-700 group-hover/aspects:[background-position:0_100%] text-transparent font-bold bg-clip-text overflow-hidden tracking-[0px] font-century-gothic text-center italic`}>
+                    {aspectData.description}
+                </div>
             </div>
         </div>
     )
@@ -97,23 +99,29 @@ const AspectBanner : React.FC<{ aspect: string }> = ({ aspect }) => {
 const AspectSection : React.FC<{ aspect: string, active: boolean, setActiveAspect: Dispatch<SetStateAction<string>> }> = ({ aspect, active, setActiveAspect }) => {
     const { isAspects, setIsAspects } = useContext(AspectsContext);
     const handleSetActive = () => {
+        if (!isAspects) return;
         setActiveAspect(aspect);
         setIsAspects(false);
     }
 
     return (
-        <div className={`flex h-full ${isAspects ? "w-full" : (active ? "w-full" : "w-0") } shrink-1 cursor-pointer`} onClick={handleSetActive}>
+        <div className={`flex h-full ${isAspects ? "w-full cursor-pointer" : (active ? "w-full" : "w-0") } shrink-1`} onClick={handleSetActive}>
             {
                 isAspects ?
                 <AspectBanner aspect={aspect} /> :
                 (
                     active ? 
                     <>
-                        {/* {
+                        {
                             ASPECTS[aspect].branches.map((tree: string, index: number) => {
-                                return <TalentTree key={index} aspect={tree} />
+                                return (
+                                    <>
+                                        {index !== 0 && <div className={`shrink-0 bg-gradient-to-b from-transparent via-gold rounded-[100%] h-full w-[0.2rem]`} />}
+                                        <TalentTree key={index} aspect={tree} />
+                                    </>
+                                )
                             })
-                        } */}
+                        }
                     </> :
                     null
                 )

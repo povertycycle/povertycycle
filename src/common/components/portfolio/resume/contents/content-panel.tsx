@@ -3,6 +3,7 @@ import Codex from "./codex/codex";
 import Skills from "./skills/skills";
 import Map from "./map";
 import Inventory from "./inventory";
+import { Gallery } from "./gallery";
 
 export const CONTENTS : {
     [key: string] : JSX.Element,
@@ -11,7 +12,7 @@ export const CONTENTS : {
     "skills": <Skills />,
     "map": <Map />,
     "inventory": <Inventory />,
-    "gallery": <></>,
+    "gallery": <Gallery />,
 }
 
 const ContentPanel : React.FC<{
