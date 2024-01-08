@@ -80,7 +80,7 @@ const AspectBanner : React.FC<{ aspect: string }> = ({ aspect }) => {
 
     return (
         <div className={"group/aspects w-full h-full relative p-4"}>
-            <div className={`absolute z-[1] transtion-opacity duration-500 opacity-0 group-hover/aspects:opacity-100 h-full w-full bg-gradient-radial ${colors.background}`} />
+            <div className={`absolute top-0 left-0 z-[1] transtion-opacity duration-500 opacity-0 group-hover/aspects:opacity-100 h-full w-full bg-gradient-radial ${colors.background}`} />
             <div className="relative w-full h-full z-[2] flex flex-col gap-[1.5rem] items-center justify-center">
                 <div className={`text-[2rem] bg-gradient-to-r ${colors.title} via-50% to-white to-50% bg-[length:200%_100%] [background-position-x:100%] duration-700 group-hover/aspects:[background-position:0_100%] text-transparent bg-clip-text`}>{aspect}</div>
                 <div className="w-full flex gap-2 justify-center items-center">

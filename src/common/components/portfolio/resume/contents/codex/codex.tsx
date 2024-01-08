@@ -86,7 +86,7 @@ const JOURNALS : Journal = {
 const CodexScroller : React.FC<{ height: string, scroll: number }> = ({ height, scroll }) => {
     return (
         <div className="w-[0.25rem] h-full rounded-full flex justify-center relative">
-            <div className="w-1 bg-default-white shadow-[0_0_8px_1px_white] rounded-full absolute transition-height duration-500" style={{
+            <div className="w-[3px] bg-default-white shadow-[0_0_8px_1px_white] rounded-full absolute transition-height duration-500" style={{
                 height: height,
                 top: `${scroll}%`
             }} />
@@ -149,13 +149,13 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
     }
 
     return (
-        <div className={`${styles.codexAnimation} gap-4 px-8 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
+        <div className={`${styles.codexAnimation} gap-4 px-8 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black/75 flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
             <LayeredBorder gap="4px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
-                <div className="bg-gradient-to-l from-transparent via-sea-blue-dark/65 text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
+                <div className="bg-gradient-to-l from-transparent via-sea-blue-dark/35 text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
             </LayeredBorder>
             <div className="flex flex gap-4 h-full w-full">
                 <LayeredBorder>
-                    <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative bg-gradient-to-l from-sea-blue-dark/45 ${styles.overflowContainer}`} onScroll={handleScroll}>
+                    <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative bg-gradient-to-l from-sea-blue-dark/25 ${styles.overflowContainer}`} onScroll={handleScroll}>
                         <div className="flex flex-col gap-2 tracking-[0px] h-full absolute">
                             {
                                 JOURNALS[active]?.content.description.map((text: string, index: number) => {
