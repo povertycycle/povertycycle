@@ -3,6 +3,7 @@ import { useState, useContext, Dispatch, SetStateAction } from "react";
 import ControlsDescription from "../controls-description";
 import { AspectsContext } from "../../../global-context";
 import { TalentTree } from "./talents";
+import { AspectScienceIcon } from "./aspect-icons";
 
 enum AspectColor {
     GREEN = "green",
@@ -15,34 +16,30 @@ interface Aspect {
     description: string,
     color: AspectColor,
     branches: string[],
+    icon: JSX.Element,
 }
 
 interface AspectColorTypes {
     background: string,
     title: string,
-    gleam: string,
 }
 
 const ASPECTS_COLORS : { [key in AspectColor] : AspectColorTypes } = {
     "green": {
-        background: "from-aspect-green/20",
+        background: "from-aspect-green/30",
         title: "from-aspect-green via-aspect-green",
-        gleam: "from-aspect-green",
     },
     "blue": {
-        background: "from-aspect-blue/20",
+        background: "from-aspect-blue/30",
         title: "from-aspect-blue via-aspect-blue",
-        gleam: "from-aspect-blue",
     },
     "red": {
-        background: "from-aspect-red/30",
+        background: "from-aspect-red/40",
         title: "from-aspect-red via-aspect-red",
-        gleam: "from-aspect-red",
     },
     "yellow": {
-        background: "from-aspect-yellow/30",
+        background: "from-aspect-yellow/40",
         title: "from-aspect-yellow via-aspect-yellow",
-        gleam: "from-aspect-yellow",
     },
 }
 
@@ -51,44 +48,39 @@ const ASPECTS : { [key: string] : Aspect } =  {
         description: "An aspect assembled from the uncharted depths of knowledge; the mind revels in its enigmatic concepts.",
         color: AspectColor.GREEN,
         branches: ["engineering", "study"],
+        icon: <AspectScienceIcon />,
     }, 
     "arts": {
         description: "An aspect crafted from the endless well of imagination; the soul wallows in the beauty it evokes.",
         color: AspectColor.BLUE,
         branches: ["forms", "theory"],
+        icon: <></>,
     }, 
     "physique": {
         description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glory.",
         color: AspectColor.RED,
         branches: ["sports", "knowledge"],
+        icon: <></>,
     }, 
     "general": {
         description: "An aspect molded from the vast history of men; none knows the full potential of its reaches.",
         color: AspectColor.YELLOW,
         branches: ["essence", "application"],
+        icon: <></>,
     }
 };
-
-
-
-
-
 
 const AspectBanner : React.FC<{ aspect: string }> = ({ aspect }) => {
     const aspectData = ASPECTS[aspect];
     const colors = ASPECTS_COLORS[aspectData.color];
 
     return (
-        <div className={"group/aspects w-full h-full relative p-4"}>
+        <div className={"group/aspects w-full h-full relative p-4 flex items-center justify-center overflow-hidden"}>
             <div className={`absolute top-0 left-0 z-[1] transtion-opacity duration-500 opacity-0 group-hover/aspects:opacity-100 h-full w-full bg-gradient-radial ${colors.background}`} />
-            <div className="relative w-full h-full z-[2] flex flex-col gap-[1.5rem] items-center justify-center">
-                <div className={`text-[2rem] bg-gradient-to-r ${colors.title} via-50% to-white to-50% bg-[length:200%_100%] [background-position-x:100%] duration-700 group-hover/aspects:[background-position:0_100%] text-transparent bg-clip-text`}>{aspect}</div>
-                <div className="w-full flex gap-2 justify-center items-center">
-                    <div className={`${colors.gleam} transition-width duration-1000 group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-l rounded-l-[100%]`}></div>
-                    <div className="w-[4rem] h-[4rem] bg-black/25 rounded-full shrink-0"></div>
-                    <div className={`${colors.gleam} transition-width duration-1000 group-hover/aspects:w-full w-0 h-[0.25rem] bg-gradient-to-r rounded-r-[100%]`}></div>
-                </div>
-                <div className={`relative w-full bg-gradient-to-r from-white via-white to-transparent via-50% to-50% bg-[length:200%_100%] [background-position-x:100%] duration-700 group-hover/aspects:[background-position:0_100%] text-transparent font-bold bg-clip-text overflow-hidden tracking-[0px] font-century-gothic text-center italic`}>
+            <div className="relative w-full h-full z-[2] flex flex-col gap-[1.5rem] items-center pt-[45%]">
+                <div className={`text-[2rem] bg-gradient-to-r ${colors.title} via-50% to-white to-50% bg-[length:200%_100%] [background-position-x:100%] duration-400 group-hover/aspects:[background-position:0_100%] text-transparent bg-clip-text`}>{aspect}</div>
+                <div className="w-[8rem] h-[8rem] rounded-full shrink-0 relative">{aspectData.icon}</div>
+                <div className={`relative w-full bg-gradient-to-r from-white via-white to-transparent via-50% to-50% bg-[length:200%_100%] [background-position-x:100%] duration-400 group-hover/aspects:[background-position:0_100%] text-transparent font-bold bg-clip-text overflow-hidden tracking-[0px] font-century-gothic text-center italic`}>
                     {aspectData.description}
                 </div>
             </div>

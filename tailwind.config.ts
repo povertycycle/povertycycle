@@ -35,6 +35,9 @@ const config: Config = {
                 'height': 'height',
                 'width': 'width',
             },
+            transitionDuration: {
+                '400': '400ms',
+            }
 		},
 	},
 	variants: {

@@ -26,7 +26,7 @@ export const LayeredBorder : React.FC<{
             "--b": borderWidth,
             padding: gap,
         } as React.CSSProperties;
-        nests = <div className={`${styles.cornerBorder} w-full`} style={customStyles}>{nests}</div>;
+        nests = <div className={`${styles.cornerBorder} flex justify-center w-full`} style={customStyles}>{nests}</div>;
     }
     return nests;
 }

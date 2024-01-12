@@ -6,7 +6,7 @@ export interface TalentIcon {
 }
 
 export const TALENT_TREES : { [key: string] : TalentIcon[] } = {
-    "engineering": [], //mobile-development web-development game-development system-engineering
+    "engineering": [    ], //mobile-development web-development game-development system-engineering
     "study": [
         { id: 0, x: 4, y: 0, children: [0.2, 0, 0.2] },
         { id: 1, x: 3, y: 1, children: [0.2, 0] }, { id: 2, x: 4, y: 1, children: [0.2, 0] }, { id: 3, x: 5, y: 1, children: [null, 0, 0.2] },
@@ -21,7 +21,7 @@ export const TALENT_TREES : { [key: string] : TalentIcon[] } = {
     ],
     "forms": [],
     "theory": [], // fine-arts", "music", "writings" "theme", "color", "structure" "documentation" "typography" "markup", "accessibility" "design-hierarchy" "uiux"
-    "sports": [], // "strength", "agility", "dexterity" endurance", "motor
+    "sports": [], // "strength", "agility", "dexterity" endurance", "motor soccer 
     "knowledge": [],
     "essence": [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
     "application": [],

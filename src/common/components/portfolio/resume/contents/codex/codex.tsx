@@ -47,7 +47,7 @@ const JOURNALS : Journal = {
                 "Version 2.0 - Next Goal:",
                 "- Full new design for the website and its contents. Refactor all the components to make them more compact.",
                 "- Add the remaining missing pages contents.",
-                "Version 1.3.1 - Current:",
+                "Version 1.3.2 - Current:",
                 "- Redesigned the 'about' page. Reworked the math behaviors of components that use quadratic equations.",
                 "Version 1.0:",
                 "- Old personal website was launched using github pages with React and NodeJS.",
@@ -117,7 +117,7 @@ const JournalOptions : React.FC<{ active: number, setActive: Dispatch<SetStateAc
                                 setActive(index);
                             }
                             return (
-                                <div className={`flex select-none cursor-pointer rounded-[0.25rem] gap-8 px-4 py-1 transition-transform from-60% ${active == index ? "skew-x-[-10deg] bg-gradient-to-r from-default-white text-black translate-x-[2rem]" : "bg-gradient-to-r from-sea-blue-dark/35 from-0% hover:from-sea-blue-dark/75 hover:skew-x-[-10deg] hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
+                                <div className={`flex select-none cursor-pointer rounded-[0.25rem] gap-8 px-4 py-1 transition-transform from-60% ${active == index ? "skew-x-[-10deg] bg-gradient-to-r from-default-white text-black translate-x-[2rem]" : "bg-gradient-to-r from-sea-blue-dark/35 hover:from-sea-blue-dark/75 hover:skew-x-[-10deg] hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
                                     <span className="w-[3rem]">{index.toString().padStart(3, "0")}</span>
                                     <span>{journal.title}</span>    
                                 </div>
@@ -149,26 +149,35 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
     }
 
     return (
-        <div className={`${styles.codexAnimation} gap-4 px-8 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black/75 flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
-            <LayeredBorder gap="4px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
-                <div className="bg-gradient-to-l from-transparent via-sea-blue-dark/35 text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
-            </LayeredBorder>
-            <div className="flex flex gap-4 h-full w-full">
-                <LayeredBorder>
-                    <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative bg-gradient-to-l from-sea-blue-dark/25 ${styles.overflowContainer}`} onScroll={handleScroll}>
-                        <div className="flex flex-col gap-2 tracking-[0px] h-full absolute">
-                            {
-                                JOURNALS[active]?.content.description.map((text: string, index: number) => {
-                                    return (
-                                        <div key={index} className="flex px-8 py-4">
-                                            <span className={`${index === 0 && "text-center italic font-century-gothic text-[1.5rem] tracking-[1px]"} text-[1.25rem]`}>{text}</span>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    </div>
+        <div className={`${styles.codexAnimation} gap-4 px-4 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black/75 flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
+            <div className="w-full pr-[1.25rem]">
+                <LayeredBorder gap="2px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
+                    <LayeredBorder>
+                        <div className="bg-gradient-to-l via-sea-blue-dark/35 text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
+                    </LayeredBorder>
                 </LayeredBorder>
+            </div>
+            
+            <div className="flex flex gap-4 h-full w-full">
+                <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
+                    <div className="flex flex-col gap-2 tracking-[0px] h-full absolute w-full">
+                        {
+                            JOURNALS[active]?.content.description.map((text: string, index: number) => {
+                                return (
+                                    <div key={index} className="flex w-full  bg-gradient-to-l from-sea-blue-dark/35">
+                                        {
+                                            index === 0 ?
+                                            <LayeredBorder>
+                                                <span className="py-4 px-8 text-center italic font-century-gothic text-[1.5rem] tracking-[1px]">{text}</span>
+                                            </LayeredBorder> :
+                                            <span className="py-4 text-[1.25rem] px-8">{text}</span>
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
                 <CodexScroller scroll={scroll} height={height} /> 
             </div>
         </div>

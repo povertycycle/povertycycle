@@ -7,3 +7,7 @@ export const quadraticEquationProcessor = (x: number, yAtOffset: number, offset:
     const factor = Math.abs(offset - 50) / Math.sqrt(yAtOffset)
     return min_y + Math.pow((x - 50) / factor, 2)
 }
+
+export const getAge = () => {
+    return Math.floor((new Date().getTime() - new Date(1995, 10, 2).getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+}

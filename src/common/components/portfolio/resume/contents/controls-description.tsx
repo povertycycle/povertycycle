@@ -1,5 +1,13 @@
 import styles from "./animations.module.scss";
 import controls from "./controller.module.scss";
+import { animateScroll as scroll } from "react-scroll";
+
+const returnToMainMenu = () => {
+    scroll.scrollTo(-document.body.clientHeight, {
+        smooth: "easeInQuad",
+        duration: 2000,
+    });
+}
 
 const CONTROLS_STYLES : { [key: string] : string } = {
     "cross": controls.actionCross,
@@ -8,12 +16,12 @@ const CONTROLS_STYLES : { [key: string] : string } = {
     "square": controls.actionSquare,
 }
 
-const ActionButton : React.FC<{ tag: string, action: string }> = ({ tag, action }) => {
+const ActionButton : React.FC<{ tag: string, action: string, onClick?: () => void }> = ({ tag, action, onClick }) => {
     const style = {
         ...(tag === "triangle" ? { "--a": "1.5rem"} as React.CSSProperties : ""),
     }
     return (
-        <div className="text-white flex items-center gap-2 text-[1.75rem]">
+        <div className="text-white flex items-center gap-2 text-[1.75rem]" onClick={onClick}>
             <div className="active:scale-90 h-[2.5rem] w-[2.5rem] border-[3px] border-white bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer" style={style}>
                 <div className={CONTROLS_STYLES[tag]} />
             </div>
@@ -24,7 +32,7 @@ const ActionButton : React.FC<{ tag: string, action: string }> = ({ tag, action 
 
 const CONTROLS_ICONS : { [key: string]: (action: string, index: number) => JSX.Element } = {
     "X/A": (action: string, index: number) => { return <ActionButton key={index} tag={"cross"} action={action} /> },
-    "O/B": (action: string, index: number) => { return <ActionButton key={index} tag={"circle"} action={action} /> },
+    "O/B": (action: string, index: number) => { return <ActionButton key={index} tag={"circle"} action={action} onClick={returnToMainMenu} /> },
     "T/Y": (action: string, index: number) => { return <ActionButton key={index} tag={"triangle"} action={action} /> },
     "S/X": (action: string, index: number) => { return <ActionButton key={index} tag={"square"} action={action} /> }
 }
