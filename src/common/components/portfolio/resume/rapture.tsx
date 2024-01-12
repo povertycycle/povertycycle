@@ -6,7 +6,7 @@ const Rapture : React.FC = () => {
     return (
         <div className="w-full h-full relative z-[1]">
             <Bubbles />
-            {/* <Fishes /> */}
+            <Fishes />
             <Buildings />
         </div>
     )
