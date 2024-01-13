@@ -53,7 +53,7 @@ const Buildings : React.FC = () => {
         const width = roundWithDecimals(3 + Math.random() * 2, 1);
         const h_curvature = 5;
         const stacks = Math.round(Math.random() * 4) + 2;
-        const duration = Math.round(Math.random() * 10) + 1;
+        const duration = Math.round(Math.random() * 7) + 3;
         const threshold = Math.round(Math.random() * stacks);
         let boxShadow = `0px -150px 250px 30px #1a827c, ${direction * 150}px 150px 150px 5px #1a827c, ${direction * 250}px 50px 250px 5px #67aba8`
         const filter = `blur(${Math.floor((MAX_Z_INDEX - z) / 3)}px)`;

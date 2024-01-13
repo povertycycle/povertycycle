@@ -4,31 +4,137 @@
     "0": {
       "name": "Data Structure",
       "active": true,
-      "points": "3/5"
+      "points": 4,
+      "maxPoints": 7,
+      "icon": "ri-node-tree",
+      "description": "A data organization, management, and storage format chosen for efficient access to data; a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.",
+      "levelDescription": [
+        "Basic - Primitive Data Types, Arrays, etc",
+        "Moderate - Dynamic memory allocation and pointers, fundamentals of algorithms and program execution flow, and hierarchical structures in search and sorting: Linked List, Stacks, Queues, Trees, etc.",
+        "Intermediate - Various complex trees, hash functions and collision resolutions, and basic memory management and priority queues: Graphs, Hash Tables, Heaps, etc.",
+        "Challenging - Balancing and optimization of structures, advanced graph and sorting algorithms: AVL Trees, B-Trees, Depth-First Search, Breadth-First Search, Dijkstra's, Quick Sort, Merge Sort, etc.",
+        "Complex - More specialized and less commonly used dynamic sets: Trie, Disjoint Set (Union-Find), Skip Lists, Splay Trees, etc.",
+        "Advanced Topics - Concurrent access and specialized data structures for range queries: Persistent Data Structure, Segment Trees, Fenwick Trees (Binary Indexed Trees), Concurrency Control, etc.",
+        "??????? - ???????"
+      ]
     },
     "1": {
       "name": "Discrete Structure",
-      "active": false
+      "active": false,
+      "points": 4,
+      "maxPoints": 8,
+      "icon": "ri-bubble-chart-line",
+      "description": "The study of discrete mathematical structures.",
+      "levelDescription": [
+        "Elementary - Basic concepts of sets, operations, relations, and propositional and first-order logic: Set Theory, Logic, etc.",
+        "Intermediate - Injective, surjective, and bijective functions, simple graph representation concepts, counting principles, permutations, and combinations: Functions and Relations, Graph Theory, Combinatorics, etc.",
+        "Algebraic - Advanced and fundamental algebric Structures with closure, associativity, identity, and inverses: Groups, Rings, Fields, etc.",
+        "Advanced Topics - Modular arithmetic, prime numbers, recurrence relations, cardinality, transfinite numbers, trees, connectivity, and graph algorithms: Advanced Graph Theory, Number Theory, Combinatorial Structures, Advanced Set Theory, etc",
+        "Complex - Graph Algorithms: More advanced algorithms, network flows, matchings. Combinatorial Optimization: Traveling Salesman Problem, Maximum Flow. Model Theory: Study of mathematical structures via formal languages.",
+        "Abstract Algebra - Advanced Group Theory: Sylow theorems, permutation groups. Field Extensions and Galois Theory: Understanding polynomial equations. Advanced Number Theory: Diophantine equations, elliptic curves.",
+        "Logic and Computability - Model Checking and Formal Verification: Applying logic to system verification. Automata Theory: Finite automata, regular languages, context-free languages. Computability and Complexity Theory: Turing machines, P vs NP, complexity classes.",
+        "???????? - ????????"
+      ]
     },
     "2": {
       "name": "Algorithms",
-      "active": false
+      "active": false,
+      "points": 4,
+      "maxPoints": 9,
+      "icon": "ri-flow-chart",
+      "description": " finite sequence of rigorous instructions, typically used to solve a class of specific problems or to perform a computation.[1] Algorithms are used as specifications for performing calculations and data processing.",
+      "levelDescription": [
+        "Easy - Simple algorithms with straightforward logic and low complexity: Linear search, Bubble sort.",
+        "Intermediate - Algorithms that involve more complex logic or address moderately challenging problems: Binary search, Merge sort.",
+        "Advanced - Algorithms that require a deeper understanding of advanced data structures or mathematical concepts: Graph algorithms (Dijkstra's algorithm, Breadth-First Search), Dynamic programming.",
+        "Hard - Complex algorithms that tackle intricate problems, often with high time or space complexity: NP-hard problems, certain cryptographic algorithms.",
+        "Research-Level - Cutting-edge algorithms developed for specific research purposes: State-of-the-art machine learning algorithms, algorithms in specialized scientific domains.",
+        "Algorithmic Challenges - Algorithms designed for programming competitions or coding interviews, often requiring creative problem-solving: Problems from platforms like LeetCode or Codeforces.",
+        "NP-Hard and NP-Complete Problems: Problems classified as NP-hard or NP-complete, indicating high computational complexity: Traveling Salesman Problem, Knapsack Problem.",
+        "Quantum Algorithms - Algorithms designed for quantum computing, leveraging principles of quantum mechanics: Shor's algorithm for factoring large numbers, Grover's algorithm for searching.",
+        "????????? - ?????????"
+      ]
     },
     "3": {
       "name": "Computer Systems",
-      "active": false
+      "active": false,
+      "points": 3,
+      "maxPoints": 11,
+      "icon": "ri-computer-line",
+      "description": "Interaction between user programs and the operating system/hardware, systems programming, assembly language, machine data representation, thread management, optimization, and virtual memory",
+      "levelDesription": [
+        "Introducory - Basic understanding of computer components and architecture: CPU, memory, storage, and input/output.",
+        "Intermediate - In-depth study of computer organization and architecture: CPU architecture, instruction sets, memory hierarchy, and assembly language programming.",
+        "Operating Systems - Study of processes, memory management, file systems, and device management. Exposure to concepts like multitasking, multiprocessing, and virtual memory.",
+        "Networks and Communications - Basics of computer networks, including protocols and communication models, networking devices, protocols, network architecture, IP addressing, routing, and network security.",
+        "Advanced Computer Architecture: In-depth study of advanced computer architectures, pipelining, parallel processing, cache coherence, superscalar and VLIW architectures.",
+        "Distributed Systems - Study of distributed algorithms, synchronization, and fault tolerance, distributed computing, cloud computing and distributed databases.",
+        "Embedded Systems - Study of embedded system design and programming, real-time operating systems and constraints, microcontrollers, sensors, and actuators.",
+        "Computer Security - Study of principles and practices in computer security, cryptography, network security, and secure software development, ethical hacking and penetration testing.",
+        "Quantum Computing - Introduction to the principles of quantum computing, qubits, quantum gates, and quantum algorithms, quantum programming languages and frameworks.",
+        "Specialized Topics - In-depth study of computer graphics, artificial intelligence, machine learning, robotics or bioinformatics.",
+        "??????????? - ???????????"
+      ]
     },
     "4": {
       "name": "Performance",
-      "active": false
+      "active": false,
+      "points": 7,
+      "maxPoints": 12,
+      "icon": "ri-speed-up-line",
+      "description": "Accuracy, efficiency and speed of executing computer program instructions",
+      "levelDescription": [
+        "Introductory - Introduction to concepts like response time, throughput, and latency, profiling and monitoring skills.",
+        "Intermediate - Understanding and analyzing CPU and memory usage, performance testing methodologies.",
+        "System Performance - Analyzing and optimizing overall system performance, profiling at the system level, including CPU, memory, disk, and network, identifying and addressing performance bottlenecks.",
+        "Performance Testing - In-depth knowledge of performance testing tools and methodologies, load testing, stress testing, and scalability testing.",
+        "Web Performance - Understanding front-end performance optimization techniques, caching strategies and content delivery network (CDN) usage.",
+        "Database Performance - Profiling and optimizing database queries, indexing strategies and database schema optimization. Dealing with large datasets and optimizing data access.",
+        "Network Performance - Network protocols and their impact on performance, implementing strategies for reducing latency and improving bandwidth usage.",
+        "Cloud Performance - Optimizing performance in cloud environments.Understanding cloud infrastructure and services. Implementing auto-scaling and load balancing for improved performance.",
+        "Security Performance - Considering the performance impact of security measures, balancing security and performance considerations, performance-aware security practices.",
+        "Real-time Systems - Optimizing performance in real-time and embedded systems. Understanding constraints and deadlines in real-time applications. Analyzing and reducing system response times.",
+        "Advanced Performance Tuning - Specialized optimization techniques for specific platforms or applications. In-depth analysis of low-level performance metrics. Expertise in performance profiling tools and methodologies.",
+        "???????????? - ????????????"
+      ]
     },
     "5": {
       "name": "Design Patterns",
-      "active": false
+      "active": false,
+      "points": 7,
+      "maxPoints": 9,
+      "icon": "ri-layout-4-line",
+      "description": "General, reusable solution to a commonly occurring problem within a given context in software design.",
+      "levelDescription": [
+        "Introductory - Understanding basic design principles. Awareness of the need for reusable and maintainable code. Recognition of common design issues.",
+        "Creational Patterns - Creating a single instance of a class, defining an interface for creating an object, with subclasses deciding which class to instantiate, providing an interface for creating families of related or dependent objects without specifying their concrete classes.",
+        "Structural Patterns - Allowing incompatible interfaces to work together, adding new functionalities to objects dynamically, composing objects into tree structures to represent part-whole hierarchies.",
+        "Behavioral Patterns - Defining a one-to-many dependency between objects, defining a family of algorithms, encapsulating each one, and making them interchangeable, encapsulating a request as an object, thereby allowing users to parameterize clients with queues, requests, and operations.",
+        "Architectural Patterns - Separating concerns in an application, enhancing separation of concerns with a focus on data binding, structuring applications to separate concerns like business logic and external services.",
+        "Concurrency Patterns - Managing access to shared resources, coordinating the actions of producers and consumers in a shared buffer, immplementing concurrency through actors that communicate by sending messages.",
+        "Anti-Patterns - Recognizing and avoiding common design pitfalls.",
+        "Real-world Application - Applying design patterns in complex, real-world scenarios. Understanding when and where to use specific patterns.",
+        "????????? - ?????????"
+      ]
     },
     "6": {
       "name": "Efficiency",
-      "active": false
+      "active": false,
+      "points": 5,
+      "maxPoints": 9,
+      "icon": "ri-time-line",
+      "description": "Amount of computational resources used by the algorithm to determine its resource usage, and the efficiency of an algorithm can be measured based on the usage of different resources. ",
+      "levelDescription": [
+        "Data Structures Efficiency - Using basic data structures like arrays and lists, employing more advanced data structures like trees and hash tables, designing and implementing custom data structures for specific needs.",
+        "Algorithmic Efficiency - Selection of appropriate algorithms for common tasks, optimization of algorithmic complexity (e.g., moving from O(n^2) to O(n log n)), designing custom algorithms for specific use cases.",
+        "Code-Level Efficiency - Writing clean and readable code, profiling and optimizing critical sections of code, understanding low-level details (memory management, CPU caches) for fine-tuning.",
+        "Code Profiling and Optimization - Using profiling tools to identify bottlenecks, interpreting profiling results and applying optimizations, deep analysis of performance metrics for complex systems.",
+        "Continuous Improvement - Regular code reviews for efficiency, implementing feedback from performance testing, continuous monitoring and iterative improvements.",
+        "Concurrency Efficiency - Basic use of concurrency mechanisms (e.g., multithreading), designing concurrent systems with proper synchronization, applying advanced concurrency patterns, lock-free algorithms.",
+        "Architectural Efficiency - Choosing appropriate architectural patterns for the application, optimizing system architecture for scalability and performance, designing distributed systems for efficiency and fault tolerance.",
+        "Resource Efficiency - Proper resource management (e.g., memory, file handles), efficient I/O operations, minimizing resource contention, fine-tuning resource allocation in cloud or containerized environments.",
+        "????????? - ?????????"
+      ]
     },
     "7": {
       "name": "Software Architecture",

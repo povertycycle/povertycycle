@@ -51,9 +51,11 @@ const Resume : React.FC = () => {
                 <div className={iconStyles.resumeStrike} />
             </div>
             <div className={iconStyles.resumeLines} style={{ backgroundColor: "unset" }}>
-                {Array.from(Array(4)).map((_, i)=>{
-                    return <div key={i} className={iconStyles.resumeLine} style={{width: i == 3 ? "60%" : "100%"}}/>
-                })}
+                {
+                    Array.from(Array(4)).map((_, i) => {
+                        return <div key={i} className={iconStyles.resumeLine} style={{width: i == 3 ? "60%" : "100%"}}/>
+                    })
+                }
             </div>
         </div>
     )
