@@ -47,8 +47,8 @@ const JOURNALS : Journal = {
                 "Version 2.0 - Next Goal:",
                 "- Full new design for the website and its contents. Refactor all the components to make them more compact.",
                 "- Add the remaining missing pages contents.",
-                "Version 1.3.2 - Current:",
-                "- Redesigned the 'about' page. Reworked the math behaviors of components that use quadratic equations.",
+                "Version 1.3.4 - Current:",
+                "- Redesigned the 'about' page. Reworked the math behaviors of components that use quadratic equations. Prototyping skill sections.",
                 "Version 1.0:",
                 "- Old personal website was launched using github pages with React and NodeJS.",
             ]

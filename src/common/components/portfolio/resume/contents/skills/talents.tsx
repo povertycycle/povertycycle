@@ -112,16 +112,16 @@ export const TalentTree : React.FC<{ aspect: string }> = ({ aspect }) => {
                 width: `${(MAX_WIDTH * 3) + ((MAX_WIDTH - 1) * 1.5)}rem`
             }}>
                 {
-                    TALENT_TREES[aspect].length === 0 ? 
-                    <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
-                    TALENT_TREES[aspect].map((icon: TalentIcon, index: number) => {
-                        const talent = TALENTS[icon.id];
-                        return (
-                            talent ? 
-                            <TalentIcon key={index} talent={talent} icon={icon} /> :
-                            null
-                        )
-                    })
+                    // TALENT_TREES[aspect].length === 0 ? 
+                    <div className="h-full w-full flex justify-center items-center">In Progress</div> 
+                    // TALENT_TREES[aspect].map((icon: TalentIcon, index: number) => {
+                    //     const talent = TALENTS[icon.id];
+                    //     return (
+                    //         talent ? 
+                    //         <TalentIcon key={index} talent={talent} icon={icon} /> :
+                    //         null
+                    //     )
+                    // })
                 }
             </div>
         </div>
