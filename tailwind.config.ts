@@ -22,7 +22,7 @@ const config: Config = {
 				'sea-green': '#1a827c',
                 'gold': '#E5B80B',
                 'aspect-green': '#1cff00', // '#7aff00',
-                'aspect-blue': '#00ffb9', //'#00cfff',
+                'aspect-blue': '#00e8ff', //'#00cfff',
                 'aspect-red': '#ff0025', // '#ff0025',
                 'aspect-yellow': '#ffa300', //'#ffaf00',
 			},

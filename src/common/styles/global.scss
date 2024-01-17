@@ -8,7 +8,16 @@
         border-style: solid;
     }
 }
-  
+
+@layer components {
+    .aspect-bg-white {
+        @apply bg-white transition-colors duration-200
+    }
+    .aspect-border-white {
+        @apply border-2 border-white transition-colors duration-200
+    }
+}
+
 :root {
     --neon-text-glow: #3bb5f2;
     --none-color: #092838;

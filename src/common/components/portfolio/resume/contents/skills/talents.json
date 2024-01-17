@@ -138,11 +138,35 @@
     },
     "7": {
       "name": "Software Architecture",
-      "active": false
+      "active": false,
+      "points": 3,
+      "maxPoints": 6,
+      "icon": "ri-stack-line",
+      "description": "The set of structures needed to reason about a software system and the discipline of creating such structures and systems.",
+      "levelDescription": [
+        "Basic - Understanding and applying fundamental architectural patterns (e.g., layered architecture, client-server architecture).",
+        "Intermediate - Implementing more advanced architectural patterns (e.g., microservices architecture, event-driven architecture). Designing systems with moderate complexity and multiple interacting components.",
+        "Advanced - Handling complex distributed systems with high scalability and reliability requirements. Utilizing advanced architectural concepts (e.g., domain-driven design, CQRS, event sourcing). Designing for security, performance, and maintainability at scale.",
+        "Architecting large-scale enterprise systems with intricate business logic. Managing trade-offs between conflicting architectural goals. Guiding and mentoring other architects and development teams.",
+        "Contributing to the development and evolution of architectural best practices. Innovating and pushing the boundaries of software architecture. Leading strategic decision-making related to technology and architecture.",
+        "?????? - ??????"
+      ]
     },
     "8": {
       "name": "Cleanliness",
-      "active": false
+      "active": false,
+      "points": 4,
+      "maxPoints": 6,
+      "icon": "ri-sparkling-line",
+      "description": "",
+      "levelDescription": [
+        "Basic - Following basic coding conventions and style guidelines. Writing code that is easy to read and understand. Properly formatting code with consistent indentation.",
+        "Applying design principles such as SOLID to improve code structure. Using meaningful variable and function names for clarity. Breaking down complex functions into smaller, more manageable ones.",
+        "Writing modular and reusable code components. Implementing error handling and logging for robustness. Utilizing comments to explain complex or non-obvious code sections.",
+        "Embracing a consistent and well-defined coding style throughout the project. Conducting code reviews to ensure adherence to coding standards. Understanding and applying advanced design patterns where appropriate.",
+        "Demonstrating a deep understanding of the project's domain and business logic. Advocating for and leading initiatives to improve code quality across the organization. Mentoring and coaching team members on best practices for code cleanliness.",
+        "?????? - ??????"
+      ]
     },
     "9": {
       "name": "Optimization",

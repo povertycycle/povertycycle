@@ -3,7 +3,7 @@ import { useState, useContext, Dispatch, SetStateAction } from "react";
 import ControlsDescription from "../controls-description";
 import { AspectsContext } from "../../../global-context";
 import { TalentTree } from "./talents";
-import { AspectScienceIcon } from "./aspect-icons";
+import { AspectArtsIcon, AspectGeneralIcon, AspectPhysiqueIcon, AspectScienceIcon } from "./aspect-icons";
 
 enum AspectColor {
     GREEN = "green",
@@ -53,20 +53,20 @@ const ASPECTS : { [key: string] : Aspect } =  {
     "arts": {
         description: "An aspect crafted from the endless well of imagination; the soul wallows in the beauty it evokes.",
         color: AspectColor.BLUE,
-        branches: ["forms", "theory"],
-        icon: <></>,
+        branches: ["form", "theory"],
+        icon: <AspectArtsIcon />,
     }, 
     "physique": {
         description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glory.",
         color: AspectColor.RED,
-        branches: ["sports", "knowledge"],
-        icon: <></>,
+        branches: ["sport", "knowledge"],
+        icon: <AspectPhysiqueIcon />,
     }, 
     "general": {
         description: "An aspect molded from the vast history of men; none knows the full potential of its reaches.",
         color: AspectColor.YELLOW,
         branches: ["essence", "application"],
-        icon: <></>,
+        icon: <AspectGeneralIcon />,
     }
 };
 

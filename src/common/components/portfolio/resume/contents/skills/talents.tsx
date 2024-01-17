@@ -77,7 +77,7 @@ const TalentIcon : React.FC<{ icon: TalentIcon, talent: Talent }> = ({ icon, tal
                         return (
                             magnitude !== null ? 
                             (() => {
-                                const degree = (index - 1) * -45;
+                                const degree = ((index - 1) * -45);
                                 const height = (SIZE / 2 + GAP) / Math.cos(degree) + (index === 1 ? 1 : -1) * (magnitude * 1);
                                 const left = - (Math.tan(degree) * (height / 2 - 0.4));
                                 const top = SIZE / 2 + ((index - 1)  * Math.sin(degree)) - 0.2;
@@ -100,20 +100,30 @@ const TalentIcon : React.FC<{ icon: TalentIcon, talent: Talent }> = ({ icon, tal
     )
 }
 
+// {
+//     Array.from({ length: 10 }).map((_, index: number) => {
+//         return (
+//             <div className="z-[0] flex items-center justify-end px-4 text-[1.5rem] absolute w-full bg-gradient-to-l from-transparent via-sea-blue-dark/25" style={{ opacity: 0.5, height: `${SIZE}rem`, top: `${1.25 + (SIZE + GAP) * index}rem` }}>
+//                 <div>Tier {index + 1}</div>
+//             </div>
+//         )
+//     })
+// }
+
 export const TalentTree : React.FC<{ aspect: string }> = ({ aspect }) => {
     return (
         <div className="flex flex-col p-[1.25rem] items-center w-full text-[1.25rem] relative">
-            <div className="absolute left-0 top-0 p-4 flex flex-col">
+            <div className="z-[1] absolute left-0 top-0 p-4 flex flex-col">
                 <span className="text-[3rem]">{aspect.toUpperCase()}</span>
                 <span>0 POINTS AVAILABLE</span>
             </div>
-
-            <div className={`h-full flex flex-col relative items-center overflow-hidden`} style={{
+            <div className={`z-[1] h-full flex flex-col relative items-center overflow-hidden`} style={{
                 width: `${(MAX_WIDTH * 3) + ((MAX_WIDTH - 1) * 1.5)}rem`
             }}>
+                
                 {
                     // TALENT_TREES[aspect].length === 0 ? 
-                    <div className="h-full w-full flex justify-center items-center">In Progress</div> 
+                    <div className="h-full w-full flex justify-center items-center">In Progress</div>
                     // TALENT_TREES[aspect].map((icon: TalentIcon, index: number) => {
                     //     const talent = TALENTS[icon.id];
                     //     return (

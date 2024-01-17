@@ -21,7 +21,7 @@ export const TALENT_TREES : { [key: string] : TalentIcon[] } = {
     ],
     "forms": [],
     "theory": [], // fine-arts", "music", "writings" "theme", "color", "structure" "documentation" "typography" "markup", "accessibility" "design-hierarchy" "uiux"
-    "sports": [], // "strength", "agility", "dexterity" endurance", "motor soccer 
+    "sport": [], // "strength", "agility", "dexterity" endurance", "motor soccer 
     "knowledge": [],
     "essence": [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
     "application": [],
