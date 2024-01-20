@@ -1,6 +1,7 @@
 import styles from "./index.module.scss";
 import Directory from "./directory";
 import Raindrops from "./navigation/raindrops";
+import { useEffect } from "react";
 
 const Portfolio : React.FC = () => {
     return (

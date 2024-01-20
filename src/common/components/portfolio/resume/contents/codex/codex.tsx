@@ -2,13 +2,13 @@ import { scrollPercent, scrollerHeightValue } from "@/common/utils/scroller";
 import styles from "../animations.module.scss";
 import React, { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
 import ControlsDescription from "../controls-description";
-import { LayeredBorder } from "@/common/components/utils/borders";
 
 interface Journal {
     [key: number] : {
         title: string,
         content: {
             heading: string,
+            flavorText: string,
             description: string[],
         }
     }
@@ -19,8 +19,8 @@ const JOURNALS : Journal = {
         title: "Introduction",
         content: {
             heading: "Arts & Music Enthusiast",
+            flavorText: "Nothing is more fascinating\u2014than to fully understand the intricacies behind the work of art and music of a game or a piece of cinema.",
             description: [
-                "Nothing is more fascinating\u2014than to fully understand the intricacies behind the work of art and music of a game or a piece of cinema.",
                 "Your journey started off with the classics--Star Wars, Jurassic Park, Terminator, and many more--not exactly old though gold nonetheless. Yet from the start, that enjoyment for them was however a shallow and unappreciative one, ignorant of their real beauty.",
                 "And with the years of exposure, stumbling across those which values were burrowed deep within their concepts and designs, the curiosity for their details and techniques grew stronger. Suddenly, the aspiration bloomed: to fully understand the idea behind such celebrated works, and to be able to relish such feelings with the community.",
                 "How amazing it is that we were blessed with such magnificence, for there is a whole world of imagination out there waiting to be explored; the works of art that transcend beyond time and space--those that resonate uniquely to their fans--those that can be appreciated by anyone of any background. And so, it was believed that: to truly appreciate their endless creativity, is to really be a human."
@@ -31,10 +31,10 @@ const JOURNALS : Journal = {
         title: "Website",
         content: {
             heading: "Software Engineer - Minor in Maths",
+            flavorText: "The time does not matter; what matters is the completion.",
             description: [
-                "The time does not matter; what matters is the completion.",
                 "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
-                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some skill icons were made purely with CSS and Javascript; the repository stores no images files.  Some of the icons in the talent trees are from remixicon.",
+                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS and Javascript; the repository stores no images files. Most of the icons in the talent trees are from remixicon.",
             ]
         }
     },
@@ -42,15 +42,15 @@ const JOURNALS : Journal = {
         title: "Updates",
         content: {
             heading: "Patch Notes History",
+            flavorText: "We can always learn something from our past mistakes.",
             description: [
-                "We can always learn something from our past mistakes.",
-                "Version 2.0 - Next Goal:",
-                "- Full new design for the website and its contents. Refactor all the components to make them more compact.",
-                "- Add the remaining missing pages contents.",
+                "Version 2.0 (Next Goal):",
+                "- New design for the website and its contents.",
                 "Version 1.3.4 - Current:",
-                "- Redesigned the 'about' page. Reworked the math behaviors of components that use quadratic equations. Prototyping skill sections.",
+                "- New website made with React and NextJS.",
+                "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations. Prototyping skills section.",
                 "Version 1.0:",
-                "- Old personal website was launched using github pages with React and NodeJS.",
+                "- Personal website (old) launched using github pages with React and NodeJS.",
             ]
         }
     },
@@ -58,8 +58,8 @@ const JOURNALS : Journal = {
         title: "Future",
         content: {
             heading: "Upcoming changes and to-do list",
+            flavorText: "The best one can do for oneself is to keep learning and improving.",
             description: [
-                "The best one can do for oneself is to keep learning and improving.",
                 "- Complete the Skill conetnts.",
                 "- Complete the Map contents.",
                 "- Complete the Inventory contents.",
@@ -76,7 +76,8 @@ const JOURNALS : Journal = {
             title: "??????????",
             content: {
                 heading: "??????????",
-                description: ["??????????"],
+                flavorText: "??????????",
+                description: [],
             },
         };
         return acc;
@@ -135,6 +136,7 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const [scroll, setScroll] = useState<number>(0);
     const [height, setHeight] = useState<string>("0%");
+    const selectedJournal = JOURNALS[active].content;
 
     useEffect(() => {
         handleScrollHeight();
@@ -147,31 +149,27 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
     const handleScroll = (e: any) => {
         setScroll(scrollPercent(e.target));
     }
+{/* <LayeredBorder gap="3px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
+                    <LayeredBorder></LayeredBorder> */}
 
     return (
         <div className={`${styles.codexAnimation} gap-4 px-4 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black/75 flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
-            <div className="w-full pr-[1.25rem]">
-                <LayeredBorder gap="2px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
-                    <LayeredBorder>
-                        <div className="bg-gradient-to-l via-sea-blue-dark/35 text-center px-8 py-2 text-[2.25rem] w-full">{JOURNALS[active]?.content.heading}</div>
-                    </LayeredBorder>
-                </LayeredBorder>
+            <div className="w-full items-center  text-[2.25rem] bg-gradient-to-l via-sea-blue-dark/25 flex flex-col gap-2">
+                <div className="w-full h-[2px] bg-gradient-to-l via-white/70" />
+                {selectedJournal.heading}
+                <div className="w-full h-[2px] bg-gradient-to-l via-white/70" />
             </div>
-            
             <div className="flex flex gap-4 h-full w-full">
                 <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
                     <div className="flex flex-col gap-2 tracking-[0px] h-full absolute w-full">
+                        <div className="flex w-full bg-gradient-to-l from-sea-blue-dark/35">
+                            <span className="py-4 px-8 text-center italic font-century-gothic text-[1.5rem] tracking-[1px]">{selectedJournal.flavorText}</span>
+                        </div>
                         {
-                            JOURNALS[active]?.content.description.map((text: string, index: number) => {
+                            selectedJournal.description.map((text: string, index: number) => {
                                 return (
                                     <div key={index} className="flex w-full  bg-gradient-to-l from-sea-blue-dark/35">
-                                        {
-                                            index === 0 ?
-                                            <LayeredBorder>
-                                                <span className="py-4 px-8 text-center italic font-century-gothic text-[1.5rem] tracking-[1px]">{text}</span>
-                                            </LayeredBorder> :
-                                            <span className="py-4 text-[1.25rem] px-8">{text}</span>
-                                        }
+                                        <span className="py-4 text-[1.25rem] px-8">{text}</span>
                                     </div>
                                 )
                             })

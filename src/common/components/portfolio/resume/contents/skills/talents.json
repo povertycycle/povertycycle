@@ -3,326 +3,723 @@
   "talents": {
     "0": {
       "name": "Data Structure",
-      "active": true,
-      "points": 4,
-      "maxPoints": 7,
-      "icon": "ri-node-tree",
-      "description": "A data organization, management, and storage format chosen for efficient access to data; a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.",
-      "levelDescription": [
-        "Basic - Primitive Data Types, Arrays, etc",
-        "Moderate - Dynamic memory allocation and pointers, fundamentals of algorithms and program execution flow, and hierarchical structures in search and sorting: Linked List, Stacks, Queues, Trees, etc.",
-        "Intermediate - Various complex trees, hash functions and collision resolutions, and basic memory management and priority queues: Graphs, Hash Tables, Heaps, etc.",
-        "Challenging - Balancing and optimization of structures, advanced graph and sorting algorithms: AVL Trees, B-Trees, Depth-First Search, Breadth-First Search, Dijkstra's, Quick Sort, Merge Sort, etc.",
-        "Complex - More specialized and less commonly used dynamic sets: Trie, Disjoint Set (Union-Find), Skip Lists, Splay Trees, etc.",
-        "Advanced Topics - Concurrent access and specialized data structures for range queries: Persistent Data Structure, Segment Trees, Fenwick Trees (Binary Indexed Trees), Concurrency Control, etc.",
-        "??????? - ???????"
-      ]
+      "ability": {
+        "cast_time": "7s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "7",
+        "cooldown": "14s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 4.5,
+      "icon": "ri-building-line",
+      "description": "A data organization, management, and storage format chosen for efficient access to data."
     },
     "1": {
       "name": "Discrete Structure",
-      "active": false,
-      "points": 4,
-      "maxPoints": 8,
-      "icon": "ri-bubble-chart-line",
-      "description": "The study of discrete mathematical structures.",
-      "levelDescription": [
-        "Elementary - Basic concepts of sets, operations, relations, and propositional and first-order logic: Set Theory, Logic, etc.",
-        "Intermediate - Injective, surjective, and bijective functions, simple graph representation concepts, counting principles, permutations, and combinations: Functions and Relations, Graph Theory, Combinatorics, etc.",
-        "Algebraic - Advanced and fundamental algebric Structures with closure, associativity, identity, and inverses: Groups, Rings, Fields, etc.",
-        "Advanced Topics - Modular arithmetic, prime numbers, recurrence relations, cardinality, transfinite numbers, trees, connectivity, and graph algorithms: Advanced Graph Theory, Number Theory, Combinatorial Structures, Advanced Set Theory, etc",
-        "Complex - Graph Algorithms: More advanced algorithms, network flows, matchings. Combinatorial Optimization: Traveling Salesman Problem, Maximum Flow. Model Theory: Study of mathematical structures via formal languages.",
-        "Abstract Algebra - Advanced Group Theory: Sylow theorems, permutation groups. Field Extensions and Galois Theory: Understanding polynomial equations. Advanced Number Theory: Diophantine equations, elliptic curves.",
-        "Logic and Computability - Model Checking and Formal Verification: Applying logic to system verification. Automata Theory: Finite automata, regular languages, context-free languages. Computability and Complexity Theory: Turing machines, P vs NP, complexity classes.",
-        "???????? - ????????"
-      ]
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 2,
+      "maxRank": 3,
+      "experience": 5,
+      "icon": "ri-shapes-line",
+      "description": "The study of discrete mathematical structures in computer science."
     },
     "2": {
       "name": "Algorithms",
-      "active": false,
-      "points": 4,
-      "maxPoints": 9,
-      "icon": "ri-flow-chart",
-      "description": " finite sequence of rigorous instructions, typically used to solve a class of specific problems or to perform a computation.[1] Algorithms are used as specifications for performing calculations and data processing.",
-      "levelDescription": [
-        "Easy - Simple algorithms with straightforward logic and low complexity: Linear search, Bubble sort.",
-        "Intermediate - Algorithms that involve more complex logic or address moderately challenging problems: Binary search, Merge sort.",
-        "Advanced - Algorithms that require a deeper understanding of advanced data structures or mathematical concepts: Graph algorithms (Dijkstra's algorithm, Breadth-First Search), Dynamic programming.",
-        "Hard - Complex algorithms that tackle intricate problems, often with high time or space complexity: NP-hard problems, certain cryptographic algorithms.",
-        "Research-Level - Cutting-edge algorithms developed for specific research purposes: State-of-the-art machine learning algorithms, algorithms in specialized scientific domains.",
-        "Algorithmic Challenges - Algorithms designed for programming competitions or coding interviews, often requiring creative problem-solving: Problems from platforms like LeetCode or Codeforces.",
-        "NP-Hard and NP-Complete Problems: Problems classified as NP-hard or NP-complete, indicating high computational complexity: Traveling Salesman Problem, Knapsack Problem.",
-        "Quantum Algorithms - Algorithms designed for quantum computing, leveraging principles of quantum mechanics: Shor's algorithm for factoring large numbers, Grover's algorithm for searching.",
-        "????????? - ?????????"
-      ]
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 2,
+      "maxRank": 4,
+      "experience": 4.5,
+      "icon": "ri-route-line",
+      "description": "A finite sequence of rigorous instructions, used to solve a class of specific problems or to perform a computation, as specifications for performing calculations and data processing."
     },
     "3": {
       "name": "Computer Systems",
-      "active": false,
-      "points": 3,
-      "maxPoints": 11,
-      "icon": "ri-computer-line",
-      "description": "Interaction between user programs and the operating system/hardware, systems programming, assembly language, machine data representation, thread management, optimization, and virtual memory",
-      "levelDesription": [
-        "Introducory - Basic understanding of computer components and architecture: CPU, memory, storage, and input/output.",
-        "Intermediate - In-depth study of computer organization and architecture: CPU architecture, instruction sets, memory hierarchy, and assembly language programming.",
-        "Operating Systems - Study of processes, memory management, file systems, and device management. Exposure to concepts like multitasking, multiprocessing, and virtual memory.",
-        "Networks and Communications - Basics of computer networks, including protocols and communication models, networking devices, protocols, network architecture, IP addressing, routing, and network security.",
-        "Advanced Computer Architecture: In-depth study of advanced computer architectures, pipelining, parallel processing, cache coherence, superscalar and VLIW architectures.",
-        "Distributed Systems - Study of distributed algorithms, synchronization, and fault tolerance, distributed computing, cloud computing and distributed databases.",
-        "Embedded Systems - Study of embedded system design and programming, real-time operating systems and constraints, microcontrollers, sensors, and actuators.",
-        "Computer Security - Study of principles and practices in computer security, cryptography, network security, and secure software development, ethical hacking and penetration testing.",
-        "Quantum Computing - Introduction to the principles of quantum computing, qubits, quantum gates, and quantum algorithms, quantum programming languages and frameworks.",
-        "Specialized Topics - In-depth study of computer graphics, artificial intelligence, machine learning, robotics or bioinformatics.",
-        "??????????? - ???????????"
-      ]
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "30s"
+      },
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 1,
+      "icon": "ri-cpu-line",
+      "description": "A complex interconnection of the computer's operating system/hardware and its software that work together to provide computing capabilities."
     },
     "4": {
       "name": "Performance",
-      "active": false,
-      "points": 7,
-      "maxPoints": 12,
-      "icon": "ri-speed-up-line",
-      "description": "Accuracy, efficiency and speed of executing computer program instructions",
-      "levelDescription": [
-        "Introductory - Introduction to concepts like response time, throughput, and latency, profiling and monitoring skills.",
-        "Intermediate - Understanding and analyzing CPU and memory usage, performance testing methodologies.",
-        "System Performance - Analyzing and optimizing overall system performance, profiling at the system level, including CPU, memory, disk, and network, identifying and addressing performance bottlenecks.",
-        "Performance Testing - In-depth knowledge of performance testing tools and methodologies, load testing, stress testing, and scalability testing.",
-        "Web Performance - Understanding front-end performance optimization techniques, caching strategies and content delivery network (CDN) usage.",
-        "Database Performance - Profiling and optimizing database queries, indexing strategies and database schema optimization. Dealing with large datasets and optimizing data access.",
-        "Network Performance - Network protocols and their impact on performance, implementing strategies for reducing latency and improving bandwidth usage.",
-        "Cloud Performance - Optimizing performance in cloud environments.Understanding cloud infrastructure and services. Implementing auto-scaling and load balancing for improved performance.",
-        "Security Performance - Considering the performance impact of security measures, balancing security and performance considerations, performance-aware security practices.",
-        "Real-time Systems - Optimizing performance in real-time and embedded systems. Understanding constraints and deadlines in real-time applications. Analyzing and reducing system response times.",
-        "Advanced Performance Tuning - Specialized optimization techniques for specific platforms or applications. In-depth analysis of low-level performance metrics. Expertise in performance profiling tools and methodologies.",
-        "???????????? - ????????????"
-      ]
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 6,
+      "icon": "ri-dashboard-2-line",
+      "description": "The efficiency and responsiveness of a computer system or application in terms of executing tasks and managing resources, encompassing speed, throughput, latency, and resource utilization."
     },
     "5": {
       "name": "Design Patterns",
-      "active": false,
-      "points": 7,
-      "maxPoints": 9,
-      "icon": "ri-layout-4-line",
-      "description": "General, reusable solution to a commonly occurring problem within a given context in software design.",
-      "levelDescription": [
-        "Introductory - Understanding basic design principles. Awareness of the need for reusable and maintainable code. Recognition of common design issues.",
-        "Creational Patterns - Creating a single instance of a class, defining an interface for creating an object, with subclasses deciding which class to instantiate, providing an interface for creating families of related or dependent objects without specifying their concrete classes.",
-        "Structural Patterns - Allowing incompatible interfaces to work together, adding new functionalities to objects dynamically, composing objects into tree structures to represent part-whole hierarchies.",
-        "Behavioral Patterns - Defining a one-to-many dependency between objects, defining a family of algorithms, encapsulating each one, and making them interchangeable, encapsulating a request as an object, thereby allowing users to parameterize clients with queues, requests, and operations.",
-        "Architectural Patterns - Separating concerns in an application, enhancing separation of concerns with a focus on data binding, structuring applications to separate concerns like business logic and external services.",
-        "Concurrency Patterns - Managing access to shared resources, coordinating the actions of producers and consumers in a shared buffer, immplementing concurrency through actors that communicate by sending messages.",
-        "Anti-Patterns - Recognizing and avoiding common design pitfalls.",
-        "Real-world Application - Applying design patterns in complex, real-world scenarios. Understanding when and where to use specific patterns.",
-        "????????? - ?????????"
-      ]
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 3,
+      "maxRank": 4,
+      "experience": 5,
+      "icon": "ri-layout-line",
+      "description": "General, reusable solutions\u2014not finished designs that can be transformed directly into source or machine code\u2014descriptions, or templates of solutions to software problems that can be used in different situations."
     },
     "6": {
       "name": "Efficiency",
-      "active": false,
-      "points": 5,
-      "maxPoints": 9,
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 2,
+      "maxRank": 4,
+      "experience": 6,
       "icon": "ri-time-line",
-      "description": "Amount of computational resources used by the algorithm to determine its resource usage, and the efficiency of an algorithm can be measured based on the usage of different resources. ",
-      "levelDescription": [
-        "Data Structures Efficiency - Using basic data structures like arrays and lists, employing more advanced data structures like trees and hash tables, designing and implementing custom data structures for specific needs.",
-        "Algorithmic Efficiency - Selection of appropriate algorithms for common tasks, optimization of algorithmic complexity (e.g., moving from O(n^2) to O(n log n)), designing custom algorithms for specific use cases.",
-        "Code-Level Efficiency - Writing clean and readable code, profiling and optimizing critical sections of code, understanding low-level details (memory management, CPU caches) for fine-tuning.",
-        "Code Profiling and Optimization - Using profiling tools to identify bottlenecks, interpreting profiling results and applying optimizations, deep analysis of performance metrics for complex systems.",
-        "Continuous Improvement - Regular code reviews for efficiency, implementing feedback from performance testing, continuous monitoring and iterative improvements.",
-        "Concurrency Efficiency - Basic use of concurrency mechanisms (e.g., multithreading), designing concurrent systems with proper synchronization, applying advanced concurrency patterns, lock-free algorithms.",
-        "Architectural Efficiency - Choosing appropriate architectural patterns for the application, optimizing system architecture for scalability and performance, designing distributed systems for efficiency and fault tolerance.",
-        "Resource Efficiency - Proper resource management (e.g., memory, file handles), efficient I/O operations, minimizing resource contention, fine-tuning resource allocation in cloud or containerized environments.",
-        "????????? - ?????????"
-      ]
+      "description": "A property of an algorithm which relates to the amount of computational resources used by the algorithm."
     },
     "7": {
       "name": "Software Architecture",
-      "active": false,
-      "points": 3,
-      "maxPoints": 6,
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "45s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 4,
       "icon": "ri-stack-line",
-      "description": "The set of structures needed to reason about a software system and the discipline of creating such structures and systems.",
-      "levelDescription": [
-        "Basic - Understanding and applying fundamental architectural patterns (e.g., layered architecture, client-server architecture).",
-        "Intermediate - Implementing more advanced architectural patterns (e.g., microservices architecture, event-driven architecture). Designing systems with moderate complexity and multiple interacting components.",
-        "Advanced - Handling complex distributed systems with high scalability and reliability requirements. Utilizing advanced architectural concepts (e.g., domain-driven design, CQRS, event sourcing). Designing for security, performance, and maintainability at scale.",
-        "Architecting large-scale enterprise systems with intricate business logic. Managing trade-offs between conflicting architectural goals. Guiding and mentoring other architects and development teams.",
-        "Contributing to the development and evolution of architectural best practices. Innovating and pushing the boundaries of software architecture. Leading strategic decision-making related to technology and architecture.",
-        "?????? - ??????"
-      ]
+      "description": "The set of structures needed to reason about a software system and the discipline of creating such structures and systems."
     },
     "8": {
       "name": "Cleanliness",
-      "active": false,
-      "points": 4,
-      "maxPoints": 6,
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 3,
+      "maxRank": 4,
+      "experience": 5,
       "icon": "ri-sparkling-line",
-      "description": "",
-      "levelDescription": [
-        "Basic - Following basic coding conventions and style guidelines. Writing code that is easy to read and understand. Properly formatting code with consistent indentation.",
-        "Applying design principles such as SOLID to improve code structure. Using meaningful variable and function names for clarity. Breaking down complex functions into smaller, more manageable ones.",
-        "Writing modular and reusable code components. Implementing error handling and logging for robustness. Utilizing comments to explain complex or non-obvious code sections.",
-        "Embracing a consistent and well-defined coding style throughout the project. Conducting code reviews to ensure adherence to coding standards. Understanding and applying advanced design patterns where appropriate.",
-        "Demonstrating a deep understanding of the project's domain and business logic. Advocating for and leading initiatives to improve code quality across the organization. Mentoring and coaching team members on best practices for code cleanliness.",
-        "?????? - ??????"
-      ]
+      "description": "The quality, readability, and maintainability of source code in a software project."
     },
     "9": {
       "name": "Optimization",
-      "active": true
+      "ability": {
+        "cast_time": "3s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "5",
+        "cooldown": "5s"
+      },
+      "rank": 2,
+      "maxRank": 4,
+      "experience": 4,
+      "icon": "ri-tools-line",
+      "description": "The process of modifying a software system to make the work use fewer resources, executes more rapidly, or allowing it to operate with less memory storage or draw less power."
     },
     "10": {
-      "name": "Frameworks & Integration",
-      "active": true
+      "name": "Frameworks & Integrations",
+      "ability": {
+        "cast_time": "2s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "5",
+        "cooldown": "3s"
+      },
+      "rank": 2,
+      "maxRank": 6,
+      "experience": 2.5,
+      "icon": "ri-collage-line",
+      "description": "An abstraction providing generic functionality or a standard way to build and deploy applications; reusable software environment that provides particular functionality to facilitate the development of software applications, products and solutions."
     },
     "11": {
       "name": "Dynamic Programming",
-      "active": true
+      "ability": {
+        "cast_time": "7s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "5",
+        "cooldown": "14s"
+      },
+      "rank": 2,
+      "maxRank": 5,
+      "experience": 2.5,
+      "icon": "ri-swap-3-line",
+      "description": "A mathematical optimization method and an algorithmic paradigm, where complicated problems are simplified by breaking them down into simpler sub-problems in a recursive manner."
     },
     "12": {
       "name": "Higher-Order Programming",
-      "active": true
+      "ability": {
+        "cast_time": "1s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "1",
+        "cooldown": "1s"
+      },
+      "rank": 2,
+      "maxRank": 5,
+      "experience": 3,
+      "icon": "ri-archive-stack-line",
+      "description": "A style that uses software components\u2014functions, modules or objects\u2014as values, borrowing concepts from models of computation such as lambda calculus which make heavy use of higher-order functions."
     },
     "13": {
       "name": "Maintainable",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 5,
+      "icon": "ri-list-view",
+      "description": "Advanced readability, coupling, or consistency contributing to efficient code development; inversely proportional to the amount of time it takes a for a change and to the risk that change will break something."
     },
     "14": {
       "name": "Profiling",
-      "active": true
+      "ability": {
+        "cast_time": "3s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "3",
+        "cooldown": "1s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 4,
+      "icon": "ri-bar-chart-horizontal-fill",
+      "description": "A form of dynamic program analysis that measures the space (memory) or time complexity of a program, the usage of particular instructions, or the frequency and duration of function calls."
     },
     "15": {
       "name": "Debugging",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 5,
+      "maxRank": 10,
+      "experience": 6.5,
+      "icon": "ri-bug-line",
+      "description": "The process of finding and resolving bugs (defects or problems that prevent correct operation) within computer programs, software, or systems."
     },
     "16": {
       "name": "Responsiveness",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 4,
+      "maxRank": 5,
+      "experience": 4,
+      "icon": "ri-voiceprint-line",
+      "description": "The adaptability of the design in different environments, especially in web development."
     },
     "17": {
       "name": "Asynchronous Programming",
-      "active": true
+      "ability": {
+        "cast_time": "3s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "3",
+        "cooldown": "14s"
+      },
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 3.5,
+      "icon": "ri-shuffle-line",
+      "description": "A technique that enables the program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished."
     },
     "18": {
       "name": "Automation",
-      "active": true
+      "ability": {
+        "cast_time": "21s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "21",
+        "cooldown": "45s"
+      },
+      "rank": 1,
+      "maxRank": 4,
+      "experience": 1,
+      "icon": "ri-robot-2-line",
+      "description": "A technique to program a script or batch processing that allows repetitive tasks to saves time, reduces effort, and perform complex and tedious operations."
     },
     "19": {
       "name": "Modular Programming",
-      "active": true
+      "ability": {
+        "cast_time": "7s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "14",
+        "cooldown": "1s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 5.5,
+      "icon": "ri-organization-chart",
+      "description": "A technique that emphasizes separating the functionality of a program into independent, interchangeable modules, such that each contains everything necessary to execute only one aspect of the desired functionality."
     },
     "20": {
       "name": "Version Control",
-      "active": true
+      "ability": {
+        "cast_time": "1s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "1",
+        "cooldown": "90s"
+      },
+      "rank": 1,
+      "maxRank": 2,
+      "experience": 2,
+      "icon": "ri-git-merge-line",
+      "description": "A class of systems responsible for managing changes to computer programs, documents, large web sites, or other collections of information."
     },
     "21": {
       "name": "Monitoring",
-      "active": true
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "30s"
+      },
+      "rank": 2,
+      "maxRank": 4,
+      "experience": 2,
+      "icon": "ri-computer-line",
+      "description": "The process of observing and collecting data from software applications, systems, or networks to ensure their proper functioning, performance, and security."
     },
     "22": {
       "name": "Scalability",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 2,
+      "maxRank": 5,
+      "experience": 2,
+      "icon": "ri-arrow-right-up-line",
+      "description": "The practice towards a system's ability to increase or decrease in performance and cost in response to changes in application and system processing demands."
     },
     "23": {
       "name": "Networking",
-      "active": true
+      "ability": {
+        "cast_time": "7s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "14",
+        "cooldown": "7s"
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.5,
+      "icon": "ri-base-station-line",
+      "description": "Act of using computer code to write programs or processes that can communicate with other programs or processes across a network."
     },
     "24": {
       "name": "Cloud Computing",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "90s"
+      },
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 1,
+      "icon": "ri-cloud-line",
+      "description": "the on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user."
     },
     "25": {
       "name": "Parallelization",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 0,
+      "maxRank": 5,
+      "experience": 0,
+      "icon": "ri-menu-line",
+      "description": "A computational task broken down into many similar sub-tasks, processes, or calculations that can be processed independently and simultaneously whose results are combined afterwards upon completion."
     },
     "26": {
       "name": "Scripting",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "7s"
+      },
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 2,
+      "icon": "ri-file-list-3-line",
+      "description": "A way of delivering instructions\u2014that automates various step-by-step functions or processes\u2014to a computer (or group of computers), as with all forms of programming."
     },
     "27": {
       "name": "Software Testing",
-      "active": true
+      "ability": {
+        "cast_time": "14s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "7",
+        "cooldown": "30s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 5,
+      "icon": "ri-checkbox-multiple-line",
+      "description": "The act of examining the artifacts and the behavior of the software under test by validation and verification."
     },
     "28": {
       "name": "Software Analysis",
-      "active": true
+      "ability": {
+        "cast_time": "14s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "30",
+        "cooldown": "30s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 5,
+      "icon": "ri-line-chart-line",
+      "description": "A requirement analysis that aims to gain insights of behavior, performance, and structure, involving techniques such as examining code, data, and algorithms to ensure the software meets specified requirements"
     },
     "29": {
       "name": "Data Handling",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 3,
+      "maxRank": 4,
+      "experience": 6,
+      "icon": "ri-database-line",
+      "description": "Techniques of recording, collecting, and representing data that is presented into valuable insights or actionable information."
     },
     "30": {
       "name": "Software Security",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "14s"
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.5,
+      "icon": "ri-shield-keyhole-line",
+      "description": "The concept of implementing mechanisms in the construction of security to protect software applications and digital solutions from attackers."
     },
     "31": {
       "name": "Software Engineering",
-      "active": true
+      "ability": {
+        "cast_time": "30s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "365",
+        "cooldown": "7s"
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 6,
+      "icon": "ri-file-code-line",
+      "description": "An engineering-based approach to design, develop, test, maintain, and evaluate computer software."
     },
     "32": {
       "name": "Distributed Computing",
-      "active": true
+      "ability": {
+        "cast_time": "120s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "180",
+        "cooldown": "240s"
+      },
+      "rank": 0,
+      "maxRank": 5,
+      "experience": 0,
+      "icon": "ri-dashboard-line",
+      "description": "A system whose components are located on different networked computers, which communicate and coordinate their actions by passing messages to one another."
     },
     "33": {
       "name": "Usability",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 2,
+      "maxRank": 3,
+      "experience": 6,
+      "icon": "ri-hand",
+      "description": "the degree to which a software can be used by specified consumers to achieve quantified objectives with effectiveness, efficiency, and satisfaction in a quantified context of use."
     },
     "34": {
       "name": "CI/CD",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 2.5,
+      "icon": "ri-infinity-line",
+      "description": "The combined practice of frequent merging of several small changes into a main branch, and the rapid and reliable software release."
     },
     "35": {
       "name": "Big Data",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.5,
+      "icon": "ri-database-2-line",
+      "description": "Organization, administration and governance of large volumes of both structured and unstructured data."
     },
     "36": {
-      "name": "Cryptography",
-      "active": true
+      "name": "Ethical Hacking",
+      "ability": {
+        "cast_time": "365s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "30",
+        "cooldown": "30s"
+      },
+      "rank": 0,
+      "maxRank": 2,
+      "experience": 0,
+      "icon": "ri-spy-line",
+      "description": "Ethical act of identifying any vulnerabilities or security issues the current system has to improve on its security."
     },
     "37": {
       "name": "Computer Graphics",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.5,
+      "icon": "ri-image-line",
+      "description": "A sub-field of computer science which studies methods for digitally synthesizing and manipulating visual content."
     },
     "38": {
-      "name": "Cybersecurity",
-      "active": true
+      "name": "Cryptography",
+      "ability": {
+        "cast_time": "7s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "30",
+        "cooldown": "30s"
+      },
+      "rank": 0,
+      "maxRank": 10,
+      "experience": 0,
+      "icon": "ri-file-lock-line",
+      "description": "the practice and study of techniques for secure communication in the presence of adversarial behavior."
     },
     "39": {
       "name": "Research",
-      "active": true
+      "ability": {
+        "cast_time": "365s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "365",
+        "cooldown": "365s"
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "ri-microscope-line",
+      "description": "The systematic investigation into and study of materials, sources, etc, in order to establish facts and reach new conclusions."
     },
     "40": {
       "name": "Artificial Intelligence",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "120s"
+      },
+      "rank": 0,
+      "maxRank": 3,
+      "experience": 0,
+      "icon": "ri-openai-line",
+      "description": "A field of study in computer science that develops and studies intelligent machines."
     },
     "41": {
       "name": "Game Design",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "365s"
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.5,
+      "icon": "ri-game-line",
+      "description": "The software development of video games by the creation of the mechanics, systems, and rules."
     },
     "42": {
       "name": "Computer Vision",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.5,
+      "icon": "ri-eye-line",
+      "description": "The methods for acquiring, processing, analyzing and understanding digital images, and extraction of high-dimensional data from the real world in order to produce numerical or symbolic information."
     },
     "43": {
       "name": "Data Science",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 0,
+      "maxRank": 6,
+      "experience": 0,
+      "icon": "ri-file-copy-2-line",
+      "description": "An interdisciplinary academic field that uses statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from potentially noisy, structured, or unstructured data."
     },
     "44": {
       "name": "Deep Learning",
-      "active": true
+      "ability": {
+        "cast_time": "",
+        "active": true,
+        "resource": "",
+        "cost": "1 Mana",
+        "cooldown": ""
+      },
+      "rank": 0,
+      "maxRank": 3,
+      "experience": 0,
+      "icon": "ri-brain-line",
+      "description": "The subset of machine learning methods based on artificial neural networks with representation learning."
     },
     "45": {
       "name": "Simulation",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": ""
+      },
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 0.5,
+      "icon": "ri-body-scan-line",
+      "description": "The process of modeling a real phenomenon with a set of mathematical formulas."
     },
     "46": {
       "name": "VR/AR",
-      "active": true
+      "ability": {
+        "cast_time": "60s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "30",
+        "cooldown": "60s"
+      },
+      "rank": 0,
+      "maxRank": 3,
+      "experience": 0,
+      "icon": "ri-goggles-line",
+      "description": "The use of computer modeling and simulation that enables a person to interact with an artificial three-dimensional (3-D) visual or other sensory environment."
     },
     "47": {
       "name": "Advanced Topics",
-      "active": false
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "365s"
+      },
+      "rank": 0,
+      "maxRank": 10,
+      "experience": 0,
+      "icon": "ri-flask-line",
+      "description": "Subjects, themes, or areas of study that are characterized by a higher level of complexity, depth, and specialization."
     }
   }
 }

@@ -62,10 +62,10 @@ export const AspectArtsIcon : React.FC = () => {
 
 const Weight : React.FC<{ left: boolean }> = ({ left }) => {
     const divs = [
-        <div className={`w-[15%] h-[10%] group-hover/aspects:border-aspect-red transition-colors duration-200 border-y-2 border-white ${left ? "border-l-2 rounded-l-[0.2rem]" : "border-r-2 rounded-r-[0.2rem]"}`} />,
-        <div className="w-[35%] h-[40%] group-hover/aspects:border-aspect-red aspect-border-white rounded-[0.5rem]" />,
-        <div className="w-[35%] h-[65%] group-hover/aspects:border-aspect-red aspect-border-white rounded-[0.5rem]" />,
-        <div className="w-[15%] h-[10%] group-hover/aspects:border-aspect-red transition-colors duration-200 border-y-2 border-white" />,
+        <div key="weight-0" className={`w-[15%] h-[10%] group-hover/aspects:border-aspect-red transition-colors duration-200 border-y-2 border-white ${left ? "border-l-2 rounded-l-[0.2rem]" : "border-r-2 rounded-r-[0.2rem]"}`} />,
+        <div key="weight-1" className="w-[35%] h-[40%] group-hover/aspects:border-aspect-red aspect-border-white rounded-[0.5rem]" />,
+        <div key="weight-2" className="w-[35%] h-[65%] group-hover/aspects:border-aspect-red aspect-border-white rounded-[0.5rem]" />,
+        <div key="weight-3" className="w-[15%] h-[10%] group-hover/aspects:border-aspect-red transition-colors duration-200 border-y-2 border-white" />,
     ];
     return left ? divs : divs.reverse();
 }
@@ -98,7 +98,7 @@ export const AspectGeneralIcon : React.FC = () => {
                     const y = Math.round(-FORCE * Math.cos(rad) * 10) / 10;
                     const x = Math.round(FORCE * Math.sin(rad) * 10) / 10;
                     return (
-                        <div  className={`rounded-b-full group-hover/aspects:border-aspect-yellow rounded-r-full aspect-border-white absolute`} style={{
+                        <div key={i} className={`rounded-b-full group-hover/aspects:border-aspect-yellow rounded-r-full aspect-border-white absolute`} style={{
                             width: `${SIZE}%`,
                             height: `${SIZE}%`,
                             transform: `translate(${x}%, ${y}%) rotateZ(${deg}deg)`,

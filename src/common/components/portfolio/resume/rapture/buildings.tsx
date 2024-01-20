@@ -1,4 +1,4 @@
-import { useState, useEffect, use, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./index.module.scss";
 import jsgradient from "@/common/utils/js-gradient"
 import { quadraticEquationProcessor, roundWithDecimals } from "@/common/utils/math";
