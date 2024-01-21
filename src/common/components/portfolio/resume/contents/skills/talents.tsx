@@ -1,19 +1,27 @@
 import "remixicon/fonts/remixicon.css";
-import { Fragment, Dispatch, SetStateAction, memo, useContext, useState, useRef } from "react";
+import { Fragment, Dispatch, SetStateAction, memo, useContext, useState, useRef, useEffect } from "react";
 import talentData from "./talents.json";
 import styles from "./talents.module.scss";
 import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentType, ViewMode } from "./constants";
+import { checkOverlap, getExperienceData } from "@/common/utils/math";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
+const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [ key: string ] : Talent | undefined };
 const MAX_WIDTH = 9;
 const MAX_HEIGHT = 10;
+const REMAINING_POINTS = Math.floor((new Date().getTime() - new Date(2023, 9, 2).getTime()) / (1000 * 60 * 60 * 24 * 365)) * 3;
 
 const BRANCHES : { [key in AspectType] : TalentType[] } = {
     [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.STUDY],
     [AspectType.ARTS]: [TalentType.FORM, TalentType.THEORY],
     [AspectType.PHYSIQUE]: [TalentType.SPORT, TalentType.KNOWLEDGE],
     [AspectType.GENERAL]: [TalentType.ESSENCE, TalentType.APPLICATION],
+}
+
+const VIEW_MODE_ICON : { [key in ViewMode] : string } = {
+    [ViewMode.TREE]: "ri-git-fork-line",
+    [ViewMode.LIST]: "ri-align-justify",
 }
 
 const ICON_COLORS : { [key in AspectType] : string } = {
@@ -53,46 +61,41 @@ const TalentsDisplay : React.FC = () => {
     const { aspect } = useContext(AspectsContext);
 
     return (
-        aspect ?
+        aspect && 
         <>
             {
-                BRANCHES[aspect].map((tree: TalentType, index: number) => {
+                BRANCHES[aspect].map((category: TalentType, index: number) => {
                     return (
                         <Fragment key={index}>
                             { index !== 0 && <div className={`shrink-0 bg-gradient-to-b from-transparent via-gold rounded-[100%] h-full w-[0.2rem]`} /> }
-                            <TalentTree category={tree} />
+                            <TalentContents category={category} />
                         </Fragment>
                     )
                 })
             }
             <TreeVersion />
-        </> :
-        null
+        </>
     )
 }
 
-const TalentTree : React.FC<{ category: TalentType }> = ({ category }) => {
-    const tree = TALENT_TREES[category];
+const TalentContents : React.FC<{ category: TalentType }> = ({ category }) => {
     const [mode, setMode] = useState<ViewMode>(ViewMode.TREE);
+    const width = (MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP);
+    const height = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
 
     return (
         <div className="flex flex-col p-[1.25rem] items-center justify-center w-full text-[1.25rem] relative select-none">
-            <Navigator category={category} mode={mode} setMode={setMode} />
-            <div className={`z-[1] flex flex-col relative items-center`} style={{
-                width: `${(MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP)}rem`,
-                height: `${(MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP)}rem`,
-            }}>
+            <Navigator title={category} mode={mode} setMode={setMode} />
+            <div className={`z-[1] flex flex-col relative items-center`} style={{ width: `${width}rem`, height: `${height}rem` }}>
                 {
-                    tree.length === 0 ? 
-                    <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
                     (() => {
                         switch (mode) {
                             case ViewMode.TREE:
-                                return <TreeView talents={tree} />;
+                                return <TreeView category={category} />;
                             case ViewMode.LIST:
                                 return <div className="h-full w-full flex justify-center items-center">In Progress</div>;
                             default:
-                                return <div className="h-full w-full flex justify-center items-center">In Progress</div>;
+                                return null;
                         }
                     })()
                 }
@@ -101,105 +104,112 @@ const TalentTree : React.FC<{ category: TalentType }> = ({ category }) => {
     )
 }
 
-const Navigator : React.FC<{ category: TalentType, mode: ViewMode, setMode: Dispatch<SetStateAction<ViewMode>> }> = ({ category, mode, setMode }) => {
-    const treeView = () => {
-        if (mode === ViewMode.TREE) return;
-        setMode(ViewMode.TREE);
-    }
-
-    const listView = () => {
-        if (mode === ViewMode.LIST) return;
-        setMode(ViewMode.LIST);
-    }
-
+const Navigator : React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatch<SetStateAction<ViewMode>> }> = ({ title, mode, setMode }) => {
     return (
         <div className="z-[2] absolute left-0 top-0 p-4 flex flex-col gap-4">
             <div className="flex flex-col">
-                <span className="text-[3rem]">{category.toUpperCase()}</span>
-                <span>{0} POINTS AVAILABLE</span>
+                <span className="text-[3rem]">{title.toUpperCase()}</span>
+                <span>{REMAINING_POINTS} POINTS AVAILABLE</span>
             </div>
-            <div className="flex flex-col gap-4 text-[1.5rem] h-[2.5rem]">
-                <div className={`${mode === ViewMode.TREE ? "bg-white text-black w-[11rem]" : "text-white bg-black cursor-pointer hover:w-[11rem] w-[2.5rem]"} border-2 border-white flex relative overflow-hidden shrink-0 justify-end h-full transition-width duration-300 group/tree rounded-[0.25rem]`} onClick={treeView}>
-                    <div className="h-full w-full px-4 flex items-center absolute overflow-hidden whitespace-nowrap">Tree View</div>
-                    <div className="h-full flex items-center justify-center w-[2.5rem] bg-inherit z-[2] rotate-[180deg]"><i className="ri-git-fork-line" /></div>
-                </div>
-                <div className={`${mode === ViewMode.LIST ? "bg-white text-black w-[11rem]" : "text-white bg-black cursor-pointer hover:w-[11rem] w-[2.5rem]"} border-2 border-white flex relative overflow-hidden shrink-0 justify-end h-full transition-width duration-300 group/tree rounded-[0.25rem]`} onClick={listView}>                   
-                    <div className="h-full w-full px-4 flex items-center absolute overflow-hidden whitespace-nowrap">List View</div>
-                    <div className="h-full flex items-center justify-center w-[2.5rem] bg-inherit z-[2]"><i className="ri-align-justify" /></div>
-                </div>
-            </div>
+            {
+                (Object.values(ViewMode) as ViewMode[]).map((m: ViewMode, i: number) => {
+                    const selectView = () => {
+                        setMode(m);
+                    }
+                    return (
+                        <div key={i} className={`${mode === m ? "bg-white text-black w-[11rem]" : "text-white bg-black cursor-pointer hover:w-[11rem] w-[2.5rem]"} border-2 border-white flex relative overflow-hidden shrink-0 justify-end h-full transition-width duration-300 group/tree rounded-[0.25rem]`} onClick={selectView}>
+                            <div className="h-full w-full px-4 flex items-center absolute overflow-hidden whitespace-nowrap">{m.toUpperCase().replace("_", " ")}</div>
+                            <div className="h-full flex items-center justify-center w-[2.5rem] bg-inherit z-[2] rotate-[180deg]"><i className={VIEW_MODE_ICON[m]} /></div>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
 
-const TreeView : React.FC<{ talents: TalentIcon[] }> = ({ talents }) => {
+interface DetailsPayload {
+    talent: Talent,
+    x: number, 
+    bottom: number,
+}
+
+const TreeView : React.FC<{ category: TalentType }> = ({ category }) => {
+    const [details, setDetails] = useState<DetailsPayload | null>(null);
+
+    return (
+        <>
+            <TalentTree category={category} setDetails={setDetails} />
+            { details && <Details data={details} /> }
+        </>
+    )
+}
+
+const TalentTree = memo(({ category, setDetails } : { category: TalentType, setDetails: Dispatch<SetStateAction<DetailsPayload | null>> }) => {
+    const tree = TALENT_TREES[category];
     const { aspect } = useContext(AspectsContext);
     const color = aspect ? ICON_COLORS[aspect] : "bg-sea-blue-dark";
 
     return (
-        talents.map((icon: TalentIcon, index: number) => {
-            const talentData = TALENTS[icon.id];
-            
-            return (
-                talentData ? 
-                <Talent key={index} icon={icon} talent={talentData} color={color} /> :
-                null
-            )
-        })
-    )
-}
+        tree.length === 0 ? 
+        <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
+        (
+            tree.map((icon: TalentIcon, index: number) => {
+                const talentData = TALENTS[icon.id];
+                return (
+                    talentData && <Talent key={index} icon={icon} talent={talentData} color={color} setDetails={setDetails} /> 
+                )
+            })
+        )
+    )    
+});
 
-const Talent : React.FC<{ icon: TalentIcon, talent: Talent, color: string }> = ({ icon, talent, color }) => {
-    const [details, setDetails] = useState<boolean>(false);
-
-    const showDetails = () => {
-        setDetails(true);
+const Talent : React.FC<{ icon: TalentIcon, talent: Talent, color: string, setDetails: Dispatch<SetStateAction<DetailsPayload | null>> }> = ({ icon, talent, color, setDetails }) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const enter = () => {
+        if (ref.current) {
+            const bound = ref.current.getBoundingClientRect();
+            setDetails({
+                talent: talent,
+                x: bound.x,
+                bottom: window.innerHeight - bound.bottom,
+            });
+        }
     }
 
-    const hideDetails = () => {
-        setDetails(false);
+    const leave = () => {
+        setDetails(null);
     }
 
     return (
         <div className="absolute" style={{ 
-            zIndex: `${(MAX_WIDTH - icon.x) + (10 - icon.y) * MAX_WIDTH}`,
             left: `${icon.x * (SIZE + GAP)}rem`,
             top: `${icon.y * (SIZE + GAP)}rem`,
             width: `${SIZE}rem`, 
             height: `${SIZE}rem`
         }}>
             <div className="flex w-full h-full justify-center absolute">
-                <Icon data={talent} color={color} onMouseEnter={showDetails} onMouseLeave={hideDetails} />
-                <Branches branches={icon.children} />
+                <div ref={ref} className={`relative z-[2] w-full h-full ${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"}`}>
+                    <div className={`${talent.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit]`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }} onMouseEnter={enter} onMouseLeave={leave}>
+                        {
+                            talent.icon.startsWith("ri") ? 
+                            <i className={talent.icon} /> :
+                            <i className="ri-question-mark" />
+                        }
+                    </div>
+                    <div className={`${talent.rank ? "text-gold border-gold" : "text-gold-gray border-gold-gray"} absolute rounded-[0.2rem] leading-[1rem] text-[0.9rem] right-[-1.25rem] bottom-[-0.3rem] px-1 z-[3] bg-black border-2`}>
+                        {talent.rank}/{talent.maxRank}
+                    </div>
+                </div>
+                { icon.children && <Branches branches={icon.children} /> }
             </div>
-            {
-                details &&
-                <Details data={talent} />
-            }
         </div> 
     )
 }
 
-const Icon = memo(({ data, color, onMouseEnter, onMouseLeave } : { data: Talent, color: string, onMouseEnter: () => void, onMouseLeave: () => void }) => {
+const Branches : React.FC<{ branches: (number | null)[] }> = ({ branches }) => {
     return (
-        <div className={`relative z-[2] w-full h-full ${data?.ability.active ? "rounded-[0.375rem]" : "rounded-full"}`} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <div className={`${data.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center text-[2rem] font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit]`}>
-                {
-                    data.icon.startsWith("ri") ? 
-                    <i className={data.icon} /> :
-                    <i className="ri-question-mark" />
-                }
-            </div>
-            <div className={`${data.rank ? "text-gold border-gold" : "text-gold-gray border-gold-gray"} absolute rounded-[0.2rem] leading-[1rem] text-[0.9rem] right-[-1.25rem] bottom-[-0.3rem] px-1 z-[3] bg-black border-2`}>
-                {data.rank}/{data.maxRank}
-            </div>
-        </div>
-    )
-}, (prevData, newData) => { return prevData.data.name === newData.data.name });
-
-const Branches = memo(({ branches } : { branches: (number | null)[] | undefined })  => {
-    return (
-        branches?.map((magnitude: number | null, index: number)=> {
+        branches.map((magnitude: number | null, index: number)=> {
             return (
                 magnitude !== null && 
                 (() => {
@@ -220,50 +230,68 @@ const Branches = memo(({ branches } : { branches: (number | null)[] | undefined 
             )
         })
     )
-});
+}
 
-const Details : React.FC<{ data: Talent }> = ({ data }) => {
-    const expPerRank = Math.round(data.experience / data.rank)
-    const p = expPerRank === 0 || data.experience === 0 ? 0 : (data.experience / expPerRank) % 1;
-    const req = expPerRank === 0 || data.experience === 0 ? 1 : Math.round((1 - p) * expPerRank * 10) / 10;
+const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
+    const ref =  useRef<HTMLDivElement>(null);
+    const { talent, x, bottom } = data;
+    const { p, req } = getExperienceData(talent.experience, talent.rank);
+    const [pos, setPos] = useState<[number, number]>([x + OFFSET_IN_PX, bottom + OFFSET_IN_PX]);
+
+    useEffect(() => {
+        if (ref.current) {
+            const bound = ref.current.getBoundingClientRect();
+            if (bound.top < 0 || bound.right > window.innerWidth) {
+                setPos(prev => { 
+                    const newPos : [number, number] = [
+                        bound.right > window.innerWidth ? window.innerWidth - bound.width - 8 : prev[0], 
+                        bound.top < 0 ? prev[1] + bound.top - 8 : prev[1]
+                    ]
+                    if (checkOverlap(newPos, [x + (SIZE * 16), bottom + (SIZE * 16)])) return [newPos[0], bottom - bound.height - 4]
+                    return [newPos[0], newPos[1]];
+                });
+            }
+            return;
+        }
+    }, []);
 
     return (
-        <div className="absolute z-[100] font-century-gothic tracking-[1px] border-gold/75 border-2 rounded-[0.375rem] w-[16.5rem] select-none bg-black/75 flex flex-col p-[0.75rem] gap-[0.75rem]" style={{
-            left: `-${GAP * 2}rem`,
-            top: `${SIZE + 1}rem`
+        <div ref={ref} className="fixed z-[100] font-century-gothic tracking-[1px] border-gold/75 border-2 rounded-[0.375rem] w-[25rem] select-none bg-black/75 flex flex-col p-[0.75rem] gap-[0.75rem]" style={{
+            left: `${pos[0]}px`,
+            bottom: `${pos[1]}px`
         }}>
             <div className="flex flex-col w-full">
-                <div className="font-market-deco tracking-[0px] text-[1.25rem] leading-[1.25rem]">{data.name}</div>
-                <div className="text-[0.875rem]">Rank {data.rank}/{data.maxRank}</div>
+                <div className="font-market-deco tracking-[0px] text-[1.25rem] leading-[1.25rem]">{talent.name}</div>
+                <div className="text-[0.875rem]">Rank {talent.rank}/{talent.maxRank}</div>
             </div>
             <div className="flex flex-col w-full text-[1.125rem]">
                 {
-                    data.ability.active ? 
+                    talent.ability.active ? 
                     <div className="flex flex-col w-full gap-1">
-                        { data.ability.resource && <div className={`leading-[1rem] ${RESOURCE_COLORS[data.ability.resource]}`}>{data.ability.cost} {data.ability.resource}</div> }
+                        { talent.ability.resource && <div className={`leading-[1rem] ${RESOURCE_COLORS[talent.ability.resource]}`}>{talent.ability.cost} {talent.ability.resource}</div> }
                         <div className="w-full flex justify-between leading-[1rem]">
-                            { data.ability.cast_time && <div>{data.ability.cast_time}</div> }
-                            { data.ability.cooldown && <div>{data.ability.cooldown} cooldown</div> }
+                            { talent.ability.cast_time && <div>{talent.ability.cast_time}</div> }
+                            { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
                         </div>
                     </div> : 
                     <div className="flex w-full justify-between">
                         <div>Passive</div>
-                        { data.ability.cooldown && <div>{data.ability.cooldown} cooldown</div> }
+                        { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
                     </div>
                 }
             </div>
             <div className="flex flex-col text-[1rem] leading-[1rem] text-gold">
-                <div>{data.description === ""? "??????????" : data.description}</div>
+                <div>{talent.description === ""? "??????????" : talent.description}</div>
             </div>
             <div className="w-full text-[1rem] tracking-[0px]">
                 <div className="flex justify-between">
                     <div>Experience</div>
-                    <div>{data.experience} year{data.experience > 1 && "s"}</div>
+                    <div>{talent.experience} year{talent.experience > 1 && "s"}</div>
                 </div>
                 <div className={`w-full rounded-[0.25rem] bg-gold-gray overflow-hidden`}>
                     <div className={`h-[4px] bg-gold`} style={{ width: `${Math.round(p * 100)}%` }}></div>
                 </div>
-                <div className="text-[0.875rem] tracking-[1px]">{req} year{req > 1 && "s"} needed for next rank</div>
+                <div className="text-[0.875rem] tracking-[1px]">{req}</div>
             </div>
         </div>
     )
@@ -271,7 +299,7 @@ const Details : React.FC<{ data: Talent }> = ({ data }) => {
 
 const TreeVersion : React.FC = () => {
     return (
-        <div className="absolute bottom-0 right-0 font-century-gothic text-[1.25rem]">Tree v1.0.0.2024.01.20</div>
+        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.1.20240122</div>
     )
 }
 

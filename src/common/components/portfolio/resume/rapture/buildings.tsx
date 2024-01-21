@@ -27,7 +27,7 @@ const Buildings : React.FC = () => {
 
     useEffect(() => {
         if (!dive) return;
-        setTowers(Math.round(window.innerWidth / 80));
+        setTowers(Math.round(window.innerWidth / 96));
         setOffset(Math.round(window.innerWidth / 192));
     }, [dive]);
 
@@ -80,7 +80,7 @@ const Buildings : React.FC = () => {
         )
     }
     return (
-        <div className={"absolute bottom-0 w-full h-full"}>    
+        <div className={"z-[1] absolute bottom-0 w-full h-full"}>    
             {towers !== 0 && <Lighthouse />}
             <div className="w-full h-[40%] absolute bottom-0">
                 {

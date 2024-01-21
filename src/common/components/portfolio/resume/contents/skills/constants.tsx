@@ -30,8 +30,8 @@ export enum TalentType {
 }
 
 export enum ViewMode {
-    TREE = 0,
-    LIST = 1,
+    TREE = "tree_view",
+    LIST = "list_view",
 }
 
 export interface AspectColorTypes {

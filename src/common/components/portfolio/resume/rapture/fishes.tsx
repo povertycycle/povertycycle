@@ -22,15 +22,17 @@ const Fishes : React.FC = () => {
     const { dive } = useContext(RaptureContext);
 
     useEffect(() => {
-        if (dive) setSchools(Math.round(window.innerWidth / 192));
+        setTimeout(() => {
+            if (dive) setSchools(Math.round(window.innerWidth / 192));
+        }, 5000);
     }, [dive]);
     
     const Fish = () => {
         const direction = Math.random() >= 0.5 ? true : false;
         const z = 6 + Math.round(Math.random() * 4);
         const opacity = 0.5 + z / 10;
-        const top = 50 + Math.random() * 40;
-        const scale = 0.2 + z / 20;
+        const top = 25 + Math.random() * 40;
+        const scale = 0.2 + z / 30;
         const delay = Math.random() * 5; 
         const duration = (Math.random() * 240) + 90;
         const fish = Math.round(Math.random() * Math.round(window.innerWidth / 384)) + 1;
@@ -85,7 +87,7 @@ const Fishes : React.FC = () => {
     }
 
     return (
-        <div className={"absolute h-full w-full"}>
+        <div className={"z-[1] absolute h-full w-full"}>
             {
                 Array.from({ length: schools }, (_, index: number) => (
                     <Fish key={index} />

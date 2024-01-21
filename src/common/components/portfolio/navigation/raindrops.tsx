@@ -7,7 +7,7 @@ const Raindrops : React.FC = () => {
     const [raindrops, setRaindrops] = useState<number>(0);
 
     useEffect(() => {
-        setRaindrops(Math.round(window.innerWidth / 50));
+        setRaindrops(Math.round(window.innerWidth / 64));
     }, []);
 
     const Raindrop = () => {

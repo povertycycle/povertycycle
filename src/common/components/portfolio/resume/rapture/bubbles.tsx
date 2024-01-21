@@ -27,7 +27,7 @@ const Bubbles : React.FC = () => {
     }
 
     return (
-        <div className="w-full h-full absolute z-[3] overflow-hidden">
+        <div className="w-full h-full absolute z-[2] overflow-hidden">
             {
                 Array.from({ length: bubbles }, (_, index: number) => (
                     <Bubble key={index} />

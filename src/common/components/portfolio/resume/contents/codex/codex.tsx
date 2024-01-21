@@ -67,7 +67,7 @@ const JOURNALS : Journal = {
                 "- Controller supports for website.",
                 "- Mobile supports for website.",
                 "- Design icons for skills section.",
-                "- Improve fishes algorithms",
+                "- Convert into canvas to draw background animations.",
             ]
         }
     },
