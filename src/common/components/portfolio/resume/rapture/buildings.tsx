@@ -50,7 +50,7 @@ const Buildings : React.FC = () => {
         const spread = left + direction * (quadraticEquationProcessor(left, 15, offset))
         const h_variation = Math.random() * quadraticEquationProcessor(left, 25, offset);
         const z = (MAX_Z_INDEX / 2) + Math.round((MAX_Z_INDEX / 2) * Math.pow((left - 50) / (50 - offset), 2));
-        const width = roundWithDecimals(3 + Math.random() * 2, 1);
+        const width = roundWithDecimals(3 + Math.random() * 3, 1);
         const h_curvature = 5;
         const stacks = Math.round(Math.random() * 4) + 2;
         const duration = Math.round(Math.random() * 7) + 3;
@@ -61,7 +61,7 @@ const Buildings : React.FC = () => {
         return (
             <div className={styles.tower} style={{
                 left: `${spread - width / 2}%`,
-                width: `${width}%`,
+                width: `${width}rem`,
                 height: `${Math.round(100 - Math.pow((spread - 50) / h_curvature, 2) - h_variation)}%`,
                 zIndex: z - (Math.random() > 0.5 ? 1 : -1) * 3,
                 animationDuration: `${duration}s`,

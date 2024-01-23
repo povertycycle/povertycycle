@@ -6,7 +6,7 @@ import { getAge } from "@/common/utils/math";
 const CharacterStatus : React.FC = () => {
     const MAX_HP = 100;
     return (
-        <div className={`absolute right-0 flex select-none items-center w-[18rem] ${styles.statusAnimation}`}>
+        <div className={`absolute right-0 hidden xl:flex select-none items-center w-[18rem] ${styles.statusAnimation}`}>
             <div className="absolute w-[130%] right-[-1rem] h-full skew-x-[-30deg] rounded-[0.2rem] bg-gradient-to-l from-sea-green/50 from-75%"></div>
             <div className="w-full h-full z-[1] px-4 flex gap-8 text-[1.75rem] whitespace-nowrap">
                 <span>HP {90}/{MAX_HP}</span>

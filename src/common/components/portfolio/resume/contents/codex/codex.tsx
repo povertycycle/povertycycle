@@ -46,7 +46,7 @@ const JOURNALS : Journal = {
             description: [
                 "Version 2.0 (Next Goal):",
                 "- New design for the website and its contents.",
-                "Version 1.3.4 - Current:",
+                "Version 1.3.5 - Current:",
                 "- New website made with React and NextJS.",
                 "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations. Prototyping skills section.",
                 "Version 1.0:",
@@ -149,12 +149,10 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
     const handleScroll = (e: any) => {
         setScroll(scrollPercent(e.target));
     }
-{/* <LayeredBorder gap="3px" step={2} borderColor="white" borderWidth="3px" xAxis={{ start: 1, step: 1, unit: "rem" }} yAxis={{ start: 10, step: -5, unit: "%" }}>
-                    <LayeredBorder></LayeredBorder> */}
 
     return (
         <div className={`${styles.codexAnimation} gap-4 px-4 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black/75 flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
-            <div className="w-full items-center  text-[2.25rem] bg-gradient-to-l via-sea-blue-dark/25 flex flex-col gap-2">
+            <div className="w-full items-center text-center text-[2.25rem] bg-gradient-to-l via-sea-blue-dark/25 flex flex-col gap-2">
                 <div className="w-full h-[2px] bg-gradient-to-l via-white/70" />
                 {selectedJournal.heading}
                 <div className="w-full h-[2px] bg-gradient-to-l via-white/70" />

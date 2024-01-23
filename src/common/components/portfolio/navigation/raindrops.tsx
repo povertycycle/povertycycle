@@ -42,7 +42,7 @@ const Raindrops : React.FC = () => {
     }
 
     return (
-        <div className="absolute z-[2] w-full h-full">
+        <div className="absolute z-[2] w-full h-full overflow-hidden">
             {Array.from({ length: raindrops }, (_, index: number) => (
                 <Raindrop key={index} />
             ))}

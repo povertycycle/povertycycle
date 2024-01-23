@@ -1,11 +1,13 @@
 import "remixicon/fonts/remixicon.css";
-import { Fragment, Dispatch, SetStateAction, memo, useContext, useState, useRef, useEffect } from "react";
+import React, { Fragment, Dispatch, SetStateAction, memo, useContext, useState, useRef, useEffect } from "react";
 import talentData from "./talents.json";
 import styles from "./talents.module.scss";
+import overflow from "../animations.module.scss";
 import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentType, ViewMode } from "./constants";
 import { checkOverlap, getExperienceData } from "@/common/utils/math";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
+const { TITLE, POINTS } = { TITLE: 3, POINTS: 1.25 };
 const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [ key: string ] : Talent | undefined };
 const MAX_WIDTH = 9;
@@ -82,7 +84,7 @@ const TalentContents : React.FC<{ category: TalentType }> = ({ category }) => {
     const [mode, setMode] = useState<ViewMode>(ViewMode.TREE);
     const width = (MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP);
     const height = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
-
+    
     return (
         <div className="flex flex-col p-[1.25rem] items-center justify-center w-full text-[1.25rem] relative select-none">
             <Navigator title={category} mode={mode} setMode={setMode} />
@@ -93,7 +95,7 @@ const TalentContents : React.FC<{ category: TalentType }> = ({ category }) => {
                             case ViewMode.TREE:
                                 return <TreeView category={category} />;
                             case ViewMode.LIST:
-                                return <div className="h-full w-full flex justify-center items-center">In Progress</div>;
+                                return <ListView category={category} />;
                             default:
                                 return null;
                         }
@@ -108,8 +110,8 @@ const Navigator : React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatc
     return (
         <div className="z-[2] absolute left-0 top-0 p-4 flex flex-col gap-4">
             <div className="flex flex-col">
-                <span className="text-[3rem]">{title.toUpperCase()}</span>
-                <span>{REMAINING_POINTS} POINTS AVAILABLE</span>
+                <span style={{ fontSize: `${TITLE}rem`, lineHeight: `${TITLE}rem` }}>{title.toUpperCase()}</span>
+                <span style={{ fontSize: `${POINTS}rem`, lineHeight: `${POINTS}rem` }}>{REMAINING_POINTS} POINTS AVAILABLE</span>
             </div>
             {
                 (Object.values(ViewMode) as ViewMode[]).map((m: ViewMode, i: number) => {
@@ -125,6 +127,60 @@ const Navigator : React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatc
                 })
             }
         </div>
+    )
+}
+
+type TierList = { [key: string]: number[] }
+
+const ListView : React.FC<{ category: TalentType }> = ({ category }) => {
+    const tiers = TALENT_TREES[category].reduce((acc: TierList, item: TalentIcon) => {
+        const { y, id } = item;
+        if (!acc[y]) acc[y] = [];
+        acc[y].push(id);
+        return acc;
+    }, {});
+
+    return (
+        Object.keys(tiers).length === 0 ? 
+        <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
+        <div className={`w-full h-full flex flex-col gap-4 px-4 overflow-y-scroll ${overflow.overflowContainer}`} style={{ marginTop: `${TITLE + POINTS}rem` }}>
+            <div className="w-full text-center">BETA</div>
+            {
+                Object.keys(tiers).map((tier: string, index: number) => {
+                    return (
+                        <TieredTalents key={index} tier={tier} talents={tiers[tier]} />
+                    )
+                })
+            }
+        </div>
+    )
+}
+
+const TieredTalents : React.FC<{ tier: string, talents: number[] }> = ({ tier, talents }) => {
+    const { aspect } = useContext(AspectsContext);
+    const color = aspect ? ICON_COLORS[aspect] : "bg-sea-blue-dark";
+
+    return (
+        <div className="w-full">
+            <div className="px-4 py-2 bg-sea-blue-dark/50 text-[1.5rem] leading-[1.5rem]">Tier {parseInt(tier) + 1}</div>
+            <div className="flex flex-col gap-2 w-full">
+                {
+                    talents.map((talent: number, index: number) => {
+                        const talentData = TALENTS[talent];
+                        return (
+                            talentData && <ListedTalent key={index} talent={talentData} color={color} />
+                        )
+                    })
+                }
+            </div>
+
+        </div>
+    )
+}
+
+const ListedTalent : React.FC<{ talent: Talent, color: string }> = ({ talent, color }) => {
+    return (
+        <div className={`${color} w-full px-4 py-2`}>{talent.name}</div>
     )
 }
 
