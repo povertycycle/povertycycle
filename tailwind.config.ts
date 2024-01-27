@@ -16,6 +16,7 @@ const config: Config = {
 				'rain':'#A1C6CC',
 				'neon': '#E1F5FF',
 				'sea-blue-dark': '#136087',
+                'sea-blue-darker': '#07202C',
                 'sea-blue-gray': '#777d81',
                 'soft-white': '#E6E6E6',
 				'default-white': '#FAFAFA',
@@ -24,14 +25,14 @@ const config: Config = {
                 'gold': '#E5B80B',
                 'gold-desaturated': '#b19d62',
                 'gold-gray': '#938c76',
-                'aspect-green': '#1cff00', // '#7aff00',
-                'aspect-green-darker': '#0f8000',
                 'aspect-blue': '#00e8ff', //'#00cfff',
                 'aspect-blue-darker': '#007580',
                 'aspect-red': '#ff0025', // '#ff0025',
                 'aspect-red-darker': '#800013',
                 'aspect-yellow': '#ffa300', //'#ffaf00',
                 'aspect-yellow-darker': '#805100',
+                'aspect-green': '#1cff00', // '#7aff00',
+                'aspect-green-darker': '#0f8000',
                 'mana-cost': '#00cbde',
 			},
 			fontFamily: {
@@ -45,6 +46,7 @@ const config: Config = {
             },
             transitionDuration: {
                 '400': '400ms',
+                '800': '800ms',
             }
 		},
 	},

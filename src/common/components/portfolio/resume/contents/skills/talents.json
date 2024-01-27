@@ -107,19 +107,19 @@
       "description": "A property of an algorithm which relates to the amount of the computational resources it uses."
     },
     "7": {
-      "name": "Software Architecture",
+      "name": "Higher-Order Programming",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "45s"
+        "cast_time": "1s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "1",
+        "cooldown": "1s"
       },
-      "rank": 3,
+      "rank": 2,
       "maxRank": 5,
-      "experience": 4,
-      "icon": "ri-stack-line",
-      "description": "The set of structures needed to reason about a software system and the discipline of creating such structures and systems."
+      "experience": 3,
+      "icon": "ri-archive-stack-line",
+      "description": "A style that heavily utilizes software components as higher-order functions*, borrowing concepts from models of computations such as lambda calculus; *a function that takes one or more functions as arguments, or returns a function as its result."
     },
     "8": {
       "name": "Cleanliness",
@@ -182,19 +182,19 @@
       "description": "A mathematical and algorithmic optimization method where complicated problems are broken down into simpler sub-problems in a recursive manner."
     },
     "12": {
-      "name": "Higher-Order Programming",
+      "name": "Asynchronous Programming",
       "ability": {
-        "cast_time": "1s cast",
+        "cast_time": "3s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "1",
-        "cooldown": "1s"
+        "cost": "3",
+        "cooldown": "14s"
       },
-      "rank": 2,
-      "maxRank": 5,
-      "experience": 3,
-      "icon": "ri-archive-stack-line",
-      "description": "A style that heavily utilizes software components as higher-order functions*, borrowing concepts from models of computations such as lambda calculus; *a function that takes one or more functions as arguments, or returns a function as its result."
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 3.5,
+      "icon": "ri-shuffle-line",
+      "description": "A technique that enables a program to start a new task while allowing the program to still be responsive to other events, and not having the program to wait for the old task to finish."
     },
     "13": {
       "name": "Maintainability",
@@ -257,19 +257,19 @@
       "description": "The adaptability of the design in different environments, especially in a web development."
     },
     "17": {
-      "name": "Asynchronous Programming",
+      "name": "Software Architecture",
       "ability": {
-        "cast_time": "3s channel",
-        "active": true,
-        "resource": "Mana",
-        "cost": "3",
-        "cooldown": "14s"
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "45s"
       },
-      "rank": 1,
-      "maxRank": 3,
-      "experience": 3.5,
-      "icon": "ri-shuffle-line",
-      "description": "A technique that enables a program to start a new task while allowing the program to still be responsive to other events, and not having the program to wait for the old task to finish."
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 4,
+      "icon": "ri-stack-line",
+      "description": "The set of structures needed to reason about a software system and the discipline of creating such structures and systems."
     },
     "18": {
       "name": "Automation",
@@ -377,7 +377,7 @@
       "description": "An on-demand access, via the internet, to computing resources—applications, physical and virtual servers, data storage, development tools, networking capabilities, and more—hosted at a remote data center managed by a cloud services provider."
     },
     "25": {
-      "name": "Parallelization",
+      "name": "Systems Design",
       "ability": {
         "cast_time": "",
         "active": false,
@@ -385,11 +385,11 @@
         "cost": "",
         "cooldown": ""
       },
-      "rank": 0,
-      "maxRank": 5,
-      "experience": 0,
-      "icon": "ri-menu-line",
-      "description": "A programming method of breaking down task into similar sub-tasks, processes, or calculations that can be processed independently and simultaneously, whose results afterwards are combined upon completion."
+      "rank": 3,
+      "maxRank": 10,
+      "experience": 5,
+      "icon": "ri-folder-settings-line",
+      "description": "The process of defining and developing the architecture, components, modules, interfaces, and data for a system to satisfy the specified requirements of the user."
     },
     "26": {
       "name": "Scripting",

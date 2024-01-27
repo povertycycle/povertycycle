@@ -7,7 +7,8 @@ import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentTyp
 import { checkOverlap, getExperienceData } from "@/common/utils/math";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
-const { TITLE, POINTS } = { TITLE: 3, POINTS: 1.25 };
+const { TITLE, POINTS } = { TITLE: 2.5, POINTS: 1.25 };
+const { HEIGHT, BORDER } = { HEIGHT: 2.5, BORDER: 0.25 }
 const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [ key: string ] : Talent | undefined };
 const MAX_WIDTH = 9;
@@ -33,6 +34,13 @@ const ICON_COLORS : { [key in AspectType] : string } = {
     [AspectType.GENERAL]: "bg-aspect-yellow-darker"
 }
 
+const LIST_COLORS : { [key in AspectType] : string[] } = {
+    [AspectType.SCIENCE]: ["via-aspect-green-darker", "from-aspect-green/75", "via-aspect-green-darker/50"],
+    [AspectType.ARTS]: ["via-aspect-blue-darker", "from-aspect-blue/75", "via-aspect-blue-darker/50"],
+    [AspectType.PHYSIQUE]: ["via-aspect-red-darker", "from-aspect-red/75", "via-aspect-red-darker/50"],
+    [AspectType.GENERAL]: ["via-aspect-yellow-darker", "from-aspect-yellow/75", "via-aspect-yellow-darker/50"],
+}
+
 const RESOURCE_COLORS : { [key in ResourceType] : string } = {
     [ResourceType.MANA]: "text-mana-cost",
 }
@@ -41,13 +49,13 @@ const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
     [TalentType.ENGINEERING]: [    ], //mobile-development web-development game-development system-engineering
     [TalentType.STUDY]: [
         { id: 0, x: 4, y: 0, children: [1, 0, 1] },
-        { id: 1, x: 3, y: 1, children: [1, 0] }, { id: 2, x: 4, y: 1, children: [1, 0] }, { id: 3, x: 5, y: 1, children: [null, 0, 1] },
+        { id: 1, x: 3, y: 1, children: [1, 0] }, { id: 2, x: 4, y: 1, children: [null, 0, 1.4] }, { id: 3, x: 5, y: 1, children: [null, 0, 1] },
         { id: 4, x: 2, y: 2, children: [1.4, 4.3, 1.4] }, { id: 5, x: 3, y: 2, children: [null, 0, 1.4] }, { id: 6, x: 4, y: 2, children: [null, 0] }, { id: 7, x: 5, y: 2, children: [1.4, 0] }, { id: 8, x: 6, y: 2, children: [1.4, null, 1] },
-        { id: 9, x: 1, y: 3, children: [1.4, 0, 1] }, { id: 10, x: 3, y: 3, children: [1, null, 1.4] }, { id: 11, x: 4, y: 3, children: [null, 0] }, { id: 12, x: 5, y: 3, children: [1.4, null, 1.4] }, { id: 13, x: 7, y: 3, children: [1.4, 0, 1.4] },
+        { id: 9, x: 1, y: 3, children: [1.4, 0, 1] }, { id: 10, x: 3, y: 3, children: [1, null, 1] }, { id: 11, x: 4, y: 3, children: [null, 0] }, { id: 12, x: 5, y: 3, children: [1, null, 1.4] }, { id: 13, x: 7, y: 3, children: [1.4, 0, 1.4] },
         { id: 14, x: 0, y: 4, children: [null, 4.3, 1] }, { id: 15, x: 1, y: 4 }, { id: 16, x: 2, y: 4, children: [null, 0] }, { id: 17, x: 4, y: 4, children: [1.4, 0, 1] }, { id: 18, x: 6, y: 4, children: [null, 0, 1.4] }, { id: 19, x: 7, y: 4, children: [null, 0] }, { id: 20, x: 8, y: 4, children: [null, 4.3] },
         { id: 21, x: 1, y: 5 }, { id: 22, x: 2, y: 5, children: [null, 0] }, { id: 23, x: 3, y: 5, children: [1, 0] }, { id: 24, x: 4, y: 5, children: [1, 0, 1.4] }, { id: 25, x: 5, y: 5, children: [null, 0] }, { id: 26, x: 6, y: 5, children: [1.4, 0] }, { id: 27, x: 7, y: 5, children: [1, null, 1] },
         { id: 28, x: 0, y: 6 }, { id: 29, x: 2, y: 6, children: [null, 0] }, { id: 30, x: 3, y: 6, children: [null, 0] }, { id: 31, x: 4, y: 6, children: [1.4, 0, 1.4] }, { id: 32, x: 5, y: 6, children: [null, 0] }, { id: 33, x: 6, y: 6, children: [null, 0] }, { id: 34, x: 8, y: 6 },
-        { id: 35, x: 2, y: 7, children: [null, 4.3, 1] }, { id: 36, x: 3, y: 7 }, { id: 37, x: 4, y: 7, children: [1, 0, 1] }, { id: 38, x: 5, y: 7 }, { id: 39, x: 6, y: 7, children: [1, 4.3] }, 
+        { id: 35, x: 2, y: 7, children: [null, 4.3, 1] }, { id: 36, x: 3, y: 7 }, { id: 37, x: 4, y: 7, children: [null, 0, 1] }, { id: 38, x: 5, y: 7 }, { id: 39, x: 6, y: 7, children: [1, 4.3] }, 
         { id: 40, x: 3, y: 8, children: [null, 0] }, { id: 41, x: 4, y: 8, children: [1.4, 0, 1.4] }, { id: 42, x: 5, y: 8, children: [null, 0, 1] },
         { id: 43, x: 2, y: 9 }, { id: 44, x: 3, y: 9 }, { id: 45, x: 4, y: 9 }, { id: 46, x: 5, y: 9 }, { id: 47, x: 6, y: 9 },
     ],
@@ -143,8 +151,7 @@ const ListView : React.FC<{ category: TalentType }> = ({ category }) => {
     return (
         Object.keys(tiers).length === 0 ? 
         <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
-        <div className={`w-full h-full flex flex-col gap-4 px-4 overflow-y-scroll ${overflow.overflowContainer}`} style={{ marginTop: `${TITLE + POINTS}rem` }}>
-            <div className="w-full text-center">BETA</div>
+        <div className={`w-full h-full flex flex-col px-4 overflow-y-scroll ${overflow.overflowContainer}`} style={{ marginTop: `${TITLE + POINTS}rem` }}>
             {
                 Object.keys(tiers).map((tier: string, index: number) => {
                     return (
@@ -158,31 +165,91 @@ const ListView : React.FC<{ category: TalentType }> = ({ category }) => {
 
 const TieredTalents : React.FC<{ tier: string, talents: number[] }> = ({ tier, talents }) => {
     const { aspect } = useContext(AspectsContext);
-    const color = aspect ? ICON_COLORS[aspect] : "bg-sea-blue-dark";
+    const color = aspect ? LIST_COLORS[aspect] : ["via-bg-sea-blue-dark", "via-bg-sea-blue-dark/25 hover:via-sea-blue-dark-50", "via-sea-blue-dark-50"];
+    const [selected, setSelected] = useState<number[]>([]);
 
+    const collapse = () => {
+        setSelected([]);
+    }
+    
     return (
-        <div className="w-full">
-            <div className="px-4 py-2 bg-sea-blue-dark/50 text-[1.5rem] leading-[1.5rem]">Tier {parseInt(tier) + 1}</div>
-            <div className="flex flex-col gap-2 w-full">
+        <div className="w-full flex flex-col">
+            <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px]" />
+            <div className={`flex justify-between py-2 bg-gradient-to-r from-transparent via-10%  ${color[0]} px-12 text-[1.5rem] leading-[1.5rem]`}>
+                <div>Tier {parseInt(tier) + 1}</div>
+                { selected.length > 0 ? <div className="cursor-pointer text-[1.25rem] leading-[1.25rem]" onClick={collapse}><i className="ri-contract-up-down-line" /></div> : null }
+            </div>
+            <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px]" />
+            <div className="flex flex-col w-full px-4 py-2 gap-2">
                 {
                     talents.map((talent: number, index: number) => {
                         const talentData = TALENTS[talent];
                         return (
-                            talentData && <ListedTalent key={index} talent={talentData} color={color} />
+                            talentData && <ListedTalent id={talent} active={selected.includes(talent)} setSelected={setSelected} talent={talentData} color={color} key={index}/>
                         )
                     })
                 }
             </div>
-
         </div>
     )
 }
 
-const ListedTalent : React.FC<{ talent: Talent, color: string }> = ({ talent, color }) => {
+const ListedTalent = memo(({ id, active, talent, color, setSelected } : { id: number, active: boolean, talent: Talent, color: string[], setSelected: Dispatch<SetStateAction<number[]>> }) => {
+    const { p, req } = getExperienceData(talent.experience, talent.rank);
+    const activate = () => {
+        setSelected(prev => {
+            if (prev.includes(id))return prev.filter((val) => { return val != id });
+            return prev.concat([id]);
+        });
+    }
+
     return (
-        <div className={`${color} w-full px-4 py-2`}>{talent.name}</div>
+        <div className="group/listed w-full relative flex flex-col cursor-pointer px-8" onClick={activate}>
+            <div className={`${active ? "w-full" : "w-0 group-hover/listed:w-full"} ${color[1]} shrink-0 rounded-[0.25rem] relative z-[1] py-1 flex justify-end transition-width duration-400 bg-gradient-to-r`} style={{ height: `${HEIGHT}rem` }}>
+                <div className={`${active ? "w-0" : "w-full"} h-full bg-sea-blue-darker transition-width duration-400`} style={{ marginLeft: `${BORDER}rem` }} />
+            </div>
+            <div className="absolute z-[2] flex items-center justify-between px-8" style={{ lineHeight: `${HEIGHT}rem`, width: `calc(100% - 4rem)` }}>
+                <span>{talent.name}</span>
+                <span>{`Rank ${talent.rank} / ${talent.maxRank}`}</span>
+            </div>
+            <div className={`${active ? "h-full" : "h-0"} w-full px-8 overflow-hidden tracking-[1px]`}>
+                <div className="w-full h-full flex flex-col gap-2 justify-center py-4">
+                    <div className="w-full flex gap-4">
+                        <div className={`${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"} ${talent.rank !== 0 ? `bg-aspect-green-darker border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} flex items-center justify-center font-normal z-[2] border-2 shadow-[inset_0_0_8px_black]`} style={{ height: `${SIZE}rem`, width: `${SIZE}rem`, fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
+                            { talent.icon.startsWith("ri") ? <i className={talent.icon} /> : <i className="ri-question-mark" /> }
+                        </div>
+                        <div className="flex flex-col justify-center">
+                            <div className="text-[1rem] ">Experience: {talent.experience} {talent.experience > 1 ? "years" : "year"}</div>
+                            <div className="text-[0.875rem] ">{req}</div>
+                        </div>
+                    </div>
+                    <div className="w-full h-[4px] rounded-full overflow-hidden bg-gold-gray">
+                        <div className="h-full bg-gold/75" style={{ width: active ? `${Math.round(p * 100)}%` : 0 }}></div>
+                    </div>
+                    <div className="flex flex-col w-full text-[1rem]">
+                        {
+                            talent.ability.active ? 
+                            <div className="flex flex-col w-full gap-1">
+                                { talent.ability.resource && <div className={`leading-[1rem] ${RESOURCE_COLORS[talent.ability.resource]}`}>{talent.ability.cost} {talent.ability.resource}</div> }
+                                <div className="w-full flex justify-between leading-[1rem]">
+                                    { talent.ability.cast_time && <div>{talent.ability.cast_time}</div> }
+                                    { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
+                                </div>
+                            </div> : 
+                            <div className="flex w-full justify-between">
+                                <div>Passive</div>
+                                { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
+                            </div>
+                        }
+                    </div>
+                    <div className="flex flex-col font-century-gothic text-[1rem] leading-[1rem] text-gold">
+                        <div>{talent.description === "" ? "??????????" : talent.description}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
-}
+})
 
 interface DetailsPayload {
     talent: Talent,
@@ -314,7 +381,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
     return (
         <div ref={ref} className="fixed z-[100] font-century-gothic tracking-[1px] border-gold/75 border-2 rounded-[0.375rem] w-[25rem] select-none bg-black/75 flex flex-col p-[0.75rem] gap-[0.75rem]" style={{
             left: `${pos[0]}px`,
-            bottom: `${pos[1]}px`
+            bottom: `${pos[1]}px`,
         }}>
             <div className="flex flex-col w-full">
                 <div className="font-market-deco tracking-[0px] text-[1.25rem] leading-[1.25rem]">{talent.name}</div>
@@ -337,7 +404,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
                 }
             </div>
             <div className="flex flex-col text-[1rem] leading-[1rem] text-gold">
-                <div>{talent.description === ""? "??????????" : talent.description}</div>
+                <div>{talent.description === "" ? "??????????" : talent.description}</div>
             </div>
             <div className="w-full text-[1rem] tracking-[0px]">
                 <div className="flex justify-between">
@@ -355,7 +422,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
 
 const TreeVersion : React.FC = () => {
     return (
-        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.1.20240122</div>
+        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.2.20240124</div>
     )
 }
 
