@@ -101,7 +101,7 @@ const NavigationTabs : React.FC<{
 
 
     return (
-        <div className={`w-full h-[5rem] overflow-hidden flex items-center justify-center gap-4 text-[1.5rem] ${styles.navTabAnimation}`}>
+        <div className={`relative z-[1] w-full h-[5rem] overflow-hidden flex items-center justify-center gap-4 text-[1.5rem] ${styles.navTabAnimation}`}>
             <ControllerTabbing onClick={prevMenu}>L1</ControllerTabbing>
             <div className="flex">
                 {

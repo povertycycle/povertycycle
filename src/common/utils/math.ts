@@ -14,7 +14,7 @@ export const getAge = () => {
 
 export const getExperienceData = (experience: number, rank: number) => {
     if (rank === 0) return { p: 0, req: "Explore to find more info about the skill" }
-    const epr = Math.round(experience / rank);
+    const epr = Math.ceil(experience / rank);
     const p = epr === 0 ? 0 : (experience / epr) % 1;
     const expReq = experience === 0 ? 1 : Math.round((1 - p) * epr * 10) / 10;
     const req = `${expReq} year${expReq > 1 ? "s" : ""} needed for next rank`;

@@ -5,6 +5,7 @@ import styles from "./talents.module.scss";
 import overflow from "../animations.module.scss";
 import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentType, ViewMode } from "./constants";
 import { checkOverlap, getExperienceData } from "@/common/utils/math";
+import { CustomIcon, CUSTOM_COLORS } from "./talent-icons";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
 const { TITLE, POINTS } = { TITLE: 2.5, POINTS: 1.25 };
@@ -46,7 +47,18 @@ const RESOURCE_COLORS : { [key in ResourceType] : string } = {
 }
 
 const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
-    [TalentType.ENGINEERING]: [    ], //mobile-development web-development game-development system-engineering
+    [TalentType.ENGINEERING]: [
+        { id: 48, x: 4, y: 0, children: [1.4, 0, 1] },
+        { id: 49, x: 3, y: 1, children: [1.4, 0] }, { id: 50, x: 4, y: 1, children: [null, 0] }, { id: 51, x: 5, y: 1, children: [null, 0, 1] }, 
+        { id: 52, x: 2, y: 2, children: [null, 4.3] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [1, 0] }, { id: 56, x: 6, y: 2, children: [null, 4.3] }, 
+        { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1.4, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0] }, 
+        { id: 60, x: 2, y: 4, children: [1, null, 1] }, { id: 61, x: 3, y: 4, children: [null, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0, 1] }, { id: 64, x: 6, y: 4, children: [null, 0, 1] }, 
+        { id: 65, x: 1, y: 5, children: [1.4, null, 1] }, { id: 66, x: 3, y: 5 }, { id: 67, x: 4, y: 5 }, { id: 68, x: 5, y: 5 }, { id: 69, x: 6, y: 5 }, { id: 70, x: 7, y: 5 }, 
+        { id: 71, x: 0, y: 6, children: [null, null, 1.4] }, { id: 72, x: 2, y: 6 }, { id: 73, x: 4, y: 6 }, { id: 74, x: 5, y: 6 }, { id: 75, x: 6, y: 6 }, 
+        { id: 76, x: 1, y: 7, children: [null, 0] }, { id: 77, x: 3, y: 7 }, { id: 78, x: 5, y: 7 }, { id: 79, x: 7, y: 7 }, 
+        { id: 80, x: 1, y: 8, children: [null, 0] }, { id: 81, x: 2, y: 8 }, { id: 82, x: 3, y: 8 }, { id: 83, x: 4, y: 8 }, { id: 84, x: 6, y: 8 }, { id: 85, x: 7, y: 8 }, 
+        { id: 86, x: 1, y: 9 }, { id: 87, x: 3, y: 9 }, { id: 88, x: 5, y: 9 }, { id: 89, x: 7, y: 9 }, 
+    ],
     [TalentType.STUDY]: [
         { id: 0, x: 4, y: 0, children: [1, 0, 1] },
         { id: 1, x: 3, y: 1, children: [1, 0] }, { id: 2, x: 4, y: 1, children: [null, 0, 1.4] }, { id: 3, x: 5, y: 1, children: [null, 0, 1] },
@@ -78,7 +90,7 @@ const TalentsDisplay : React.FC = () => {
                     return (
                         <Fragment key={index}>
                             { index !== 0 && <div className={`shrink-0 bg-gradient-to-b from-transparent via-gold rounded-[100%] h-full w-[0.2rem]`} /> }
-                            <TalentContents category={category} />
+                            <TalentContents category={category} pos={index} />
                         </Fragment>
                     )
                 })
@@ -88,13 +100,13 @@ const TalentsDisplay : React.FC = () => {
     )
 }
 
-const TalentContents : React.FC<{ category: TalentType }> = ({ category }) => {
+const TalentContents : React.FC<{ category: TalentType, pos: number }> = ({ category, pos }) => {
     const [mode, setMode] = useState<ViewMode>(ViewMode.TREE);
     const width = (MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP);
     const height = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
     
     return (
-        <div className="flex flex-col p-[1.25rem] items-center justify-center w-full text-[1.25rem] relative select-none">
+        <div className="flex flex-col p-[1.25rem] items-center justify-center w-full text-[1.25rem] relative select-none" style={{ zIndex: 2 - pos }}>
             <Navigator title={category} mode={mode} setMode={setMode} />
             <div className={`z-[1] flex flex-col relative items-center`} style={{ width: `${width}rem`, height: `${height}rem` }}>
                 {
@@ -313,13 +325,19 @@ const Talent : React.FC<{ icon: TalentIcon, talent: Talent, color: string, setDe
         }}>
             <div className="flex w-full h-full justify-center absolute">
                 <div ref={ref} className={`relative z-[2] w-full h-full ${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"}`}>
-                    <div className={`${talent.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit]`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }} onMouseEnter={enter} onMouseLeave={leave}>
-                        {
-                            talent.icon.startsWith("ri") ? 
-                            <i className={talent.icon} /> :
-                            <i className="ri-question-mark" />
-                        }
-                    </div>
+                    {
+                        talent.icon.startsWith("cust") ?
+                        <div className={`${talent.rank !== 0 ? `${CUSTOM_COLORS[talent.icon.replace("cust-", "")]} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }} onMouseEnter={enter} onMouseLeave={leave}>
+                            <CustomIcon icon={talent.icon.replace("cust-", "")} />
+                        </div> :
+                        <div className={`${talent.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }} onMouseEnter={enter} onMouseLeave={leave}>
+                            {
+                                talent.icon.startsWith("ri") ? 
+                                <i className={talent.icon} /> :
+                                <i className="ri-question-mark" />
+                            }
+                        </div>
+                    }
                     <div className={`${talent.rank ? "text-gold border-gold" : "text-gold-gray border-gold-gray"} absolute rounded-[0.2rem] leading-[1rem] text-[0.9rem] right-[-1.25rem] bottom-[-0.3rem] px-1 z-[3] bg-black border-2`}>
                         {talent.rank}/{talent.maxRank}
                     </div>
@@ -422,7 +440,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
 
 const TreeVersion : React.FC = () => {
     return (
-        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.2.20240124</div>
+        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.3.20240129</div>
     )
 }
 

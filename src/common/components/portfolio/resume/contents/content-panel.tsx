@@ -21,7 +21,7 @@ const ContentPanel : React.FC<{
     active,
 }) => {
     return (
-        <div className={`w-full h-full flex items-center justify-start text-[1rem]`}>
+        <div className={`relative z-[2] w-full h-full flex items-center justify-start text-[1rem]`}>
             {CONTENTS[active]}
         </div>
     )

@@ -34,7 +34,7 @@ const JOURNALS : Journal = {
             flavorText: "The time does not matter; what matters is the completion.",
             description: [
                 "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
-                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS and Javascript; the repository stores no images files. Most of the icons in the talent trees are from remixicon.",
+                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS; the repository stores no .jpg or .png files. Most of the icons in the talent trees are from remixicon.",
             ]
         }
     },
