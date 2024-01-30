@@ -50,24 +50,24 @@ const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
     [TalentType.ENGINEERING]: [
         { id: 48, x: 4, y: 0, children: [1.4, 0, 1] },
         { id: 49, x: 3, y: 1, children: [1.4, 0] }, { id: 50, x: 4, y: 1, children: [null, 0] }, { id: 51, x: 5, y: 1, children: [null, 0, 1] }, 
-        { id: 52, x: 2, y: 2, children: [null, 4.3] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [1, 0] }, { id: 56, x: 6, y: 2, children: [null, 4.3] }, 
+        { id: 52, x: 2, y: 2, children: [null, 5.5] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [1.4, 0] }, { id: 56, x: 6, y: 2, children: [null, 5.5] }, 
         { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1.4, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0] }, 
         { id: 60, x: 2, y: 4, children: [1, null, 1] }, { id: 61, x: 3, y: 4, children: [null, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0, 1] }, { id: 64, x: 6, y: 4, children: [null, 0, 1] }, 
-        { id: 65, x: 1, y: 5, children: [1.4, null, 1] }, { id: 66, x: 3, y: 5 }, { id: 67, x: 4, y: 5 }, { id: 68, x: 5, y: 5 }, { id: 69, x: 6, y: 5 }, { id: 70, x: 7, y: 5 }, 
-        { id: 71, x: 0, y: 6, children: [null, null, 1.4] }, { id: 72, x: 2, y: 6 }, { id: 73, x: 4, y: 6 }, { id: 74, x: 5, y: 6 }, { id: 75, x: 6, y: 6 }, 
-        { id: 76, x: 1, y: 7, children: [null, 0] }, { id: 77, x: 3, y: 7 }, { id: 78, x: 5, y: 7 }, { id: 79, x: 7, y: 7 }, 
-        { id: 80, x: 1, y: 8, children: [null, 0] }, { id: 81, x: 2, y: 8 }, { id: 82, x: 3, y: 8 }, { id: 83, x: 4, y: 8 }, { id: 84, x: 6, y: 8 }, { id: 85, x: 7, y: 8 }, 
+        { id: 65, x: 1, y: 5, children: [1.4, null, 1.4] }, { id: 66, x: 3, y: 5, children: [1.4, null, 1] }, { id: 67, x: 4, y: 5, children: [null, 0, 1.4] }, { id: 68, x: 5, y: 5, children: [null, 0] }, { id: 69, x: 6, y: 5, children: [1.4, 0] }, { id: 70, x: 7, y: 5 }, 
+        { id: 71, x: 0, y: 6, children: [null, null, 1] }, { id: 72, x: 2, y: 6, children: [1, null, 1.4] }, { id: 73, x: 4, y: 6, children: [1.4, null, 1] }, { id: 74, x: 5, y: 6, children: [null, 0] }, { id: 75, x: 6, y: 6 }, 
+        { id: 76, x: 1, y: 7, children: [null, 0, 1.4] }, { id: 77, x: 3, y: 7, children: [1.4, 0, 1] }, { id: 78, x: 5, y: 7 }, { id: 79, x: 7, y: 7 }, 
+        { id: 80, x: 1, y: 8, children: [null, 0] }, { id: 81, x: 2, y: 8, children: [1.4] }, { id: 82, x: 3, y: 8 }, { id: 83, x: 4, y: 8 }, { id: 84, x: 6, y: 8 }, { id: 85, x: 7, y: 8 }, 
         { id: 86, x: 1, y: 9 }, { id: 87, x: 3, y: 9 }, { id: 88, x: 5, y: 9 }, { id: 89, x: 7, y: 9 }, 
     ],
     [TalentType.STUDY]: [
         { id: 0, x: 4, y: 0, children: [1, 0, 1] },
         { id: 1, x: 3, y: 1, children: [1, 0] }, { id: 2, x: 4, y: 1, children: [null, 0, 1.4] }, { id: 3, x: 5, y: 1, children: [null, 0, 1] },
-        { id: 4, x: 2, y: 2, children: [1.4, 4.3, 1.4] }, { id: 5, x: 3, y: 2, children: [null, 0, 1.4] }, { id: 6, x: 4, y: 2, children: [null, 0] }, { id: 7, x: 5, y: 2, children: [1.4, 0] }, { id: 8, x: 6, y: 2, children: [1.4, null, 1] },
+        { id: 4, x: 2, y: 2, children: [1.4, 5.5, 1.4] }, { id: 5, x: 3, y: 2, children: [null, 0, 1.4] }, { id: 6, x: 4, y: 2, children: [null, 0] }, { id: 7, x: 5, y: 2, children: [1.4, 0] }, { id: 8, x: 6, y: 2, children: [1.4, null, 1] },
         { id: 9, x: 1, y: 3, children: [1.4, 0, 1] }, { id: 10, x: 3, y: 3, children: [1, null, 1] }, { id: 11, x: 4, y: 3, children: [null, 0] }, { id: 12, x: 5, y: 3, children: [1, null, 1.4] }, { id: 13, x: 7, y: 3, children: [1.4, 0, 1.4] },
-        { id: 14, x: 0, y: 4, children: [null, 4.3, 1] }, { id: 15, x: 1, y: 4 }, { id: 16, x: 2, y: 4, children: [null, 0] }, { id: 17, x: 4, y: 4, children: [1.4, 0, 1] }, { id: 18, x: 6, y: 4, children: [null, 0, 1.4] }, { id: 19, x: 7, y: 4, children: [null, 0] }, { id: 20, x: 8, y: 4, children: [null, 4.3] },
+        { id: 14, x: 0, y: 4, children: [null, 5.5, 1] }, { id: 15, x: 1, y: 4 }, { id: 16, x: 2, y: 4, children: [null, 0] }, { id: 17, x: 4, y: 4, children: [1.4, 0, 1] }, { id: 18, x: 6, y: 4, children: [null, 0, 1.4] }, { id: 19, x: 7, y: 4, children: [null, 0] }, { id: 20, x: 8, y: 4, children: [null, 5.5] },
         { id: 21, x: 1, y: 5 }, { id: 22, x: 2, y: 5, children: [null, 0] }, { id: 23, x: 3, y: 5, children: [1, 0] }, { id: 24, x: 4, y: 5, children: [1, 0, 1.4] }, { id: 25, x: 5, y: 5, children: [null, 0] }, { id: 26, x: 6, y: 5, children: [1.4, 0] }, { id: 27, x: 7, y: 5, children: [1, null, 1] },
         { id: 28, x: 0, y: 6 }, { id: 29, x: 2, y: 6, children: [null, 0] }, { id: 30, x: 3, y: 6, children: [null, 0] }, { id: 31, x: 4, y: 6, children: [1.4, 0, 1.4] }, { id: 32, x: 5, y: 6, children: [null, 0] }, { id: 33, x: 6, y: 6, children: [null, 0] }, { id: 34, x: 8, y: 6 },
-        { id: 35, x: 2, y: 7, children: [null, 4.3, 1] }, { id: 36, x: 3, y: 7 }, { id: 37, x: 4, y: 7, children: [null, 0, 1] }, { id: 38, x: 5, y: 7 }, { id: 39, x: 6, y: 7, children: [1, 4.3] }, 
+        { id: 35, x: 2, y: 7, children: [null, 5.5, 1] }, { id: 36, x: 3, y: 7 }, { id: 37, x: 4, y: 7, children: [null, 0, 1] }, { id: 38, x: 5, y: 7 }, { id: 39, x: 6, y: 7, children: [1, 5.5] }, 
         { id: 40, x: 3, y: 8, children: [null, 0] }, { id: 41, x: 4, y: 8, children: [1.4, 0, 1.4] }, { id: 42, x: 5, y: 8, children: [null, 0, 1] },
         { id: 43, x: 2, y: 9 }, { id: 44, x: 3, y: 9 }, { id: 45, x: 4, y: 9 }, { id: 46, x: 5, y: 9 }, { id: 47, x: 6, y: 9 },
     ],
@@ -355,8 +355,8 @@ const Branches : React.FC<{ branches: (number | null)[] }> = ({ branches }) => {
                 magnitude !== null && 
                 (() => {
                     const degree = ((index - 1) * -45);
-                    const height = (SIZE / 2 + GAP) / Math.cos(degree) + (index === 1 ? 1 : -1) * (magnitude * 1);
-                    const left = - (Math.tan(degree) * (height / 2 - 0.4));
+                    const height = (SIZE / 2 + GAP) / Math.cos(degree) + (index === 1 ? 1 : -1) * (magnitude * 0.8);
+                    const left = - (Math.tan(degree) * (height / 2 - 0.6));
                     const top = SIZE / 2 + ((index - 1)  * Math.sin(degree)) - 0.2;
 
                     return (
@@ -440,7 +440,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
 
 const TreeVersion : React.FC = () => {
     return (
-        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.3.20240129</div>
+        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.4.20240131</div>
     )
 }
 

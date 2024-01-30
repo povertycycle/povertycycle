@@ -992,19 +992,19 @@
       "description": "A distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers who are collaboratively developing source code during software development."
     },
     "66": {
-      "name": "",
+      "name": "PostgreSQL",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "cast_time": "60s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "14",
+        "cooldown": "30s"
       },
       "rank": 0,
       "maxRank": 1,
       "experience": 0,
-      "icon": "",
-      "description": ""
+      "icon": "cust-postgresql",
+      "description": "A free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance that feature transactions with atomicity, consistency, isolation, durability (ACID) properties, automatically updatable views, materialized views, triggers, foreign keys, and stored procedures."
     },
     "67": {
       "name": "React",
@@ -1067,6 +1067,21 @@
       "description": ""
     },
     "71": {
+      "name": "Gitlab",
+      "ability": {
+        "cast_time": "5s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "5",
+        "cooldown": "1s"
+      },
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 0.5,
+      "icon": "cust-gitlab",
+      "description": "An open source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more."
+    },
+    "72": {
       "name": "Github",
       "ability": {
         "cast_time": "5s channel",
@@ -1081,50 +1096,35 @@
       "icon": "cust-github",
       "description": "A developer platform that allows developers to create, store, manage and share their code; it uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project."
     },
-    "72": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": ""
-    },
     "73": {
-      "name": "",
+      "name": "MongoDB",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "cast_time": "30s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "14",
+        "cooldown": "30s"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": ""
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 0.1,
+      "icon": "cust-mongodb",
+      "description": "A source-available, cross-platform, document-oriented database program, classified as a NoSQL database product that utilizes JSON-like documents with optional schemas."
     },
     "74": {
-      "name": "",
+      "name": "GraphQL",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "cast_time": "30s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "7",
+        "cooldown": "30s"
       },
       "rank": 0,
-      "maxRank": 1,
+      "maxRank": 5,
       "experience": 0,
-      "icon": "",
-      "description": ""
+      "icon": "cust-graphql",
+      "description": "an open-source data query and manipulation language for APIs and a query runtime engine that enables declarative data fetching where a client can specify exactly what data it needs from an API."
     },
     "75": {
       "name": "",
@@ -1142,34 +1142,34 @@
       "description": ""
     },
     "76": {
-      "name": "Gitlab",
-      "ability": {
-        "cast_time": "5s cast",
-        "active": true,
-        "resource": "Mana",
-        "cost": "5",
-        "cooldown": "1s"
-      },
-      "rank": 1,
-      "maxRank": 3,
-      "experience": 0.5,
-      "icon": "cust-gitlab",
-      "description": "An open source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more."
-    },
-    "77": {
-      "name": "",
+      "name": "Docker",
       "ability": {
         "cast_time": "",
         "active": false,
         "resource": "",
         "cost": "",
-        "cooldown": ""
+        "cooldown": "30s"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": ""
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.1,
+      "icon": "cust-docker",
+      "description": "A set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers."
+    },
+    "77": {
+      "name": "Google Cloud Platform",
+      "ability": {
+        "cast_time": "30s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "15",
+        "cooldown": "45s"
+      },
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 2,
+      "icon": "cust-gcp",
+      "description": "A suite of cloud computing services, offered by Google, that provides a series of modular cloud services including computing, data storage, data analytics, and machine learning, alongside a set of management tools."
     },
     "78": {
       "name": "",
@@ -1202,34 +1202,34 @@
       "description": ""
     },
     "80": {
-      "name": "Docker",
+      "name": "Ansible",
       "ability": {
         "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "30s"
-      },
-      "rank": 1,
-      "maxRank": 5,
-      "experience": 0.1,
-      "icon": "cust-docker",
-      "description": "A set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers."
-    },
-    "81": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
+        "active": true,
         "resource": "",
         "cost": "",
         "cooldown": ""
       },
       "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": ""
+      "maxRank": 3,
+      "experience": 0.1,
+      "icon": "cust-ansible",
+      "description": "An open source, command-line IT automation software application written in Python. It can configure systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more."
+    },
+    "81": {
+      "name": "Jenkins",
+      "ability": {
+        "cast_time": "30s channel",
+        "active": true,
+        "resource": "Mana",
+        "cost": "30",
+        "cooldown": "60s"
+      },
+      "rank": 0,
+      "maxRank": 3,
+      "experience": 0.1,
+      "icon": "cust-jenkins",
+      "description": "A self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software."
     },
     "82": {
       "name": "",
