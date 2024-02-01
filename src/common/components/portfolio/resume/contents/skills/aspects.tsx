@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-import { AspectColor, AspectColorTypes, AspectType, AspectsContext, TalentType } from "./constants";
+import { AspectColor, AspectColorTypes, AspectType, AspectsContext, SkillTab, TalentType } from "./constants";
 import { AspectArtsIcon, AspectGeneralIcon, AspectPhysiqueIcon, AspectScienceIcon } from "./aspect-icons";
 
 interface Aspect { 
@@ -53,11 +53,11 @@ const ASPECTS_COLORS : { [key in AspectColor] : AspectColorTypes } = {
 const AspectBanner : React.FC<{ aspect: AspectType }> = ({ aspect }) => {
     const aspectData = ASPECTS[aspect];
     const colors = ASPECTS_COLORS[aspectData.color];
-    const { setIsAspects, setAspect } = useContext(AspectsContext);
+    const { setActiveTab, setAspect } = useContext(AspectsContext);
     
     const setActive = () => {
         setAspect(aspect);
-        setIsAspects(false);
+        setActiveTab(SkillTab.TALENTS);
     }
 
     return (

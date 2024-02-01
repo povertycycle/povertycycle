@@ -49,14 +49,14 @@ const RESOURCE_COLORS : { [key in ResourceType] : string } = {
 const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
     [TalentType.ENGINEERING]: [
         { id: 48, x: 4, y: 0, children: [1.4, 0, 1] },
-        { id: 49, x: 3, y: 1, children: [1.4, 0] }, { id: 50, x: 4, y: 1, children: [null, 0] }, { id: 51, x: 5, y: 1, children: [null, 0, 1] }, 
-        { id: 52, x: 2, y: 2, children: [null, 5.5] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [1.4, 0] }, { id: 56, x: 6, y: 2, children: [null, 5.5] }, 
-        { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1.4, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0] }, 
-        { id: 60, x: 2, y: 4, children: [1, null, 1] }, { id: 61, x: 3, y: 4, children: [null, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0, 1] }, { id: 64, x: 6, y: 4, children: [null, 0, 1] }, 
-        { id: 65, x: 1, y: 5, children: [1.4, null, 1.4] }, { id: 66, x: 3, y: 5, children: [1.4, null, 1] }, { id: 67, x: 4, y: 5, children: [null, 0, 1.4] }, { id: 68, x: 5, y: 5, children: [null, 0] }, { id: 69, x: 6, y: 5, children: [1.4, 0] }, { id: 70, x: 7, y: 5 }, 
-        { id: 71, x: 0, y: 6, children: [null, null, 1] }, { id: 72, x: 2, y: 6, children: [1, null, 1.4] }, { id: 73, x: 4, y: 6, children: [1.4, null, 1] }, { id: 74, x: 5, y: 6, children: [null, 0] }, { id: 75, x: 6, y: 6 }, 
-        { id: 76, x: 1, y: 7, children: [null, 0, 1.4] }, { id: 77, x: 3, y: 7, children: [1.4, 0, 1] }, { id: 78, x: 5, y: 7 }, { id: 79, x: 7, y: 7 }, 
-        { id: 80, x: 1, y: 8, children: [null, 0] }, { id: 81, x: 2, y: 8, children: [1.4] }, { id: 82, x: 3, y: 8 }, { id: 83, x: 4, y: 8 }, { id: 84, x: 6, y: 8 }, { id: 85, x: 7, y: 8 }, 
+        { id: 49, x: 3, y: 1, children: [1.4, 0] }, { id: 50, x: 4, y: 1, children: [null, 0] }, { id: 51, x: 5, y: 1, children: [null, 0, 1.4] }, 
+        { id: 52, x: 2, y: 2, children: [null, 5.5] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [null, 0] }, { id: 56, x: 6, y: 2, children: [null, 5.5] }, 
+        { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0, 1.4] }, 
+        { id: 60, x: 2, y: 4, children: [1, null, 1.4] }, { id: 61, x: 3, y: 4, children: [null, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0] }, { id: 64, x: 6, y: 4, children: [1.4, 0, 1.4] }, 
+        { id: 65, x: 1, y: 5, children: [1.4, null, 1.4] }, { id: 66, x: 3, y: 5, children: [1.4, null, 1.4] }, { id: 67, x: 4, y: 5, children: [null, 0] }, { id: 68, x: 5, y: 5, children: [1.4, null, 1.4] }, { id: 69, x: 6, y: 5, children: [null, 0] }, { id: 70, x: 7, y: 5, children: [1.4, null, 1.4] }, 
+        { id: 71, x: 0, y: 6, children: [null, null, 1] }, { id: 72, x: 2, y: 6, children: [1, null, 1.4] }, { id: 73, x: 4, y: 6, children: [1.4, null, 1.4] }, { id: 74, x: 6, y: 6, children: [1.4, null, 1] }, { id: 75, x: 8, y: 6, children: [1] }, 
+        { id: 76, x: 1, y: 7, children: [null, 0, 1.4] }, { id: 77, x: 3, y: 7, children: [1.4, 0, 1.4] }, { id: 78, x: 5, y: 7, children: [1.4, null, 1.4] }, { id: 79, x: 7, y: 7, children: [1.4, 0] }, 
+        { id: 80, x: 1, y: 8, children: [null, 0] }, { id: 81, x: 2, y: 8, children: [1.4] }, { id: 82, x: 3, y: 8, children: [null, 0] }, { id: 83, x: 4, y: 8, children: [1.4, null, 1.4] }, { id: 84, x: 6, y: 8, children: [1.4, null, 1.4] }, { id: 85, x: 7, y: 8, children: [null, 0] }, 
         { id: 86, x: 1, y: 9 }, { id: 87, x: 3, y: 9 }, { id: 88, x: 5, y: 9 }, { id: 89, x: 7, y: 9 }, 
     ],
     [TalentType.STUDY]: [
@@ -227,8 +227,20 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected } : { id: nu
             <div className={`${active ? "h-full" : "h-0"} w-full px-8 overflow-hidden tracking-[1px]`}>
                 <div className="w-full h-full flex flex-col gap-2 justify-center py-4">
                     <div className="w-full flex gap-4">
-                        <div className={`${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"} ${talent.rank !== 0 ? `bg-aspect-green-darker border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} flex items-center justify-center font-normal z-[2] border-2 shadow-[inset_0_0_8px_black]`} style={{ height: `${SIZE}rem`, width: `${SIZE}rem`, fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
-                            { talent.icon.startsWith("ri") ? <i className={talent.icon} /> : <i className="ri-question-mark" /> }
+                        <div className={`${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"} ${talent.rank !== 0 ? `bg-aspect-green-darker` : "text-white/50 bg-sea-blue-gray"} flex items-center justify-center font-normal z-[2] shadow-[inset_0_0_8px_black]`} style={{ height: `${SIZE}rem`, width: `${SIZE}rem`, fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
+                            {
+                                talent.icon.startsWith("cust") ?
+                                <div className={`${talent.rank !== 0 ? `${CUSTOM_COLORS[talent.icon.replace("cust-", "")]} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
+                                    <CustomIcon icon={talent.icon.replace("cust-", "")} />
+                                </div> :
+                                <div className={`${talent.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
+                                    {
+                                        talent.icon.startsWith("ri") ? 
+                                        <i className={talent.icon} /> :
+                                        <i className="ri-question-mark" />
+                                    }
+                                </div>
+                            }
                         </div>
                         <div className="flex flex-col justify-center">
                             <div className="text-[1rem] ">Experience: {talent.experience} {talent.experience > 1 ? "years" : "year"}</div>

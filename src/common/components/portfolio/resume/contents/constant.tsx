@@ -1,1 +1,1 @@
-const PLAYTIME = 390;
+const PLAYTIME = 396;

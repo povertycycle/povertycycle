@@ -1,5 +1,11 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
+export enum SkillTab {
+    ASPECTS = "aspects",
+    TALENTS = "talents",
+    PATCH_NOTES = "patch-notes",
+}
+
 export enum AspectColor {
     GREEN = "green",
     BLUE = "blue",
@@ -63,13 +69,13 @@ export interface TalentIcon {
 }
 
 export const AspectsContext = createContext<{
-    isAspects: boolean,
-    setIsAspects: Dispatch<SetStateAction<boolean>>,
+    activeTab: SkillTab,
+    setActiveTab: Dispatch<SetStateAction<SkillTab>>,
     aspect: AspectType | undefined,
     setAspect: Dispatch<SetStateAction<AspectType | undefined>>,
 }>({
-    isAspects: true,
-    setIsAspects: (aspects: SetStateAction<boolean>) => {},
+    activeTab: SkillTab.ASPECTS,
+    setActiveTab: (aspects: SetStateAction<SkillTab>) => {},
     aspect: undefined,
     setAspect: (aspect: SetStateAction<AspectType | undefined>) => {},
 });
