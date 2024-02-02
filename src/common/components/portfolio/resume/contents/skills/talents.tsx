@@ -4,7 +4,7 @@ import talentData from "./talents.json";
 import styles from "./talents.module.scss";
 import overflow from "../animations.module.scss";
 import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentType, ViewMode } from "./constants";
-import { checkOverlap, getExperienceData } from "@/common/utils/math";
+import { checkOverlap, getAge, getExperienceData } from "@/common/utils/math";
 import { CustomIcon, CUSTOM_COLORS } from "./talent-icons";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
@@ -14,12 +14,11 @@ const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [ key: string ] : Talent | undefined };
 const MAX_WIDTH = 9;
 const MAX_HEIGHT = 10;
-const REMAINING_POINTS = Math.floor((new Date().getTime() - new Date(2023, 9, 2).getTime()) / (1000 * 60 * 60 * 24 * 365)) * 3;
 
 const BRANCHES : { [key in AspectType] : TalentType[] } = {
     [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.STUDY],
     [AspectType.ARTS]: [TalentType.FORM, TalentType.THEORY],
-    [AspectType.PHYSIQUE]: [TalentType.SPORT, TalentType.KNOWLEDGE],
+    [AspectType.PHYSIQUE]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
     [AspectType.GENERAL]: [TalentType.ESSENCE, TalentType.APPLICATION],
 }
 
@@ -50,14 +49,14 @@ const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
     [TalentType.ENGINEERING]: [
         { id: 48, x: 4, y: 0, children: [1.4, 0, 1] },
         { id: 49, x: 3, y: 1, children: [1.4, 0] }, { id: 50, x: 4, y: 1, children: [null, 0] }, { id: 51, x: 5, y: 1, children: [null, 0, 1.4] }, 
-        { id: 52, x: 2, y: 2, children: [null, 5.5] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [null, 0] }, { id: 56, x: 6, y: 2, children: [null, 5.5] }, 
-        { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0, 1.4] }, 
-        { id: 60, x: 2, y: 4, children: [1, null, 1.4] }, { id: 61, x: 3, y: 4, children: [null, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0] }, { id: 64, x: 6, y: 4, children: [1.4, 0, 1.4] }, 
-        { id: 65, x: 1, y: 5, children: [1.4, null, 1.4] }, { id: 66, x: 3, y: 5, children: [1.4, null, 1.4] }, { id: 67, x: 4, y: 5, children: [null, 0] }, { id: 68, x: 5, y: 5, children: [1.4, null, 1.4] }, { id: 69, x: 6, y: 5, children: [null, 0] }, { id: 70, x: 7, y: 5, children: [1.4, null, 1.4] }, 
-        { id: 71, x: 0, y: 6, children: [null, null, 1] }, { id: 72, x: 2, y: 6, children: [1, null, 1.4] }, { id: 73, x: 4, y: 6, children: [1.4, null, 1.4] }, { id: 74, x: 6, y: 6, children: [1.4, null, 1] }, { id: 75, x: 8, y: 6, children: [1] }, 
-        { id: 76, x: 1, y: 7, children: [null, 0, 1.4] }, { id: 77, x: 3, y: 7, children: [1.4, 0, 1.4] }, { id: 78, x: 5, y: 7, children: [1.4, null, 1.4] }, { id: 79, x: 7, y: 7, children: [1.4, 0] }, 
-        { id: 80, x: 1, y: 8, children: [null, 0] }, { id: 81, x: 2, y: 8, children: [1.4] }, { id: 82, x: 3, y: 8, children: [null, 0] }, { id: 83, x: 4, y: 8, children: [1.4, null, 1.4] }, { id: 84, x: 6, y: 8, children: [1.4, null, 1.4] }, { id: 85, x: 7, y: 8, children: [null, 0] }, 
-        { id: 86, x: 1, y: 9 }, { id: 87, x: 3, y: 9 }, { id: 88, x: 5, y: 9 }, { id: 89, x: 7, y: 9 }, 
+        { id: 52, x: 2, y: 2, children: [1.4, 5.5] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [null, 0] }, { id: 56, x: 6, y: 2, children: [null, 5.5, 1] }, 
+        { id: 92, x: 1, y: 3, children: [null, 5.5] }, { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0, 1.4] }, { id: 91, x: 7, y: 3, children: [null, 5.5]}, 
+        { id: 60, x: 2, y: 4, children: [1, 0] }, { id: 61, x: 3, y: 4, children: [1.4, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0] }, { id: 64, x: 6, y: 4, children: [1.4, 0, 1.4] }, 
+        { id: 65, x: 1, y: 5, children: [1.4, null, 1.4] }, { id: 66, x: 2, y: 5, children: [null, 0] }, { id: 67, x: 3, y: 5, children: [1.4, null, 1.4] }, { id: 68, x: 4, y: 5, children: [null, 0] }, { id: 69, x: 5, y: 5, children: [1.4, null, 1.4] }, { id: 70, x: 6, y: 5, children: [null, 0] }, { id: 71, x: 7, y: 5, children: [1.4, null, 1.4] }, 
+        { id: 72, x: 0, y: 6, children: [null, null, 1] }, { id: 73, x: 2, y: 6, children: [1, null, 1.4] }, { id: 74, x: 4, y: 6, children: [1.4, null, 1.4] }, { id: 75, x: 6, y: 6, children: [1.4, null, 1] }, { id: 76, x: 8, y: 6, children: [1] }, 
+        { id: 77, x: 1, y: 7, children: [null, 0, 1.4] }, { id: 78, x: 3, y: 7, children: [1.4, 0, 1.4] }, { id: 79, x: 5, y: 7, children: [1.4, null, 1.4] }, { id: 80, x: 7, y: 7, children: [1.4, 0] }, 
+        { id: 81, x: 1, y: 8, children: [null, 0] }, { id: 82, x: 2, y: 8, children: [1.4] }, { id: 83, x: 3, y: 8, children: [null, 0] }, { id: 84, x: 4, y: 8, children: [1.4, null, 1.4] }, { id: 85, x: 6, y: 8, children: [1.4, null, 1.4] }, { id: 86, x: 7, y: 8, children: [null, 0] }, 
+        { id: 87, x: 1, y: 9 }, { id: 88, x: 3, y: 9 }, { id: 89, x: 5, y: 9 }, { id: 90, x: 7, y: 9 }, 
     ],
     [TalentType.STUDY]: [
         { id: 0, x: 4, y: 0, children: [1, 0, 1] },
@@ -73,7 +72,7 @@ const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
     ],
     [TalentType.FORM]: [],
     [TalentType.THEORY]: [], // fine-arts", "music", "writings" "theme", "color", "structure" "documentation" "typography" "markup", "accessibility" "design-hierarchy" "uiux"
-    [TalentType.SPORT]: [], // "strength", "agility", "dexterity" endurance", "motor soccer 
+    [TalentType.ENTERTAINMENT]: [], // "strength", "agility", "dexterity" endurance", "motor soccer 
     [TalentType.KNOWLEDGE]: [],
     [TalentType.ESSENCE]: [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
     [TalentType.APPLICATION]: [],
@@ -127,6 +126,8 @@ const TalentContents : React.FC<{ category: TalentType, pos: number }> = ({ cate
 }
 
 const Navigator : React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatch<SetStateAction<ViewMode>> }> = ({ title, mode, setMode }) => {
+    const REMAINING_POINTS = getAge() * 3 - (TALENT_TREES[title].reduce((acc: number, item: TalentIcon) => ( acc += TALENTS[item.id]?.rank ?? 0 ), 0));
+
     return (
         <div className="z-[2] absolute left-0 top-0 p-4 flex flex-col gap-4">
             <div className="flex flex-col">
@@ -452,7 +453,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
 
 const TreeVersion : React.FC = () => {
     return (
-        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.4.20240131</div>
+        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.5.20240202</div>
     )
 }
 

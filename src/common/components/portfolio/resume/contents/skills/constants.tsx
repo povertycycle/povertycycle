@@ -25,14 +25,14 @@ export enum ResourceType {
 }
 
 export enum TalentType {
-    ENGINEERING = "engineering",
-    STUDY = "study",
-    FORM = "form",
-    THEORY = "theory",
-    SPORT = "sport",
-    KNOWLEDGE = "knowledge",
-    ESSENCE = "essence",
-    APPLICATION = "application",
+    ENGINEERING = "ENGINEERING",
+    STUDY = "STUDY",
+    FORM = "FORM",
+    THEORY = "THEORY",
+    ENTERTAINMENT = "ENTERTAINMENT",
+    KNOWLEDGE = "KNOWLEDGE",
+    ESSENCE = "ESSENCE",
+    APPLICATION = "APPLICATION",
 }
 
 export enum ViewMode {

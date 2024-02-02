@@ -6,12 +6,12 @@ import { TextStyleParser } from "@/common/utils/parser";
 type Notes = { version: string, changes: string[] }
 
 const PATCH_NOTES : Notes[] = [
-    { version: "1.0.5.20240202", changes: [`Fixed /b:${TalentType.ENGINEERING.toUpperCase()}/ skill talents.`] },
-    { version: "1.0.4.20240131", changes: [`Rearranged /b:${TalentType.ENGINEERING.toUpperCase()}/ skill talents for a more balanced flow.`] },
-    { version: "1.0.3.20240129", changes: [`Added /b:${TalentType.ENGINEERING.toUpperCase()}/ skill talents.`] },
-    { version: "1.0.2.20240124", changes: [`Added /b:${ViewMode.LIST.toUpperCase().replace("_", " ")}/ for skill talents.`] },
-    { version: "1.0.1.20240122", changes: [`Rearranged /b:${TalentType.STUDY.toUpperCase()}/ skill talents for a more balanced flow.`] },
-    { version: "1.0.0.20240120", changes: [`Added /b:${TalentType.STUDY.toUpperCase()}/ skill talents.`] },
+    { version: "1.0.5.20240202", changes: [`Balanced, fixed, and added some of the /b:${TalentType.ENGINEERING}/ skill talents.`] },
+    { version: "1.0.4.20240131", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ skill talents for a more balanced flow.`] },
+    { version: "1.0.3.20240129", changes: [`Added /b:${TalentType.ENGINEERING}/ skill talents.`] },
+    { version: "1.0.2.20240124", changes: [`Added /b:${ViewMode.LIST.replace("_", " ")}/ for skill talents.`] },
+    { version: "1.0.1.20240122", changes: [`Rearranged /b:${TalentType.STUDY}/ skill talents for a more balanced flow.`] },
+    { version: "1.0.0.20240120", changes: [`Added /b:${TalentType.STUDY}/ skill talents.`] },
 ]
 
 const PatchNotesDisplay : React.FC = () => {

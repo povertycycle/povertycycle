@@ -730,8 +730,8 @@
         "cost": "1",
         "cooldown": "2s"
       },
-      "rank": 3,
-      "maxRank": 4,
+      "rank": 8,
+      "maxRank": 10,
       "experience": 6,
       "icon": "cust-html5",
       "description": "The standard markup language for documents designed to be displayed in a web browser; it defines the content and structure of web content."
@@ -760,8 +760,8 @@
         "cost": "",
         "cooldown": ""
       },
-      "rank": 5,
-      "maxRank": 6,
+      "rank": 8,
+      "maxRank": 10,
       "experience": 6,
       "icon": "cust-javascript",
       "description": "A high-level programming language often just-in-time compiled language that conforms to the ECMAScript standard."
@@ -775,8 +775,8 @@
         "cost": "",
         "cooldown": ""
       },
-      "rank": 2,
-      "maxRank": 5,
+      "rank": 4,
+      "maxRank": 7,
       "experience": 2,
       "icon": "cust-python",
       "description": "A high-level, general-purpose, dynamically typed, and garbage-collected programming language that supports multiple programming paradigms, including structured object-oriented and functional programming."
@@ -820,8 +820,8 @@
         "cost": "1",
         "cooldown": "3s"
       },
-      "rank": 3,
-      "maxRank": 5,
+      "rank": 4,
+      "maxRank": 6,
       "experience": 3,
       "icon": "cust-jquery",
       "description": "A JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animations, and Ajax."
@@ -850,8 +850,8 @@
         "cost": "5",
         "cooldown": "14s"
       },
-      "rank": 1,
-      "maxRank": 5,
+      "rank": 2,
+      "maxRank": 6,
       "experience": 1,
       "icon": "cust-flask",
       "description": "A micro web framework written in Python that does not require particular tools or libraries."
@@ -865,9 +865,9 @@
         "cost": "",
         "cooldown": ""
       },
-      "rank": 3,
-      "maxRank": 4,
-      "experience": 0,
+      "rank": 4,
+      "maxRank": 5,
+      "experience": 1,
       "icon": "cust-sass-scss",
       "description": "A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS); SCSS is a newer syntax of the Sass preprocessor scripting language."
     },
@@ -880,8 +880,8 @@
         "cost": "",
         "cooldown": "30s"
       },
-      "rank": 2,
-      "maxRank": 5,
+      "rank": 1,
+      "maxRank": 3,
       "experience": 1.5,
       "icon": "cust-node-js",
       "description": "A cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more."
@@ -895,8 +895,8 @@
         "cost": "5",
         "cooldown": "7s"
       },
-      "rank": 2,
-      "maxRank": 5,
+      "rank": 4,
+      "maxRank": 7,
       "experience": 1,
       "icon": "cust-java",
       "description": "A high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible."
@@ -910,8 +910,8 @@
         "cost": "14",
         "cooldown": "7s"
       },
-      "rank": 2,
-      "maxRank": 5,
+      "rank": 4,
+      "maxRank": 7,
       "experience": 2,
       "icon": "cust-mysql",
       "description": "An open-source relational database management system (RDBMS)."
@@ -925,8 +925,8 @@
         "cost": "",
         "cooldown": "3s"
       },
-      "rank": 4,
-      "maxRank": 5,
+      "rank": 6,
+      "maxRank": 7,
       "experience": 6,
       "icon": "cust-react",
       "description": "A free and open-source front-end JavaScript library for building user interfaces based on components."
@@ -941,7 +941,7 @@
         "cooldown": "7s"
       },
       "rank": 0,
-      "maxRank": 5,
+      "maxRank": 7,
       "experience": 0,
       "icon": "cust-vue-js",
       "description": "An open-source model-view-viewmodel front end JavaScript library for building user interfaces and single-page applications."
@@ -956,7 +956,7 @@
         "cooldown": "7s"
       },
       "rank": 0,
-      "maxRank": 5,
+      "maxRank": 7,
       "experience": 0,
       "icon": "cust-angular",
       "description": "A TypeScript-based, free and open-source single-page web application framework."
@@ -971,7 +971,7 @@
         "cooldown": "30s"
       },
       "rank": 1,
-      "maxRank": 3,
+      "maxRank": 4,
       "experience": 1,
       "icon": "cust-spring",
       "description": "An application framework and inversion of control container for the Java platform; Spring Boot Extension is Spring's convention-over-configuration solution intended to aid in creating production-grade Spring applications with minimal amounts of configuration."
@@ -1007,6 +1007,21 @@
       "description": "A set of backend cloud computing services and application development platforms provided by Google."
     },
     "67": {
+      "name": "Next.JS",
+      "ability": {
+        "cast_time": "14s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "14s",
+        "cooldown": "30s"
+      },
+      "rank": 2,
+      "maxRank": 5,
+      "experience": 1,
+      "icon": "cust-nextjs",
+      "description": "An open-source web development framework created by the private company Vercel providing React-based web applications with server-side rendering and static website generation."
+    },
+    "68": {
       "name": "Typescript",
       "ability": {
         "cast_time": "",
@@ -1015,13 +1030,13 @@
         "cost": "",
         "cooldown": ""
       },
-      "rank": 4,
+      "rank": 3,
       "maxRank": 5,
       "experience": 1,
       "icon": "cust-typescript",
       "description": "A free and open-source high-level programming language developed by Microsoft that adds static typing with optional type annotations to JavaScript."
     },
-    "68": {
+    "69": {
       "name": "PostgreSQL",
       "ability": {
         "cast_time": "60s channel",
@@ -1031,12 +1046,12 @@
         "cooldown": "30s"
       },
       "rank": 0,
-      "maxRank": 1,
+      "maxRank": 3,
       "experience": 0,
       "icon": "cust-postgresql",
       "description": "A free and open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance that feature transactions with atomicity, consistency, isolation, durability (ACID) properties, automatically updatable views, materialized views, triggers, foreign keys, and stored procedures."
     },
-    "69": {
+    "70": {
       "name": "Django",
       "ability": {
         "cast_time": "30s channel",
@@ -1051,7 +1066,7 @@
       "icon": "cust-django",
       "description": "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
     },
-    "70": {
+    "71": {
       "name": "Go",
       "ability": {
         "cast_time": "7s cast",
@@ -1060,13 +1075,13 @@
         "cost": "5",
         "cooldown": "7s"
       },
-      "rank": 2,
-      "maxRank": 5,
+      "rank": 4,
+      "maxRank": 7,
       "experience": 2,
       "icon": "cust-go",
       "description": "A statically typed, compiled high-level programming language that has memory safety, garbage collection, structural typing, and CSP-style concurrency."
     },
-    "71": {
+    "72": {
       "name": "Gitlab",
       "ability": {
         "cast_time": "5s cast",
@@ -1081,7 +1096,7 @@
       "icon": "cust-gitlab",
       "description": "An open source end-to-end software development platform with built-in version control, issue tracking, code review, CI/CD, and more."
     },
-    "72": {
+    "73": {
       "name": "Github",
       "ability": {
         "cast_time": "5s channel",
@@ -1096,7 +1111,7 @@
       "icon": "cust-github",
       "description": "A developer platform that allows developers to create, store, manage and share their code; it uses Git software, providing the distributed version control of Git plus access control, bug tracking, software feature requests, task management, continuous integration, and wikis for every project."
     },
-    "73": {
+    "74": {
       "name": "Jest",
       "ability": {
         "cast_time": "120s channel",
@@ -1111,7 +1126,7 @@
       "icon": "cust-jest",
       "description": "A JavaScript testing framework designed to ensure correctness of any JavaScript codebase that allows you to write tests with an approachable, familiar and feature-rich API, giving results quickly."
     },
-    "74": {
+    "75": {
       "name": "GraphQL",
       "ability": {
         "cast_time": "30s channel",
@@ -1126,7 +1141,7 @@
       "icon": "cust-graphql",
       "description": "an open-source data query and manipulation language for APIs and a query runtime engine that enables declarative data fetching where a client can specify exactly what data it needs from an API."
     },
-    "75": {
+    "76": {
       "name": "MongoDB",
       "ability": {
         "cast_time": "30s channel",
@@ -1141,7 +1156,7 @@
       "icon": "cust-mongodb",
       "description": "A source-available, cross-platform, document-oriented database program, classified as a NoSQL database product that utilizes JSON-like documents with optional schemas."
     },
-    "76": {
+    "77": {
       "name": "Docker",
       "ability": {
         "cast_time": "",
@@ -1156,7 +1171,7 @@
       "icon": "cust-docker",
       "description": "A set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers."
     },
-    "77": {
+    "78": {
       "name": "Google Cloud Platform",
       "ability": {
         "cast_time": "30s cast",
@@ -1171,7 +1186,7 @@
       "icon": "cust-gcp",
       "description": "A suite of cloud computing services, offered by Google, that provides a series of modular cloud services including computing, data storage, data analytics, and machine learning, alongside a set of management tools."
     },
-    "78": {
+    "79": {
       "name": "AWS",
       "ability": {
         "cast_time": "30s cast",
@@ -1186,7 +1201,7 @@
       "icon": "cust-aws",
       "description": "A suite of cloud computing services, offered by Amazon, that provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered, pay-as-you-go basis."
     },
-    "79": {
+    "80": {
       "name": "C",
       "ability": {
         "cast_time": "",
@@ -1201,7 +1216,7 @@
       "icon": "cust-c",
       "description": "a procedural, general-purpose, highly flexible, and powerful computer programming language used to develop operating systems, databases, applications, etc; considered as the mother language of all modern programming languages."
     },
-    "80": {
+    "81": {
       "name": "Ansible",
       "ability": {
         "cast_time": "",
@@ -1210,13 +1225,13 @@
         "cost": "",
         "cooldown": ""
       },
-      "rank": 0,
-      "maxRank": 3,
+      "rank": 1,
+      "maxRank": 4,
       "experience": 0.1,
       "icon": "cust-ansible",
       "description": "An open source, command-line IT automation software application written in Python. It can configure systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more."
     },
-    "81": {
+    "82": {
       "name": "Jenkins",
       "ability": {
         "cast_time": "30s channel",
@@ -1225,13 +1240,13 @@
         "cost": "30",
         "cooldown": "60s"
       },
-      "rank": 0,
+      "rank": 1,
       "maxRank": 3,
       "experience": 0.1,
       "icon": "cust-jenkins",
       "description": "A self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software."
     },
-    "82": {
+    "83": {
       "name": "Datadog",
       "ability": {
         "cast_time": "30s cast",
@@ -1246,7 +1261,7 @@
       "icon": "cust-datadog",
       "description": "An observability service for cloud-scale applications, providing monitoring of servers, databases, tools, and services, through a SaaS-based data analytics platform; the mascot is a dog named Bits."
     },
-    "83": {
+    "84": {
       "name": "C#",
       "ability": {
         "cast_time": "90s cast",
@@ -1261,7 +1276,7 @@
       "icon": "cust-csharp",
       "description": "A general-purpose high-level programming language that can be used to create a number of different programs and applications: mobile apps, desktop apps, cloud-based services, websites, enterprise software and games."
     },
-    "84": {
+    "85": {
       "name": "C++",
       "ability": {
         "cast_time": "60s cast",
@@ -1276,8 +1291,8 @@
       "icon": "cust-c++",
       "description": "A high-level, general-purpose programming language that has object-oriented, generic, and functional features, in addition to facilities for low-level memory manipulation."
     },
-    "85": {
-      "name": "py",
+    "86": {
+      "name": "PyTorch",
       "ability": {
         "cast_time": "180s cast",
         "active": true,
@@ -1286,12 +1301,12 @@
         "cooldown": "180s"
       },
       "rank": 0,
-      "maxRank": 1,
+      "maxRank": 5,
       "experience": 0,
       "icon": "cust-pytorch",
       "description": "A machine learning framework based on the Torch library, used for applications such as computer vision and natural language processing."
     },
-    "86": {
+    "87": {
       "name": "Kubernetes",
       "ability": {
         "cast_time": "365s cast",
@@ -1306,7 +1321,7 @@
       "icon": "cust-kubernetes",
       "description": "An open-source container orchestration system for automating software deployment, scaling, and management."
     },
-    "87": {
+    "88": {
       "name": "ASP.NET Core",
       "ability": {
         "cast_time": "60s cast",
@@ -1321,7 +1336,7 @@
       "icon": "cust-asp-net-core",
       "description": "An open-source modular web-application framework: a redesign of ASP.NET that unites the previously separate ASP.NET MVC and ASP.NET Web API into a single programming model."
     },
-    "88": {
+    "89": {
       "name": "Unity",
       "ability": {
         "cast_time": "365s channel",
@@ -1336,7 +1351,7 @@
       "icon": "cust-unity",
       "description": "A cross-platform game engine used to create three-dimensional (3D) and two-dimensional (2D) games, as well as interactive simulations and other experiences."
     },
-    "89": {
+    "90": {
       "name": "TensorFlow",
       "ability": {
         "cast_time": "365s cast",
@@ -1350,6 +1365,36 @@
       "experience": 0,
       "icon": "cust-tensorflow",
       "description": "A free and open-source software library for machine learning and artificial intelligence."
+    },
+    "91": {
+      "name": "Rust",
+      "ability": {
+        "cast_time": "",
+        "active": false,
+        "resource": "",
+        "cost": "",
+        "cooldown": "60s"
+      },
+      "rank": 1,
+      "maxRank": 4,
+      "experience": 0.5,
+      "icon": "cust-rust",
+      "description": "A multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency."
+    },
+    "92": {
+      "name": "Symfony",
+      "ability": {
+        "cast_time": "60s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": "14",
+        "cooldown": "60s"
+      },
+      "rank": 0,
+      "maxRank": 5,
+      "experience": 0,
+      "icon": "cust-symfony",
+      "description": "A free and open-source PHP web application framework and a set of reusable PHP component libraries."
     }
   }
 }
