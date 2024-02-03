@@ -35,6 +35,7 @@ const JOURNALS : Journal = {
             description: [
                 "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
                 "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS; the repository stores no .jpg or .png files. Most of the icons in the talent trees are from remixicon, fontawesome, and vectorlogo.",
+                "All the contents were dynamically rendered from a list of arrays and objects of the contents; all components were rendered through loops and recursion while the contents were passed as lists."
             ]
         }
     },
@@ -46,7 +47,7 @@ const JOURNALS : Journal = {
             description: [
                 "Version 2.0 (Next Goal):",
                 "- New design for the website and its contents.",
-                "Version 1.3.7 - Current:",
+                "Version 1.3.8 - Current:",
                 "- New website made with React and NextJS.",
                 "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations. Prototyping skills section.",
                 "Version 1.0:",

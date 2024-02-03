@@ -59,6 +59,9 @@ export interface Talent {
     experience: number,
     icon: string,
     description: string,
+    x: number,
+    y: number,
+    children?: string[]
 }
 
 export interface TalentIcon {

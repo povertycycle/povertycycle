@@ -5,7 +5,8 @@ import { TextStyleParser } from "@/common/utils/parser";
 
 type Notes = { version: string, changes: string[] }
 
-const PATCH_NOTES : Notes[] = [
+export const PATCH_NOTES : Notes[] = [
+    { version: "1.0.6.20240203", changes: [`Arrows drawn using canvas instead of divs.`] },
     { version: "1.0.5.20240202", changes: [`Balanced, fixed, and added some of the /b:${TalentType.ENGINEERING}/ skill talents.`] },
     { version: "1.0.4.20240131", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ skill talents for a more balanced flow.`] },
     { version: "1.0.3.20240129", changes: [`Added /b:${TalentType.ENGINEERING}/ skill talents.`] },

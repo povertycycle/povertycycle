@@ -6,6 +6,7 @@ import overflow from "../animations.module.scss";
 import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentType, ViewMode } from "./constants";
 import { checkOverlap, getAge, getExperienceData } from "@/common/utils/math";
 import { CustomIcon, CUSTOM_COLORS } from "./talent-icons";
+import { PATCH_NOTES } from "./patch-notes";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
 const { TITLE, POINTS } = { TITLE: 2.5, POINTS: 1.25 };
@@ -14,6 +15,9 @@ const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [ key: string ] : Talent | undefined };
 const MAX_WIDTH = 9;
 const MAX_HEIGHT = 10;
+const TALENTS_WIDTH = (MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP);
+const TALENTS_HEIGHT = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
+const DULL_GOLD = "#b19d62";
 
 const BRANCHES : { [key in AspectType] : TalentType[] } = {
     [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.STUDY],
@@ -45,32 +49,10 @@ const RESOURCE_COLORS : { [key in ResourceType] : string } = {
     [ResourceType.MANA]: "text-mana-cost",
 }
 
-const TALENT_TREES : { [key in TalentType] : TalentIcon[] } = {
-    [TalentType.ENGINEERING]: [
-        { id: 48, x: 4, y: 0, children: [1.4, 0, 1] },
-        { id: 49, x: 3, y: 1, children: [1.4, 0] }, { id: 50, x: 4, y: 1, children: [null, 0] }, { id: 51, x: 5, y: 1, children: [null, 0, 1.4] }, 
-        { id: 52, x: 2, y: 2, children: [1.4, 5.5] }, { id: 53, x: 3, y: 2, children: [null, 0] }, { id: 54, x: 4, y: 2, children: [null, 0] }, { id: 55, x: 5, y: 2, children: [null, 0] }, { id: 56, x: 6, y: 2, children: [null, 5.5, 1] }, 
-        { id: 92, x: 1, y: 3, children: [null, 5.5] }, { id: 57, x: 3, y: 3, children: [1.4, 0] }, { id: 58, x: 4, y: 3, children: [1, 0, 1] }, { id: 59, x: 5, y: 3, children: [null, 0, 1.4] }, { id: 91, x: 7, y: 3, children: [null, 5.5]}, 
-        { id: 60, x: 2, y: 4, children: [1, 0] }, { id: 61, x: 3, y: 4, children: [1.4, 0, 1] }, { id: 62, x: 4, y: 4, children: [null, 0] }, { id: 63, x: 5, y: 4, children: [1, 0] }, { id: 64, x: 6, y: 4, children: [1.4, 0, 1.4] }, 
-        { id: 65, x: 1, y: 5, children: [1.4, null, 1.4] }, { id: 66, x: 2, y: 5, children: [null, 0] }, { id: 67, x: 3, y: 5, children: [1.4, null, 1.4] }, { id: 68, x: 4, y: 5, children: [null, 0] }, { id: 69, x: 5, y: 5, children: [1.4, null, 1.4] }, { id: 70, x: 6, y: 5, children: [null, 0] }, { id: 71, x: 7, y: 5, children: [1.4, null, 1.4] }, 
-        { id: 72, x: 0, y: 6, children: [null, null, 1] }, { id: 73, x: 2, y: 6, children: [1, null, 1.4] }, { id: 74, x: 4, y: 6, children: [1.4, null, 1.4] }, { id: 75, x: 6, y: 6, children: [1.4, null, 1] }, { id: 76, x: 8, y: 6, children: [1] }, 
-        { id: 77, x: 1, y: 7, children: [null, 0, 1.4] }, { id: 78, x: 3, y: 7, children: [1.4, 0, 1.4] }, { id: 79, x: 5, y: 7, children: [1.4, null, 1.4] }, { id: 80, x: 7, y: 7, children: [1.4, 0] }, 
-        { id: 81, x: 1, y: 8, children: [null, 0] }, { id: 82, x: 2, y: 8, children: [1.4] }, { id: 83, x: 3, y: 8, children: [null, 0] }, { id: 84, x: 4, y: 8, children: [1.4, null, 1.4] }, { id: 85, x: 6, y: 8, children: [1.4, null, 1.4] }, { id: 86, x: 7, y: 8, children: [null, 0] }, 
-        { id: 87, x: 1, y: 9 }, { id: 88, x: 3, y: 9 }, { id: 89, x: 5, y: 9 }, { id: 90, x: 7, y: 9 }, 
-    ],
-    [TalentType.STUDY]: [
-        { id: 0, x: 4, y: 0, children: [1, 0, 1] },
-        { id: 1, x: 3, y: 1, children: [1, 0] }, { id: 2, x: 4, y: 1, children: [null, 0, 1.4] }, { id: 3, x: 5, y: 1, children: [null, 0, 1] },
-        { id: 4, x: 2, y: 2, children: [1.4, 5.5, 1.4] }, { id: 5, x: 3, y: 2, children: [null, 0, 1.4] }, { id: 6, x: 4, y: 2, children: [null, 0] }, { id: 7, x: 5, y: 2, children: [1.4, 0] }, { id: 8, x: 6, y: 2, children: [1.4, null, 1] },
-        { id: 9, x: 1, y: 3, children: [1.4, 0, 1] }, { id: 10, x: 3, y: 3, children: [1, null, 1] }, { id: 11, x: 4, y: 3, children: [null, 0] }, { id: 12, x: 5, y: 3, children: [1, null, 1.4] }, { id: 13, x: 7, y: 3, children: [1.4, 0, 1.4] },
-        { id: 14, x: 0, y: 4, children: [null, 5.5, 1] }, { id: 15, x: 1, y: 4 }, { id: 16, x: 2, y: 4, children: [null, 0] }, { id: 17, x: 4, y: 4, children: [1.4, 0, 1] }, { id: 18, x: 6, y: 4, children: [null, 0, 1.4] }, { id: 19, x: 7, y: 4, children: [null, 0] }, { id: 20, x: 8, y: 4, children: [null, 5.5] },
-        { id: 21, x: 1, y: 5 }, { id: 22, x: 2, y: 5, children: [null, 0] }, { id: 23, x: 3, y: 5, children: [1, 0] }, { id: 24, x: 4, y: 5, children: [1, 0, 1.4] }, { id: 25, x: 5, y: 5, children: [null, 0] }, { id: 26, x: 6, y: 5, children: [1.4, 0] }, { id: 27, x: 7, y: 5, children: [1, null, 1] },
-        { id: 28, x: 0, y: 6 }, { id: 29, x: 2, y: 6, children: [null, 0] }, { id: 30, x: 3, y: 6, children: [null, 0] }, { id: 31, x: 4, y: 6, children: [1.4, 0, 1.4] }, { id: 32, x: 5, y: 6, children: [null, 0] }, { id: 33, x: 6, y: 6, children: [null, 0] }, { id: 34, x: 8, y: 6 },
-        { id: 35, x: 2, y: 7, children: [null, 5.5, 1] }, { id: 36, x: 3, y: 7 }, { id: 37, x: 4, y: 7, children: [null, 0, 1] }, { id: 38, x: 5, y: 7 }, { id: 39, x: 6, y: 7, children: [1, 5.5] }, 
-        { id: 40, x: 3, y: 8, children: [null, 0] }, { id: 41, x: 4, y: 8, children: [1.4, 0, 1.4] }, { id: 42, x: 5, y: 8, children: [null, 0, 1] },
-        { id: 43, x: 2, y: 9 }, { id: 44, x: 3, y: 9 }, { id: 45, x: 4, y: 9 }, { id: 46, x: 5, y: 9 }, { id: 47, x: 6, y: 9 },
-    ],
-    [TalentType.FORM]: [],
+const TALENT_TREES : { [key in TalentType] : number[] } = {
+    [TalentType.ENGINEERING]: Array.from({ length: 93 - 48 }, (_, index) => index + 48),
+    [TalentType.STUDY]: Array.from({ length: 48 }, (_, index) => index),
+    [TalentType.FORM]: Array.from({ length: 143 - 93 }, (_, index) => index + 93),
     [TalentType.THEORY]: [], // fine-arts", "music", "writings" "theme", "color", "structure" "documentation" "typography" "markup", "accessibility" "design-hierarchy" "uiux"
     [TalentType.ENTERTAINMENT]: [], // "strength", "agility", "dexterity" endurance", "motor soccer 
     [TalentType.KNOWLEDGE]: [],
@@ -101,13 +83,18 @@ const TalentsDisplay : React.FC = () => {
 
 const TalentContents : React.FC<{ category: TalentType, pos: number }> = ({ category, pos }) => {
     const [mode, setMode] = useState<ViewMode>(ViewMode.TREE);
-    const width = (MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP);
-    const height = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
-    
+    const GRID_MODE = false;
     return (
         <div className="flex flex-col p-[1.25rem] items-center justify-center w-full text-[1.25rem] relative select-none" style={{ zIndex: 2 - pos }}>
             <Navigator title={category} mode={mode} setMode={setMode} />
-            <div className={`z-[1] flex flex-col relative items-center`} style={{ width: `${width}rem`, height: `${height}rem` }}>
+            <div className={`z-[1] flex flex-col relative items-center`} style={{ width: `${TALENTS_WIDTH}rem`, height: `${TALENTS_HEIGHT}rem` }}>
+                { GRID_MODE && <div className="w-full h-full flex justify-between absolute top-0 gap-[1.5rem]">{
+                    Array.from({ length: 9 }).map((_, index) => (
+                        <div key={index} className="w-full h-full border-x-2 bg-green-100/50 border-green-200">
+                            
+                            </div>
+                    ))
+                }</div> }
                 {
                     (() => {
                         switch (mode) {
@@ -126,7 +113,7 @@ const TalentContents : React.FC<{ category: TalentType, pos: number }> = ({ cate
 }
 
 const Navigator : React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatch<SetStateAction<ViewMode>> }> = ({ title, mode, setMode }) => {
-    const REMAINING_POINTS = getAge() * 3 - (TALENT_TREES[title].reduce((acc: number, item: TalentIcon) => ( acc += TALENTS[item.id]?.rank ?? 0 ), 0));
+    const REMAINING_POINTS = getAge() * 3 - (TALENT_TREES[title].reduce((acc: number, id: number) => ( acc += TALENTS[id]?.rank ?? 0 ), 0));
 
     return (
         <div className="z-[2] absolute left-0 top-0 p-4 flex flex-col gap-4">
@@ -154,8 +141,8 @@ const Navigator : React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatc
 type TierList = { [key: string]: number[] }
 
 const ListView : React.FC<{ category: TalentType }> = ({ category }) => {
-    const tiers = TALENT_TREES[category].reduce((acc: TierList, item: TalentIcon) => {
-        const { y, id } = item;
+    const tiers = TALENT_TREES[category].reduce((acc: TierList, id: number) => {
+        const y = TALENTS[id]?.y ?? 0;
         if (!acc[y]) acc[y] = [];
         acc[y].push(id);
         return acc;
@@ -301,18 +288,21 @@ const TalentTree = memo(({ category, setDetails } : { category: TalentType, setD
     return (
         tree.length === 0 ? 
         <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
-        (
-            tree.map((icon: TalentIcon, index: number) => {
-                const talentData = TALENTS[icon.id];
-                return (
-                    talentData && <Talent key={index} icon={icon} talent={talentData} color={color} setDetails={setDetails} /> 
-                )
-            })
-        )
+        <>
+            {
+                tree.map((id: number, index: number) => {
+                    const talentData = TALENTS[id];
+                    return (
+                        talentData && <Talent key={index} talent={talentData} color={color} setDetails={setDetails} /> 
+                    )
+                })
+            }
+            <Branches tree={tree} />
+        </>
     )    
 });
 
-const Talent : React.FC<{ icon: TalentIcon, talent: Talent, color: string, setDetails: Dispatch<SetStateAction<DetailsPayload | null>> }> = ({ icon, talent, color, setDetails }) => {
+const Talent : React.FC<{ talent: Talent, color: string, setDetails: Dispatch<SetStateAction<DetailsPayload | null>> }> = ({ talent, color, setDetails }) => {
     const ref = useRef<HTMLDivElement>(null);
     const enter = () => {
         if (ref.current) {
@@ -331,8 +321,8 @@ const Talent : React.FC<{ icon: TalentIcon, talent: Talent, color: string, setDe
 
     return (
         <div className="absolute" style={{ 
-            left: `${icon.x * (SIZE + GAP)}rem`,
-            top: `${icon.y * (SIZE + GAP)}rem`,
+            left: `${talent.x * (SIZE + GAP)}rem`,
+            top: `${talent.y * (SIZE + GAP)}rem`,
             width: `${SIZE}rem`, 
             height: `${SIZE}rem`
         }}>
@@ -355,34 +345,59 @@ const Talent : React.FC<{ icon: TalentIcon, talent: Talent, color: string, setDe
                         {talent.rank}/{talent.maxRank}
                     </div>
                 </div>
-                { icon.children && <Branches branches={icon.children} /> }
             </div>
         </div> 
     )
 }
 
-const Branches : React.FC<{ branches: (number | null)[] }> = ({ branches }) => {
-    return (
-        branches.map((magnitude: number | null, index: number)=> {
-            return (
-                magnitude !== null && 
-                (() => {
-                    const degree = ((index - 1) * -45);
-                    const height = (SIZE / 2 + GAP) / Math.cos(degree) + (index === 1 ? 1 : -1) * (magnitude * 0.8);
-                    const left = - (Math.tan(degree) * (height / 2 - 0.6));
-                    const top = SIZE / 2 + ((index - 1)  * Math.sin(degree)) - 0.2;
+const Branches : React.FC<{ tree: number[] }> = ({ tree }) => {
+    const canvasRef = useRef<HTMLCanvasElement>(null);
 
-                    return (
-                        <div key={index} className={`z-[1] absolute w-[2px] bg-gold-desaturated ${styles.talentArrow}`} style={{
-                            transform: `rotate(${degree}deg)`,
-                            height: `${height}rem`,
-                            marginLeft: `${left}rem`,
-                            top: `${top}rem`,
-                        }} />
-                    );
-                })()
-            )
+    useEffect(() => {
+        if (!canvasRef.current) return;
+        const context = canvasRef.current.getContext('2d');
+        if (!context) return;
+        context.clearRect(0, 0, TALENTS_WIDTH * 16, TALENTS_HEIGHT * 16);
+
+        const drawArrow = (x1: number, y1: number, x2: number, y2: number) => {
+            context.beginPath();
+            context.moveTo(x1, y1);
+            context.lineTo(x2, y2);
+            context.strokeStyle = DULL_GOLD;
+            context.lineWidth = 2;
+            context.stroke();
+      
+            const angle = Math.atan2(y2 - y1, x2 - x1);
+            const arrowSize = 10;
+            context.beginPath();
+            context.moveTo(x2 - arrowSize * Math.cos(angle - Math.PI / 6), y2 - arrowSize * Math.sin(angle - Math.PI / 6));
+            context.lineTo(x2, y2);
+            context.lineTo(x2 - arrowSize * Math.cos(angle + Math.PI / 6), y2 - arrowSize * Math.sin(angle + Math.PI / 6));
+            context.fillStyle = DULL_GOLD;
+            context.fill();
+        }
+        
+        tree.forEach((id: number) => {
+            const talent = TALENTS[id];
+
+            talent?.children?.forEach((child: string) => {
+                const childTalent = TALENTS[child];
+                if (!childTalent) return;
+                const dir = Math.abs(talent.x - childTalent.x) < 1  ? 0 : (talent.x - childTalent.x > 0 ? 1 : -1);
+                const passivePad = dir !== 0 && !childTalent.ability.active ? SIZE / 2 * (1 - Math.sin(45 * Math.PI / 180)) : 0;
+                drawArrow(
+                    (talent.x * (SIZE + GAP) + (SIZE / 2)) * 16, 
+                    (talent.y * (SIZE + GAP) + (SIZE / 2)) * 16, 
+                    (childTalent.x * (SIZE + GAP) + (SIZE / 2) + dir * (SIZE / 2 - passivePad)) * 16, 
+                    (childTalent.y * (SIZE + GAP) + passivePad) * 16
+                );
+            })
+            
         })
+    }, [])
+
+    return (
+        <canvas ref={canvasRef} width={TALENTS_WIDTH * 16} height={TALENTS_HEIGHT * 16} />
     )
 }
 
@@ -453,7 +468,7 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
 
 const TreeVersion : React.FC = () => {
     return (
-        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v1.0.5.20240202</div>
+        <div className="absolute bottom-0 right-0 font-century-gothic tracking-[1px] text-[1.25rem]">Tree v{PATCH_NOTES[0].version}</div>
     )
 }
 
