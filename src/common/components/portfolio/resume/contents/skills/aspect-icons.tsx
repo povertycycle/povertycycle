@@ -70,7 +70,7 @@ const Weight : React.FC<{ left: boolean }> = ({ left }) => {
     return left ? divs : divs.reverse();
 }
 
-export const AspectPhysiqueIcon : React.FC = () => {
+export const AspectSportsIcon : React.FC = () => {
     return (
         <div className="h-full w-full relative flex items-center">
             <div className="w-[32%] h-full flex items-center">

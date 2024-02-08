@@ -1,4 +1,5 @@
 import { createContext, Dispatch, SetStateAction } from "react";
+import { ResourceType } from "../constant";
 
 export enum SkillTab {
     ASPECTS = "aspects",
@@ -16,12 +17,8 @@ export enum AspectColor {
 export enum AspectType {
     SCIENCE = "science",
     ARTS = "arts",
-    PHYSIQUE = "physique",
+    SPORTS = "sports",
     GENERAL = "general",
-}
-
-export enum ResourceType {
-    MANA = "Mana",
 }
 
 export enum TalentType {
@@ -45,15 +42,18 @@ export interface AspectColorTypes {
     title: string,
 }
 
+export interface TalentAbility { 
+    active: boolean, 
+    resource?: ResourceType,
+    cost?: number, 
+    cooldown?: number, 
+    cast_time?: string,
+    proc_chance?: number,
+}
+
 export interface Talent {
     name: string,
-    ability: { 
-        active: boolean, 
-        resource: ResourceType,
-        cost: string, 
-        cooldown: string, 
-        cast_time: string 
-    },
+    ability: TalentAbility,
     rank: number,
     maxRank: number,
     experience: number,

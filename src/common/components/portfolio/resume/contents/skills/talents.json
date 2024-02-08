@@ -7,8 +7,8 @@
         "cast_time": "7s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "7",
-        "cooldown": "14s"
+        "cost": 7,
+        "cooldown": 14
       },
       "rank": 3,
       "maxRank": 5,
@@ -22,11 +22,7 @@
     "1": {
       "name": "Discrete Structure",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 2,
       "maxRank": 3,
@@ -40,11 +36,7 @@
     "2": {
       "name": "Algorithms",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 2,
       "maxRank": 4,
@@ -58,11 +50,8 @@
     "3": {
       "name": "Computer Systems",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "30s"
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 3,
@@ -76,11 +65,7 @@
     "4": {
       "name": "Performance",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 5,
@@ -94,11 +79,7 @@
     "5": {
       "name": "Design Patterns",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 4,
@@ -112,11 +93,7 @@
     "6": {
       "name": "Efficiency",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 2,
       "maxRank": 4,
@@ -133,8 +110,8 @@
         "cast_time": "1s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "1",
-        "cooldown": "1s"
+        "cost": 1,
+        "cooldown": 1
       },
       "rank": 2,
       "maxRank": 5,
@@ -148,11 +125,7 @@
     "8": {
       "name": "Cleanliness",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 4,
@@ -161,7 +134,7 @@
       "description": "The quality of readability and maintainability of the source code in a software project.",
       "x": 6,
       "y": 2,
-      "children": ["12", "13"]
+      "children": ["12", "13", "18"]
     },
     "9": {
       "name": "Optimization",
@@ -169,8 +142,8 @@
         "cast_time": "3s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "5s"
+        "cost": 5,
+        "cooldown": 5
       },
       "rank": 2,
       "maxRank": 4,
@@ -187,8 +160,8 @@
         "cast_time": "2s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "3s"
+        "cost": 5,
+        "cooldown": 3
       },
       "rank": 2,
       "maxRank": 6,
@@ -205,8 +178,8 @@
         "cast_time": "7s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "14s"
+        "cost": 5,
+        "cooldown": 14
       },
       "rank": 2,
       "maxRank": 5,
@@ -223,8 +196,8 @@
         "cast_time": "3s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "3",
-        "cooldown": "14s"
+        "cost": 3,
+        "cooldown": 14
       },
       "rank": 1,
       "maxRank": 3,
@@ -238,11 +211,7 @@
     "13": {
       "name": "Maintainability",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 5,
@@ -259,8 +228,8 @@
         "cast_time": "3s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "3",
-        "cooldown": "1s"
+        "cost": 3,
+        "cooldown": 1
       },
       "rank": 3,
       "maxRank": 5,
@@ -274,11 +243,7 @@
     "15": {
       "name": "Debugging",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 5,
       "maxRank": 10,
@@ -286,16 +251,13 @@
       "icon": "ri-bug-line",
       "description": "The process of finding and resolving bugs\u2014defects or problems that prevent correct operations\u2014within computer programs, software, or systems.",
       "x": 1,
-      "y": 4
+      "y": 4,
+      "children": ["21"]
     },
     "16": {
       "name": "Responsiveness",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 4,
       "maxRank": 5,
@@ -309,11 +271,8 @@
     "17": {
       "name": "Software Architecture",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "45s"
+        "cooldown": 45
       },
       "rank": 3,
       "maxRank": 5,
@@ -330,8 +289,8 @@
         "cast_time": "21s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "21",
-        "cooldown": "45s"
+        "cost": 21,
+        "cooldown": 45
       },
       "rank": 1,
       "maxRank": 4,
@@ -340,7 +299,7 @@
       "description": "A technique of programming a script or a batch processing that allows repetitive tasks to save time, reduce effort, and perform complex and tedious operations.",
       "x": 6,
       "y": 4,
-      "children": ["26", "27"]
+      "children": ["26"]
     },
     "19": {
       "name": "Modular Programming",
@@ -348,8 +307,8 @@
         "cast_time": "7s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "1s"
+        "cost": 14,
+        "cooldown": 1
       },
       "rank": 3,
       "maxRank": 5,
@@ -366,8 +325,8 @@
         "cast_time": "1s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "1",
-        "cooldown": "90s"
+        "cost": 1,
+        "cooldown": 90
       },
       "rank": 1,
       "maxRank": 2,
@@ -376,16 +335,13 @@
       "description": "The practice of tracking and managing changes to computer programs and software code.",
       "x": 8,
       "y": 4,
-      "children": ["34"]
+      "children": ["27", "34"]
     },
     "21": {
       "name": "Monitoring",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "30s"
+        "cooldown": 30
       },
       "rank": 2,
       "maxRank": 4,
@@ -393,16 +349,13 @@
       "icon": "ri-computer-line",
       "description": "The process of observing and collecting data from software applications, systems, or networks to ensure their proper functioning, performance, and security.",
       "x": 1,
-      "y": 5
+      "y": 5,
+      "children": ["28", "29"]
     },
     "22": {
       "name": "Scalability",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 2,
       "maxRank": 5,
@@ -411,7 +364,7 @@
       "description": "A software development practice towards a system's ability to increase in performance and decrease in cost with its changes in its application and system processing demands.",
       "x": 2,
       "y": 5,
-      "children": ["29"]
+      "children": ["29", "30"]
     },
     "23": {
       "name": "Networking",
@@ -419,8 +372,8 @@
         "cast_time": "7s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "7s"
+        "cost": 14,
+        "cooldown": 7
       },
       "rank": 1,
       "maxRank": 5,
@@ -429,16 +382,13 @@
       "description": "A software development technique of writing programs or processes that can communicate with other programs or processes across a network.",
       "x": 3,
       "y": 5,
-      "children": ["29", "30"]
+      "children": ["30"]
     },
     "24": {
       "name": "Cloud Computing",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "90s"
+        "cooldown": 90
       },
       "rank": 1,
       "maxRank": 10,
@@ -452,11 +402,7 @@
     "25": {
       "name": "Systems Design",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 10,
@@ -470,11 +416,8 @@
     "26": {
       "name": "Scripting",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "7s"
+        "cooldown": 7
       },
       "rank": 1,
       "maxRank": 3,
@@ -491,8 +434,8 @@
         "cast_time": "14s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "7",
-        "cooldown": "30s"
+        "cost": 7,
+        "cooldown": 30
       },
       "rank": 3,
       "maxRank": 5,
@@ -509,8 +452,8 @@
         "cast_time": "14s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "30s"
+        "cost": 30,
+        "cooldown": 30
       },
       "rank": 3,
       "maxRank": 5,
@@ -523,29 +466,22 @@
     "29": {
       "name": "Data Handling",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 4,
       "experience": 6,
       "icon": "ri-database-line",
       "description": "Techniques of recording, collecting, and representing data that is presented into valuable insights or actionable information.",
-      "x": 2,
+      "x": 1,
       "y": 6,
       "children": ["35"]
     },
     "30": {
       "name": "Software Security",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "14s"
+        "cooldown": 14
       },
       "rank": 1,
       "maxRank": 5,
@@ -562,8 +498,8 @@
         "cast_time": "30s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "365",
-        "cooldown": "7s"
+        "cost": 365,
+        "cooldown": 7
       },
       "rank": 3,
       "maxRank": 5,
@@ -580,8 +516,8 @@
         "cast_time": "120s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "180",
-        "cooldown": "240s"
+        "cost": 180,
+        "cooldown": 240
       },
       "rank": 0,
       "maxRank": 5,
@@ -595,29 +531,21 @@
     "33": {
       "name": "Usability",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 2,
       "maxRank": 3,
       "experience": 6,
       "icon": "ri-hand",
       "description": "A programming technique that allows a software or code to be used by specified consumers with effectiveness, efficiency, and satisfaction in a quantified context of its use.",
-      "x": 6,
+      "x": 7,
       "y": 6,
       "children": ["39"]
     },
     "34": {
       "name": "CI/CD",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 5,
@@ -630,11 +558,7 @@
     "35": {
       "name": "Big Data",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 1,
       "maxRank": 5,
@@ -651,8 +575,8 @@
         "cast_time": "365s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "30s"
+        "cost": 30,
+        "cooldown": 30
       },
       "rank": 0,
       "maxRank": 2,
@@ -665,11 +589,7 @@
     "37": {
       "name": "Computer Graphics",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 1,
       "maxRank": 5,
@@ -686,8 +606,8 @@
         "cast_time": "7s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "30s"
+        "cost": 30,
+        "cooldown": 30
       },
       "rank": 0,
       "maxRank": 10,
@@ -703,8 +623,8 @@
         "cast_time": "365s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "365",
-        "cooldown": "365s"
+        "cost": 365,
+        "cooldown": 365
       },
       "rank": 0,
       "maxRank": 1,
@@ -718,11 +638,8 @@
     "40": {
       "name": "Artificial Intelligence",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "120s"
+        "cooldown": 120
       },
       "rank": 0,
       "maxRank": 3,
@@ -736,11 +653,8 @@
     "41": {
       "name": "Game Design",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "365s"
+        "cooldown": 365
       },
       "rank": 1,
       "maxRank": 5,
@@ -754,11 +668,7 @@
     "42": {
       "name": "Computer Vision",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 1,
       "maxRank": 5,
@@ -767,16 +677,12 @@
       "description": "The methods for acquiring, processing, analyzing, and understanding digital images along with the extraction of high-dimensional data from the real world in order to produce numerical or symbolic information.",
       "x": 5,
       "y": 8,
-      "children": ["46", "47"]
+      "children": ["46"]
     },
     "43": {
       "name": "Data Science",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 6,
@@ -789,11 +695,9 @@
     "44": {
       "name": "Deep Learning",
       "ability": {
-        "cast_time": "",
         "active": true,
-        "resource": "",
-        "cost": "1 Mana",
-        "cooldown": ""
+        "cost": 1,
+        "resource": "Mana"
       },
       "rank": 0,
       "maxRank": 3,
@@ -806,11 +710,7 @@
     "45": {
       "name": "Simulation",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 1,
       "maxRank": 10,
@@ -826,8 +726,8 @@
         "cast_time": "60s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "60s"
+        "cost": 30,
+        "cooldown": 60
       },
       "rank": 0,
       "maxRank": 3,
@@ -840,11 +740,8 @@
     "47": {
       "name": "Advanced Topics",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "365s"
+        "cooldown": 365
       },
       "rank": 0,
       "maxRank": 10,
@@ -860,8 +757,8 @@
         "cast_time": "1s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "1",
-        "cooldown": "2s"
+        "cost": 1,
+        "cooldown": 2
       },
       "rank": 8,
       "maxRank": 10,
@@ -878,8 +775,8 @@
         "cast_time": "3s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "7s"
+        "cost": 5,
+        "cooldown": 7
       },
       "rank": 1,
       "maxRank": 3,
@@ -893,11 +790,7 @@
     "50": {
       "name": "Javascript",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 8,
       "maxRank": 10,
@@ -911,14 +804,10 @@
     "51": {
       "name": "Python",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 4,
-      "maxRank": 7,
+      "rank": 3,
+      "maxRank": 5,
       "experience": 2,
       "icon": "cust-python",
       "description": "A high-level, general-purpose, dynamically typed, and garbage-collected programming language that supports multiple programming paradigms, including structured object-oriented and functional programming.",
@@ -932,26 +821,22 @@
         "cast_time": "30s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "30s"
+        "cost": 30,
+        "cooldown": 30
       },
       "rank": 0,
       "maxRank": 5,
       "experience": 0,
       "icon": "cust-laravel",
       "description": "A free and open-source PHP web framework intended for the development of web applications following the model-view-controller (MVC) architectural pattern, based on Symfony.",
-      "x": 2,
+      "x": 1,
       "y": 2,
       "children": ["92"]
     },
     "53": {
       "name": "CSS",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 4,
       "maxRank": 5,
@@ -960,7 +845,7 @@
       "description": "A style sheet language used for specifying the presentation and styling of a document written in a markup language such as HTML or XML.",
       "x": 3,
       "y": 2,
-      "children": ["57"]
+      "children": ["57", "93"]
     },
     "54": {
       "name": "JQuery",
@@ -968,8 +853,8 @@
         "cast_time": "14s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "1",
-        "cooldown": "3s"
+        "cost": 1,
+        "cooldown": 3
       },
       "rank": 4,
       "maxRank": 6,
@@ -983,11 +868,7 @@
     "55": {
       "name": "Ruby",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 1,
       "maxRank": 3,
@@ -996,7 +877,7 @@
       "description": "A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.",
       "x": 5,
       "y": 2,
-      "children": ["59"]
+      "children": ["59", "94"]
     },
     "56": {
       "name": "Flask",
@@ -1004,26 +885,22 @@
         "cast_time": "5s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "14s"
+        "cost": 5,
+        "cooldown": 14
       },
-      "rank": 2,
-      "maxRank": 6,
+      "rank": 1,
+      "maxRank": 3,
       "experience": 1,
       "icon": "cust-flask",
       "description": "A micro web framework written in Python that does not require particular tools or libraries.",
-      "x": 6,
+      "x": 7,
       "y": 2,
       "children": ["91"]
     },
     "57": {
       "name": "Sass/SCSS",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 4,
       "maxRank": 5,
@@ -1037,11 +914,8 @@
     "58": {
       "name": "Node.js",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "30s"
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 3,
@@ -1058,8 +932,8 @@
         "cast_time": "14s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "7s"
+        "cost": 5,
+        "cooldown": 7
       },
       "rank": 4,
       "maxRank": 7,
@@ -1076,11 +950,11 @@
         "cast_time": "14s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "7s"
+        "cost": 14,
+        "cooldown": 7
       },
-      "rank": 4,
-      "maxRank": 7,
+      "rank": 3,
+      "maxRank": 5,
       "experience": 2,
       "icon": "cust-mysql",
       "description": "An open-source relational database management system (RDBMS).",
@@ -1091,11 +965,8 @@
     "61": {
       "name": "React",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "3s"
+        "cooldown": 3
       },
       "rank": 6,
       "maxRank": 7,
@@ -1109,11 +980,8 @@
     "62": {
       "name": "Vue.js",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "7s"
+        "cooldown": 7
       },
       "rank": 0,
       "maxRank": 7,
@@ -1127,11 +995,8 @@
     "63": {
       "name": "Angular 2+",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "7s"
+        "cooldown": 7
       },
       "rank": 0,
       "maxRank": 7,
@@ -1148,8 +1013,8 @@
         "cast_time": "30s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "30s"
+        "cost": 14,
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 4,
@@ -1163,11 +1028,7 @@
     "65": {
       "name": "Git",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 5,
@@ -1184,8 +1045,8 @@
         "cast_time": "3s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "7s"
+        "cost": 5,
+        "cooldown": 7
       },
       "rank": 1,
       "maxRank": 2,
@@ -1202,8 +1063,8 @@
         "cast_time": "14s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14s",
-        "cooldown": "30s"
+        "cost": 14,
+        "cooldown": 30
       },
       "rank": 2,
       "maxRank": 5,
@@ -1217,11 +1078,7 @@
     "68": {
       "name": "Typescript",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 5,
@@ -1238,8 +1095,8 @@
         "cast_time": "60s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "30s"
+        "cost": 14,
+        "cooldown": 30
       },
       "rank": 0,
       "maxRank": 3,
@@ -1256,8 +1113,8 @@
         "cast_time": "30s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "60s"
+        "cost": 30,
+        "cooldown": 60
       },
       "rank": 0,
       "maxRank": 3,
@@ -1274,8 +1131,8 @@
         "cast_time": "7s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "7s"
+        "cost": 5,
+        "cooldown": 7
       },
       "rank": 4,
       "maxRank": 7,
@@ -1292,8 +1149,8 @@
         "cast_time": "5s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "1s"
+        "cost": 5,
+        "cooldown": 1
       },
       "rank": 1,
       "maxRank": 3,
@@ -1310,8 +1167,8 @@
         "cast_time": "5s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "5",
-        "cooldown": "2s"
+        "cost": 5,
+        "cooldown": 2
       },
       "rank": 3,
       "maxRank": 5,
@@ -1328,8 +1185,8 @@
         "cast_time": "120s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "60",
-        "cooldown": "180s"
+        "cost": 60,
+        "cooldown": 180
       },
       "rank": 1,
       "maxRank": 5,
@@ -1346,8 +1203,8 @@
         "cast_time": "30s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "7",
-        "cooldown": "30s"
+        "cost": 7,
+        "cooldown": 30
       },
       "rank": 0,
       "maxRank": 5,
@@ -1364,8 +1221,8 @@
         "cast_time": "30s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "30s"
+        "cost": 14,
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 3,
@@ -1379,11 +1236,8 @@
     "77": {
       "name": "Docker",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "30s"
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 5,
@@ -1400,8 +1254,8 @@
         "cast_time": "30s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "15",
-        "cooldown": "45s"
+        "cost": 15,
+        "cooldown": 45
       },
       "rank": 1,
       "maxRank": 3,
@@ -1418,8 +1272,8 @@
         "cast_time": "30s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "15",
-        "cooldown": "45s"
+        "cost": 15,
+        "cooldown": 45
       },
       "rank": 1,
       "maxRank": 5,
@@ -1433,11 +1287,7 @@
     "80": {
       "name": "C",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 3,
       "maxRank": 10,
@@ -1451,11 +1301,7 @@
     "81": {
       "name": "Ansible",
       "ability": {
-        "cast_time": "",
-        "active": true,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true
       },
       "rank": 1,
       "maxRank": 4,
@@ -1472,8 +1318,8 @@
         "cast_time": "30s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "60s"
+        "cost": 30,
+        "cooldown": 60
       },
       "rank": 1,
       "maxRank": 3,
@@ -1490,8 +1336,8 @@
         "cast_time": "30s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "30s"
+        "cost": 14,
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 2,
@@ -1508,8 +1354,8 @@
         "cast_time": "90s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "30s"
+        "cost": 14,
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 7,
@@ -1526,8 +1372,8 @@
         "cast_time": "60s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "30",
-        "cooldown": "30s"
+        "cost": 30,
+        "cooldown": 30
       },
       "rank": 1,
       "maxRank": 10,
@@ -1544,8 +1390,8 @@
         "cast_time": "180s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "180",
-        "cooldown": "180s"
+        "cost": 180,
+        "cooldown": 180
       },
       "rank": 0,
       "maxRank": 5,
@@ -1562,8 +1408,8 @@
         "cast_time": "365s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "365",
-        "cooldown": "365s"
+        "cost": 365,
+        "cooldown": 365
       },
       "rank": 0,
       "maxRank": 3,
@@ -1579,8 +1425,8 @@
         "cast_time": "60s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "45",
-        "cooldown": "30s"
+        "cost": 45,
+        "cooldown": 30
       },
       "rank": 0,
       "maxRank": 3,
@@ -1596,8 +1442,8 @@
         "cast_time": "365s channel",
         "active": true,
         "resource": "Mana",
-        "cost": "365",
-        "cooldown": "365s"
+        "cost": 365,
+        "cooldown": 365
       },
       "rank": 1,
       "maxRank": 10,
@@ -1613,8 +1459,8 @@
         "cast_time": "365s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "365",
-        "cooldown": "365s"
+        "cost": 365,
+        "cooldown": 365
       },
       "rank": 0,
       "maxRank": 3,
@@ -1627,11 +1473,8 @@
     "91": {
       "name": "Rust",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": "60s"
+        "cooldown": 60
       },
       "rank": 1,
       "maxRank": 4,
@@ -1648,8 +1491,8 @@
         "cast_time": "60s cast",
         "active": true,
         "resource": "Mana",
-        "cost": "14",
-        "cooldown": "60s"
+        "cost": 14,
+        "cooldown": 60
       },
       "rank": 0,
       "maxRank": 5,
@@ -1661,643 +1504,984 @@
       "children": ["65"]
     },
     "93": {
-      "name": "",
+      "name": "TailwindCSS",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
+      "rank": 2,
+      "maxRank": 3,
+      "experience": 1,
+      "icon": "cust-tailwind",
+      "description": "An open source CSS framework containing a list of utility CSS classes that can be used to style each element by mixing and matching.",
       "x": 2,
-      "y": 0,
-      "children": ["95", "96", "97"]
+      "y": 3
     },
     "94": {
-      "name": "",
+      "name": "OCaml",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "cast_time": "30s cast",
+        "active": true,
+        "resource": "Mana",
+        "cost": 3,
+        "cooldown": 30
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 0.3,
+      "icon": "cust-ocaml",
+      "description": "A general-purpose, high-level, multi-paradigm programming language which extends the Caml dialect of ML with object-oriented features.",
       "x": 6,
+      "y": 3
+    },
+    "95": {
+      "name": "Shapes",
+      "ability": {
+        "active": false
+      },
+      "rank": 1,
+      "maxRank": 2,
+      "experience": 22,
+      "icon": "ri-shapes-line",
+      "description": "Understanding the concept of artwork created through lines or by other shapes such as triangles, circles, and squares; the building blocks of visual arts.",
+      "x": 2,
       "y": 0,
       "children": ["97", "98", "99"]
     },
-    "95": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 1,
-      "y": 1,
-      "children": ["100", "101"]
-    },
     "96": {
-      "name": "",
+      "name": "Notation",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 2,
-      "y": 1,
-      "children": ["101"]
+      "rank": 1,
+      "maxRank": 2,
+      "experience": 22,
+      "icon": "ri-font-size",
+      "description": "Understanding the system of graphics or symbols, characters and abbreviated expressions used to represent words, sounds, pitches, rhythms, or other elements in a standardized and communicable form.",
+      "x": 6,
+      "y": 0,
+      "children": ["99", "100", "101"]
     },
     "97": {
-      "name": "",
+      "name": "Perspective",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "cast_time": "3s channel",
+        "active": true,
+        "resource": "Flair",
+        "cost": 3,
+        "cooldown": 7
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 4,
+      "rank": 2,
+      "maxRank": 3,
+      "experience": 13,
+      "icon": "ri-box-3-line",
+      "description": "The technique to create an impression of space, depth and scale in an artwork.",
+      "x": 1,
       "y": 1,
-      "children": ["101", "102", "103"]
+      "children": ["102", "103"]
     },
     "98": {
-      "name": "",
+      "name": "Structure",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "proc_chance": 5
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 6,
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 10,
+      "icon": "ri-dashboard-fill",
+      "description": "The technique of arranging the underlying framework that gives form and coherence to the artwork.",
+      "x": 2,
       "y": 1,
       "children": ["103"]
     },
     "99": {
-      "name": "",
+      "name": "Color",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "1s cast",
+        "resource": "Flair",
+        "cost": 14,
+        "cooldown": 14,
+        "proc_chance": 5
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 7,
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 1,
+      "icon": "ri-palette-line",
+      "description": "The technique of adding an element such as hues and tints to convey emotion and mood within an artwork, or in the musical concept: the richness, texture, and tonal qualities that contribute to the overall auditory experience.",
+      "x": 4,
       "y": 1,
-      "children": ["103", "104"]
+      "children": ["103", "104", "105"]
     },
     "100": {
-      "name": "",
+      "name": "Tone",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "30s cast",
+        "cost": 30,
+        "resource": "Flair",
+        "cooldown": 365,
+        "proc_chance": 1
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 0,
-      "y": 2,
+      "rank": 2,
+      "maxRank": 10,
+      "experience": 13,
+      "icon": "ri-music-line",
+      "description": "The technique of applying a board concept of duration, pitch, intensity, and timbre; in visual art tone refers to the to the value or character of color.",
+      "x": 6,
+      "y": 1,
       "children": ["105"]
     },
     "101": {
-      "name": "",
+      "name": "Tempo",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 2,
-      "y": 2,
+      "rank": 1,
+      "maxRank": 3,
+      "experience": 1,
+      "icon": "ri-timer-line",
+      "description": "The technique of utilizing the different speed or pace of a given composition.",
+      "x": 7,
+      "y": 1,
       "children": ["105", "106"]
     },
     "102": {
-      "name": "",
+      "name": "Proportion",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 4,
+      "rank": 3,
+      "maxRank": 10,
+      "experience": 13,
+      "icon": "ri-picture-in-picture-line",
+      "description": "The technique of giving dimensions to a composition; it is related to the relationships between height, width and depth of an artwork.",
+      "x": 1,
       "y": 2,
-      "children": ["106", "107", "108"]
+      "children": ["107"]
     },
     "103": {
-      "name": "",
+      "name": "Texture",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "14s cast",
+        "cooldown": 30,
+        "cost": 30,
+        "resource": "Flair"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 6,
+      "rank": 2,
+      "maxRank": 8,
+      "experience": 8,
+      "icon": "ri-mist-fill",
+      "description": "The technique of applying the perceived surface quality to a work of art; in musical terms, it is how different layers of a piece of music are combined to produce the overall sound.",
+      "x": 2,
       "y": 2,
-      "children": ["108", "109"]
+      "children": ["107", "108"]
     },
     "104": {
-      "name": "",
+      "name": "Harmony",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "proc_chance": 5,
+        "cooldown": 30
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 8,
+      "rank": 2,
+      "maxRank": 7,
+      "experience": 1,
+      "icon": "ri-color-filter-line",
+      "description": "The technique of using of colours, shapes, and other elements to create a pleasing or balanced effect.",
+      "x": 4,
       "y": 2,
-      "children": ["109"]
+      "children": ["108", "109", "110"]
     },
     "105": {
-      "name": "",
+      "name": "Dynamics",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "3 cast",
+        "cooldown": 7,
+        "cost": 30,
+        "resource": "Flair",
+        "proc_chance": 10
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 1,
-      "y": 3,
-      "children": ["110", "111", "112"]
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 8,
+      "icon": "ri-blaze-line",
+      "description": "The technique to keep the artwork captivating and thrilling while avoiding predictability by adding movement and energy; in music, it is the variation in loudness between notes or phrases.",
+      "x": 6,
+      "y": 2,
+      "children": ["110", "111"]
     },
     "106": {
-      "name": "",
+      "name": "Rhythm",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 3,
-      "y": 3,
-      "children": ["118"]
+      "rank": 1,
+      "maxRank": 4,
+      "experience": 8,
+      "icon": "ri-rhythm-line",
+      "description": "The technique of implementing the timing of musical sounds and silences that occur over time, or the steps of a dance, or the meter of spoken language and poetry.",
+      "x": 7,
+      "y": 2,
+      "children": ["111"]
     },
     "107": {
-      "name": "",
+      "name": "Observation",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "proc_chance": 35
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 4,
+      "rank": 3,
+      "maxRank": 5,
+      "experience": 22,
+      "icon": "ri-eye-line",
+      "description": "Concept of learning by looking at a subject and then making a representation of that subject through an art medium.",
+      "x": 1,
       "y": 3,
-      "children": ["113"]
+      "children": ["112", "113", "114"]
     },
     "108": {
-      "name": "",
+      "name": "Expression",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "1s cast",
+        "cooldown": 14,
+        "cost": 60,
+        "resource": "Flair",
+        "proc_chance": 10
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 5,
+      "rank": 4,
+      "maxRank": 7,
+      "experience": 22,
+      "icon": "ri-user-smile-line",
+      "description": "Concept of bringing an idea, feeling, and emotion to life through the use of basic art techniques.",
+      "x": 3,
       "y": 3,
-      "children": ["119"]
+      "children": ["120"]
     },
     "109": {
-      "name": "",
+      "name": "Composition",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "cooldown": 7,
+        "proc_chance": 10
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 7,
+      "rank": 3,
+      "maxRank": 7,
+      "experience": 8,
+      "icon": "ri-contrast-line",
+      "description": "Concept of combining and arranging different elements of an artwork to convey specific stories or meaning within an image.",
+      "x": 4,
       "y": 3,
-      "children": ["114", "115", "116"]
+      "children": ["115"]
     },
     "110": {
-      "name": "",
+      "name": "Intention",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "2s cast",
+        "cooldown": 7,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 1
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 0,
-      "y": 4,
-      "children": ["117"]
+      "rank": 5,
+      "maxRank": 7,
+      "experience": 13,
+      "icon": "ri-lightbulb-line",
+      "description": "The concept of adding a purpose or motivation to an artwork for it to be considered meaningful, thought-provoking, or impactful.",
+      "x": 5,
+      "y": 3,
+      "children": ["121"]
     },
     "111": {
-      "name": "",
+      "name": "Articulation",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 1,
-      "y": 4,
-      "children": ["117"]
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 1,
+      "icon": "ri-voiceprint-line",
+      "description": "The concept of structuring an artwork's clarity, precision, and effectiveness by determining the length of its sound and the shape of its attack and decay.",
+      "x": 7,
+      "y": 3,
+      "children": ["116", "117", "118"]
     },
     "112": {
-      "name": "",
+      "name": "Motion",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "14s cast",
+        "cooldown": 7,
+        "cost": 5,
+        "resource": "Flair"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 2,
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 3,
+      "icon": "ri-windy-line",
+      "description": "The study of movement and action in an artwork and the effects of those qualities.",
+      "x": 0,
       "y": 4,
-      "children": ["117", "121"]
+      "children": ["119"]
     },
     "113": {
-      "name": "",
+      "name": "Material",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 4,
+      "rank": 1,
+      "maxRank": 4,
+      "experience": 6,
+      "icon": "ri-t-shirt-air-line",
+      "description": "The study of a substance or mixture that constitutes an object.",
+      "x": 1,
       "y": 4,
-      "children": ["123"]
+      "children": ["119"]
     },
     "114": {
-      "name": "",
+      "name": "Anatomy",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 6,
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 3,
+      "icon": "ri-user-3-line",
+      "description": "The study of the structure of organisms and their parts.",
+      "x": 2,
       "y": 4,
-      "children": ["120", "125"]
+      "children": ["119", "123"]
     },
     "115": {
-      "name": "",
+      "name": "Narrative",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "365s channel",
+        "cooldown": 30,
+        "cost": 60,
+        "resource": "Flair",
+        "proc_chance": 35
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 7,
+      "rank": 5,
+      "maxRank": 7,
+      "experience": 22,
+      "icon": "ri-book-open-line",
+      "description": "Any account of a series of related events or experiences presented through a sequence of written or spoken words, movements, or music.",
+      "x": 4,
       "y": 4,
-      "children": ["120"]
+      "children": ["125"]
     },
     "116": {
-      "name": "",
+      "name": "Voice",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "1s channel",
+        "cooldown": 3,
+        "cost": 7,
+        "resource": "Flair"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 8,
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 1,
+      "icon": "ri-speak-line",
+      "description": "The art of performing a character or providing information to an audience with one's voice.",
+      "x": 6,
       "y": 4,
-      "children": ["120"]
+      "children": ["122", "127"]
     },
     "117": {
-      "name": "",
+      "name": "Phrasing",
       "ability": {
-        "cast_time": "",
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "proc_chance": 15
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 1,
-      "y": 5,
-      "children": ["121", "126"]
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 3,
+      "icon": "ri-music-2-fill",
+      "description": "The way of the performer to shapes a sequence of notes or words in a passage to allow expression.",
+      "x": 7,
+      "y": 4,
+      "children": ["122"]
     },
     "118": {
-      "name": "",
+      "name": "Sight-Reading",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "1s channel",
+        "cooldown": 7,
+        "cost": 30,
+        "resource": "Flair"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 3,
-      "y": 5,
-      "children": ["121", "122", "123"]
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 0.5,
+      "icon": "ri-keynote-line",
+      "description": "The practice of reading and performing of a piece in a music notation that the performer has not seen or learned before.",
+      "x": 8,
+      "y": 4,
+      "children": ["122"]
     },
     "119": {
-      "name": "",
+      "name": "Linework",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "30s channel",
+        "cooldown": 7,
+        "cost": 30,
+        "resource": "Flair"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 5,
+      "rank": 3,
+      "maxRank": 7,
+      "experience": 22,
+      "icon": "ri-edit-2-line",
+      "description": "The use of lines\u2014drawn, painted, etched, crafted, or digitally created\u2014to delineate forms, shapes, and contours within a visual composition.",
+      "x": 1,
+      "y": 5,
+      "children": ["123", "145"]
+    },
+    "120": {
+      "name": "Lighting",
+      "ability": {
+        "active": true,
+        "cast_time": "14s channel",
+        "cooldown": 60,
+        "cost": 30,
+        "resource": "Flair",
+        "proc_chance": 5
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 8,
+      "icon": "ri-sun-line",
+      "description": "The manipulation of light to illuminate a subject or scene, aimed at enhancing the aesthetic qualities, mood, and storytelling aspects of the artwork.",
+      "x": 3,
       "y": 5,
       "children": ["123", "124", "125"]
     },
-    "120": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 7,
-      "y": 5,
-      "children": ["125", "130"]
-    },
     "121": {
-      "name": "",
+      "name": "Genre",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 2,
-      "y": 6,
-      "children": ["126", "127"]
+      "rank": 7,
+      "maxRank": 10,
+      "experience": 22,
+      "icon": "ri-globe-fill",
+      "description": "A category of literature, music, or other forms of art or entertainment, based on some set of stylistic criteria.",
+      "x": 5,
+      "y": 5,
+      "children": ["125", "126", "127"]
     },
     "122": {
-      "name": "",
+      "name": "Gesture",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "1s channel",
+        "cooldown": 1,
+        "cost": 7,
+        "resource": "Flair"
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 3,
-      "y": 6,
-      "children": ["127"]
+      "rank": 2,
+      "maxRank": 5,
+      "experience": 13,
+      "icon": "ri-hand",
+      "description": "The intentional movement, physical or expression, understanding and appreciation of the meaning, emotion, or narrative.",
+      "x": 7,
+      "y": 5,
+      "children": ["127", "148"]
     },
     "123": {
-      "name": "",
+      "name": "Modelling",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "90s channel",
+        "cooldown": 30,
+        "cost": 30,
+        "resource": "Flair"
       },
       "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 4,
+      "maxRank": 7,
+      "experience": 0.1,
+      "icon": "ri-brush-line",
+      "description": "The process of creating three-dimensional representations of objects, figures, or scenes using various materials and techniques.",
+      "x": 2,
       "y": 6,
-      "children": ["127", "128", "129"]
+      "children": ["128", "129"]
     },
     "124": {
-      "name": "",
+      "name": "Photography",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "1s cast",
+        "cooldown": 1,
+        "cost": 1,
+        "resource": "Flair",
+        "proc_chance": 1
       },
       "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 5,
+      "maxRank": 8,
+      "experience": 0.1,
+      "icon": "ri-camera-3-line",
+      "description": "The practice of creating images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.",
+      "x": 3,
       "y": 6,
       "children": ["129"]
     },
     "125": {
-      "name": "",
+      "name": "Storyboarding",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "30s cast",
+        "cooldown": 45,
+        "cost": 90,
+        "resource": "Flair",
+        "proc_chance": 1
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 6,
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 4,
+      "icon": "ri-artboard-line",
+      "description": "The act of organizing illustrations or images that are displayed in sequence for the purpose of pre-visualizing a motion picture, animation, motion graphic or interactive media sequence.",
+      "x": 4,
       "y": 6,
-      "children": ["129", "130"]
+      "children": ["129", "130", "131"]
     },
     "126": {
-      "name": "",
+      "name": "Dialogue",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": true,
+        "cast_time": "3s cast",
+        "cooldown": 30,
+        "cost": 7,
+        "resource": "Flair",
+        "proc_chance": 25
       },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 1,
-      "y": 7,
+      "rank": 2,
+      "maxRank": 7,
+      "experience": 4,
+      "icon": "ri-question-answer-line",
+      "description": "The method through which characters\u2014 in writing and acting\u2014communicate, express their emotions, and reveal their personalities.",
+      "x": 5,
+      "y": 6,
       "children": ["131"]
     },
     "127": {
-      "name": "",
+      "name": "Performance",
       "ability": {
-        "cast_time": "",
+        "active": true,
+        "cast_time": "1s channel",
+        "cooldown": 90,
+        "cost": 90,
+        "resource": "Flair",
+        "proc_chance": 5
+      },
+      "rank": 1,
+      "maxRank": 6,
+      "experience": 2,
+      "icon": "ri-team-fill",
+      "description": "A range of disciplines which are performed in front of a live audience, including theatre, music, and dance.",
+      "x": 6,
+      "y": 6,
+      "children": ["131", "132"]
+    },
+    "128": {
+      "name": "Sculpting",
+      "ability": {
+        "active": true,
+        "cast_time": "180s channel",
+        "cooldown": 180,
+        "cost": 30,
+        "resource": "Flair"
+      },
+      "rank": 0,
+      "maxRank": 5,
+      "experience": 0,
+      "icon": "ri-slice-line",
+      "description": "The branch of the three-dimensional art work which is physically presented in the dimensions of height, width and depth.",
+      "x": 2,
+      "y": 7,
+      "children": ["133"]
+    },
+    "129": {
+      "name": "Editing",
+      "ability": {
+        "active": true,
+        "cast_time": "90s channel",
+        "cooldown": 90,
+        "cost": 30,
+        "resource": "Flair",
+        "proc_chance": 5
+      },
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 0.1,
+      "icon": "ri-scissors-line",
+      "description": "The process of selecting and preparing written, visual, audible, or cinematic material used by a person or an entity to convey a message or information.",
+      "x": 3,
+      "y": 7,
+      "children": ["134"]
+    },
+    "130": {
+      "name": "Animation",
+      "ability": {
+        "active": true,
+        "cast_time": "60s channel",
+        "cooldown": 30,
+        "cost": 180,
+        "resource": "Flair"
+      },
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 1,
+      "icon": "ri-p2p-line",
+      "description": "A filmmaking technique by which still images are manipulated to create moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets (cels) to be photographed and exhibited on film.",
+      "x": 4,
+      "y": 7
+    },
+    "131": {
+      "name": "Characterization",
+      "ability": {
+        "active": false
+      },
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 13,
+      "icon": "ri-mental-health-fill",
+      "description": "The representation of characters (persons, creatures, or other beings) in narrative and dramatic works.",
+      "x": 5,
+      "y": 7,
+      "children": ["135"]
+    },
+    "132": {
+      "name": "Technique",
+      "ability": {
         "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "proc_chance": 5
+      },
+      "rank": 1,
+      "maxRank": 8,
+      "experience": 22,
+      "icon": "ri-key-2-line",
+      "description": "The ability of artists to exert optimal control of their tools or instruments in order to produce the precise artistic effects they desire.",
+      "x": 6,
+      "y": 7,
+      "children": ["136"]
+    },
+    "133": {
+      "name": "Illustration",
+      "ability": {
+        "active": true,
+        "cast_time": "30s cast",
+        "cooldown": 30,
+        "cost": 14,
+        "resource": "Flair",
+        "proc_chance": 1
+      },
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 3,
+      "icon": "ri-image-2-line",
+      "description": "A decoration, interpretation, or visual explanation of a text, concept, or process, designed for integration in print and digitally published media, such as posters, flyers, magazines, books, teaching materials, animations, video games and films.",
+      "x": 1,
+      "y": 8,
+      "children": ["137", "138"]
+    },
+    "134": {
+      "name": "Visual Effects",
+      "ability": {
+        "active": true,
+        "cast_time": "365s channel",
+        "cooldown": 365,
+        "cost": 180,
+        "resource": "Flair"
+      },
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 0.1,
+      "icon": "ri-camera-lens-line",
+      "description": "The process by which imagery is created or manipulated in filmmaking and video production.",
+      "x": 3,
+      "y": 8,
+      "children": ["139", "140"]
+    },
+    "135": {
+      "name": "Stagecraft",
+      "ability": {
+        "active": false
+      },
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 0.1,
+      "icon": "ri-store-line",
+      "description": "A technical aspect of theatrical, film, and video production that includes constructing and rigging scenery; hanging and focusing of lighting; design and procurement of costumes; make-up; stage management; audio engineering; and procurement of props.",
+      "x": 5,
+      "y": 8,
+      "children": ["141", "142"]
+    },
+    "136": {
+      "name": "Musicality",
+      "ability": {
+        "active": false,
+        "proc_chance": 1
+      },
+      "rank": 1,
+      "maxRank": 8,
+      "experience": 22,
+      "icon": "ri-sparkling-2-fill",
+      "description": "The sensitivity to, knowledge of, or talent for music",
+      "x": 7,
+      "y": 8,
+      "children": ["143", "144"]
+    },
+    "137": {
+      "name": "Architecture",
+      "ability": {
+        "active": true,
+        "cast_time": "365s channel",
+        "cooldown": 365,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 1
+      },
+      "rank": 0,
+      "maxRank": 3,
+      "experience": 0,
+      "icon": "ri-bank-line",
+      "description": "The art and technique of designing, sketching, conceiving, planning, designing, and constructing buildings or other structures.",
+      "x": 0.5,
+      "y": 9
+    },
+    "138": {
+      "name": "Fine Arts",
+      "ability": {
+        "active": true,
+        "cooldown": 365,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 1
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 2,
+      "icon": "ri-brush-3-line",
+      "description": "A visual art considered to have been created primarily for aesthetic and intellectual purposes and judged for its beauty and meaningfulness, specifically, painting, sculpture, drawing, watercolor, graphics, and architecture.",
+      "x": 1.5,
+      "y": 9
+    },
+    "139": {
+      "name": "Cinematography",
+      "ability": {
+        "active": true,
+        "cast_time": "365s channel",
+        "cooldown": 365,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 1
+      },
+      "rank": 1,
+      "maxRank": 10,
+      "experience": 1,
+      "icon": "ri-movie-2-line",
+      "description": "The art of motion picture photography.",
+      "x": 2.5,
+      "y": 9
+    },
+    "140": {
+      "name": "Choreography",
+      "ability": {
+        "active": true,
+        "cast_time": "365s channel",
+        "cooldown": 365,
+        "cost": 365,
+        "resource": "Flair"
+      },
+      "rank": 2,
+      "maxRank": 10,
+      "experience": 2,
+      "icon": "ri-footprint-fill",
+      "description": "The art or practice of designing sequences of movements of physical bodies (or their depictions) in which motion or form or both are specified.",
+      "x": 3.5,
+      "y": 9
+    },
+    "141": {
+      "name": "Acting",
+      "ability": {
+        "active": true,
+        "cast_time": "1s channel",
+        "cooldown": 3,
+        "cost": 30,
+        "resource": "Flair",
+        "proc_chance": 5
+      },
+      "rank": 0,
+      "maxRank": 5,
+      "experience": 0,
+      "icon": "ri-open-arm-line",
+      "description": "An activity in which a story is told by means of its enactment by an actor who adopts a character—in theatre, television, film, radio, or any other medium that makes use of the mimetic mode.",
+      "x": 4.5,
+      "y": 9
+    },
+    "142": {
+      "name": "Scriptwriting",
+      "ability": {
+        "active": true,
+        "cast_time": "180s channel",
+        "cooldown": 180,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 5
+      },
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 6,
+      "icon": "ri-quill-pen-fill",
+      "description": "The art and craft of writing scripts for mass media such as feature films, television productions or video games.",
+      "x": 5.5,
+      "y": 9
+    },
+    "143": {
+      "name": "Orchestration",
+      "ability": {
+        "active": true,
+        "cast_time": "365s channel",
+        "cooldown": 365,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 1
+      },
+      "rank": 0,
+      "maxRank": 7,
+      "experience": 0,
+      "icon": "ri-broadcast-line",
+      "description": "The study or practice of writing music for an orchestra (or, more loosely, for any musical ensemble, such as a concert band) or of adapting music composed for another medium for an orchestra.",
+      "x": 6.5,
+      "y": 9
+    },
+    "144": {
+      "name": "Virtuoso",
+      "ability": {
+        "active": true,
+        "cast_time": "1s channel",
+        "cooldown": 90,
+        "cost": 365,
+        "resource": "Flair",
+        "proc_chance": 50
       },
       "rank": 0,
       "maxRank": 1,
       "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 3,
-      "y": 7,
-      "children": ["132"]
+      "icon": "ri-award-line",
+      "description": "An individual who possesses outstanding talent and technical ability in a particular art or field such as fine arts, music, singing, playing a musical instrument, or composition.",
+      "x": 7.5,
+      "y": 9
     },
-    "128": {
+    "145": {
+      "name": "Concept",
+      "ability": {
+        "active": false,
+        "proc_chance": 15
+      },
+      "rank": 4,
+      "maxRank": 10,
+      "experience": 22,
+      "icon": "ri-pen-nib-fill",
+      "description": "A form of visual art used to convey an idea for use in films, video games, animation, comic books, television shows, or other media before it is put into the final product.",
+      "x": 0,
+      "y": 6,
+      "children": ["146"]
+    },
+    "146": {
+      "name": "Prototyping",
+      "ability": {
+        "active": true,
+        "cast_time": "30s channel",
+        "cooldown": 30,
+        "cost": 14,
+        "resource": "Flair",
+        "proc_chance": 25
+      },
+      "rank": 1,
+      "maxRank": 7,
+      "experience": 7,
+      "icon": "ri-tools-line",
+      "description": "The actions to make, test and analyse a prototype, a model or a mockup according to one or various purposes in different stages of the design process.",
+      "x": 1,
+      "y": 7,
+      "children": ["147", "133"]
+    },
+    "147": {
+      "name": "Graphic Design",
+      "ability": {
+        "active": true,
+        "cast_time": "14s cast",
+        "cooldown": 14,
+        "cost": 7,
+        "resource": "Flair",
+        "proc_chance": 5
+      },
+      "rank": 1,
+      "maxRank": 5,
+      "experience": 22,
+      "icon": "ri-artboard-2-line",
+      "description": "An interdisciplinary branch of design and of the fine arts that involves creativity, innovation and lateral thinking using manual or digital tools, where it is usual to use text and graphics to communicate visually.",
+      "x": 0,
+      "y": 8
+    },
+    "148": {
+      "name": "Repertoire",
+      "ability": {
+        "active": false
+      },
+      "rank": 2,
+      "maxRank": 7,
+      "experience": 22,
+      "icon": "ri-archive-stack-line",
+      "description": "A list or set of dramas, operas, musical compositions or roles which a person has learnt or is prepared to perform.",
+      "x": 8,
+      "y": 6,
+      "children": ["149"]
+    },
+    "149": {
+      "name": "Ear-training",
+      "ability": {
+        "active": false,
+        "proc_chance": 1
+      },
+      "rank": 1,
+      "maxRank": 12,
+      "experience": 1,
+      "icon": "ri-user-voice-line",
+      "description": "a music theory study in which musicians learn aural skills to identify pitches, intervals, melody, chords, rhythms, solfeges, and other basic elements of music, solely by hearing.",
+      "x": 7,
+      "y": 7,
+      "children": ["136", "150"]
+    },
+    "150": {
+      "name": "Conducting",
+      "ability": {
+        "active": true,
+        "cast_time": "1s cast",
+        "cooldown": 60,
+        "cost": 60,
+        "resource": "Flair"
+      },
+      "rank": 0,
+      "maxRank": 3,
+      "experience": 0,
+      "icon": "ri-sketching",
+      "description": "The art of directing a musical performance, such as an orchestral or choral concert.",
+      "x": 8,
+      "y": 8
+    },
+    "151": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
@@ -2305,70 +2489,13 @@
       "icon": "",
       "description": "",
       "x": 4,
-      "y": 7
+      "y": 0,
+      "children": ["152", "153"]
     },
-    "129": {
+    "152": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 5,
-      "y": 7,
-      "children": ["133"]
-    },
-    "130": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 7,
-      "y": 7,
-      "children": ["134"]
-    },
-    "131": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 1,
-      "y": 8,
-      "children": ["135", "136"]
-    },
-    "132": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
@@ -2376,17 +2503,13 @@
       "icon": "",
       "description": "",
       "x": 3,
-      "y": 8,
-      "children": ["137", "138"]
+      "y": 1,
+      "children": ["154"]
     },
-    "133": {
+    "153": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
@@ -2394,17 +2517,181 @@
       "icon": "",
       "description": "",
       "x": 5,
-      "y": 8,
-      "children": ["139", "140"]
+      "y": 1,
+      "children": ["155"]
     },
-    "134": {
+    "154": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 3,
+      "y": 2,
+      "children": ["156", "157", "158"]
+    },
+    "155": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 5,
+      "y": 2,
+      "children": ["158", "159", "160"]
+    },
+    "156": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 2,
+      "y": 3,
+      "children": ["161", "162"]
+    },
+    "157": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 3,
+      "y": 3,
+      "children": ["162", "163"]
+    },
+    "158": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 4,
+      "y": 3,
+      "children": ["163", "164"]
+    },
+    "159": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 5,
+      "y": 3,
+      "children": ["164", "165"]
+    },
+    "160": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 6,
+      "y": 3,
+      "children": ["165", "166"]
+    },
+    "161": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 1,
+      "y": 4,
+      "children": ["167"]
+    },
+    "162": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 2,
+      "y": 4,
+      "children": ["167", "168", "169"]
+    },
+    "163": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 3,
+      "y": 4,
+      "children": ["169", "170"]
+    },
+    "164": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 5,
+      "y": 4,
+      "children": ["170", "171"]
+    },
+    "165": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 6,
+      "y": 4,
+      "children": ["171", "172", "173"]
+    },
+    "166": {
+      "name": "",
+      "ability": {
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
@@ -2412,143 +2699,338 @@
       "icon": "",
       "description": "",
       "x": 7,
+      "y": 4,
+      "children": ["173"]
+    },
+    "167": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 1,
+      "y": 5,
+      "children": ["177", "178"]
+    },
+    "168": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 2,
+      "y": 5,
+      "children": ["174", "178"]
+    },
+    "169": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 3,
+      "y": 5,
+      "children": ["174"]
+    },
+    "170": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 4,
+      "y": 5,
+      "children": ["174", "175", "176"]
+    },
+    "171": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 5,
+      "y": 5,
+      "children": ["176"]
+    },
+    "172": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 6,
+      "y": 5,
+      "children": ["176", "181"]
+    },
+    "173": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 7,
+      "y": 5,
+      "children": ["181", "182"]
+    },
+    "174": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 3,
+      "y": 6,
+      "children": ["178"]
+    },
+    "175": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 4,
+      "y": 6,
+      "children": ["179", "180"]
+    },
+    "176": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 5,
+      "y": 6,
+      "children": ["181"]
+    },
+    "177": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 1,
+      "y": 7,
+      "children": ["183"]
+    },
+    "178": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 2,
+      "y": 7,
+      "children": ["184"]
+    },
+    "179": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 3,
+      "y": 7,
+      "children": ["185"]
+    },
+    "180": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 5,
+      "y": 7,
+      "children": ["185"]
+    },
+    "181": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 6,
+      "y": 7,
+      "children": ["186"]
+    },
+    "182": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 7,
+      "y": 7,
+      "children": ["187"]
+    },
+    "183": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 1,
+      "y": 8
+    },
+    "184": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 2,
       "y": 8,
-      "children": ["141", "142"]
+      "children": ["188"]
     },
-    "135": {
+    "185": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
       "experience": 0,
       "icon": "",
       "description": "",
-      "x": 0.5,
+      "x": 4,
+      "y": 8,
+      "children": ["189"]
+    },
+    "186": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 6,
+      "y": 8,
+      "children": ["190"]
+    },
+    "187": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 7,
+      "y": 8
+    },
+    "188": {
+      "name": "",
+      "ability": {
+        "active": false
+      },
+      "rank": 0,
+      "maxRank": 1,
+      "experience": 0,
+      "icon": "",
+      "description": "",
+      "x": 2,
       "y": 9
     },
-    "136": {
+    "189": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
       "experience": 0,
       "icon": "",
       "description": "",
-      "x": 1.5,
+      "x": 4,
       "y": 9
     },
-    "137": {
+    "190": {
       "name": "",
       "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
+        "active": false
       },
       "rank": 0,
       "maxRank": 1,
       "experience": 0,
       "icon": "",
       "description": "",
-      "x": 2.5,
-      "y": 9
-    },
-    "138": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 3.5,
-      "y": 9
-    },
-    "139": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": true,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 4.5,
-      "y": 9
-    },
-    "140": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": true,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 5.5,
-      "y": 9
-    },
-    "141": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 6.5,
-      "y": 9
-    },
-    "142": {
-      "name": "",
-      "ability": {
-        "cast_time": "",
-        "active": false,
-        "resource": "",
-        "cost": "",
-        "cooldown": ""
-      },
-      "rank": 0,
-      "maxRank": 1,
-      "experience": 0,
-      "icon": "",
-      "description": "",
-      "x": 7.5,
+      "x": 6,
       "y": 9
     }
   }

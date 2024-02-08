@@ -2,15 +2,30 @@ import { Dispatch, SetStateAction } from "react";
 import styles from "./index.module.scss";
 import { CONTENTS } from "./content-panel";
 import { getAge } from "@/common/utils/math";
+import { RESOURCE_COLORS } from "./constant";
 
 const CharacterStatus : React.FC = () => {
     const MAX_HP = 100;
+    const today = new Date();
+    const remainingDays = Math.ceil((new Date(today.getFullYear(), 11, 31).getTime() - today.getTime()) / (1000 * 60 * 60 * 24));;
     return (
-        <div className={`absolute right-0 hidden xl:flex select-none items-center w-[18rem] ${styles.statusAnimation}`}>
+        <div className={`absolute right-0 hidden xl:flex flex-col h-full select-none items-center w-[18rem] ${styles.statusAnimation}`}>
             <div className="absolute w-[130%] right-[-1rem] h-full skew-x-[-30deg] rounded-[0.2rem] bg-gradient-to-l from-sea-green/50 from-75%"></div>
-            <div className="w-full h-full z-[1] px-4 flex gap-8 text-[1.75rem] whitespace-nowrap">
-                <span>HP {90}/{MAX_HP}</span>
-                <span>Level {getAge()}</span>
+            <div className="w-full p-2 z-[1] flex flex-col text-[1.25rem] whitespace-nowrap h-full">
+                <div className="flex gap-8 justify-end">
+                    <span>HP {60}/{MAX_HP}</span>
+                    <span>Level {getAge()}</span>
+                </div>
+                <div className="flex gap-4 justify-end h-full">
+                    {
+                        Object.entries(RESOURCE_COLORS).map((entry: [string, string], index: number) => (
+                            <div key={index} className={`${entry[1]} flex gap-2 h-full items-center`}>
+                                <span>{entry[0]}</span>
+                                <span>{remainingDays}/365</span>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )

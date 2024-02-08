@@ -6,6 +6,8 @@ import { TextStyleParser } from "@/common/utils/parser";
 type Notes = { version: string, changes: string[] }
 
 export const PATCH_NOTES : Notes[] = [
+    { version: "1.0.8.20240209", changes: [`Added /b:${TalentType.THEORY}/ skill talents.`] },
+    { version: "1.0.7.20240204", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ and /b:${TalentType.STUDY}/ skill talents for a better visual.`] },
     { version: "1.0.6.20240203", changes: [`Arrows drawn using canvas instead of divs.`] },
     { version: "1.0.5.20240202", changes: [`Balanced, fixed, and added some of the /b:${TalentType.ENGINEERING}/ skill talents.`] },
     { version: "1.0.4.20240131", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ skill talents for a more balanced flow.`] },
@@ -18,7 +20,7 @@ export const PATCH_NOTES : Notes[] = [
 const PatchNotesDisplay : React.FC = () => {
     return (
         <div className="w-full h-full relative overflow-hidden">
-            <div className={`absolute w-full h-full overflow-y-scroll flex p-8 flex-col gap-16 ${styles.overflowContainer}`}>
+            <div className={`absolute w-full h-full overflow-y-scroll flex p-8 flex-col gap-8 ${styles.overflowContainer}`}>
                 {
                     PATCH_NOTES.map((notes: Notes, index: number) => {
                         return (
@@ -33,9 +35,9 @@ const PatchNotesDisplay : React.FC = () => {
 
 const Notes : React.FC<{ notes: Notes }> = ({ notes }) => {
     return (
-        <div className="flex flex-col gap-4">
-            <span className="font-bold text-[2.5rem] leading-[2.5rem]">Version {notes.version}:</span>
-            <div className="flex flex-col gap-2 font-century-gothic tracking-[1px] text-[1.5rem]">
+        <div className="flex flex-col gap-2">
+            <span className="font-bold text-[1.5rem] leading-[1.5rem]">v{notes.version}:</span>
+            <div className="flex flex-col gap-1 font-century-gothic tracking-[1px] text-[1.25rem]">
                 {
                     notes.changes.map((note: string, index: number) => {
                         return (

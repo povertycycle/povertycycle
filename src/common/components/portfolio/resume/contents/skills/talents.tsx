@@ -1,16 +1,16 @@
 import "remixicon/fonts/remixicon.css";
 import React, { Fragment, Dispatch, SetStateAction, memo, useContext, useState, useRef, useEffect } from "react";
 import talentData from "./talents.json";
-import styles from "./talents.module.scss";
 import overflow from "../animations.module.scss";
-import { AspectType, AspectsContext, ResourceType, Talent, TalentIcon, TalentType, ViewMode } from "./constants";
+import { AspectType, AspectsContext, Talent, TalentAbility, TalentType, ViewMode } from "./constants";
 import { checkOverlap, getAge, getExperienceData } from "@/common/utils/math";
-import { CustomIcon, CUSTOM_COLORS } from "./talent-icons";
+import { CUSTOM_ICONS } from "./talent-icons";
 import { PATCH_NOTES } from "./patch-notes";
+import { RESOURCE_COLORS } from "../constant";
 
 const { SIZE, GAP }  = { SIZE: 3, GAP: 1.5 };
 const { TITLE, POINTS } = { TITLE: 2.5, POINTS: 1.25 };
-const { HEIGHT, BORDER } = { HEIGHT: 2.5, BORDER: 0.25 }
+const { HEIGHT, BORDER } = { HEIGHT: 1.5, BORDER: 0.125 }
 const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [ key: string ] : Talent | undefined };
 const MAX_WIDTH = 9;
@@ -22,7 +22,7 @@ const DULL_GOLD = "#b19d62";
 const BRANCHES : { [key in AspectType] : TalentType[] } = {
     [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.STUDY],
     [AspectType.ARTS]: [TalentType.FORM, TalentType.THEORY],
-    [AspectType.PHYSIQUE]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
+    [AspectType.SPORTS]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
     [AspectType.GENERAL]: [TalentType.ESSENCE, TalentType.APPLICATION],
 }
 
@@ -34,26 +34,22 @@ const VIEW_MODE_ICON : { [key in ViewMode] : string } = {
 const ICON_COLORS : { [key in AspectType] : string } = {
     [AspectType.SCIENCE]: "bg-aspect-green-darker",
     [AspectType.ARTS]: "bg-aspect-blue-darker",
-    [AspectType.PHYSIQUE]: "bg-aspect-red-darker",
+    [AspectType.SPORTS]: "bg-aspect-red-darker",
     [AspectType.GENERAL]: "bg-aspect-yellow-darker"
 }
 
 const LIST_COLORS : { [key in AspectType] : string[] } = {
-    [AspectType.SCIENCE]: ["via-aspect-green-darker", "from-aspect-green/75", "via-aspect-green-darker/50"],
-    [AspectType.ARTS]: ["via-aspect-blue-darker", "from-aspect-blue/75", "via-aspect-blue-darker/50"],
-    [AspectType.PHYSIQUE]: ["via-aspect-red-darker", "from-aspect-red/75", "via-aspect-red-darker/50"],
-    [AspectType.GENERAL]: ["via-aspect-yellow-darker", "from-aspect-yellow/75", "via-aspect-yellow-darker/50"],
-}
-
-const RESOURCE_COLORS : { [key in ResourceType] : string } = {
-    [ResourceType.MANA]: "text-mana-cost",
+    [AspectType.SCIENCE]: ["via-aspect-green-darker", "from-aspect-green/75"],
+    [AspectType.ARTS]: ["via-aspect-blue-darker", "from-aspect-blue/75"],
+    [AspectType.SPORTS]: ["via-aspect-red-darker", "from-aspect-red/75"],
+    [AspectType.GENERAL]: ["via-aspect-yellow-darker", "from-aspect-yellow/75"],
 }
 
 const TALENT_TREES : { [key in TalentType] : number[] } = {
-    [TalentType.ENGINEERING]: Array.from({ length: 93 - 48 }, (_, index) => index + 48),
+    [TalentType.ENGINEERING]: Array.from({ length: 95 - 48 }, (_, index) => index + 48),
     [TalentType.STUDY]: Array.from({ length: 48 }, (_, index) => index),
-    [TalentType.FORM]: Array.from({ length: 143 - 93 }, (_, index) => index + 93),
-    [TalentType.THEORY]: [], // fine-arts", "music", "writings" "theme", "color", "structure" "documentation" "typography" "markup", "accessibility" "design-hierarchy" "uiux"
+    [TalentType.FORM]: Array.from({ length: 191 - 151 }, (_, index) => index + 151),
+    [TalentType.THEORY]: Array.from({ length: 151 - 95 }, (_, index) => index + 95),
     [TalentType.ENTERTAINMENT]: [], // "strength", "agility", "dexterity" endurance", "motor soccer 
     [TalentType.KNOWLEDGE]: [],
     [TalentType.ESSENCE]: [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
@@ -151,7 +147,7 @@ const ListView : React.FC<{ category: TalentType }> = ({ category }) => {
     return (
         Object.keys(tiers).length === 0 ? 
         <div className="h-full w-full flex justify-center items-center">In Progress</div> : 
-        <div className={`w-full h-full flex flex-col px-4 overflow-y-scroll ${overflow.overflowContainer}`} style={{ marginTop: `${TITLE + POINTS}rem` }}>
+        <div className={`w-full h-full flex flex-col px-4 gap-4 overflow-y-scroll ${overflow.overflowContainer}`} style={{ marginTop: `${TITLE + POINTS}rem` }}>
             {
                 Object.keys(tiers).map((tier: string, index: number) => {
                     return (
@@ -165,7 +161,7 @@ const ListView : React.FC<{ category: TalentType }> = ({ category }) => {
 
 const TieredTalents : React.FC<{ tier: string, talents: number[] }> = ({ tier, talents }) => {
     const { aspect } = useContext(AspectsContext);
-    const color = aspect ? LIST_COLORS[aspect] : ["via-bg-sea-blue-dark", "via-bg-sea-blue-dark/25 hover:via-sea-blue-dark-50", "via-sea-blue-dark-50"];
+    const color = aspect ? [...LIST_COLORS[aspect], ICON_COLORS[aspect]] : ["via-bg-sea-blue-dark", "from-sea-blue-dark-50", "bg-sea-blue-dark"];
     const [selected, setSelected] = useState<number[]>([]);
 
     const collapse = () => {
@@ -173,13 +169,13 @@ const TieredTalents : React.FC<{ tier: string, talents: number[] }> = ({ tier, t
     }
     
     return (
-        <div className="w-full flex flex-col">
-            <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px]" />
-            <div className={`flex justify-between py-2 bg-gradient-to-r from-transparent via-10%  ${color[0]} px-12 text-[1.5rem] leading-[1.5rem]`}>
+        <div className="w-full flex flex-col relative">
+            <div className={`flex h-full justify-between py-2 bg-gradient-to-r from-transparent via-10%  ${color[0]} px-12 text-[1rem] leading-[1rem]`}>
                 <div>Tier {parseInt(tier) + 1}</div>
-                { selected.length > 0 ? <div className="cursor-pointer text-[1.25rem] leading-[1.25rem]" onClick={collapse}><i className="ri-contract-up-down-line" /></div> : null }
+                { selected.length > 0 ? <div className="cursor-pointer text-[0.75rem] leading-[0.75rem]" onClick={collapse}><i className="ri-contract-up-down-line" /></div> : null }
             </div>
-            <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px]" />
+
+            <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px] shrink-0" />
             <div className="flex flex-col w-full px-4 py-2 gap-2">
                 {
                     talents.map((talent: number, index: number) => {
@@ -190,6 +186,7 @@ const TieredTalents : React.FC<{ tier: string, talents: number[] }> = ({ tier, t
                     })
                 }
             </div>
+            <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px] shrink-0" />
         </div>
     )
 }
@@ -204,34 +201,29 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected } : { id: nu
     }
 
     return (
-        <div className="group/listed w-full relative flex flex-col cursor-pointer px-8" onClick={activate}>
-            <div className={`${active ? "w-full" : "w-0 group-hover/listed:w-full"} ${color[1]} shrink-0 rounded-[0.25rem] relative z-[1] py-1 flex justify-end transition-width duration-400 bg-gradient-to-r`} style={{ height: `${HEIGHT}rem` }}>
-                <div className={`${active ? "w-0" : "w-full"} h-full bg-sea-blue-darker transition-width duration-400`} style={{ marginLeft: `${BORDER}rem` }} />
+        <div className="group/listed w-full relative flex flex-col cursor-pointer px-4" onClick={activate}>
+            <div className={`${active ? "w-full" : "w-0 group-hover/listed:w-full"} ${color[1]} shrink-0 rounded-[0.25rem] relative z-[1] flex justify-end transition-width duration-400 bg-gradient-to-r`} style={{ height: `${HEIGHT}rem`, paddingTop: `${BORDER}rem`, paddingBottom: `${BORDER}rem` }}>
+                <div className={`${active ? "w-0" : "w-full"} rounded-[0.25rem] h-full bg-sea-blue-darker transition-width duration-400`} style={{ marginLeft: `${BORDER}rem` }} />
             </div>
-            <div className="absolute z-[2] flex items-center justify-between px-8" style={{ lineHeight: `${HEIGHT}rem`, width: `calc(100% - 4rem)` }}>
+            <div className="absolute z-[2] text-base flex items-center justify-between px-4" style={{ height: `${HEIGHT}rem`, width: `calc(100% - 4rem)` }}>
                 <span>{talent.name}</span>
-                <span>{`Rank ${talent.rank} / ${talent.maxRank}`}</span>
+                <div className="h-full flex justify-end gap-4">
+                    <span>{`${talent.experience} ${talent.experience > 1 ? "years" : "year"}`}</span>
+                    <div className="flex skew-x-[-30deg] gap-1 h-full items-center">
+                        {
+                            Array.from({ length: talent.maxRank }).map((_, index: number) => (
+                                <div className={`${index < talent.rank ? "bg-gold" : "bg-gold-gray"} h-[50%] aspect-square`} />
+                            )).reverse()
+                        }
+                    </div>
+                </div>
             </div>
             <div className={`${active ? "h-full" : "h-0"} w-full px-8 overflow-hidden tracking-[1px]`}>
                 <div className="w-full h-full flex flex-col gap-2 justify-center py-4">
                     <div className="w-full flex gap-4">
-                        <div className={`${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"} ${talent.rank !== 0 ? `bg-aspect-green-darker` : "text-white/50 bg-sea-blue-gray"} flex items-center justify-center font-normal z-[2] shadow-[inset_0_0_8px_black]`} style={{ height: `${SIZE}rem`, width: `${SIZE}rem`, fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
-                            {
-                                talent.icon.startsWith("cust") ?
-                                <div className={`${talent.rank !== 0 ? `${CUSTOM_COLORS[talent.icon.replace("cust-", "")]} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
-                                    <CustomIcon icon={talent.icon.replace("cust-", "")} />
-                                </div> :
-                                <div className={`${talent.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }}>
-                                    {
-                                        talent.icon.startsWith("ri") ? 
-                                        <i className={talent.icon} /> :
-                                        <i className="ri-question-mark" />
-                                    }
-                                </div>
-                            }
-                        </div>
+                        <IconImage active={talent.ability.active} taken={talent.rank > 0} icon={talent.icon} color={color[2]} />
                         <div className="flex flex-col justify-center">
-                            <div className="text-[1rem] ">Experience: {talent.experience} {talent.experience > 1 ? "years" : "year"}</div>
+                            <div className="text-base">Experience: {talent.experience} {talent.experience > 1 ? "years" : "year"}</div>
                             <div className="text-[0.875rem] ">{req}</div>
                         </div>
                     </div>
@@ -239,20 +231,7 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected } : { id: nu
                         <div className="h-full bg-gold/75" style={{ width: active ? `${Math.round(p * 100)}%` : 0 }}></div>
                     </div>
                     <div className="flex flex-col w-full text-[1rem]">
-                        {
-                            talent.ability.active ? 
-                            <div className="flex flex-col w-full gap-1">
-                                { talent.ability.resource && <div className={`leading-[1rem] ${RESOURCE_COLORS[talent.ability.resource]}`}>{talent.ability.cost} {talent.ability.resource}</div> }
-                                <div className="w-full flex justify-between leading-[1rem]">
-                                    { talent.ability.cast_time && <div>{talent.ability.cast_time}</div> }
-                                    { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
-                                </div>
-                            </div> : 
-                            <div className="flex w-full justify-between">
-                                <div>Passive</div>
-                                { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
-                            </div>
-                        }
+                        <AbilityDescription ability={talent.ability} />
                     </div>
                     <div className="flex flex-col font-century-gothic text-[1rem] leading-[1rem] text-gold">
                         <div>{talent.description === "" ? "??????????" : talent.description}</div>
@@ -326,27 +305,30 @@ const Talent : React.FC<{ talent: Talent, color: string, setDetails: Dispatch<Se
             width: `${SIZE}rem`, 
             height: `${SIZE}rem`
         }}>
-            <div className="flex w-full h-full justify-center absolute">
-                <div ref={ref} className={`relative z-[2] w-full h-full ${talent?.ability.active ? "rounded-[0.375rem]" : "rounded-full"}`}>
-                    {
-                        talent.icon.startsWith("cust") ?
-                        <div className={`${talent.rank !== 0 ? `${CUSTOM_COLORS[talent.icon.replace("cust-", "")]} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }} onMouseEnter={enter} onMouseLeave={leave}>
-                            <CustomIcon icon={talent.icon.replace("cust-", "")} />
-                        </div> :
-                        <div className={`${talent.rank !== 0 ? `${color} border-gold` : "text-white/50 border-gold-gray bg-sea-blue-gray"} h-full flex items-center justify-center font-normal w-full z-[2] border-2 shadow-[inset_0_0_8px_black] rounded-[inherit] overflow-hidden`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem` }} onMouseEnter={enter} onMouseLeave={leave}>
-                            {
-                                talent.icon.startsWith("ri") ? 
-                                <i className={talent.icon} /> :
-                                <i className="ri-question-mark" />
-                            }
-                        </div>
-                    }
-                    <div className={`${talent.rank ? "text-gold border-gold" : "text-gold-gray border-gold-gray"} absolute rounded-[0.2rem] leading-[1rem] text-[0.9rem] right-[-1.25rem] bottom-[-0.3rem] px-1 z-[3] bg-black border-2`}>
-                        {talent.rank}/{talent.maxRank}
-                    </div>
-                </div>
+            <div className="h-full w-full" ref={ref} onMouseEnter={enter} onMouseLeave={leave}>
+                <IconImage active={talent.ability.active} taken={talent.rank > 0} icon={talent.icon} color={color} />
+            </div>
+            <div className={`${talent.rank ? "text-gold border-gold" : "text-gold-gray border-gold-gray"} absolute rounded-[0.2rem] leading-[1rem] text-[0.9rem] right-[-1.25rem] bottom-[-0.3rem] px-1 z-[3] bg-black border-2`}>
+                {talent.rank}/{talent.maxRank}
             </div>
         </div> 
+    )
+}
+
+const IconImage : React.FC<{ active: boolean, taken: boolean, icon: string, color: string }> = ({ active, taken, icon, color }) => {
+    const customData = icon.startsWith("cust") ? CUSTOM_ICONS[icon.replace("cust-", "")] : null;
+    return (
+        <div className={`${active ? "rounded-[0.375rem]" : "rounded-full"} ${taken ? `border-gold ${customData ? customData.background : color}` : "text-[#BFBFBF] bg-sea-blue-gray border-gold-gray"} border-2 shadow-[inset_0_0_8px_black] relative z-[2] aspect-square overflow-hidden flex items-center justify-center`} style={{ fontSize: `${Math.round(SIZE * 2 / 3 * 10) / 10}rem`, height: `${SIZE}rem` }}>
+            {
+                customData ? 
+                customData.icon : 
+                (
+                    icon.startsWith("ri") ?
+                    <i className={icon} /> :
+                    <i className="ri-question-mark" />
+                )
+            }
+        </div>
     )
 }
 
@@ -433,26 +415,13 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
                 <div className="font-market-deco tracking-[0px] text-[1.25rem] leading-[1.25rem]">{talent.name}</div>
                 <div className="text-[0.875rem]">Rank {talent.rank}/{talent.maxRank}</div>
             </div>
-            <div className="flex flex-col w-full text-[1.125rem]">
-                {
-                    talent.ability.active ? 
-                    <div className="flex flex-col w-full gap-1">
-                        { talent.ability.resource && <div className={`leading-[1rem] ${RESOURCE_COLORS[talent.ability.resource]}`}>{talent.ability.cost} {talent.ability.resource}</div> }
-                        <div className="w-full flex justify-between leading-[1rem]">
-                            { talent.ability.cast_time && <div>{talent.ability.cast_time}</div> }
-                            { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
-                        </div>
-                    </div> : 
-                    <div className="flex w-full justify-between">
-                        <div>Passive</div>
-                        { talent.ability.cooldown && <div>{talent.ability.cooldown} cooldown</div> }
-                    </div>
-                }
+            <div className="flex flex-col w-full text-base leading-4">
+                <AbilityDescription ability={talent.ability} />
             </div>
             <div className="flex flex-col text-[1rem] leading-[1rem] text-gold">
                 <div>{talent.description === "" ? "??????????" : talent.description}</div>
             </div>
-            <div className="w-full text-[1rem] tracking-[0px]">
+            <div className="w-full text-[1rem] tracking-[1px]">
                 <div className="flex justify-between">
                     <div>Experience</div>
                     <div>{talent.experience} year{talent.experience > 1 && "s"}</div>
@@ -463,6 +432,29 @@ const Details : React.FC<{ data: DetailsPayload }> = ({ data }) => {
                 <div className="text-[0.875rem] tracking-[1px]">{req}</div>
             </div>
         </div>
+    )
+}
+
+const AbilityDescription : React.FC<{ ability: TalentAbility }> = ({ ability }) => {
+    return (
+            ability.active ? 
+            <>
+                <div className="w-full flex justify-between">
+                    { ability.resource && <span className={RESOURCE_COLORS[ability.resource]}>{ability.cost} {ability.resource}</span> }
+                    { ability.proc_chance && <span>{ability.proc_chance}% critical chance</span>}
+                </div>
+                <div className="w-full flex justify-between">
+                    { ability.cast_time && <span>{ability.cast_time}</span> }
+                    { ability.cooldown && <span>{ability.cooldown}s cooldown</span> }
+                </div>
+            </> : 
+            <div className="flex w-full justify-between">
+                <div>Passive</div>
+                <div className="flex flex-col">
+                    { ability.cooldown && <span>{ability.cooldown}s cooldown</span> }
+                    { ability.proc_chance && <span>{ability.proc_chance}% critical chance</span>}
+                </div>
+            </div>
     )
 }
 
