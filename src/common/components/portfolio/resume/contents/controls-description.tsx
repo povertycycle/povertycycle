@@ -9,16 +9,16 @@ const returnToMainMenu = () => {
     });
 }
 
-const CONTROLS_STYLES : { [key: string] : string } = {
+const CONTROLS_STYLES: { [key: string]: string } = {
     "cross": controls.actionCross,
     "circle": controls.actionCircle,
     "triangle": controls.actionTriangle,
     "square": controls.actionSquare,
 }
 
-const ActionButton : React.FC<{ tag: string, action: string, onClick?: () => void }> = ({ tag, action, onClick }) => {
+const ActionButton: React.FC<{ tag: string, action: string, onClick?: () => void }> = ({ tag, action, onClick }) => {
     const style = {
-        ...(tag === "triangle" ? { "--a": "1.5rem"} as React.CSSProperties : ""),
+        ...(tag === "triangle" ? { "--a": "1.5rem" } as React.CSSProperties : ""),
     }
     return (
         <div className="text-white flex items-center gap-2 text-[1.75rem]" onClick={onClick}>
@@ -30,26 +30,30 @@ const ActionButton : React.FC<{ tag: string, action: string, onClick?: () => voi
     )
 }
 
-const CONTROLS_ICONS : { [key: string]: (action: string, index: number) => JSX.Element } = {
+const CONTROLS_ICONS: { [key: string]: (action: string, index: number) => JSX.Element } = {
     "X/A": (action: string, index: number) => { return <ActionButton key={index} tag={"cross"} action={action} /> },
     "O/B": (action: string, index: number) => { return <ActionButton key={index} tag={"circle"} action={action} onClick={returnToMainMenu} /> },
     "T/Y": (action: string, index: number) => { return <ActionButton key={index} tag={"triangle"} action={action} /> },
     "S/X": (action: string, index: number) => { return <ActionButton key={index} tag={"square"} action={action} /> }
 }
 
-const SECTION_CONTROLS : { [key: string] : { control: string, action: string}[] } = {
+const SECTION_CONTROLS: { [key: string]: { control: string, action: string }[] } = {
     "codex": [
-        { control: "X/A", action: "Select" }, 
-        { control: "O/B", action: "Back" }, 
+        { control: "X/A", action: "Select" },
+        { control: "O/B", action: "Back" },
     ],
     "skills": [
         { control: "X/A", action: "Select" },
         { control: "O/B", action: "Back" },
         { control: "T/Y", action: "Details" },
+    ],
+    "map": [
+        { control: "X/A", action: "Select" },
+        { control: "O/B", action: "Back" },
     ]
 }
 
-const ControlsDescription : React.FC<{ tag: string }> = ( {tag }) => {
+const ControlsDescription: React.FC<{ tag: string }> = ({ tag }) => {
     return (
         <div className={`w-full bg-gradient-to-l from-black to transparent flex gap-4 justify-end py-2 px-16 ${styles.controlsAnimation}`}>
             {
