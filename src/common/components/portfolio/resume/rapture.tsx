@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Bubbles from "./rapture/bubbles";
 import Buildings from "./rapture/buildings";
 import Fishes from "./rapture/fishes";

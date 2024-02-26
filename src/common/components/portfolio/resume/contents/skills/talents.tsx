@@ -10,7 +10,7 @@ import { RESOURCE_COLORS } from "../constant";
 
 const { SIZE, GAP } = { SIZE: 3, GAP: 1.5 };
 const { TITLE, POINTS } = { TITLE: 2.5, POINTS: 1.25 };
-const { HEIGHT, BORDER } = { HEIGHT: 1.5, BORDER: 0.125 }
+const { HEIGHT, BORDER } = { HEIGHT: 1.5, BORDER: 0.125 };
 const OFFSET_IN_PX = (SIZE * 16) + 4;
 const TALENTS = talentData.talents as { [key: string]: Talent | undefined };
 const MAX_WIDTH = 9;
@@ -24,26 +24,26 @@ const BRANCHES: { [key in AspectType]: TalentType[] } = {
     [AspectType.ARTS]: [TalentType.FORM, TalentType.THEORY],
     [AspectType.SPORTS]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
     [AspectType.GENERAL]: [TalentType.ESSENCE, TalentType.APPLICATION],
-}
+};
 
 const VIEW_MODE_ICON: { [key in ViewMode]: string } = {
     [ViewMode.TREE]: "ri-git-fork-line",
     [ViewMode.LIST]: "ri-align-justify",
-}
+};
 
 const ICON_COLORS: { [key in AspectType]: string } = {
     [AspectType.SCIENCE]: "bg-aspect-green-darker",
     [AspectType.ARTS]: "bg-aspect-blue-darker",
     [AspectType.SPORTS]: "bg-aspect-red-darker",
     [AspectType.GENERAL]: "bg-aspect-yellow-darker"
-}
+};
 
 const LIST_COLORS: { [key in AspectType]: string[] } = {
     [AspectType.SCIENCE]: ["via-aspect-green-darker", "from-aspect-green/75"],
     [AspectType.ARTS]: ["via-aspect-blue-darker", "from-aspect-blue/75"],
     [AspectType.SPORTS]: ["via-aspect-red-darker", "from-aspect-red/75"],
     [AspectType.GENERAL]: ["via-aspect-yellow-darker", "from-aspect-yellow/75"],
-}
+};
 
 const TALENT_TREES: { [key in TalentType]: number[] } = {
     [TalentType.ENGINEERING]: Array.from({ length: 95 - 48 }, (_, index) => index + 48),
@@ -51,7 +51,7 @@ const TALENT_TREES: { [key in TalentType]: number[] } = {
     [TalentType.FORM]: Array.from({ length: 199 - 151 }, (_, index) => index + 151),
     [TalentType.THEORY]: Array.from({ length: 151 - 95 }, (_, index) => index + 95),
     [TalentType.ENTERTAINMENT]: [], // "strength", "agility", "dexterity" endurance", "motor soccer 
-    [TalentType.KNOWLEDGE]: [],
+    [TalentType.KNOWLEDGE]: Array.from({ length: 241 - 199 }, (_, index) => index + 199),
     [TalentType.ESSENCE]: [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
     [TalentType.APPLICATION]: [],
 }
@@ -174,7 +174,6 @@ const TieredTalents: React.FC<{ tier: string, talents: number[] }> = ({ tier, ta
                 <div>Tier {parseInt(tier) + 1}</div>
                 {selected.length > 0 ? <div className="cursor-pointer text-[0.75rem] leading-[0.75rem]" onClick={collapse}><i className="ri-contract-up-down-line" /></div> : null}
             </div>
-
             <div className="w-full bg-gradient-to-r from-transparent via-10% via-gold h-[2px] shrink-0" />
             <div className="flex flex-col w-full px-4 py-2 gap-2">
                 {
@@ -202,8 +201,8 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected }: { id: num
 
     return (
         <div className="group/listed w-full relative flex flex-col cursor-pointer px-4" onClick={activate}>
-            <div className={`${active ? "w-full" : "w-0 group-hover/listed:w-full"} ${color[1]} shrink-0 rounded-[0.25rem] relative z-[1] flex justify-end transition-width duration-400 bg-gradient-to-r`} style={{ height: `${HEIGHT}rem`, paddingTop: `${BORDER}rem`, paddingBottom: `${BORDER}rem` }}>
-                <div className={`${active ? "w-0" : "w-full"} rounded-[0.25rem] h-full bg-sea-blue-darker transition-width duration-400`} style={{ marginLeft: `${BORDER}rem` }} />
+            <div className={`${active ? "w-[80%]" : "w-0 group-hover/listed:w-full"} ${color[1]} overflow-hidden shrink-0 rounded-[0.25rem] relative z-[1] flex justify-end transition-width duration-400 bg-gradient-to-r`} style={{ height: `${HEIGHT}rem`, paddingTop: `${BORDER}rem`, paddingBottom: `${BORDER}rem` }}>
+                <div className={`${active ? "w-0" : "w-full"} rounded-[0.25rem] h-full bg-gradient-to-r from-sea-blue-darker from-75% transition-width duration-400`} style={{ marginLeft: `${BORDER}rem` }} />
             </div>
             <div className="absolute z-[2] text-base flex items-center justify-between px-4" style={{ height: `${HEIGHT}rem`, width: `calc(100% - 4rem)` }}>
                 <span>{talent.name}</span>
