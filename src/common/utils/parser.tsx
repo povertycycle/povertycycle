@@ -2,7 +2,7 @@ export const TextStyleParser = (text: string) => {
     const styling = text.split("/");
     return (
         <>
-            - 
+            -
             {
                 styling.map((str: string, index: number) => {
                     const styled = /^[bi]\:\w+/.test(str);
@@ -13,7 +13,7 @@ export const TextStyleParser = (text: string) => {
                                 return <b key={index}>{val}</b>
                             case "i":
                                 return <em key={index}>{val}</em>
-                            default: 
+                            default:
                                 return <span key={index}>{val}</span>;
                         }
                     } else {

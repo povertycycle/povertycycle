@@ -74,7 +74,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "tailwind": {
         background: "bg-[#38bdf8]",
-        icon: <svg width="80%" height="60%" viewBox="0 0 54 33"><path fill="#fafafa" d="M27 0c-7 0-12 4-13 11 2-4 5-5 9-4 2 0 3 2 5 3 3 3 6 6 13 6s11-3 13-11c-3 4-6 5-9 4-3 0-4-2-6-3-2-3-5-6-12-6zM14 16C6 16 2 20 0 27c3-4 6-5 9-4 3 0 4 2 6 4s5 5 12 5 12-3 14-10c-3 3-6 5-10 4l-5-4c-3-3-6-6-12-6z" /></svg>
+        icon: <i className="text-white ri-tailwind-css-fill" />
     },
     "ocaml": {
         background: "bg-[#EC670F]",
@@ -334,7 +334,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "node-js": {
         background: "bg-[#3C873A]",
-        icon: <svg width="60%" height="60%" fill="#fff" viewBox="0 0 448 512"><path d="M224 508c-7 0-13-2-19-5l-62-37c-9-5-5-7-2-8 12-4 15-5 28-12h5l47 28h6l184-106c2-1 3-3 3-5V149c0-2-1-4-3-5L227 38h-6L37 144c-2 1-3 3-3 5v214c0 2 1 4 3 4l50 30c28 13 44-3 44-19V168c1-3 3-6 6-6h23c3 0 6 2 6 5v211c0 37-20 58-55 58-11 0-19 0-42-12l-49-28c-12-7-19-20-19-34V149c0-13 7-26 19-33L205 9c11-7 27-7 38 0l185 107c12 7 19 20 19 33v214c0 13-7 26-19 33L243 503c-5 3-12 5-19 5zm149-210c0-40-27-51-84-58-57-8-63-12-63-25 0-11 5-26 48-26 38 0 52 8 57 34 1 2 3 4 6 4h24l3-2 2-4c-4-44-33-64-92-64-53 0-85 22-85 59 0 41 32 52 82 57 61 6 65 15 65 27 0 20-16 29-55 29-49 0-60-12-63-37-1-2-3-4-6-4h-23c-3 0-6 2-6 5 0 31 17 68 98 68 58 0 92-23 92-63z" /></svg>
+        icon: <i className="text-white ri-nodejs-fill" />
     },
     "go": {
         background: "bg-[#29BEB0]",
@@ -380,7 +380,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     // Courtesy of World vector logo
     "nextjs": {
         background: "bg-black",
-        icon: <svg width="70%" height="70%" fill="#fafafa" viewBox="0.5 -0.2 1023 1024.1"><path d="m479 1-16 1a513 513 0 1 0 292 960l-84-112-82-111-102-151-103-152-1 150c0 144-1 150-2 153-3 5-5 7-9 9-3 2-6 2-21 2h-18l-4-3-7-7-2-5V334l4-4 7-6c4-2 6-2 23-2 20 0 24 1 29 7 2 1 57 85 123 185l202 306 81 123 4-3a525 525 0 0 0 226-354c4-28 4-36 4-74s0-46-4-75A514 514 0 0 0 479 1zm209 309c5 2 9 7 10 12l1 183-1 180-31-48-32-49V457l1-134c2-6 5-10 10-13 4-2 5-2 21-2 15 0 18 0 21 2z" /><path d="M784 945c-3 2-4 4-1 2l5-4-4 2zm-7 5h1l2-1-3 1zm-5 3h1l2-1-3 1zm-5 3h1l2-1-3 1zm-7 4c-4 2-4 2 0 1l3-2-3 1z" /></svg>
+        icon: <i className="text-white ri-nextjs-fill" />
     },
     // Courtesy of Tech Icons
     "jest": {

@@ -42,13 +42,12 @@ export interface AspectColorTypes {
     title: string,
 }
 
-export interface TalentAbility { 
-    active: boolean, 
-    resource?: ResourceType,
-    cost?: number, 
-    cooldown?: number, 
+export interface TalentAbility {
+    active: boolean,
+    cost?: unknown,
+    cooldown?: number,
     cast_time?: string,
-    proc_chance?: number,
+    special?: string,
 }
 
 export interface Talent {
@@ -78,7 +77,7 @@ export const AspectsContext = createContext<{
     setAspect: Dispatch<SetStateAction<AspectType | undefined>>,
 }>({
     activeTab: SkillTab.ASPECTS,
-    setActiveTab: (aspects: SetStateAction<SkillTab>) => {},
+    setActiveTab: (aspects: SetStateAction<SkillTab>) => { },
     aspect: undefined,
-    setAspect: (aspect: SetStateAction<AspectType | undefined>) => {},
+    setAspect: (aspect: SetStateAction<AspectType | undefined>) => { },
 });

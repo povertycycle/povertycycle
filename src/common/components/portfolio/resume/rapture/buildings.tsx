@@ -7,11 +7,11 @@ import { RaptureContext } from "../../global-context";
 export const MAX_Z_INDEX = 10;
 export const GRADIENTS = jsgradient.generateGradient("#000000", "#136087", MAX_Z_INDEX);
 
-const Lighthouse : React.FC = () => {
+const Lighthouse: React.FC = () => {
     return (
         <div className="absolute bottom-0 h-[90%] flex justify-center" style={{
             left: "calc(50% - 2.5rem)",
-            zIndex: MAX_Z_INDEX / 2, 
+            zIndex: MAX_Z_INDEX / 2,
             animation: `${styles.buildRaptureMain} 3s ease`
         }}>
             <div className={`${styles.raptureMain} w-[5rem] h-full rounded-[0.5rem]`} />
@@ -20,7 +20,7 @@ const Lighthouse : React.FC = () => {
     )
 }
 
-const Buildings : React.FC = () => {
+const Buildings: React.FC = () => {
     const [towers, setTowers] = useState<number>(0);
     const [offset, setOffset] = useState<number>(0);
     const { dive } = useContext(RaptureContext);
@@ -31,7 +31,7 @@ const Buildings : React.FC = () => {
         setOffset(Math.round(window.innerWidth / 192));
     }, [dive]);
 
-    const Stacks : React.FC<{ total: number, pos:number, factor: number, z:number }> = ({ total, pos, factor, z }) => {
+    const Stacks: React.FC<{ total: number, pos: number, factor: number, z: number }> = ({ total, pos, factor, z }) => {
         const width = (80 / (total + 1) / factor) * (total + 1 - pos);
         const height = (factor * 1) + Math.pow((pos - total) / (Math.pow(Math.pow(total, 4) / 4, 1 / 4)), 4);
 
@@ -41,10 +41,10 @@ const Buildings : React.FC = () => {
                 height: `${height}vh`,
                 background: GRADIENTS[z - (2 * (z - MAX_Z_INDEX / 2))],
             }} />
-        )    
+        )
     }
 
-    const Tower : React.FC<{ pos: number }> = ({ pos }) => {
+    const Tower: React.FC<{ pos: number }> = ({ pos }) => {
         const direction = pos >= towers / 2 ? -1 : 1
         const left = offset + roundWithDecimals((100 - 2 * offset) / towers * pos, 1);
         const spread = left + direction * (quadraticEquationProcessor(left, 15, offset))
@@ -55,7 +55,7 @@ const Buildings : React.FC = () => {
         const stacks = Math.round(Math.random() * 4) + 2;
         const duration = Math.round(Math.random() * 7) + 3;
         const threshold = Math.round(Math.random() * stacks);
-        let boxShadow = `0px -150px 250px 30px #1a827c, ${direction * 150}px 150px 150px 5px #1a827c, ${direction * 250}px 50px 250px 5px #67aba8`
+        let boxShadow = `0px -150px 250px 30px #1a827c, ${direction * 150}px 150px 150px 5px #1a827c, ${direction * 250}px 50px 250px 5px #67aba8`;
         const filter = `blur(${Math.floor((MAX_Z_INDEX - z) / 3)}px)`;
 
         return (
@@ -80,7 +80,7 @@ const Buildings : React.FC = () => {
         )
     }
     return (
-        <div className={"z-[1] absolute bottom-0 w-full h-full"}>    
+        <div className={"z-[1] absolute bottom-0 w-full h-full"}>
             {towers !== 0 && <Lighthouse />}
             <div className="w-full h-[40%] absolute bottom-0">
                 {

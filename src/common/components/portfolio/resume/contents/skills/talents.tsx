@@ -6,7 +6,7 @@ import { AspectType, AspectsContext, Talent, TalentAbility, TalentType, ViewMode
 import { checkOverlap, getAge, getExperienceData } from "@/common/utils/math";
 import { CUSTOM_ICONS } from "./talent-icons";
 import { PATCH_NOTES } from "./patch-notes";
-import { RESOURCE_COLORS } from "../constant";
+import { RESOURCE_COLORS, ResourceType } from "../constant";
 
 const { SIZE, GAP } = { SIZE: 3, GAP: 1.5 };
 const { TITLE, POINTS } = { TITLE: 2.5, POINTS: 1.25 };
@@ -50,8 +50,8 @@ const TALENT_TREES: { [key in TalentType]: number[] } = {
     [TalentType.STUDY]: Array.from({ length: 48 }, (_, index) => index),
     [TalentType.FORM]: Array.from({ length: 199 - 151 }, (_, index) => index + 151),
     [TalentType.THEORY]: Array.from({ length: 151 - 95 }, (_, index) => index + 95),
-    [TalentType.ENTERTAINMENT]: [], // "strength", "agility", "dexterity" endurance", "motor soccer 
-    [TalentType.KNOWLEDGE]: Array.from({ length: 241 - 199 }, (_, index) => index + 199),
+    [TalentType.ENTERTAINMENT]: [],
+    [TalentType.KNOWLEDGE]: Array.from({ length: 245 - 199 }, (_, index) => index + 199),
     [TalentType.ESSENCE]: [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
     [TalentType.APPLICATION]: [],
 }
@@ -191,7 +191,7 @@ const TieredTalents: React.FC<{ tier: string, talents: number[] }> = ({ tier, ta
 }
 
 const ListedTalent = memo(({ id, active, talent, color, setSelected }: { id: number, active: boolean, talent: Talent, color: string[], setSelected: Dispatch<SetStateAction<number[]>> }) => {
-    const { p, req } = getExperienceData(talent.experience, talent.rank);
+    const { p, req } = getExperienceData(talent.experience, talent.rank, talent.maxRank);
     const activate = () => {
         setSelected(prev => {
             if (prev.includes(id)) return prev.filter((val) => { return val != id });
@@ -223,7 +223,7 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected }: { id: num
                         <IconImage active={talent.ability.active} taken={talent.rank > 0} icon={talent.icon} color={color[2]} />
                         <div className="flex flex-col justify-center">
                             <div className="text-base">Experience: {talent.experience} {talent.experience > 1 ? "years" : "year"}</div>
-                            <div className="text-[0.875rem] ">{req}</div>
+                            <p className="text-[0.875rem]">{req}</p>
                         </div>
                     </div>
                     <div className="w-full h-[4px] rounded-full overflow-hidden bg-gold-gray">
@@ -233,7 +233,7 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected }: { id: num
                         <AbilityDescription ability={talent.ability} />
                     </div>
                     <div className="flex flex-col font-century-gothic text-[1rem] leading-[1rem] text-gold">
-                        <div>{talent.description === "" ? "??????????" : talent.description}</div>
+                        <p>{talent.description === "" ? "??????????" : talent.description}</p>
                     </div>
                 </div>
             </div>
@@ -385,7 +385,7 @@ const Branches: React.FC<{ tree: number[] }> = ({ tree }) => {
 const Details: React.FC<{ data: DetailsPayload }> = ({ data }) => {
     const ref = useRef<HTMLDivElement>(null);
     const { talent, x, bottom } = data;
-    const { p, req } = getExperienceData(talent.experience, talent.rank);
+    const { p, req } = getExperienceData(talent.experience, talent.rank, talent.maxRank);
     const [pos, setPos] = useState<[number, number]>([x + OFFSET_IN_PX, bottom + OFFSET_IN_PX]);
 
     useEffect(() => {
@@ -418,7 +418,7 @@ const Details: React.FC<{ data: DetailsPayload }> = ({ data }) => {
                 <AbilityDescription ability={talent.ability} />
             </div>
             <div className="flex flex-col text-[1rem] leading-[1rem] text-gold">
-                <div>{talent.description === "" ? "??????????" : talent.description}</div>
+                <p>{talent.description === "" ? "??????????" : talent.description}</p>
             </div>
             <div className="w-full text-[1rem] tracking-[1px]">
                 <div className="flex justify-between">
@@ -428,19 +428,30 @@ const Details: React.FC<{ data: DetailsPayload }> = ({ data }) => {
                 <div className={`w-full rounded-[0.25rem] bg-gold-gray overflow-hidden`}>
                     <div className={`h-[4px] bg-gold`} style={{ width: `${Math.round(p * 100)}%` }}></div>
                 </div>
-                <div className="text-[0.875rem] tracking-[1px]">{req}</div>
+                <p className="text-[0.875rem] tracking-[1px]">{req}</p>
             </div>
         </div>
     )
 }
+type AbilityCost = [cost: number, resource: ResourceType]
 
 const AbilityDescription: React.FC<{ ability: TalentAbility }> = ({ ability }) => {
+    const abilityCost = ability.cost as AbilityCost[];
+
     return (
         ability.active ?
             <>
                 <div className="w-full flex justify-between">
-                    {ability.resource && <span className={RESOURCE_COLORS[ability.resource]}>{ability.cost} {ability.resource}</span>}
-                    {ability.proc_chance && <span>{ability.proc_chance}% critical chance</span>}
+                    {
+                        abilityCost && <div className="flex gap-2">
+                            {
+                                abilityCost.map(([cost, type]: AbilityCost, index: number) => (
+                                    <span key={index} className={RESOURCE_COLORS[type]}>{cost} {type}</span>
+                                ))
+                            }
+                        </div>
+                    }
+                    {ability.special && <span>{ability.special}</span>}
                 </div>
                 <div className="w-full flex justify-between">
                     {ability.cast_time && <span>{ability.cast_time}</span>}
@@ -451,7 +462,7 @@ const AbilityDescription: React.FC<{ ability: TalentAbility }> = ({ ability }) =
                 <div>Passive</div>
                 <div className="flex flex-col">
                     {ability.cooldown && <span>{ability.cooldown}s cooldown</span>}
-                    {ability.proc_chance && <span>{ability.proc_chance}% critical chance</span>}
+                    {ability.special && <span>{ability.special}</span>}
                 </div>
             </div>
     )

@@ -34,7 +34,8 @@ const config: Config = {
                 'aspect-green': '#1cff00', // '#7aff00',
                 'aspect-green-darker': '#0f8000',
                 'mana-cost': '#83f0ff',
-                'flair-cost': '#fc6d65'
+                'flair-cost': '#fc6d65',
+                'focus-cost': '#ffdd00'
 			},
 			fontFamily: {
 				'andes': ['andes'],
