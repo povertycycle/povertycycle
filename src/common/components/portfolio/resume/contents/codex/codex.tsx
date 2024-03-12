@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect, Dispatch, SetStateAction } from "re
 import ControlsDescription from "../controls-description";
 
 interface Journal {
-    [key: number] : {
+    [key: number]: {
         title: string,
         content: {
             heading: string,
@@ -12,9 +12,9 @@ interface Journal {
             description: string[],
         }
     }
-} 
+}
 
-const JOURNALS : Journal = {
+const JOURNALS: Journal = {
     0: {
         title: "Introduction",
         content: {
@@ -27,14 +27,14 @@ const JOURNALS : Journal = {
             ]
         }
     },
-    1 : {
+    1: {
         title: "Website",
         content: {
             heading: "Software Engineer - Minor in Maths",
             flavorText: "The time does not matter; what matters is the completion.",
             description: [
                 "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
-                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS; the repository stores no .jpg or .png files. Most of the icons in the talent trees are from remixicon, fontawesome, and vectorlogo.",
+                "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS; the repository stores no .jpg or .png files. Most of the icons in the talent trees are from remixicon, fontawesome, vectorlogo, or are self made. ",
                 "All the contents were dynamically rendered from a list of arrays and objects of the contents; all components were rendered through loops and recursion while the contents were passed as lists.",
                 "Skill trees took elements and inspired from WoW's talent trees."
             ]
@@ -74,7 +74,7 @@ const JOURNALS : Journal = {
             ]
         }
     },
-    ...(Array.from({ length: 17 }).reduce((acc : Journal, _, index) => {
+    ...(Array.from({ length: 17 }).reduce((acc: Journal, _, index) => {
         acc[index + 4] = {
             title: "??????????",
             content: {
@@ -87,7 +87,7 @@ const JOURNALS : Journal = {
     }, {}))
 }
 
-const CodexScroller : React.FC<{ height: string, scroll: number }> = ({ height, scroll }) => {
+const CodexScroller: React.FC<{ height: string, scroll: number }> = ({ height, scroll }) => {
     return (
         <div className="w-[0.25rem] h-full rounded-full flex justify-center relative">
             <div className="w-[3px] bg-default-white shadow-[0_0_8px_1px_white] rounded-full absolute transition-height duration-500" style={{
@@ -98,7 +98,7 @@ const CodexScroller : React.FC<{ height: string, scroll: number }> = ({ height, 
     )
 }
 
-const JournalOptions : React.FC<{ active: number, setActive: Dispatch<SetStateAction<number>> }> = ({ active, setActive }) => {
+const JournalOptions: React.FC<{ active: number, setActive: Dispatch<SetStateAction<number>> }> = ({ active, setActive }) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const [scroll, setScroll] = useState<number>(0);
     const [height, setHeight] = useState<string>("0%");
@@ -123,19 +123,19 @@ const JournalOptions : React.FC<{ active: number, setActive: Dispatch<SetStateAc
                             return (
                                 <div className={`flex select-none cursor-pointer rounded-[0.25rem] gap-8 px-4 py-1 transition-transform from-60% ${active == index ? "skew-x-[-10deg] bg-gradient-to-r from-default-white text-black translate-x-[2rem]" : "bg-gradient-to-r from-sea-blue-dark/35 hover:from-sea-blue-dark/75 hover:skew-x-[-10deg] hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
                                     <span className="w-[3rem]">{index.toString().padStart(3, "0")}</span>
-                                    <span>{journal.title}</span>    
+                                    <span>{journal.title}</span>
                                 </div>
                             )
                         })
                     }
                 </div>
             </div>
-            <CodexScroller scroll={scroll} height={height} /> 
+            <CodexScroller scroll={scroll} height={height} />
         </div>
     )
 }
 
-const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
+const JournalDescription: React.FC<{ active: number }> = ({ active }) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const [scroll, setScroll] = useState<number>(0);
     const [height, setHeight] = useState<string>("0%");
@@ -177,14 +177,14 @@ const JournalDescription : React.FC<{ active: number }> = ({ active }) => {
                         }
                     </div>
                 </div>
-                <CodexScroller scroll={scroll} height={height} /> 
+                <CodexScroller scroll={scroll} height={height} />
             </div>
         </div>
 
     )
 }
 
-const Codex : React.FC = () => {
+const Codex: React.FC = () => {
     const [active, setActive] = useState<number>(0);
 
     return (

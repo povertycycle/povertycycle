@@ -50,7 +50,7 @@ const TALENT_TREES: { [key in TalentType]: number[] } = {
     [TalentType.STUDY]: Array.from({ length: 48 }, (_, index) => index),
     [TalentType.FORM]: Array.from({ length: 199 - 151 }, (_, index) => index + 151),
     [TalentType.THEORY]: Array.from({ length: 151 - 95 }, (_, index) => index + 95),
-    [TalentType.ENTERTAINMENT]: [],
+    [TalentType.ENTERTAINMENT]: Array.from({ length: 300 - 245 }, (_, index) => index + 245),
     [TalentType.KNOWLEDGE]: Array.from({ length: 245 - 199 }, (_, index) => index + 199),
     [TalentType.ESSENCE]: [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
     [TalentType.APPLICATION]: [],
@@ -79,18 +79,11 @@ const TalentsDisplay: React.FC = () => {
 
 const TalentContents: React.FC<{ category: TalentType, pos: number }> = ({ category, pos }) => {
     const [mode, setMode] = useState<ViewMode>(ViewMode.TREE);
-    const GRID_MODE = false;
+
     return (
         <div className="flex flex-col p-[1.25rem] items-center justify-center w-full text-[1.25rem] relative select-none" style={{ zIndex: 2 - pos }}>
             <Navigator title={category} mode={mode} setMode={setMode} />
-            <div className={`z-[1] flex flex-col relative items-center`} style={{ width: `${TALENTS_WIDTH}rem`, height: `${TALENTS_HEIGHT}rem` }}>
-                {GRID_MODE && <div className="w-full h-full flex justify-between absolute top-0 gap-[1.5rem]">{
-                    Array.from({ length: 9 }).map((_, index) => (
-                        <div key={index} className="w-full h-full border-x-2 bg-green-100/50 border-green-200">
-
-                        </div>
-                    ))
-                }</div>}
+            <div className={`z-[2] flex flex-col relative items-center`} style={{ width: `${TALENTS_WIDTH}rem`, height: `${TALENTS_HEIGHT}rem` }}>
                 {
                     (() => {
                         switch (mode) {
@@ -112,7 +105,7 @@ const Navigator: React.FC<{ title: TalentType, mode: ViewMode, setMode: Dispatch
     const REMAINING_POINTS = getAge() * 3 - (TALENT_TREES[title].reduce((acc: number, id: number) => (acc += TALENTS[id]?.rank ?? 0), 0));
 
     return (
-        <div className="z-[2] absolute left-0 top-0 p-4 flex flex-col gap-4">
+        <div className="z-[1] absolute left-0 top-0 p-4 flex flex-col gap-4">
             <div className="flex flex-col">
                 <span style={{ fontSize: `${TITLE}rem`, lineHeight: `${TITLE}rem` }}>{title.toUpperCase()}</span>
                 <span style={{ fontSize: `${POINTS}rem`, lineHeight: `${POINTS}rem` }}>{REMAINING_POINTS} POINTS AVAILABLE</span>
