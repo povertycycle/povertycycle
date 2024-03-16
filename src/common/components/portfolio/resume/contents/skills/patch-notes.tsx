@@ -6,6 +6,7 @@ import { TextStyleParser } from "@/common/utils/parser";
 type Notes = { version: string, changes: string[] }
 
 export const PATCH_NOTES: Notes[] = [
+    { version: "1.0.12.20240316", changes: [`Added full /b:${TalentType.ENTERTAINMENT}/ skill talents and rebalanced skills costs and special resources.`] },
     { version: "1.0.11.20240305", changes: [`Added full /b:${TalentType.KNOWLEDGE}/ skill talents and rebalanced some skills' description.`] },
     { version: "1.0.10.20240227", changes: [`Added full /b:${TalentType.FORM}/ skill talents and skeleton for /b:${TalentType.KNOWLEDGE}/ skill talents.`] },
     { version: "1.0.9.20240212", changes: [`Added some /b:${TalentType.FORM}/ skill talents and rebalanced end-game talents for /b:${TalentType.THEORY}/.`] },
