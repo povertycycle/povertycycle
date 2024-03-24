@@ -48,9 +48,9 @@ const JOURNALS: Journal = {
             description: [
                 "Version 2.0 (Next Goal):",
                 "- New design for the website and its contents.",
-                "Version 1.3.8 - Current:",
+                "Version 1.4.0 - Current:",
                 "- New website made with React and NextJS.",
-                "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations. Prototyping skills section.",
+                "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations, and a new skill talent section.",
                 "Version 1.0:",
                 "- Personal website (old) launched using github pages with React and NodeJS.",
             ]
@@ -62,13 +62,12 @@ const JOURNALS: Journal = {
             heading: "Upcoming changes and to-do list",
             flavorText: "The best one can do for oneself is to keep learning and improving.",
             description: [
-                "- Complete the Skill conetnts.",
                 "- Complete the Map contents.",
                 "- Complete the Inventory contents.",
                 "- Complete the Gallery contents.",
                 "- Controller supports for website.",
                 "- Mobile supports for website.",
-                "- Design icons for skills section.",
+                "- Design new icons for skills section.",
                 "- Convert into canvas to draw background animations.",
                 "- Compose background music for the website's ambience."
             ]

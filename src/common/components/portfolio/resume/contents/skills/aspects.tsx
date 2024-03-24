@@ -1,29 +1,29 @@
 import { Fragment, useContext } from "react";
-import { AspectColor, AspectColorTypes, AspectType, AspectsContext, SkillTab, TalentType } from "./constants";
+import { AspectColor, AspectColorTypes, AspectType, AspectsContext, SkillTab } from "./constants";
 import { AspectArtsIcon, AspectGeneralIcon, AspectScienceIcon, AspectSportsIcon } from "./aspect-icons";
 
-interface Aspect { 
+interface Aspect {
     description: string,
     color: AspectColor,
     icon: JSX.Element,
 }
 
-const ASPECTS : { [key in AspectType] : Aspect } =  {
+const ASPECTS: { [key in AspectType]: Aspect } = {
     [AspectType.SCIENCE]: {
         description: "An aspect assembled from the uncharted depths of knowledge; the mind revels in its enigmatic concepts.",
         color: AspectColor.GREEN,
         icon: <AspectScienceIcon />,
-    }, 
+    },
     [AspectType.ARTS]: {
         description: "An aspect crafted from the endless well of imagination; the soul wallows in the beauty it evokes.",
         color: AspectColor.BLUE,
         icon: <AspectArtsIcon />,
-    }, 
+    },
     [AspectType.SPORTS]: {
         description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glory.",
         color: AspectColor.RED,
         icon: <AspectSportsIcon />,
-    }, 
+    },
     [AspectType.GENERAL]: {
         description: "An aspect molded from the vast history of men; none knows the full potential of its reaches.",
         color: AspectColor.YELLOW,
@@ -31,7 +31,7 @@ const ASPECTS : { [key in AspectType] : Aspect } =  {
     }
 };
 
-const ASPECTS_COLORS : { [key in AspectColor] : AspectColorTypes } = {
+const ASPECTS_COLORS: { [key in AspectColor]: AspectColorTypes } = {
     [AspectColor.GREEN]: {
         background: "from-aspect-green/30",
         title: "from-aspect-green via-aspect-green",
@@ -50,11 +50,11 @@ const ASPECTS_COLORS : { [key in AspectColor] : AspectColorTypes } = {
     },
 }
 
-const AspectBanner : React.FC<{ aspect: AspectType }> = ({ aspect }) => {
+const AspectBanner: React.FC<{ aspect: AspectType }> = ({ aspect }) => {
     const aspectData = ASPECTS[aspect];
     const colors = ASPECTS_COLORS[aspectData.color];
     const { setActiveTab, setAspect } = useContext(AspectsContext);
-    
+
     const setActive = () => {
         setAspect(aspect);
         setActiveTab(SkillTab.TALENTS);
@@ -76,14 +76,14 @@ const AspectBanner : React.FC<{ aspect: AspectType }> = ({ aspect }) => {
     )
 }
 
-const AspectDisplay : React.FC = () => {
+const AspectDisplay: React.FC = () => {
     const aspects = Object.keys(ASPECTS) as AspectType[];
 
     return (
         aspects.map((aspect: AspectType, index: number) => {
             return (
                 <Fragment key={index}>
-                    { index !== 0 && <div className={`shrink-0 bg-gradient-to-b from-transparent via-gold rounded-[100%] h-full w-[0.2rem]`} /> }
+                    {index !== 0 && <div className={`shrink-0 bg-gradient-to-b from-transparent via-gold rounded-[100%] h-full w-[0.2rem]`} />}
                     <AspectBanner aspect={aspect} />
                 </Fragment>
             )

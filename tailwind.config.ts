@@ -13,18 +13,18 @@ const config: Config = {
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			colors: {
+                'soft-white': '#FAFAFA',
 				'rain':'#A1C6CC',
 				'neon': '#E1F5FF',
 				'sea-blue-dark': '#136087',
                 'sea-blue-darker': '#07202C',
                 'sea-blue-gray': '#777d81',
-                'soft-white': '#E6E6E6',
 				'default-white': '#FAFAFA',
 				'sea-green-dark': '#0d403d',
 				'sea-green': '#1a827c',
                 'gold': '#E5B80B',
                 'gold-desaturated': '#b19d62',
-                'gold-gray': '#938c76',
+                'gold-gray': '#959595',
                 'aspect-blue': '#00e8ff', //'#00cfff',
                 'aspect-blue-darker': '#007580',
                 'aspect-red': '#ff0025', // '#ff0025',
@@ -35,7 +35,8 @@ const config: Config = {
                 'aspect-green-darker': '#0f8000',
                 'mana-cost': '#83f0ff',
                 'flair-cost': '#fc6d65',
-                'focus-cost': '#ffdd00'
+                'focus-cost': '#ffdd00',
+                'life-cost': '#98FB98'
 			},
 			fontFamily: {
 				'andes': ['andes'],

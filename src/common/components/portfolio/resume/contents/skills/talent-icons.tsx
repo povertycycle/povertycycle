@@ -21,7 +21,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <i className="ri-css3-fill" />
     },
     "mysql": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <div className="flex items-center justify-center font-serif text-[0.75rem]"><span className="text-[#00758F]">My</span><span className="text-[#F29111]">SQL</span></div>
     },
     "react": {
@@ -42,7 +42,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "typescript": {
         background: "bg-[#007acc]",
-        icon: <div className="font-sans text-[1.5rem] text-[#FAFAFA] font-bold">TS</div>
+        icon: <div className="font-sans text-[1.5rem] text-soft-white font-bold">TS</div>
     },
     "django": {
         background: "bg-[#092E20]",
@@ -54,7 +54,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "github": {
         background: "bg-black",
-        icon: <i className="text-[2.5rem] text-[#FAFAFA] ri-github-fill" />,
+        icon: <i className="text-[2.5rem] text-soft-white ri-github-fill" />,
     },
     "c": {
         background: "bg-[#283593]",
@@ -157,7 +157,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" viewBox="0 0 1000 1000"><path fill="#BABEC0" d="m947 465-1 85-1 3-2 21-13 63h17v6l-4 4-27 63-22 51c-2 3-3 4-7 3l-16-5-35 44a435 435 0 0 1-67 62 425 425 0 0 1-224 87l-14 2h-62l-31-4-37-7c-26-5-51-13-75-24-17-8-34-15-50-25a643 643 0 0 1-101-81c-16-16-30-33-42-52l-5-1-14 4c-4 1-6 0-7-4l-28-65-17-38-7-12-1-8 18-1c-6-23-12-46-14-69l-3-11v-89l5-34 13-56a425 425 0 0 1 106-180c12-13 27-25 40-37a435 435 0 0 1 236-97l16-2h57l12 1 5 1c18 3 36 4 54 8a421 421 0 0 1 210 112 409 409 0 0 1 58 69 415 415 0 0 1 65 138c6 24 11 48 13 73l2 2m-561 36-19 34a636 636 0 0 1-89 128 344 344 0 0 1-63 53l-38 25a398 398 0 0 0 648-1l-19-10a377 377 0 0 1-119-109c-19-25-35-52-50-80l-31-54a329 329 0 0 0-68-78c-12-9-25-15-40-14-12 1-23 5-32 12-13 8-24 18-33 30l-23 28-24 36m142-251 14 2a231 231 0 0 1 135 81l26 33c16 22 29 46 41 71a565 565 0 0 0 123 166l17 13a398 398 0 0 0-651-404 399 399 0 0 0-117 404l4-3 33-27 25-28 35-45c18-26 34-54 47-83a428 428 0 0 1 100-131 225 225 0 0 1 133-50l35 1z" /></svg>
     },
     "krita": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 1024 1024"><defs><linearGradient id="e" x1="1142.6" x2="1280.9" y1="62.7" y2="200.9" gradientTransform="rotate(-6 1223 100)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#343434" /><stop offset="1" stopColor="#4d4d4d" /></linearGradient><linearGradient id="f" x1="1327.6" x2="1324.9" y1="230.9" y2="89.9" gradientTransform="matrix(0 1 1 0 1078 -1094)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#5596ea" /><stop offset="1" stopColor="#5596ea" stopOpacity="0" /></linearGradient><linearGradient id="b" x1="112" x2="711.9" y1="512" y2="512" gradientTransform="translate(-1211 -699)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#ff0" /><stop offset="1" stopColor="#ff0" stopOpacity="0" /></linearGradient><linearGradient id="c" x1="112" x2="711.9" y1="512" y2="512" gradientTransform="translate(-325 187)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#0ff" /><stop offset="1" stopColor="#0ff" stopOpacity="0" /></linearGradient><linearGradient id="d" x1="112" x2="711.9" y1="512" y2="512" gradientTransform="translate(0 -1024)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#f0f" /><stop offset="1" stopColor="#f0f" stopOpacity="0" /></linearGradient><clipPath id="a"><circle cx="532" cy="538" r="400" fillOpacity=".5" /></clipPath></defs><circle cx="532" cy="532" r="406.5" fillOpacity=".5" clipPath="url(#a)" transform="translate(-20)" /><circle cx="512" cy="512" r="400" fill="#fff" /><circle cx="-699.4" cy="-187.4" r="400" fill="url(#b)" transform="rotate(210)" /><circle cx="187.4" cy="699.4" r="400" fill="url(#c)" transform="rotate(-30)" /><circle cx="512" cy="-512" r="400" fill="url(#d)" transform="rotate(90)" /><path fillOpacity=".5" d="M225 234a400 400 0 0 0-60 80c59 57 122 117 147 145 44 47 134 115 200 108 26 18 85 59 105 69 0 9 2 19 5 28 19 52 88 86 48 141 79-48 100-128 66-186-21-35-51-47-77-38-15-18-75-68-98-86-14-64-100-130-155-159-34-17-110-61-181-102z" /><path fill="url(#e)" d="M1288 192c-18 17-54-10-68-27l-77-81c-4-3-7-8-4-13 4-4 9-2 14 1s74 47 94 58 54 40 41 62z" transform="matrix(3.5 0 0 3.5 -3949 -129)" /><path fill="url(#f)" d="M1317 209a85 85 0 0 1-139-19c6 37 30 70 68 82 28 10 73 10 93-27z" transform="matrix(3.5 0 0 3.5 -3949 -129)" /><path fill="#BABEC0" d="M664 623c-21 9-18 16-36 13-13-2-121-84-121-84-6-13 1-31 13-46s28-25 42-22c0 0 103 89 107 101 7 17 0 16-5 38z" /><path fill="#282828" d="M669 805c81-46 105-125 73-184-25-45-66-53-94-31-28 21-30 47-22 73 17 52 85 88 43 142z" /></svg>
     },
     "adobe-pr": {
@@ -181,7 +181,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <span className="text-[#BABEC0] text-[1.5rem] font-bold font-mono">Pt</span>
     },
     "blender": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 64 64"><path fill="#BABEC0" d="M44 57c-13 0-20-4-22-13l-1-5-11 8c-2 2-5 3-6 1-2-3-1-6 2-8l20-15H15c-2 0-4 0-4-2-1-2 1-4 4-4h22l-4-4c-2-1-4-2-2-4 1-3 3-3 5-2l13 9 10 9c4 7 4 13 2 19-3 7-9 11-17 11z" /><path fill="#8f8f8f" d="M31 43c-3-6-2-11 2-15 4-3 11-4 16-1s7 8 5 13c-1 4-5 7-9 8-5 1-10-1-14-5z" /><path fill="#BABEC0" d="M42 43c-4 0-7-2-8-5 0-3 1-6 4-8a8 8 0 0 1 8 0c3 2 4 4 4 7-1 4-4 6-8 6z" /></svg>
     },
     "zbrush": {
@@ -189,19 +189,19 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="70%" height="70%" viewBox="0 0 512 512"><path fill="#FAFAFA" d="M263 83c-2-10 1-20 7-30 8-13 18-20 29-21 14-2 27 6 39 22 11 15 16 29 15 42-1 8-12 13-35 14-18 2-31 0-39-5-9-5-14-12-16-22zm248 396c-2 2-6 2-14-2-13-6-27-15-43-28-18-14-29-25-31-34v-7l4-9c2-9-1-17-9-25l-17-12c-16-8-38-15-68-21-31-6-61-9-89-10l-35 2a1224 1224 0 0 1-47 50c-27 24-53 43-79 55-36 18-62 23-80 15-2-2-3-4-2-8l3-10c12-27 32-51 60-73l7-6a539 539 0 0 1 148-71l15-21 18-20a431 431 0 0 1 43-42l-36-23-32-20c-25-11-50-7-76 10-15 10-23 22-24 34l-1 15c1 5-13 12-41 22l-13 4H59l-2-2c-3-5 9-22 35-51l5-6c47-49 102-68 165-57 17 3 46 14 87 32 4-4 12-10 22-16 13-7 25-11 33-12 18 0 30 7 34 22 3 8-3 21-19 36-16 17-32 28-46 32-19 5-38 2-60-9-9 7-20 17-31 31l-2 1-27 33-1 2h19c14 0 28 2 42 7 38 12 70 27 95 45a276 276 0 0 1 69 69l24 39c9 18 12 31 10 39zM371 167c3 3 11 4 24 3 14 0 24-3 30-8 2-3 2-6-1-8-3-3-9-4-18-3-8 2-16 4-25 8s-12 7-10 8zM177 337h-4a367 367 0 0 0-75 25l-29 16c-27 18-40 35-38 52l3 3c7 5 21 1 43-11a374 374 0 0 0 100-85z" /></svg>
     },
     "3ds-max": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="50%" height="50%" viewBox="140 74.1222 107.204 145.5474"><path fill="#BABEC0" d="M154 115h-11l-1-1c0-11 5-20 14-28 19-16 57-16 76 1 6 5 9 12 10 21 2 17-6 27-21 33l-2 1c10 2 19 6 24 15l4 13v5c2 23-11 34-26 39-21 8-42 8-61-3-11-6-20-21-20-33h30l3 3c4 16 26 17 35 8 10-9 5-29-7-32l-24-3v-23h12c4 0 9-1 13-3 6-3 8-11 5-20-1-6-6-9-13-9-12 0-15 2-21 16h-19z" /></svg>
     },
     "maya": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="50%" height="50%" viewBox="77 39 100 97"><path fill="#BABEC0" d="M77 39h31l19 77 6-23 15-54h29v97h-23V74l-16 62h-23l-13-51-4-14v65H77V39Z" /></svg>
     },
     "alias": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="50%" height="50%" viewBox="92 55 97 106"><path fill="#BABEC0" d="m116 76 6-21h33l3 2 31 103v1h-27l-6-23h-32l-5 19c0 3-2 4-4 4H92l24-85m26 7-2-9h-1l-10 44h22l-9-35z" /></svg>
     },
     "fusion-360": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="50%" height="50%" viewBox="84 211 35 56"><path fill="#BABEC0" d="M84 211h35v10H98v13l18 1v9l-18 1v22H84v-56z" /></svg>
     },
     "rhino": {
@@ -217,7 +217,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" viewBox="0 0 210 200"><path fill="#BABEC0" d="M191 93v19a731 731 0 0 0-6 22 672 672 0 0 0-8 16 460 460 0 0 0-8 11l-8 8-8 6-9 6a70 70 0 0 1-35 11 98 98 0 0 1-40-5l-12-6-8-6a380 380 0 0 0-8-5 103 103 0 0 1-26-43 104 104 0 0 1-3-37 89 89 0 0 1 176-7l3 10m-36-23-1-2-9-3H59c-3 0-7 0-10 3l-1 4v54l1 9c0 3 2 5 6 5h92c3 0 5-3 9-5V75l-1-2 1-1-1-2M28 126l5-1 6-3v-12l-1-2-16 1c1 6 0 12 6 17m36 25h-7c-4-2-5 0-6 4a14 14 0 0 0 9 16l21 8c6 2 13 4 19 4 14-2 28-4 41-11 10-6 11-10 9-21H64m76-97h6l4-2c3-4 0-12-3-14a70 70 0 0 0-35-14H87c-9 2-19 7-28 10-6 3-9 7-8 14 0 4 1 6 6 6h83m27 72c12 0 17-8 12-19h-15l-1 14c0 2-1 5 4 5M23 90c0 7 0 7 7 7 9 0 9 0 9-10s2-9-9-9c-4 0-6 4-7 12m140-3c0 9 0 9 10 9h3c3 0 4-1 4-5l-1-3c-1-3-1-8-4-9-2-2-7-1-10 0l-2 8m-1 50-1 16h1l11-15-1-1h-10M41 151l-1-14h-4l-5 2 1 5 7 9 2-2m122-98-1 12 3 2h7a468 468 0 0 0-9-14M40 61l1-9-1-1-10 15 10 1v-6z" /><path fill="#BABEC0" d="M155 136V73l1 2-1 61zm0-64v-2 2zm0-2-1-1 1 1z" /></svg>
     },
     "blackmagic-fusion": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 240 240"><path fill="#BABEC0" d="M53 125c-6-6-11-11-12-20-2-16 6-28 21-32 8-2 16 1 23 5 4 3 9 4 13 4h9c11 0 20-7 24-17 3-7 13-16 23-16 13-1 22 4 28 15 10 17-2 36-15 40-8 2-17 2-26-3-7-5-15-6-24-5-10 2-16 8-21 17-5 7-11 13-19 16-9 2-16 0-24-4z" /><path fill="#BABEC0" d="M165 155c-7 2-13 1-19-3-9-6-23-5-32 7-7 11-18 16-28 12-14-4-19-22-9-33 8-7 17-8 28-3 12 6 23 6 32-5l9-9 6-4c9-2 17 0 23 6 5 5 6 12 3 18-2 6-7 11-13 14z" /><path fill="#BABEC0" d="M103 197v-8c0-7 6-12 13-12s14 6 14 12v7c-2 7-5 10-12 10-8 1-12-2-15-9z" /></svg>
     },
     "foundry-katana": {
@@ -233,7 +233,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" viewBox="0 0 256 256"><path fill="#FDFEFD" d="M47.8 190.2a73.2 73.2 0 0 1-44.8-77 72.5 72.5 0 0 1 57-62.5 71 71 0 0 1 75.1 28 10 10 0 0 0 9 4.4h107.7v21.5h-42.6V181c0 4 0 7.5-3.5 11-5.3 5.2-9.2 11.7-13.8 17.6-1 1.3-2 2.4-4 4.5V105h-40c5.6 32-3.3 58.6-29.9 77.4a71 71 0 0 1-70.2 7.8M31.5 154a54.6 54.6 0 1 0 89.2-63.5A54.6 54.6 0 0 0 31.5 154z" /><path fill="#599D3E" d="M158 245.9a3 3 0 0 1-1-.9l1.6-.5a5 5 0 0 1-.6 1.4zm-10 6.3a9 9 0 0 1-2.7 1.7 9 9 0 0 1 2.8-1.7zm66.5-59.9c-.2-.3-.2-.6-.2-.9l.9.3c-.2.2-.4.5-.7.6zM175.3 229h-.6.6zm-10.1 9.8c0 .2-.2.3-.4.4l.4-.4zm-2.7 2.2zm49-50.5zm-34 35z" /></svg>
     },
     "clip-studio-paint": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="70%" height="70%" viewBox="0 0 100 100"><path fill="#BABEC0" d="M92 18c-23-38-77-4-77-3C2 22-4 34 4 44v1l2 2c15 25 55-2 55-2l2-2 2-2-1-6-2-3-3-1-4-1-3 1c-11 7-34 22-36 2 3-12 40-18 40-19 7-3 19 1 26 21 1 0 7 13-11 21L34 73l14 23 3 2 6 2 6-3 1-3c1-2 0-4-1-6v-1l-5-7 22-10 12-9 3-4 2-5 1-5c1 0 4-9 1-17" /></svg>
     },
     "toon-boom": {
@@ -253,7 +253,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <i className="text-[#A4230D] text-[2.25rem] ri-ping-pong-fill" />
     },
     "chess": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <div className="w-full h-full relative"><div className="w-1/2 h-1/2 bg-black absolute top-0 right-0" /><div className="w-1/2 h-1/2 bg-black absolute bottom-0 left-0" /></div>
     },
     "baseball": {
@@ -261,7 +261,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" viewBox="0 0 90 125" fill="#FCC998"><path d="M40 59 29 78 5 114c-2 0-3 0-4 2-2 1-1 4 1 5l5 3 2 1 3-2v-4l24-36 14-17 12-14 12-17 14-22c3-4 1-7 0-8l-5-4-3-1c-2 0-4 1-6 4L60 25 49 43l-9 16Z" /></svg>
     },
     "football": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <i className="text-black text-[2.5rem] ri-football-fill" />
     },
     "dota": {
@@ -269,7 +269,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="70%" height="70%" viewBox="0 0 20 18"><path d="m0 17 2 1h2l3-1-5-5M0 1l16 17h2l2-5L2 0m10 2 5 3 1-3-1-1" /></svg>
     },
     "cs": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 95 120"><path fill="#010101" d="M49 14c1 4 28 6 28-1 0 6 16 3 18 6 1 2-37-2-33 9 0 2-2 1-1 4 2 7-12 14-16 6-1-3-3-1-2 2 4 10-6 15-2 22 3 4 11 17 10 19 0 3-7 30 5 33 7 2 2 4 1 4-3 0-19 2-15-4 1-3-6-13-2-22 3-4-10-24-13-22L16 93c-3 3-7 18-7 17-2-1 2 9-1 10H1c-5-1 6-29 9-35 0-1 0-22 2-25 1-1-4-21 0-24 4-4 6-16 9-19 3-4 10 0 8-4C23 2 44-8 46 9c0 3-3 4-3 7 0 2 5 1 6-2Z" /></svg>
     },
     "overwatch": {
@@ -329,7 +329,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" fill="#FAFAFA" viewBox="0 0 60 37"><path d="M30 37c-3 0-2-1-2-4l-6-1c2-3 6-4 5-10l-5-6 8-10 9 10-5 7 1 14-2-1c0-2-2-7-3 1Zm3-21c-2 5-3 4-5 1 3-4 4-2 5-1Zm-2 6 5-6-5-5-5 6 5 5Zm-11 8C17 33 1 18 0 17-2 16 16 0 31 0c16 0 28 16 29 17S45 33 41 31l-2-6c3-2 11-7 0-18-4-4-10-7-18 0-10 10-3 17 1 18l-2 5Z" /></svg>
     },
     "sh": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="70%" height="70%" fill="#BABEC0" viewBox="0 0 65 48"><path d="M41 33c-3 3-2 11-1 14h-9s1-13-1-18c6-1-9-10-8-9 12 7 10-14 9-20h8c2 0 2 14 1 16s9 2 6-1c7 7 5-14 5-15l9 1s-1 12 2 14c-5 5 5 8 3 8-8 0-5 16-3 15 3-2-3 0-2 8l-3 1c1-4-2-7-2 0h-5c0-3 3-22-7-16l5-5c-6-4-15 3-7 7Zm-15 3c-2 8-15 16-25 9V33c10 20 22-7 7-1l1-3C-3 22-5-4 17 0c2 1 4 6 3 7-2 2 1 5 0 5l-4 5c1-1 4-6 1-7 3 0-5-5-7 1-3 5 2 10 6 7-1 5 11 15 8 18-5 5 1 2 2 0Zm23-7c3 3 4-2 2-2-1-1-3 1-2 2Zm4-10c1-1-1-1-1-1-2 2-1 5 1 1Zm2-9c1 4 4 5 3-1-1-3-4-3-3 1Zm-20 2 4-1c0-4-5-3-4 1Z" /></svg>
     },
     "re": {
@@ -353,7 +353,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" viewBox="0 0 45 40"><path fill="#BC1622" d="M3 16C2 15 8 5 10 6l3 5-4 8c-1 1-6-3-6-3Zm1 1 2 2-3 2 1-4Zm5 5 4 7-4 4c-3-2-6-11-5-11l2-3 3 3Zm1 12 4-5c1 2 6 4 6 4 1 0 2 6 0 6-5-1-15 0-20-3h14l-4-2Zm13-1 1 6-2 1 1-7Zm9 2 13 1c1 0-5 4-7 3H25v-6s5-2 6-4l1 3 3 1-3 2Zm10-14c1 1-6 11-6 11l-4-4c1-1 5-6 4-8l6 1ZM37 5l4 7 1 6-6 1c1-2-1-8-2-9l3-5ZM26 6l-1-5c2-2 12 4 10 5l-3 5-6-5Zm-1-1h-3l2-3 1 3Zm0-5-3 4V0h3ZM10 5c0-1 9-6 10-5l1 4c1 3-8 5-8 5l-3-4Z" /></svg>
     },
     "alan-wake": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 79 195"><path fill="black" d="M46 59c0-12 14-10 14 0 0 9-13 10-14 0ZM5 195h73c2 1 1-15-1-20l-9-43v-3c2-2-4-25-4-25l4-2c1 0-3-32-6-33 1 3 6 1 11-5 3-2 0-30-9-36-5-3-19 0-15-8 4-7 1-24-12-19-10 4-5 16-2 20 4 4 5 10 1 10-9 1-10 7-10 8-2 3-8 40-6 40-2 1-5 14-5 14-2 2-6 14-6 14H6c-2 1-5 5-4 6l-2 10 4 1 1-4 3-3c1 0 3-1 4-4 0 0 9-1 7-5l3 1c0 4-6 45-2 47-2 2-4 28-4 28 3 5-14 9-15 8 1 3 3 3 4 3Zm57-14c5 8 4 14 2 14H28c6-1 7-38 6-38l11-48c2 0 18 63 17 72Z" /></svg>
     },
     "outer-wilds": {
@@ -389,8 +389,8 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="80%" height="80%" viewBox="0 0 65 42"><path fill="#F64413" d="M57 18c7 2-1 6-4 3-1-2 3-4 4-3ZM43 39c-3 1-12 0-16-4-1-2 4-4 8-2 0 0 11 2 10 4l-2 2ZM15 11l7-6 2 3c-6 2-7 6-7 6l-2-3Zm-1 2-5 2c-2-2-4-4-4-10l5-2c0 4 3 10 4 10Z" /><path fill="#FBFBFB" d="m65 19-1 5c-1 3-8 15-19 18-10 2-19-5-22-6L13 21c0-1 8-7 8-5 0 1 5 10 11 11l5 2c5 0 13-2 15-8 0 0 2 3 7 1l1-1c1 1 4 0 5-2ZM27 36c5 4 20 7 26-2 1-3-3-6-5-5l-8 2-8-2-4 1c-2 2-2 5-1 6ZM51 5h10c2 0 5 12 4 13 0 2-4 4-5 3 0 0 2-2-1-3v-5l-3-1 2-2c0-1-3-5-5-2l-1-1-1-1V5Zm-2 0c4-1 5 18-3 21-4 2-5 2-10 2-6-1-16-12-14-14s25-8 27-9ZM38 16c1-2-6-9-8-2l2 8c2 4 7 5 8 3v-6l-4-1 2-2ZM18 36h3l4 4c0 2-9 2-14-3-4-6 2-16 2-14l2 5c-1 0-1 6 3 8Zm7-27 2 2-9 5-1-1c1-4 8-7 8-6Zm-4-5s-6 5-6 7c-1-4 1-9 3-11h1l2 4Zm-5-3c0 1-4 4-2 11-1 0-4-8-3-9l5-2ZM4 17C2 17-1 7 0 6l4-1s0 7 4 10l-4 2Z" /></svg>
     },
     "pokemon": {
-        background: "bg-gradient-to-b from-[#FF1C1C] from-50% to-50% to-[#FAFAFA]",
-        icon: <div className="w-full h-1 bg-black flex justify-center items-center"><div className="border-4 border-black bg-[#FAFAFA] h-4 w-4 rounded-full" /></div>
+        background: "bg-gradient-to-b from-[#FF1C1C] from-50% to-50% to-soft-white",
+        icon: <div className="w-full h-1 bg-black flex justify-center items-center"><div className="border-4 border-black bg-soft-white h-4 w-4 rounded-full" /></div>
     },
     "digimon": {
         background: "bg-[#2674AC]",
@@ -405,11 +405,11 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg height="80%" width="80%" viewBox="0 0 68 195"><path fill="#FAFAFA" d="M38 193c-5-4 1-8 0-11l-26 1h-2l-6-4c2-2 3-5 6-6 8-2 9-3 6-12-2-6-2-12-3-19h1l5 5c2 7 1 7 6 10l9-4c0-2-2-6-1-9 3-7-3-13-1-20l-2-5c-2-4-3-4-6-1l-6 1-1-1v21l-6-1c-4 0-6-3-5-7l4-20-1-8c-1-5-2-9 0-14l1-14c2-15 0-30 5-44l1-2c-6 0-10-4-11-11l-3-6C0 9-2 8 3 5c3-2 5-5 9-5 10-1 15 6 16 14 0 4 3 7 6 9 9 5 12 13 14 23l9 32 9 28 1 12 1 10c0 4-1 6-5 6s-9 1-7 8l-11-4c2 3 3 5 7 6 2 1 5 4 6 7l1 21-3 15c-3 8-9 11-18 6" /></svg>
     },
     "dnd": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg height="70%" width="70%" viewBox="0 0 50 50"><path fill="#BABEC0" d="m27 29 4 3 4-7c2-3 12-4 15-3-1-2-4-4-7-4-8 3-4 0-3-1-5-1-14 11-13 12Zm1 11-5-4c-1 2-4 5-7 5-6 0-8-8-2-14-1-2-5 1-5 2l1-4-3 2-3 3 1-6c-2 1-5 3-5 8 3-6-3 6 4 14 0-2 7 2 10 3 5 3 12-5 14-9ZM6 11C5 6 7 4 8 3c2-2 5-3 9-3 6 0 9 5 9 9 0 3-1 6-3 8l-4-5c2-3 1-7-3-7-2 0-4 2-4 4v5c-2 0-4-6-4-6s-2 5-1 6l-1-3M2 22l5-4-2-3 4 1-1-4c2 5 6 6 6-3 1 10 3 3 3 1-1 3 4 5 5 7 1 4 3 8 5 6 0 3-1 5-3 6 1-3-3-3-3-3 1-3-4-2-3-1-2 1-1 3 0 2-1 1-1 3 1 3l-4 2 2-2-2 1c3-3 0-7-4-5 0-2 2-3 3-3-1-2-8 2-8 4v-4l-4-1m46 18c0-4-3-6-7-6 1 0 3 1 3 3 0 3-4 4-6 3 2-1 2-5 0-7 0 3-3 6-4 3-2-2-8-6-10-6l-5-4 2 4c1 1 0 2 3 4l4 4c2 2 1 5 1 7l4 4c-1-1-2-4 0-5 0 2 1 5 5 6 3 1 7-1 8-3-2 1-4 0-5-1 4 1 7-2 7-6m-7-5 1 2-1 2v-4" /></svg>
     },
     "witcher": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg height="80%" width="80%" viewBox="0 0 43 37"><path fill="#BABEC0" d="M41 19c4 3-4 13-4 13 3-7-1-6-2-4-1 4-10 6-10 5l6-5c2-4-3-1-3 0 1-1 4-8 1-7 0 0-6 2-6 4-1 2-5 0-4-1h2c2 0 5-6 2-7-1-1-1-2-3-2-2 1-4 2-3 3-2-2-1 1 0 2l-3-2-2-3 5-2 5-3c0-2 7-3 7-4l4-5 2 6c2-2 9 8 8 9 0 0-4-4-4-2 2 1 2 3 3 5h-1ZM8 11c9-6-7-7-8-6 0-2 13-2 13 0l4 1c2-1 2 2 2 3C15 4 6 20 7 21l2-8c-1-3-7 7-7 7 0-2 4-7 6-9Zm16 26c-3 0-12-1-13-3h-1l-7-2h5L4 22c0 1 5 10 8 9l9-4c1 1-5 5-6 5h6l-6 3 9 2Zm3 0Zm0 0 3-3c4 0 7-7 7-6 1 2-7 10-10 9ZM16 1c0-2 10-1 14 1 0 0-4-2-12 0l-2-1Zm-3 2-3-2c1-1 8 2 6 4l-3-2Zm-1 21c0 1 1 7-2 6l2-6ZM7 8l-3 6s2-7 3-6Z" /></svg>
     },
     "gta": {
@@ -425,7 +425,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg viewBox="0 0 50 50"><path d="m31 35 1-1-1 1Zm1-3-2 2 2-2Zm5-4-2 2c3-1 2-2 2-2Zm-4 1c2 0 3-2 2-2l-2 2Zm-2 0 2-2s1 1-2 2Zm-3-9v-3c1-2 4 3 3 3 1 1-1 3-1 3l-2-3Zm-3-2 1-4c2 1 1 6 0 5-1 1-2 0-1-1Zm8 28s-1-3-3-3c-9 1-12 7-12 1-3 3-14 5-12-1 5 4 12-9 15-3 0 0 0-2-2-2-1-1 1-2 2 0l-2-2c-2 1-12 9-7 2 6-1 4-6 7-4 0-2-3-1-3 0 0 0 0-3 3-2h-3c-2 1 0 3-1 3-6 6-13 1-4-5l1 3c2-8 4-7 3-3l2-3c2 4 13 14 15 10-8-5-9-10-6-10 0 0-2-4-3-3 1 0 2-2 3 0 0-1 1-1 3 1 1 0 6 3 8 2l1 1c0 1 2-1 1-3 2-2-6-6-10-10-3-3-2-5-4-4-1-3-2 2-9 1-1 9-5 2-4 7 0 3-5 10-7 5 0 3-3 6-5 3v23h40s-2-9-7-4m-5-16-1 2c1 1 1-1 1-2Zm-1 0-1 1 1-1Zm0-2-2 2 2-2Zm3 3-2 2c1 1 2-1 2-2Zm-1-3 2-2-2 2Zm0-1 1-2-1 2Z" /></svg>
     },
     "ff": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 60 40"><defs><linearGradient id="a" x1="30" x2="30" y1="0" y2="40" gradientTransform="matrix(-1 -1 1 -1 31 52)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9fc8f2" /><stop offset=".3" stop-color="#5499b5" /><stop offset="1" stop-color="#165241" /></linearGradient></defs><path fill="url(#a)" d="m60 0-7 3-1 2c-1 1-15 7-6 5 1 0-18 10-7 7l-7 5-1 1c1 2-4 12-9 14l-9 3c-1 0-5-1-5-3l-2-1c-2 0-3-2-3-3l3-2c3 0 5 0 7-2l1-2c-2 1-4-1-3-1 6-3-2-2-3-2l3-3H7c1-1 0-3 2-3l4-3h-2v-2l-3 1-4 5-2 5c-3 2-2-4 0-6 2-4 5-6 10-7h5l8-3c3-2 11-5 9-3-21 13 5-2 8-3l-12 9L53 0l2 1 5-1ZM17 27c2 0 6-4 4-6-1-1-5 1-6 2h3l-1 4Z" /></svg>
     },
     "ragnarok": {
@@ -453,16 +453,196 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="70%" height="70%" viewBox="0 0 100 100"><path fill="#BABEC0" d="M87 35c8 9 4 22-7 26-6 3-12-1-12-1L54 72v19h-8V73L32 60c-4 4-17 1-21-5-3-7-3-15 2-20 10-11 25-1 27 7 0 5 0 8-2 12l8 8V40a16 16 0 0 1 4-31c8 0 14 5 16 13 1 6-2 14-12 18v22l8-8c-6-4-1-20 7-22 9-3 16 1 18 3ZM19 11c7-6 15-9 24-11a50 50 0 1 1-24 11Zm65 65c8-10 10-21 8-33a43 43 0 1 0-8 33Z" /></svg>
     },
     "ac": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="70%" height="70%" viewBox="0 0 100 120"><path fill="#c1232c" d="M3 92c2-1 5 0 9 2 12 13 31 16 35 17-2-1-30-7-22-27l23-65 27 64c10 21-18 27-21 28 4-1 22-4 34-16 4-3 7-4 10-3-4-8-1-22 1-22 0 0-17 7-26-13L51 0 27 58C18 81 2 70 2 70c1 0 6 13 1 22m47 18c-3 9-23 10-50-16 0 0 20 27 50 26 30 1 50-26 50-26-22 24-47 25-50 16" /></svg>
     },
     "dw": {
         background: "bg-gradient-to-r from-[#00c01c] via-[#0220c0] to-[#dc0202]",
         icon: <svg width="80%" height="80%" viewBox="0 0 121 68"><path fill="#FAFAFA" d="M23 7c5-1 7 2 7 8l-7 11C15 28 7 13 9 10c3-3 11-2 14-3Zm1 35c-6 4-15-1-14-9 4-4 9-1 13-2s5 9 1 11Zm9 10c-5 8-22 11-24 9-9 1-11-9-6-11 14-2 17-2 18-4h6c3-1 6 4 6 6Zm6 8-2 3c-5-3-2-52 5-59 1 0 19-4 28-4 8 0 12 63 6 67 0 2-5 1-5-1 0 0-3-6-1-7l4 3-3-47-4 4c1-2-3-3-5-1l-2 4 4 13c2-1 4-6 2-8 4-4 8 3-1 12-1 1 1 7 4 9 1 1 3 6 2 8-1-2-4-1-3 1l-2-1c0 1-26 6-27 4Zm23-49-1-2c4-1 7 1 9 3 3-3-5-11-16-5 2 2 2 7 6 6l2-2ZM49 7c-9-1-10 20-10 26 1 5-1 19-1 21 5-1 8-4 13-7-4 1-9-8-5-13 1-2 4-7 1-8-1 0 0-5-4-10 7 1 10-3 8-9h-2Zm14 39-3-3c0 1-4 5-6 5-3 0-6 3-8 5 6 1 11-4 18-5l-1-2Zm21-5c3-1 10-13 7-14l4-1-9-10c-1-1 0-3 2-3l6-1c3-1 4-3 4-6V1l7 8 7-1c3-1 5 4 1 7l-9 7s4 0 6 3c1 3-1 4-2 6-4 3-15 6-18 6l-4 4c-1 3 1 4 3 6 2 1 2 6 0 6-3 3-9-4-8-6-2-1 0-7 3-6Zm27-5 9 4c2 3 0 8-4 7-3-2-5-3-8-3-3-1-1-8 3-8Zm-7 22c1 4-5 5-6 3-2-3-5-6-5-10 0-3 6-2 9-3l1 6c2 1 2 2 1 4Z" /></svg>
     },
+    "ina": {
+        background: "bg-gradient-to-b from-[#ff0000] from-50% to-50% to-[#FFFFFF]",
+        icon: <></>
+    },
+    "mas": {
+        background: "bg-soft-white",
+        icon: <svg viewBox="0 0 100 100"><path fill="#0052B4" d="M0 50V0h50v50H0Z" /><path fill="#D80027" d="m0 63 100-1v13H0V62v1Zm0 24h100v13H0V87Zm50-50h50v13H50V37Zm0-25h50v13H50V12Z" /><path fill="#FBD846" d="m31 29-4 3 1-4-4-1 3-2-2-4 4 1 1-4 2 4 4-1-2 3 3 3-3 1v4l-3-3Zm1 5c-5 4-12 4-16-1-5-4-5-11-1-16 5-5 11-5 17-1-6-2-11 1-13 5-1 4-1 8 2 11 2 3 6 3 10 2h1Z" /></svg>
+    },
+    "jpn": {
+        background: "bg-soft-white",
+        icon: <div className="w-full h-full flex items-center justify-center"><div className="w-full h-full shadow-[inset_0_0_8px_black] bg-[#BABEC0]" /><div className="absolute w-[40%] h-[40%] bg-[#4a4a4a] rounded-full" /></div>
+    },
+    "chn": {
+        background: "bg-[#EE1C25]",
+        icon: <svg viewBox="0 0 70 70"><path fill="#FF0" d="m39 27-2 1 1 2-2-1-2 1 1-2-2-1h2l1-2 1 2h2Zm-8 4v2l2 1-2 1v2l-1-2-3 1 2-2-1-2 2 1 1-2Zm0-21v2l2 1-2 1v2l-1-2-3 1 2-2-1-2 2 1 1-2Zm7 7-1 2 2 1h-2l-2 2v-2l-2-1 2-1v-2l1 2 2-1Zm-23-4 2 6h7l-6 4 2 6-5-4-5 4 2-6-6-4h7l2-6Z" /></svg>
+    },
+    "eng": {
+        background: "bg-[#00247D]",
+        icon: <div className="w-full h-full"><div className="shadow-[inset_0_0_8px_black] absolute w-full h-full z-[1]" /><svg viewBox="0 0 100 100"><path stroke="#fff" strokeWidth="15" d="m0 0 100 100m0-100L0 100" /><path stroke="#cf142b" strokeWidth="10" d="m0 0 100 100m0-100L0 100" /><path fill="#fff" d="M50 50V40L10 0H0l50 50Zm0 0h10l40-40V0L50 50Zm0 0v10l40 40h10L50 50Zm0 0H40L0 90v10l50-50Z" /><path stroke="#fff" strokeWidth="20" d="M50 0v100M0 50h100" /><path stroke="#cf142b" strokeWidth="10" d="M50 0v100M0 50h100" /></svg></div>
+    },
+    "ned": {
+        background: "bg-soft-white",
+        icon: <div className="h-full w-full flex justify-between flex-col"><div className="w-full h-[33%] bg-[#C8102E]" /><div className="w-full h-[33%] bg-[#003DA5]" /></div>
+    },
+    "fra": {
+        background: "bg-soft-white",
+        icon: <div className="h-full w-full flex justify-between"><div className="w-[33%] h-full bg-[#002654]" /><div className="w-[33%] h-full bg-[#ED2939]" /></div>
+    },
+    "ger": {
+        background: "bg-[#BABEC0]",
+        icon: <div className="w-full h-full flex flex-col"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-full h-full bg-[#3a3a3a]" /><div className="w-full h-full bg-[#6a6a6a]" /><div className="w-full h-full bg-[#BABEC0]" /></div>
+    },
+    "esp": {
+        background: "bg-[#F1BF00]",
+        icon: <div className="w-full h-full flex flex-col justify-between"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-full h-[27.5%] bg-[#6a6a6a]" /><div className="w-full h-[45%] bg-[#ababab] flex items-center px-2"><div className="w-2 h-2 rounded-[1px] bg-[#6a6a6a]" /> </div><div className="w-full h-[27.5%] bg-[#6a6a6a]" /></div>
+    },
+    "por": {
+        background: "bg-[#FF0000]",
+        icon: <div className="w-full h-full flex items-center"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-4 h-4 left-[20%] rounded-full absolute bg-[#ababab]" /><div className="w-[40%] h-full bg-[#3a3a3a]" /><div className="w-[60%] h-full bg-[#6a6a6a]" /></div>
+    },
+    "ita": {
+        background: "bg-soft-white",
+        icon: <div className="w-full h-full flex justify-between"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-[33%] h-full bg-[#008C45]" /><div className="w-[34%] h-full bg-[#CD212A]" /></div>
+    },
+    "rus": {
+        background: "bg-soft-white",
+        icon: <div className="w-full h-full flex flex-col justify-end"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-full h-[33%] bg-[#1C3578]" /><div className="w-full h-[33%] bg-[#E4181C]" /></div>
+    },
+    "pol": {
+        background: "bg-soft-white",
+        icon: <div className="w-full h-full flex flex-col"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-full h-full bg-[#E6E6E6]" /><div className="w-full h-full bg-[#BABEC0]" /></div>
+    },
+    "swe": {
+        background: "bg-soft-white",
+        icon: <div className="w-full h-full grid grid-cols-2 gap-1 bg-[#BABEC0]"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-full h-full bg-[#4A4A4A]" /><div className="w-full h-full bg-[#4A4A4A]" /><div className="w-full h-full bg-[#4A4A4A]" /><div className="w-full h-full bg-[#4A4A4A]" /></div>
+    },
+    "windows": {
+        background: "bg-soft-white",
+        icon: <div className="w-full h-full grid grid-cols-2 gap-[2px]"><div className="absolute w-full h-full z-[1] shadow-[inset_0_0_8px_black]" /><div className="w-full h-full bg-[#F25022]" /><div className="w-full h-full bg-[#7FBA00]" /><div className="w-full h-full bg-[#00A4EF]" /><div className="w-full h-full bg-[#FFB900]" /></div>
+    },
+    "mac": {
+        background: "bg-soft-white",
+        icon: <i className="text-black ri-apple-fill" />
+    },
+    "linux": {
+        background: "bg-[#E95420]",
+        icon: <i className="ri-ubuntu-fill" />
+    },
+    "youtube": {
+        background: "bg-[#CD201F]",
+        icon: <i className="ri-play-fill" />
+    },
+    "paper": {
+        background: "bg-[#A1662F]",
+        icon: <i className="text-[#f6eee3] ri-file-paper-2-fill" />
+    },
+    "notepad": {
+        background: "bg-[#108CC6]",
+        icon: <i className="text-[1.75rem] ri-calendar-fill" />
+    },
+    "excel": {
+        background: "bg-[#217346]",
+        icon: <i className="text-[1.75rem] ri-file-excel-2-fill" />
+    },
+    "pp": {
+        background: "bg-[#D04423]",
+        icon: <i className="text-[1.75rem] ri-file-ppt-2-fill" />
+    },
+    "word": {
+        background: "bg-[#0078D4]",
+        icon: <i className="text-[1.75rem] ri-file-word-2-fill" />
+    },
+    "vscode": {
+        background: "bg-black",
+        icon: <svg width="70%" height="70%" viewBox="0 0 100 100"><path fill="#0065A9" d="M96 11 76 1c-3-2-5-1-7 1L1 64v6l6 5h5s87-63 84-64Z" /><path fill="#007ACC" d="M96 89 76 99c-3 2-5 1-7-1L1 36v-6l6-5h5s87 63 84 64Z" /><path fill="#1F9CF0" d="M76 99c-3 1-5 1-7-1 2 2 6 1 6-3V5c0-4-4-5-6-3 2-2 4-2 7-1l20 10c3 1 4 3 4 5v68c0 2-1 4-4 5L76 99Z" /></svg>
+    },
+    "eclipse": {
+        background: "bg-soft-white",
+        icon: <svg width="70%" height="70%" viewBox="0 0 100 100"><path fill="#2C2255" d="M12 36c2-7 6-14 12-20C32 7 43 2 55 2c11 0 25 7 32 14 5 6 9 13 11 20H12Zm87 6 1 5H10l1-5h88ZM87 84c-7 7-21 14-32 14-12 0-23-5-31-14-6-6-10-13-12-20h86c-2 7-6 14-11 20Zm13-31-1 5H11l-1-5h90Z" /><path fill="#F7941E" d="M8 50C8 25 26 4 49 0h-2C21 0 0 22 0 50s21 50 47 50h2C26 96 8 75 8 50Z" /></svg>
+    },
+    "intellij": {
+        background: "bg-[conic-gradient(#087cfa_180deg,#ad4a91,#f97a12,#fe315d,#087cfa)]",
+        icon: <svg width="70%" height="70%" viewBox="0 0 45 45"><path d="M0 0h45v45H0z" /><path fill="#fff" d="M4 37h17v3H4zM16 9V6H7v3h3v12H7v3h9v-3h-2V9zm9 16-3-1-3-2 3-3 1 1 2 1 2-1 1-2V6h4v12l-1 3a6 6 0 0 1-3 3l-3 1" /></svg>
+    },
+    "slack": {
+        background: "bg-soft-white",
+        icon: <svg width="60%" height="60%" viewBox="0 0 100 100"><path fill="#E01E5A" d="M21 63a10 10 0 1 1-10-10h10v10Zm5 0a10 10 0 1 1 21 0v26a10 10 0 1 1-21 0V63Z" /><path fill="#36C5F0" d="M37 21a10 10 0 1 1 10-10v10H37Zm0 5a10 10 0 1 1 0 21H11a10 10 0 1 1 0-21h26Z" /><path fill="#2EB67D" d="M79 37a10 10 0 1 1 10 10H79V37Zm-5 0a10 10 0 1 1-21 0V11a10 10 0 1 1 21 0v26Z" /><path fill="#ECB22E" d="M63 79a10 10 0 1 1-10 10V79h10Zm0-5a10 10 0 1 1 0-21h26a10 10 0 1 1 0 21H63Z" /></svg>
+    },
+    "trello": {
+        background: "bg-[#0079BF]",
+        icon: <div className="h-full w-full p-[10px] flex gap-1"><div className="h-full w-full rounded-[2px] bg-soft-white" /><div className="h-[60%] w-full rounded-[2px] bg-soft-white" /></div>
+    },
+    "loop": {
+        background: "bg-gradient-to-r from-[#6d05e8] to-[#51e6ff]",
+        icon: <i className="ri-microsoft-loop-line" />
+    },
+    "jira": {
+        background: "bg-soft-white",
+        icon: <svg width="60%" height="60%" viewBox="0 0 25 25"><path fill="#2684ff" d="M24 0H12c0 3 2 5 5 5h3v3c0 3 2 5 5 5V1l-1-1Z" /><path fill="#2684ff" d="M18 6H6c0 3 2 5 5 5h3v3c0 3 2 5 5 5V7l-1-1Z" /><path fill="#2684ff" d="M12 12H0c0 3 2 5 5 5h3v3c0 3 2 5 5 5V13l-1-1Z" /></svg>
+    },
+    "confluence": {
+        background: "bg-soft-white",
+        icon: <svg width="60%" height="60%" viewBox="0 0 50 50"><path fill="#0052cc" d="m2 38-2 3 1 2 10 7 2-1 2-2c4-8 8-7 15-3l11 5 2-1 5-11-1-2-10-6c-14-7-26-6-35 9Z" /><path fill="#0052cc" d="m48 12 2-3-1-2-10-7-2 1-2 2c-4 8-8 7-16 3L9 1 7 2 2 13l1 3 10 5c14 7 26 6 35-9Z" /></svg>
+    },
+    "wordpress": {
+        background: "bg-soft-white",
+        icon: <i className="text-[2.5rem] text-[#BABEC0] ri-wordpress-fill" />
+    },
+    "wix": {
+        background: "bg-soft-white",
+        icon: <svg width="80%" height="80%" viewBox="0 0 150 60"><path fill="#BABEC0" d="M86 1c-3 2-4 4-4 12l7-5c3-1 3-4 3-8l-6 1Z M92 48c0 7-1 9-4 11l-6 1V19c0-2 0-3 3-4l4-2 3-3v38Zm58 12s-9 1-13-3a225 225 0 0 1-13-18l-2 1s-9 15-12 17c-4 4-13 3-13 3l19-30L98 0s8-1 12 3l12 17 2 1 1-1s10-15 13-17c4-4 12-3 12-3l-20 30 20 30ZM78 0 63 60l-8-1c-3-2-5-3-7-11l-7-30-2-3-2 3-7 30c-2 8-4 9-7 11l-8 1L0 0s6-1 10 3l3 6 8 32 6-27 4-8c3-3 7-3 8-3 0 0 5 0 7 3l4 8 7 27 8-32 3-6c4-4 10-3 10-3Z" /></svg>
+    },
+    "figma": {
+        background: "bg-soft-white",
+        icon: <svg width="80%" height="80%" viewBox="0 0 100 150"><path fill="#0acf83" d="M25 150c14 0 25-11 25-25v-25H25a25 25 0 0 0 0 50Z" /><path fill="#a259ff" d="M0 75c0-14 11-25 25-25h25v50H25C11 100 0 89 0 75Z" /><path fill="#f24e1e" d="M0 25C0 11 11 0 25 0h25v50H25C11 50 0 39 0 25Z" /><path fill="#ff7262" d="M50 0h25a25 25 0 0 1 0 50H50V0Z" /><path fill="#1abcfe" d="M100 75a25 25 0 1 1-50 0 25 25 0 0 1 50 0Z" /></svg>
+    },
+    "overleaf": {
+        background: "bg-[#47a141]",
+        icon: <svg width="80%" height="80%" viewBox="0 0 58 67"><path fill="#fff" d="M58 2c-9-3-42-5-42 15C6 23 0 33 0 44a23 23 0 1 0 23-24c-4 3-9 8-11 14 3-4 9-6 14-6a15 15 0 1 1-14 26c-4-5-6-11-5-16 3-18 25-28 41-32-5 3-15 7-21 12 19 8 22-9 31-16Z" /></svg>
+    },
+    "matlab": {
+        background: "bg-soft-white",
+        icon: <svg width="80%" height="80%" viewBox="0 0 28 25"><defs><linearGradient id="a" x1="16.8" x2="15" y1="16.6" y2="22.4" gradientTransform="matrix(1 0 0 -1 -2 29)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#512" /><stop offset=".7" stopColor="#568" /><stop offset=".8" stopColor="#29d" /></linearGradient><linearGradient id="b" x1="29.7" x2="11.7" y1="19" y2="14.6" gradientTransform="translate(-2 -3)" gradientUnits="userSpaceOnUse"><stop offset=".1" stopColor="#c33" /><stop offset=".5" stopColor="#fe8643" /><stop offset=".9" stopColor="#cf3633" /></linearGradient></defs><path fill="#49d" d="m0 14 8-3 3-3s2 0 4-3-5 14-7 13H6l-6-4Z" /><path fill="url(#a)" d="m18 1-3 4c-2 3-4 3-4 3l-3 3 3 2c3-3 5-8 6-10l1-2Z" /><path fill="url(#b)" d="M19 0c-2 0-4 11-12 18 2 0 4 5 5 7 4 0 7-8 11-8l5 4c-4-9-6-21-9-21Z" /></svg>
+    },
+    "r": {
+        background: "bg-soft-white",
+        icon: <svg width="80%" height="80%" viewBox="0 0 72 55"><path fill="#BABEC0" d="M36 48C16 48 0 37 0 24S16 0 36 0s36 11 36 24-16 24-36 24Zm6-39c-16 0-28 8-28 17s12 16 28 16c15 0 26-5 26-16C68 14 57 9 42 9Z" /><path fill="#3e3e3e" d="m55 37 3 1 2 2 9 15H56l-7-12-2-3-2-1h-3v16H30V15h24s12 0 12 11c0 10-11 11-11 11Zm-6-13h-7v6h7s4 0 4-3c0-4-4-3-4-3Z" /></svg>
+    },
+    "wiki": {
+        background: "bg-soft-white",
+        icon: <svg width="80%" height="80%" viewBox="0 0 60 40"><path d="M60 0v1l-3 1-3 4-14 34h-1l-7-16-8 16h-1L5 4 3 2 0 1V0h16v1l-4 1v1l13 28 5-10-8-17-2-2-3-1V0h16v1l-3 1-1 1 4 12 5-11-1-2-2-1h-1V0h12v1l-4 2-7 15 6 13L52 4l-1-2-3-1V0h12Z" /></svg>
+    },
+    "scholar": {
+        background: "bg-soft-white",
+        icon: <svg width="80%" height="80%" viewBox="0 0 50 50"><path fill="#4285f4" d="M25 40 0 20 25 0v40Z" /><path fill="#356ac3" d="m25 40 25-20L25 0v40Z" /><circle cx="256" cy="362.7" r="14.6" fill="#a0c3ff" transform="translate(-231 -327)" /><path fill="#76a7fa" d="M12 29a15 15 0 0 1 26 0H12Z" /></svg>
+    },
+    "wolfram": {
+        background: "bg-[#DD1100]",
+        icon: <svg width="80%" height="80%" fill="#FAFAFA" viewBox="0 0 55 57"><path d="m47 29 8-9-12-3 1-12-10 5-7-10-6 10-10-5 1 12-12 3 8 8-8 9 12 3-1 12 10-5 6 10 7-10 10 5-1-12 12-3-8-8Zm4 6-7-2-5-6 7 2 5 6ZM32 46l-4 7v-8l5-6-1 7Zm-7-29-7-3-4-5 7 3 4 5Zm9-5 7-3-4 5-7 3 4-5Zm8 6-4 5v-8l4-6v9ZM27 44l-4-8 4-6 5 6-5 8Zm-8-19-1-9 9 3v8l-8-2Zm9-6 9-3-1 9-8 2v-8Zm-15-1V9l4 6v8l-4-5Zm13 11-5 6-8-2 5-7 8 3Zm-4 10 5 6v8l-4-7-1-7Zm7-10 8-3 5 7-8 2-5-6Zm23-8-6 7-8-3 5-6 9 2ZM27 3l5 8-5 6-4-6 4-8ZM3 21l9-2 5 6-8 3-6-7Zm6 8 7-2-5 6-7 2 5-6Zm-5 8 7-3 8 2-6 2-9-1Zm9 3 8-3v8l-9 4 1-9Zm21 5v-8l8 3 1 9-9-4Zm8-7-6-2 8-2 7 3-9 1Z" /></svg>
+    },
+    "arxiv": {
+        background: "bg-soft-white",
+        icon: <svg width="70%" height="70%" viewBox="0 0 80 110"><path fill="#aa142d" d="M40 55 8 93c-1 2-2 4-1 6s2 3 4 3l3-2 39-42v-6l-13 3Z" /><path fill="#7c7469" d="m40 55 30-38c1-2 2-3 1-5-1-1-2-3-4-3l-3 1-37 42c-2 2-2 4 0 6l46 51 3 1c2 0 3-1 4-3 0-2 0-3-2-5L40 55" /><path fill="#aa142d" d="M53 52 8 2 4 0 0 3c0 1 0 3 2 5l38 48" /></svg>
+    },
+    "jstor": {
+        background: "bg-[#990000]",
+        icon: <svg width="80%" height="80%" viewBox="0 0 50 50"><path fill="#fff" d="M36 30s-4-2-4 3c0 3 4 3 4 2l-2-4 5 5v1l-2-1c-7 4-7-4-6-5 1-3 5-3 5-1Zm12-8c2 3-2 7-1 7 1-1 0-7-1-7l-1 4-1-9-5-3c-3-3 1-9 3-8l3 3c0 2-2 3-3 2 5-3-4-8-3 0 1 5 10 5 9-2 0-3-1-7-5-7-7-1-12 6-10 8l2 2-4-1c0-1 0-3 3-7 2-4 10-4 12-3 1 0 5 6 4 8-1 4-3 6-4 7-3 2 2 6 4 5l-2 1Zm0 10c2 4-1 5-1 5l1-3c0-4-7-4-6 3 0 3 0 4-5 7-1 2 1 5 2 6 2 1-4-1-3-3-5 4-8-1-7-1 2 3 4-4 4-4 0-1 3 0 5-2l-6 7c0 1 11-7 8-13 0-1-3-7-5-7-3 0-4-2-3-3 0-1 2-2 3-1-1-2 0-8 1-8l1 4 2-3c0-1 0 7 1 6l2-3s-2 10-1 11l-5-9c-1-1 0 6 5 12 0-2 6-3 7-1Zm-6-13Zm-1 11ZM7 37c2 2 0 10-2 10-4 1-6 0-5-1 2-1 5-5 5-8 1 1 0 8-3 8 0 0 4 1 4-3 1-3-1-8-1-9 1 3 9 1 11-1l-2 3h6l-3 5-2 1-4-2c1 1 8-2 7-2L7 37Zm-2-3Zm14-22C0 24-6 3 8 0c1 0 8 4 8 0 1 1 0 4-3 3 1 9-7 8-6 3 0 2 4 5 5 0S5 0 3 4c-7 16 14 9 15 7-3-2 2-7 2-6-1 0-4 6 0 6-1 0-2 7-1 9 0 0-3-6 0-8ZM7 32c-7-4-7-13 1-13 3 0 5 4 4 4 0-2 6-4 7-2-1 0-7 1-6 4 0 2-3 3-5 2-3-1-2-4-2-3s6 5 5-1c-1-7-10-2-8 2 1 4 5 11 11 3 2-3 7-6 7-5l-1 1-3 3 1 2-3-1c0 1-5 6-8 4Zm17 15c-3 2-12 3-12 2l-2-7 3 3c2 1 6 1 7-1l2-4 1-35c0-2-4-3-5-5h15c-1 2-4 3-4 5v35l-5 7Zm20-8s7 4 5 7c-4 8-7 1-6-2 1-1 4-2 2 1-3-5-3 9 3 1 2-3-4-7-6-6 0-2 2-1 2-1Z" /></svg>
+    },
+    "desmos": {
+        background: "bg-gradient-to-t from-[#0f6733] to-[#158f48]",
+        icon: <div className="w-full h-full"><div className="w-full h-full absolute z-[1] shadow-[inset_0_0_8px_black]" /><svg viewBox="0 0 100 100"><path fill="#fff" d="m85 0 6 3c-3 16-12 45-23 62l-6-4C73 44 84 5 85 0Zm15 52v8c-1-1-3-3-6-3-7 0-15 18-26 18-12 0-19-18-26-18-8 0-15 18-26 18-6 0-11-5-16-10V55c6 4 10 12 16 12 7 0 14-17 26-17s17 17 26 17c8 0 14-17 26-17 2 0 4 0 6 2Zm-69 0-6 6C20 49 10 18 7 5c1-2 4-3 6-4 3 12 11 40 18 51Zm18 20c2 0 4 0 6-2l6 5s-4 5-12 5c-9 0-15-8-18-12l5-5c1 1 7 9 13 9Z" /></svg></div>
+    },
+    "stackoverflow": {
+        background: "bg-soft-white",
+        icon: <i className="text-[#F47F24] ri-stack-overflow-line" />
+    },
+    "dribbble": {
+        background: "bg-[#ca2e6a]",
+        icon: <i className="ri-dribbble-line" />
+    },
     // Courtesy of svgrepo
     "ableton": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 24 24" fill="#BABEC0"><path d="M0 6v12h2V6zm3 0v12h2V6zm3 0v12h2V6zm4 0v12h1V6zm3 0v2h11V6zm0 4v1h11v-1zm0 3v1h11v-1zm0 3v2h11v-2z" /></svg>
     },
     "houdini": {
@@ -475,20 +655,20 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "mari": {
         background: "bg-black",
-        icon: <svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" viewBox="184 25 449 432"><path fill="#BABEC0" d="M509 169c-7-3-9-7-8-11 2-2 8-3 12-1 3 2-2 12-4 12Zm29-89c2 11-37 31-43 5-2-11 3-26 11-31 5-3 36 21 32 26Zm78 159c-4 2-19-2-22-5-5-6-3-14 5-17 7-2 13-2 19 3l3 11c0 4-1 7-5 8Zm-68-91c1-7 18-17 22-14 3 2 5 7 4 11-3 20-28 12-26 3Zm59 155s-5-10-1-15c8-7 19-6 25 1 4 4 3 8-1 12-1 1-19 3-23 2ZM396 455s-8-9-8-16c1-9 19-14 25 4 3 11-11 19-17 12ZM312 63s2-21 6-21c4-1 9 2 12 6 7 7-3 23-18 15Zm277 221c-3 3-20-12-15-19 3-4 8-2 12-1 5 0 7 17 3 20ZM358 44c-1 1-15-16-15-16 2-5 19-2 20 2 1 6 1 11-5 14ZM210 174c3 5-24 6-24 6-3-4-2-6 2-9 9-6 18-5 22 3Zm-14 63c-4-2-11-14-7-16 6-3 14-2 20 2 4 3-9 14-13 14Zm43-59c39 27 59-35 12-75 6 1 57 41 60 43 26 23 61-10 48-28 0 0-19-31-16-29 28 18 61 34 64 32 7-7 28-41 10-59 6-6 20-7 25-1 9 3-12 56-12 59 8 9 18 18 29 23 4 2 34-11 36-27 10-14 20-6 31 6-98 53-22 110-16 107 40-20 41-9 58 10-67-11-49 59 6 76 2 3-3 18-6 19-2 1-84-54-60-8-55-10-20 36-22 39-5 10-40-40-75-21-24 17 4 80-12 78-14 9-24-77-34-82-17-10-60 39-51 24 15-24-17-37-52-34 38-52-62-19-74-23-17-6 58-16 87-27s-62-54-48-56c9-1 35 8 41-4 14-25-33-17-29-42Zm50 242s-40-25-39-26c17-22 19-32 45-14 7 5 5 39-6 40Z" /></svg>
+        icon: <svg width="70%" height="70%" viewBox="184 25 449 432"><path fill="#BABEC0" d="M509 169c-7-3-9-7-8-11 2-2 8-3 12-1 3 2-2 12-4 12Zm29-89c2 11-37 31-43 5-2-11 3-26 11-31 5-3 36 21 32 26Zm78 159c-4 2-19-2-22-5-5-6-3-14 5-17 7-2 13-2 19 3l3 11c0 4-1 7-5 8Zm-68-91c1-7 18-17 22-14 3 2 5 7 4 11-3 20-28 12-26 3Zm59 155s-5-10-1-15c8-7 19-6 25 1 4 4 3 8-1 12-1 1-19 3-23 2ZM396 455s-8-9-8-16c1-9 19-14 25 4 3 11-11 19-17 12ZM312 63s2-21 6-21c4-1 9 2 12 6 7 7-3 23-18 15Zm277 221c-3 3-20-12-15-19 3-4 8-2 12-1 5 0 7 17 3 20ZM358 44c-1 1-15-16-15-16 2-5 19-2 20 2 1 6 1 11-5 14ZM210 174c3 5-24 6-24 6-3-4-2-6 2-9 9-6 18-5 22 3Zm-14 63c-4-2-11-14-7-16 6-3 14-2 20 2 4 3-9 14-13 14Zm43-59c39 27 59-35 12-75 6 1 57 41 60 43 26 23 61-10 48-28 0 0-19-31-16-29 28 18 61 34 64 32 7-7 28-41 10-59 6-6 20-7 25-1 9 3-12 56-12 59 8 9 18 18 29 23 4 2 34-11 36-27 10-14 20-6 31 6-98 53-22 110-16 107 40-20 41-9 58 10-67-11-49 59 6 76 2 3-3 18-6 19-2 1-84-54-60-8-55-10-20 36-22 39-5 10-40-40-75-21-24 17 4 80-12 78-14 9-24-77-34-82-17-10-60 39-51 24 15-24-17-37-52-34 38-52-62-19-74-23-17-6 58-16 87-27s-62-54-48-56c9-1 35 8 41-4 14-25-33-17-29-42Zm50 242s-40-25-39-26c17-22 19-32 45-14 7 5 5 39-6 40Z" /></svg>
     },
     // Courtesy of icons8.com
     "fl-studio": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 48 48"><path fill="#fe900d" d="M17 10s-6 7-6 19c0 11 4 15 8 15 1 0 7-1 12-11 7-10 6-15 6-15l-20-8z" /><path fill="#4aae52" d="m33 9-4 1c-2-3-3-5-8-5-8 0-10 6-10 7l4 1h6l-1 3c0 4 2 7 5 7 4 0 6-5 6-5l7 5c2 0 3-2 3-6 0-2-2-8-8-8z" /><path fill="#4aae52" d="m28 12-1-2 7-8a1 1 0 1 1 1 2l-6 7-1 1z" /><path fill="#fdc82e" d="m15 32-1-1 1-9a1 1 0 1 1 2 0l-1 9a1 1 0 0 1-1 1z" /></svg>
     },
     "cinema-4d": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="60%" height="60%" viewBox="0 0 24 24" fill="#BABEC0"><path d="M12 5.1a14 14 0 0 0-6.7 3 8.3 8.3 0 0 0-.3 2 9 9 0 0 0 9.2 8.7 9 9 0 0 0 2.1-.3 17 17 0 0 0 3-7.7c.3-2.8 1-3.6 1.7-4.2l.9-.4A8.1 8.1 0 0 0 17.5 2v.1c.4 1.6-1.4 2.3-5.5 3zM23.2 8a3 3 0 0 1-.1-.2c-.6-1.5-2-.5-2.4.3-.8 1.7-.6 2.4-1 4.2s-1.3 5-2.8 6.6c-2.1 2.5-4.4 3.5-7.7 3.2s-5.8-3-6.7-5c-.8-1.8-1-3.7 0-6.1s3.7-4.5 6.2-5.5 4.6-1 6-1.5c1.4-.4 2.2-1 2.2-1.7s-.8-1-1.2-1.2A12.2 12.2 0 0 0 12 .4C5.4.4 0 5.6 0 12.1s5.4 11.6 12 11.6 12-5.2 12-11.6a11.4 11.4 0 0 0-.8-4.2z" /></svg>
     },
     // Courtesy of vectorlogo.zone
     "python": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="60%" height="60%" viewBox="0 0 32 32"><defs><linearGradient id="A" x1="811.527" y1="574.895" x2="665.255" y2="573.732" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#366a96" /><stop offset="1" stopColor="#3679b0" /></linearGradient><linearGradient id="B" x1="862.824" y1="642.176" x2="573.276" y2="642.176" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#ffc836" /><stop offset="1" stopColor="#ffe873" /></linearGradient></defs><g transform="matrix(.1617 0 0 .158089 -107.53764 -81.66187)"><path d="M716.255 544.487c0-13.623 3.653-21.034 23.822-24.563 13.693-2.4 31.25-2.7 47.627 0 12.935 2.135 23.822 11.77 23.822 24.563v44.945c0 13.182-10.57 23.98-23.822 23.98h-47.627c-16.164 0-29.787 13.782-29.787 29.363v21.564h-16.376c-13.852 0-21.917-9.988-25.305-23.964-4.57-18.776-4.376-29.963 0-47.945 3.794-15.687 15.917-23.964 29.77-23.964h65.52v-6h-47.645v-17.98z" fill="url(#A)" /><path d="M811.527 688.32c0 13.623-11.823 20.523-23.822 23.964-18.052 5.188-32.54 4.394-47.627 0-12.6-3.67-23.822-11.17-23.822-23.964v-44.945c0-12.935 10.782-23.98 23.822-23.98h47.627c15.864 0 29.787-13.71 29.787-29.963v-20.964h17.858c13.87 0 20.4 10.305 23.822 23.964 4.764 18.97 4.976 33.157 0 47.945-4.817 14.364-9.97 23.964-23.822 23.964H763.9v6h47.627v17.98z" fill="url(#B)" /><path d="M728.166 541.505c0-4.976 3.988-9 8.93-9 4.923 0 8.93 4.023 8.93 9 0 4.96-4.006 8.982-8.93 8.982-4.94 0-8.93-4.023-8.93-8.982zm53.59 149.798c0-4.96 4.006-8.982 8.93-8.982 4.94 0 8.93 4.023 8.93 8.982 0 4.976-3.988 9-8.93 9-4.923 0-8.93-4.023-8.93-9z" fill="#fff" /></g></svg>
     },
     "jquery": {
@@ -496,11 +676,11 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="70%" height="70%" fill="#fff" viewBox="0 0 32 32"><path d="M2 8c-3 4-2 9 0 13v1l1 1v1a16 16 0 0 0 1 0v1h1a20 20 0 0 0 0 1h1a17 17 0 0 0 0 1h1v1h1v1a21 21 0 0 0 1 0h1v1h2a22 22 0 0 0 1 1h1c13 2 17-8 17-8-3 4-9 5-15 4h-1a19 19 0 0 1 0-1 21 21 0 0 1-1 0h-1a5 5 0 0 1 0-1h-1a22 22 0 0 1-1 0v-1h-1v-1H9v-1H8a8 8 0 0 1 0-1 17 17 0 0 1-1 0l-1-1A14 14 0 0 1 4 5m7-1c-2 3-2 7 0 10a13 13 0 0 0 0 2l2 1v1a13 13 0 0 0 1 0v1a14 14 0 0 0 1 0 12 12 0 0 0 1 1 11 11 0 0 0 1 0 14 14 0 0 0 1 1h1c11 2 13-6 13-6-2 3-6 4-11 3a13 13 0 0 1-1 0 15 15 0 0 1-1 0 13 13 0 0 1 0-1h-1a12 12 0 0 1-1 0v-1a13 13 0 0 1-1 0c-2-2-4-4-4-6V2m6 0a6 6 0 0 0 0 6l4 4h1c6 2 8-3 8-3-1 2-4 2-6 2l-1-1a9 9 0 0 1-1 0 9 9 0 0 1-1-1c-3-2-4-5-3-8" /></svg>
     },
     "flask": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 32 32"><path d="m10 27-4-3-4-8-2-5c-1-2 0-3 2-4 0 0 2 0 0 0V6l1-1C2 4 5 4 4 3 2 1 6 1 5 3l2 1c1 1 2 0 2 2l3 1 3 1c-1 1-4-1-4 1l2 9c0 2 1 3 3 5l4 3 4 1c1 0 2-2 3-1 0 0-2 1 0 1h2c1 1 3-1 3 1l-3 1-3 1h-5l-8-1-3-2zm2 1 4 1 7 1-3-1h-4l-5-2 2 1-2-1c-1 0-1 0 0 0l1 1zm-3-2v-1l-1-1c-1 1-1-1-1-1l-2-2-1-2-1-1 2 4 3 3 1 1zm-4-4s1 0 0 0zm6 5c0-1-1-1 0 0zm0 0c0-1 0 0 0 0zm1 0c1 0 0 0 0 0zm2 1s-1 0 0 0zm-3-2c1 0-1 0 0 0zm1 0s-1 0 0 0zm3 2c0 1 3 1 1 1 0 0-3-1-1-1zm-5-4s-1 0 0 0zm1 1c1 0-1 0 0 0zm1 1c1 0 0 0 0 0zm-3-2c1 0 3 0 1-1-1 0-2 0-1 1zm4 2c1 0-1 0 0 0zm-1-1c2 1-1-1 0 0zm3 2c1 0-2 0 0 0zm-7-4zm9 5s0 1 0 0zm-6-4s-1 0 0 0zm-2-1s-2-1 0 0zm-3-2c0-1-1-1 0 0zm7 4s0 1 0 0zm5 3s-1 0 0 0zm-5-3s-1 0 0 0zm-4-2c1 0-1 0 0 0zm6 3c1 0-1 0 0 0zm-3-2c1 1-1 0 0 0zm4 3h2c1-1-1 1 0 0l3 1h2l-1-1-3-1-3-2v-1l-2-2c-1-1-1-2-1 0l-1-1v-4h-1v-1c1 0 0 0 0 0v-4s0-3-1-2H8c2 1 0 1 0 1H6c2 0 0 1-1 1v1l-1 1 1 1v2-1H4v1l2 1h1c-1 0-3-1-1-1v-1 1h1c1 1 1 1 0 0l1 2v1l1-1 1 2v-1c1 1 0 1-1 1l2 1v1h-1l4 2 1 1h-2l3 1c-1 0-1 0 0 0v1zm-1-4h-1 1zm4 3zm-5-4c0-1 0 1 0 0zm-1-1h1zm-5-3c1 0 0 0 0 0zm4 2c1-1 1 1 0 0zm-2-2c-1 0 0 0 0 0zm2 1c0-1 0-1 0 0zm-4-3-1-2 1 1 1 1s-1 0 0 0H8zm-2-1c0-1 1 1 0 0zm1 0s0 1 0 0zm-1-1c-1 0-1-1 0 0 0 0-1-1 0 0 0 0 0 1 0 0zm0 0c1 0 0 0 0 0zm1 0c-1-1 0 1 0 0zm-1-1c-2-1 2 1 0 1v-1zm4 3v-1 1zm1 1c1-1 1 0 0 0zm0-1s0 1 0 0zm-5-3h1-1zm3 2c0-2 0 0 0 0zm2 1c0-1 0 0 0 0zm-5-3h1-1zm5 2c0-1 0-1 0 0zm-4-3s-1-1 0 0c0 0 1 0 0 0 1 1 0 0 0 0zm4 3c0-2 0 0 0 0zm-5-4zm1 1c1-1 1 0 0 0zm3 1s0 1 0 0zm0 0c0-1 0 0 0 0zm0-1s0 1 0 0zm0 0 1-2v1l-1 1zm1-3zm-1 14zm1 1h1-1zm-2-2s1 1 0 0v-1c-1 0-1 0 0 0v-1H7v1c1 0 2 1 0 0l2 1zm1 1c2 0-1-1 0 0zm8 5c0-1 0 0 0 0zm1 0h1-1c-1 0-1 0 0 0zM6 20c0-1-1-1 0 0zm1 0c-1 0-1 0 0 0zm5 3c0 1 2 1 0 0 0 0-1 0 0 0zm6 5c1-1 0 0 0 0zm2 1c0-1 0 0 0 0zm0-1c1 0-1 0 0 0zM4 18l-1-2-1-1 2 3zm16 10c1-1-1 0 0 0zm1 1c1-1-1-1 0 0zM6 19c0-1-1 0 0 0zm15 9zm-10-6s-1 0 0 0zm0 0zm11 7c1-1-1-1 0 0zm0-1s-1 1 0 0zm1 2c1-1 0 0 0 0zM6 19h2l-1-2-1 1c-1-1 0 0 0 0v1zm-3-3s-1-3-1-1l1 1zm6 4c-1-1 0 0 0 0zm1 0c0-1-1 0 0 0zm7 5c0-1 0 0 0 0zm1 0c-1 0-1 0 0 0zm3 2s-1 0 0 0zM5 16s-1 0 0 0zm12 8c-1-1-1 0 0 0zM4 16c1-1 0 0 0 0zm2 0zm19 12h2-3 1zM6 17c0-1 0 0 0 0zm-4-3c0-1-1 0 0 0zm1 0s-1 0 0 0zm1 0zm3 2zm-4-2c0-1-1 0 0 0zm-2-2zm1 0s-1 0 0 0zm1 1c1 0-1 0 0 0zm22 14c0-1-1-1 0 0zm3 1c0-1-1 0 0 0zM3 12c1 0 0 0 0 0zm-2-1 1-2 1 1h1l3-1 4-1 1-1H8L4 8C2 8 4 9 4 9v1L3 9c-2 0-3 0-2 2zm3-2h1-1zm1-1s0 1 0 0zm0 0v1-1zm1 0zm0 0h1-1zm3 0c0-2 2 0 0 0zm1-1s1 0 0 0c0 0 0 1 0 0zm-7 5c1-1-1-1 0 0zm1 0s-1 0 0 0zm-2-1c0-1-1-1 0 0zm27 17c0-1 0 0 0 0zm-3-2c1-1 0 0 0 0zm4 2h1-1zM4 12v-1c-1 0 2 1 0 0v1zm1 0zm1-2s-1 0 0 0zM4 7h3C6 6 6 6 7 7V6h1-2L4 7zm0-1c1-1 2 0 1-1L4 6zm2 0 1-1H6v1zM5 4c0-1-1 0 0 0zm0 0c2 0 0 0 0 0zM4 3V2v1zm10 5c1 0-1-1 0 0z" /></svg>
     },
     "java": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 32 32"><path fill="#4e7896" d="M12 25s-2 0 0 1l7-1a10 10 0 0 0 2 1c-6 3-14 0-9-1zm-1-4s-2 1 1 1h8a3 3 0 0 0 1 1c-7 2-16 0-10-2zm15 6s0 1-1 2H6c-1-1 1-1 2-2h1c-1-1-8 2-3 3 12 2 23-1 20-3zm-14-9s-6 1-2 2l8-1h5l-2 1c-6 1-17 0-14-1 3-2 5-1 5-1zm11 5c6-3 3-6 1-5h-1 1c4-2 7 4-1 6v-1zm-10 9c6 0 14 0 15-3l-5 2H8l5 1z" /><path fill="#f58219" d="M19 0s3 3-3 8c-5 5-1 7 0 10-3-3-5-6-4-8 2-3 8-5 7-10zm-2 15c2 2 0 4 0 4s4-2 2-5c-2-2-3-3 4-7 0 0-11 2-6 8z" /></svg>
     },
     "spring": {
@@ -508,11 +688,11 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="60%" height="60%" viewBox="0 0 64 64"><path fill="#fafafa" d="M58 3a30 30 0 0 1-3 6 32 32 0 1 0-45 46l1 1a32 32 0 0 0 53-22c1-8-2-18-6-31zM15 56a3 3 0 1 1-1-4 3 3 0 0 1 1 4zm43-10c-8 10-25 7-36 7l-3 1 1-1 16-5c9-5 17-14 19-25-3 10-13 19-22 22l-18 4c-8-4-8-20 6-26 6-2 12-1 18-2 7-2 16-7 19-14 4 11 8 28 0 39z" /></svg>
     },
     "firebase": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="60%" height="60%" viewBox="0 0 32 32"><path fill="#ffa000" d="m20 12-4 3-3-6 2-4h1z" /><path fill="#f57f17" d="m13 9 3 6L4 26z" /><path fill="#ffca28" d="M23 7h1l4 19-11 6h-2L4 26z" /><path fill="#ffa000" d="M13 9 4 26 8 1l1-1z" /></svg>
     },
     "postgresql": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 25.6 25.6"><g fill="none" stroke="#BABEC0"><path fill="gray" stroke="gray" d="m19 19 1-2h3l1-1-4-1c3-4 5-10 4-11-3-4-9-3-9-2l-2-1-3 1S1-2 2 7c0 2 2 14 5 10l2-2h2a2 2 0 0 0 0 1l-2 1v1c1 0 3 1 4-1v6c0 1 1 2 3 1 2 0 3 0 3-5" /><path fill="#969696" stroke="none" d="m24 16-4-1c3-4 5-10 4-11-3-4-9-2-9-2a10 10 0 0 0-2-1l-3 1S1-2 2 7c0 2 2 14 5 10l2-2h2a2 2 0 0 0 0 1l-2 1v1c1 0 3 1 4-1v6c0 1 1 2 3 1 2 0 2-1 3-2v-3l1-2h3l1-1z" /><path d="M13 16v7c0 1 1 2 3 1 2 0 2-1 3-2v-5M10 2S1-2 2 7c0 2 2 14 5 10l2-2m6-13s6-2 9 1c1 2-1 8-4 12" /><path d="m20 15 4 1-1 1h-4c0-2 2-1 1-2l-1-2s-4-7 2-6c0 0-2-6-8-6S8 8 8 8M11 16l-2 1v1c1 0 3 1 4-1l-1-1h-1z" /><path d="m11 16 1-2V8c0-2-4 0-4 0v4c0 2 1 3 3 3" /><g fill="#fff"><path d="m10 8 1 1V8h-1zM19 8c1 0 0 0 0 0h-1 1z" /></g><path d="m21 7-1 3v4" /></g></svg>
     },
     "mongodb": {
@@ -520,7 +700,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="40%" height="80%" viewBox="0 0 120 258"><path fill="#fff" d="M83 29A458 458 0 0 1 60 0L38 29c-93 118 15 198 15 198l1 1 2 30h8l3-30 1-1s108-80 15-198ZM60 225l-6-6 6-129h1l6 129-7 6Z" /></svg>
     },
     "gcp": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 64 64"><path fill="#ea4335" d="m41 20 2 1 5-6 1-2A25 25 0 0 0 8 25h2l11-2 1-1a14 14 0 0 1 10-5l9 3z" /><path fill="#4285f4" d="M56 25c-1-5-4-9-7-12l-8 7c3 3 5 7 5 11v2a7 7 0 0 1 0 14H32l-1 1v8l1 2h14a18 18 0 0 0 18-18c0-7-3-12-8-15z" /><path fill="#34a853" d="M18 58h14V47H18a7 7 0 0 1-3-1l-2 1-5 5-1 2a18 18 0 0 0 11 4z" /><path fill="#fbbc05" d="M18 22A18 18 0 0 0 0 40c0 6 3 11 7 14l8-8a7 7 0 0 1-4-6 7 7 0 0 1 13-3l8-8c-3-5-8-7-14-7z" /></svg>
     },
     "datadog": {
@@ -536,7 +716,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="100%" height="100%" viewBox="0 0 32 32"><path fill="#BABEC0" stroke="#BABEC0" d="M16 4.5c-.4 0-.7.4-.7.8v.2l.1.6a6.2 6.2 0 0 1 .1 1.2l-.2.4v.2a8.7 8.7 0 0 0-5.6 2.7l-.2-.2H9a6.2 6.2 0 0 1-1-.8 5.5 5.5 0 0 0-.4-.5h-.1a.8.8 0 0 0-.5-.3.6.6 0 0 0-.5.3c-.2.3-.1.7.2 1h.1a5.5 5.5 0 0 0 .6.4l1 .7a.7.7 0 0 1 0 .4l.3.2a8.6 8.6 0 0 0-1.4 6h-.2l-.3.3a6.2 6.2 0 0 1-1.2.2 5.6 5.6 0 0 0-.7 0l-.1.1a.7.7 0 0 0-.4 1.2.7.7 0 0 0 .6.1h.2l.6-.2 1.2-.4.4.2h.3c.6 2 2 3.7 3.8 4.7l-.1.3v.4l-.5 1a5.6 5.6 0 0 0-.4.6v.2a.7.7 0 0 0 .6 1 .7.7 0 0 0 .5-.5l.1-.1.2-.6c.2-.5.3-1 .5-1.2a.5.5 0 0 1 .3-.2l.1-.2a8.6 8.6 0 0 0 6.2 0l.1.2.4.2.4 1.1a5.6 5.6 0 0 0 .2.7l.1.1a.7.7 0 0 0 1.2.2.7.7 0 0 0 0-.7v-.2a5.5 5.5 0 0 0-.4-.6 7 7 0 0 1-.6-1 .5.5 0 0 1 0-.4 2.3 2.3 0 0 1 0-.3c1.7-1 3-2.8 3.7-4.8h.7a7.3 7.3 0 0 1 1.8.5h.1a.7.7 0 0 0 .9-.8.7.7 0 0 0-.6-.5H27a5.6 5.6 0 0 0-.6 0l-1.2-.3a.8.8 0 0 1-.3-.3h-.3a8.7 8.7 0 0 0-1.3-6l.2-.2.1-.4 1-.7a5.6 5.6 0 0 0 .6-.3l.1-.2a.7.7 0 0 0-.1-1.2.7.7 0 0 0-.7.2l-.2.1a5.6 5.6 0 0 0-.4.5l-.9.8a.7.7 0 0 1-.4 0l-.2.2A8.7 8.7 0 0 0 16.7 8v-.3a.5.5 0 0 1-.2-.4 6.2 6.2 0 0 1 0-1.2l.2-.6v-.2c0-.4-.3-.7-.7-.8zm-.8 5.2-.2 3.5c0 .2-.2.4-.4.5s-.4 0-.6 0l-2.8-2a6.9 6.9 0 0 1 3.3-1.9h.7zm1.6 0a7 7 0 0 1 4 2l-2.8 2a.6.6 0 0 1-1-.5zM10.1 13l2.6 2.4a.6.6 0 0 1-.2 1l-3.4 1a6.9 6.9 0 0 1 1-4.4zM22 13a7 7 0 0 1 1 4.4l-3.4-1c-.2 0-.4-.2-.4-.5s0-.4.2-.5l2.6-2.4zm-6.4 2.6h1l.7.8-.2 1-1 .5-1-.5-.2-1zm3.4 2.8h.1l3.5.6a6.8 6.8 0 0 1-2.8 3.5L18.4 19a.6.6 0 0 1 .5-.8zm-5.8 0a.6.6 0 0 1 .5.8l-1.3 3.3c-1.3-.9-2.3-2-2.8-3.5l3.5-.6zm2.9 1.4a.6.6 0 0 1 .5.3l1.7 3-.7.3c-1.2.3-2.5.2-3.7-.2l1.7-3c0-.3.3-.4.5-.4z" /></svg>
     },
     "rust": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="90%" height="90%" viewBox="0 0 32 32"><path d="M15 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0M4 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0m22 0a1 1 0 0 1 2 0 1 1 0 0 1-2 0M6 14a1 1 0 0 0 1-1l-1-1h2v7H5a12 12 0 0 1-1-4zm7 0v-2h4l2 1-2 1zM8 26a1 1 0 1 1 2 0 1 1 0 0 1-2 0m14 0a1 1 0 0 1 2 0 1 1 0 0 1-2 0m0-2h-1v3a12 12 0 0 1-10 0v-3H8a12 12 0 0 1-1-1h9v-4h-3v-2h3c1 0 2 0 2 2l1 2 1 2h5a12 12 0 0 1-1 1zm6-9a12 12 0 0 1 0 2h-2v1l-1 1h-1l-2-4 2-3c0-2-1-3-2-3l-2-1H7a12 12 0 0 1 7-4l1 2h2l1-2a12 12 0 0 1 8 6l-1 3a1 1 0 0 0 0 1zm2 0v-1l2-1h-1l-1-1 1-2h-1l-1-1V7h-2V5c1 0 0-1 0 0h-2V3h-2l-1-1V1l-2 1-1-1V0l-1 2h-1l-1-2-1 2h-1l-1-2v1l-1 1-2-1v1L9 3H7v2H5c0-1-1 0 0 0v2H3v2l-1 1H1l1 2-1 1H0l2 1v1l-2 1 2 1v1l-2 1h1l1 1-1 2h1l1 1v2h2v2c-1 0 0 1 0 0h2v2h2l1 1v1l2-1 1 1v1l1-2h1l1 2 1-2h1l1 2v-1l1-1 2 1v-1l1-1h2v-2h2c0 1 1 0 0 0v-2h2v-2l1-1h1l-1-2 1-1h1l-2-1v-1l2-1z" /></svg>
     },
     "unreal-engine": {
@@ -565,7 +745,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
         icon: <svg width="70%" height="60%" fill="#fff" viewBox="0 0 640 512"><path d="M350 236h-66v-59h66v59zm0-204h-66v61h66V32zm78 145h-66v59h66v-59zm-156-72h-66v60h66v-60zm78 0h-66v60h66v-60zm277 100c-15-10-48-13-73-9-4-24-17-45-41-63l-14-10-10 14c-18 28-23 74-4 104-8 5-25 11-48 11H2c-8 51 6 117 44 162 37 44 93 66 166 66 157 0 274-72 328-204 22 0 68 0 91-45l9-17-13-9zm-511-28H50v59h66v-59zm78 0h-66v59h66v-59zm78 0h-66v59h66v-59zm-78-72h-66v60h66v-60z" /></svg>
     },
     "aws": {
-        background: "bg-[#FAFAFA]",
+        background: "bg-soft-white",
         icon: <svg width="80%" height="80%" viewBox="0 0 304 182"><path fill="#252F3E" d="m86 66 2 9c0 3 1 5 3 8v2l-1 3-7 4-2 1-3-1-4-5-3-6c-8 9-18 14-29 14-9 0-16-3-20-8-5-4-8-11-8-19s3-15 9-20c6-6 14-8 25-8a79 79 0 0 1 22 3v-7c0-8-2-13-5-16-3-4-8-5-16-5l-11 1a80 80 0 0 0-14 5h-2c-1 0-2-1-2-3v-5l1-3c0-1 1-2 3-2l12-5 16-2c12 0 20 3 26 8 5 6 8 14 8 25v32zM46 82l10-2c4-1 7-4 10-7l3-6 1-9v-4a84 84 0 0 0-19-2c-6 0-11 1-15 4-3 2-4 6-4 11s1 8 3 11c3 2 6 4 11 4zm80 10-4-1-2-3-23-78-1-4 2-2h10l4 1 2 4 17 66 15-66 2-4 4-1h8l4 1 2 4 16 67 17-67 2-4 4-1h9c2 0 3 1 3 2v2l-1 2-24 78-2 4-4 1h-9l-4-1-1-4-16-65-15 64-2 4-4 1h-9zm129 3a66 66 0 0 1-27-6l-3-3-1-2v-5c0-2 1-3 2-3h2l3 1a54 54 0 0 0 23 5c6 0 11-2 14-4 4-2 5-5 5-9l-2-7-10-5-15-5c-7-2-13-6-16-10a24 24 0 0 1 5-34l10-5a44 44 0 0 1 20-2 110 110 0 0 1 12 3l4 2 3 2 1 4v4c0 3-1 4-2 4l-4-2c-6-2-12-3-19-3-6 0-11 0-14 2s-4 5-4 9c0 3 1 5 3 7s5 4 11 6l14 4c7 3 12 6 15 10s5 9 5 14l-3 12-7 8c-3 3-7 5-11 6l-14 2z" /><g fill="#F90"><path d="M274 144A220 220 0 0 1 4 124c-4-3-1-6 2-4a300 300 0 0 0 263 16c5-2 10 4 5 8z" /><path d="M287 128c-4-5-28-3-38-1-4 0-4-3-1-5 19-13 50-9 53-5 4 5-1 36-18 51-3 2-6 1-5-2 5-10 13-33 9-38z" /></g></svg>
     },
     "ansible": {

@@ -17,13 +17,12 @@ const MAX_WIDTH = 9;
 const MAX_HEIGHT = 10;
 const TALENTS_WIDTH = (MAX_WIDTH * SIZE) + ((MAX_WIDTH - 1) * GAP);
 const TALENTS_HEIGHT = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
-const DULL_GOLD = "#b19d62";
 
 const BRANCHES: { [key in AspectType]: TalentType[] } = {
-    [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.STUDY],
-    [AspectType.ARTS]: [TalentType.FORM, TalentType.THEORY],
+    [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.THEORY],
+    [AspectType.ARTS]: [TalentType.FORM, TalentType.STUDY],
     [AspectType.SPORTS]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
-    [AspectType.GENERAL]: [TalentType.ESSENCE, TalentType.APPLICATION],
+    [AspectType.GENERAL]: [TalentType.APPLICATION, TalentType.ESSENCE],
 };
 
 const VIEW_MODE_ICON: { [key in ViewMode]: string } = {
@@ -47,13 +46,13 @@ const LIST_COLORS: { [key in AspectType]: string[] } = {
 
 const TALENT_TREES: { [key in TalentType]: number[] } = {
     [TalentType.ENGINEERING]: Array.from({ length: 95 - 48 }, (_, index) => index + 48),
-    [TalentType.STUDY]: Array.from({ length: 48 }, (_, index) => index),
+    [TalentType.THEORY]: Array.from({ length: 48 }, (_, index) => index),
     [TalentType.FORM]: Array.from({ length: 199 - 151 }, (_, index) => index + 151),
-    [TalentType.THEORY]: Array.from({ length: 151 - 95 }, (_, index) => index + 95),
+    [TalentType.STUDY]: Array.from({ length: 151 - 95 }, (_, index) => index + 95),
     [TalentType.ENTERTAINMENT]: Array.from({ length: 300 - 245 }, (_, index) => index + 245),
     [TalentType.KNOWLEDGE]: Array.from({ length: 245 - 199 }, (_, index) => index + 199),
-    [TalentType.ESSENCE]: [], // logic", "initiative", "versatility" analysis", "management cross-referencing research
-    [TalentType.APPLICATION]: [],
+    [TalentType.APPLICATION]: Array.from({ length: 384 - 339 }, (_, index) => index + 339),
+    [TalentType.ESSENCE]: Array.from({ length: 339 - 300 }, (_, index) => index + 300),
 }
 
 const TalentsDisplay: React.FC = () => {
@@ -333,11 +332,11 @@ const Branches: React.FC<{ tree: number[] }> = ({ tree }) => {
         if (!context) return;
         context.clearRect(0, 0, TALENTS_WIDTH * 16, TALENTS_HEIGHT * 16);
 
-        const drawArrow = (x1: number, y1: number, x2: number, y2: number) => {
+        const drawArrow = (x1: number, y1: number, x2: number, y2: number, taken: boolean) => {
             context.beginPath();
             context.moveTo(x1, y1);
             context.lineTo(x2, y2);
-            context.strokeStyle = DULL_GOLD;
+            context.strokeStyle = taken ? "#b19d62" : "#606060";
             context.lineWidth = 2;
             context.stroke();
 
@@ -347,7 +346,7 @@ const Branches: React.FC<{ tree: number[] }> = ({ tree }) => {
             context.moveTo(x2 - arrowSize * Math.cos(angle - Math.PI / 6), y2 - arrowSize * Math.sin(angle - Math.PI / 6));
             context.lineTo(x2, y2);
             context.lineTo(x2 - arrowSize * Math.cos(angle + Math.PI / 6), y2 - arrowSize * Math.sin(angle + Math.PI / 6));
-            context.fillStyle = DULL_GOLD;
+            context.fillStyle = taken ? "#b19d62" : "#606060";
             context.fill();
         }
 
@@ -363,7 +362,8 @@ const Branches: React.FC<{ tree: number[] }> = ({ tree }) => {
                     (talent.x * (SIZE + GAP) + (SIZE / 2)) * 16,
                     (talent.y * (SIZE + GAP) + (SIZE / 2)) * 16,
                     (childTalent.x * (SIZE + GAP) + (SIZE / 2) + dir * (SIZE / 2 - passivePad)) * 16,
-                    (childTalent.y * (SIZE + GAP) + passivePad) * 16
+                    (childTalent.y * (SIZE + GAP) + passivePad) * 16,
+                    childTalent.experience > 0 && talent.experience > 0
                 );
             })
 
@@ -439,7 +439,7 @@ const AbilityDescription: React.FC<{ ability: TalentAbility }> = ({ ability }) =
                         abilityCost && <div className="flex gap-2">
                             {
                                 abilityCost.map(([cost, type]: AbilityCost, index: number) => (
-                                    <span key={index} className={RESOURCE_COLORS[type]}>{cost} {type}</span>
+                                    <span key={index} className={RESOURCE_COLORS[type]}>{cost} {type}{ability.cast_time?.startsWith("Toggle") ? "/s" : ""}</span>
                                 ))
                             }
                         </div>

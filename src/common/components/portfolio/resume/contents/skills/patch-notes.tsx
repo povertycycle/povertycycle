@@ -6,14 +6,14 @@ import { TextStyleParser } from "@/common/utils/parser";
 type Notes = { version: string, changes: string[] }
 
 export const PATCH_NOTES: Notes[] = [
-    { version: "1.0.12.20240316", changes: [`Added full /b:${TalentType.ENTERTAINMENT}/ skill talents and rebalanced skills costs and special resources.`] },
-    { version: "1.0.11.20240305", changes: [`Added full /b:${TalentType.KNOWLEDGE}/ skill talents and rebalanced some skills' description.`] },
-    { version: "1.0.10.20240227", changes: [`Added full /b:${TalentType.FORM}/ skill talents and skeleton for /b:${TalentType.KNOWLEDGE}/ skill talents.`] },
-    { version: "1.0.9.20240212", changes: [`Added some /b:${TalentType.FORM}/ skill talents and rebalanced end-game talents for /b:${TalentType.THEORY}/.`] },
-    { version: "1.0.8.20240209", changes: [`Added /b:${TalentType.THEORY}/ skill talents.`] },
-    { version: "1.0.7.20240204", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ and /b:${TalentType.STUDY}/ skill talents for a better visual.`] },
-    { version: "1.0.6.20240203", changes: [`Arrows drawn using canvas instead of divs.`] },
-    { version: "1.0.5.20240202", changes: [`Balanced, fixed, and added some of the /b:${TalentType.ENGINEERING}/ skill talents.`] },
+    { version: "1.0.12.20240324", changes: [`Added full /b:${TalentType.ESSENCE}/ and /b:${TalentType.APPLICATION}/ skill talents.`] },
+    { version: "1.0.11.20240316", changes: [`Added full /b:${TalentType.ENTERTAINMENT}/ skill talents and rebalanced skills costs and special resources.`] },
+    { version: "1.0.10.20240305", changes: [`Added full /b:${TalentType.KNOWLEDGE}/ skill talents and rebalanced some skills' description.`] },
+    { version: "1.0.9.20240227", changes: [`Added full /b:${TalentType.FORM}/ skill talents and skeleton for /b:${TalentType.KNOWLEDGE}/ skill talents.`] },
+    { version: "1.0.8.20240212", changes: [`Added some /b:${TalentType.FORM}/ skill talents and rebalanced end-game talents for /b:${TalentType.THEORY}/.`] },
+    { version: "1.0.7.20240209", changes: [`Added /b:${TalentType.THEORY}/ skill talents.`] },
+    { version: "1.0.6.20240204", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ and /b:${TalentType.STUDY}/ skill talents for a better visual.`] },
+    { version: "1.0.5.20240202", changes: [`Balanced, fixed, and added some of the /b:${TalentType.ENGINEERING}/ skill talents. Arrows drawn using canvas instead of divs.`] },
     { version: "1.0.4.20240131", changes: [`Rearranged /b:${TalentType.ENGINEERING}/ skill talents for a more balanced flow.`] },
     { version: "1.0.3.20240129", changes: [`Added /b:${TalentType.ENGINEERING}/ skill talents.`] },
     { version: "1.0.2.20240124", changes: [`Added /b:${ViewMode.LIST.replace("_", " ")}/ for skill talents.`] },
