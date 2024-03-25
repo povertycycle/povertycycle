@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react";
 import { AspectColor, AspectColorTypes, AspectType, AspectsContext, SkillTab } from "./constants";
-import { AspectArtsIcon, AspectGeneralIcon, AspectScienceIcon, AspectSportsIcon } from "./aspect-icons";
+import { AspectArtsIcon, AspectNatureIcon, AspectScienceIcon, AspectRecreationIcon } from "./aspect-icons";
 
 interface Aspect {
     description: string,
@@ -19,15 +19,15 @@ const ASPECTS: { [key in AspectType]: Aspect } = {
         color: AspectColor.BLUE,
         icon: <AspectArtsIcon />,
     },
-    [AspectType.SPORTS]: {
-        description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glory.",
+    [AspectType.RECREATION]: {
+        description: "An aspect forged from the pinnacle of extreme discipline; the body basks in all of its vigorous glories.",
         color: AspectColor.RED,
-        icon: <AspectSportsIcon />,
+        icon: <AspectRecreationIcon />,
     },
-    [AspectType.GENERAL]: {
+    [AspectType.NATURE]: {
         description: "An aspect molded from the vast history of men; none knows the full potential of its reaches.",
         color: AspectColor.YELLOW,
-        icon: <AspectGeneralIcon />,
+        icon: <AspectNatureIcon />,
     }
 };
 

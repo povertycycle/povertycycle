@@ -17,8 +17,8 @@ export enum AspectColor {
 export enum AspectType {
     SCIENCE = "science",
     ARTS = "arts",
-    SPORTS = "sports",
-    GENERAL = "general",
+    RECREATION = "recreation",
+    NATURE = "nature",
 }
 
 export enum TalentType {

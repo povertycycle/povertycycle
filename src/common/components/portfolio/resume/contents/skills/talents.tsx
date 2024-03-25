@@ -21,8 +21,8 @@ const TALENTS_HEIGHT = (MAX_HEIGHT * SIZE) + (MAX_WIDTH * GAP);
 const BRANCHES: { [key in AspectType]: TalentType[] } = {
     [AspectType.SCIENCE]: [TalentType.ENGINEERING, TalentType.THEORY],
     [AspectType.ARTS]: [TalentType.FORM, TalentType.STUDY],
-    [AspectType.SPORTS]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
-    [AspectType.GENERAL]: [TalentType.APPLICATION, TalentType.ESSENCE],
+    [AspectType.RECREATION]: [TalentType.ENTERTAINMENT, TalentType.KNOWLEDGE],
+    [AspectType.NATURE]: [TalentType.APPLICATION, TalentType.ESSENCE],
 };
 
 const VIEW_MODE_ICON: { [key in ViewMode]: string } = {
@@ -33,15 +33,15 @@ const VIEW_MODE_ICON: { [key in ViewMode]: string } = {
 const ICON_COLORS: { [key in AspectType]: string } = {
     [AspectType.SCIENCE]: "bg-aspect-green-darker",
     [AspectType.ARTS]: "bg-aspect-blue-darker",
-    [AspectType.SPORTS]: "bg-aspect-red-darker",
-    [AspectType.GENERAL]: "bg-aspect-yellow-darker"
+    [AspectType.RECREATION]: "bg-aspect-red-darker",
+    [AspectType.NATURE]: "bg-aspect-yellow-darker"
 };
 
 const LIST_COLORS: { [key in AspectType]: string[] } = {
     [AspectType.SCIENCE]: ["via-aspect-green-darker", "from-aspect-green/75"],
     [AspectType.ARTS]: ["via-aspect-blue-darker", "from-aspect-blue/75"],
-    [AspectType.SPORTS]: ["via-aspect-red-darker", "from-aspect-red/75"],
-    [AspectType.GENERAL]: ["via-aspect-yellow-darker", "from-aspect-yellow/75"],
+    [AspectType.RECREATION]: ["via-aspect-red-darker", "from-aspect-red/75"],
+    [AspectType.NATURE]: ["via-aspect-yellow-darker", "from-aspect-yellow/75"],
 };
 
 const TALENT_TREES: { [key in TalentType]: number[] } = {

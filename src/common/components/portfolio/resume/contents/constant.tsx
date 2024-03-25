@@ -1,4 +1,4 @@
-const PLAYTIME = 543;
+const PLAYTIME = 547;
 
 export enum ResourceType {
     MANA = "Mana",

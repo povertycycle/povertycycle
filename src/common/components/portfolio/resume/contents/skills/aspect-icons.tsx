@@ -1,4 +1,4 @@
-export const AspectScienceIcon : React.FC = () => {
+export const AspectScienceIcon: React.FC = () => {
     const ATOMS = 3;
     const SIZE = 10;
     return (
@@ -25,7 +25,7 @@ export const AspectScienceIcon : React.FC = () => {
     )
 }
 
-const Stripes : React.FC<{ top: boolean }> = ({ top }) => {
+const Stripes: React.FC<{ top: boolean }> = ({ top }) => {
     return (
         <div className={`${top ? "w-[80%] translate-x-[-2%] translate-y-[-30%] rotate-[-10deg] h-[15%] border-[2px] rounded-[0.2rem]" : "border-b-[2px] w-full h-[25%]"} border-white group-hover/aspects:border-aspect-blue transition-colors duration-200 flex justify-between overflow-hidden px-4`}>
             {
@@ -34,12 +34,12 @@ const Stripes : React.FC<{ top: boolean }> = ({ top }) => {
                         <div key={i} className={`h-[110%] w-[15%] group-hover/aspects:bg-aspect-blue aspect-bg-white ${top ? "skew-x-[30deg]" : "skew-x-[-30deg]"}`} />
                     )
                 })
-            }                
+            }
         </div>
     )
 }
 
-export const AspectArtsIcon : React.FC = () => {
+export const AspectArtsIcon: React.FC = () => {
     return (
         <div className="h-full w-full flex flex-col items-center justify-center">
             <Stripes top={true} />
@@ -60,7 +60,7 @@ export const AspectArtsIcon : React.FC = () => {
     )
 }
 
-const Weight : React.FC<{ left: boolean }> = ({ left }) => {
+const Weight: React.FC<{ left: boolean }> = ({ left }) => {
     const divs = [
         <div key="weight-0" className={`w-[15%] h-[10%] group-hover/aspects:border-aspect-red transition-colors duration-200 border-y-2 border-white ${left ? "border-l-2 rounded-l-[0.2rem]" : "border-r-2 rounded-r-[0.2rem]"}`} />,
         <div key="weight-1" className="w-[35%] h-[40%] group-hover/aspects:border-aspect-red aspect-border-white rounded-[0.5rem]" />,
@@ -70,7 +70,7 @@ const Weight : React.FC<{ left: boolean }> = ({ left }) => {
     return left ? divs : divs.reverse();
 }
 
-export const AspectSportsIcon : React.FC = () => {
+export const AspectRecreationIcon: React.FC = () => {
     return (
         <div className="h-full w-full relative flex items-center">
             <div className="w-[32%] h-full flex items-center">
@@ -84,7 +84,7 @@ export const AspectSportsIcon : React.FC = () => {
     )
 }
 
-export const AspectGeneralIcon : React.FC = () => {
+export const AspectNatureIcon: React.FC = () => {
     const SIZE = 20;
     const PETALS = 20;
     const SIDE = 360 / PETALS;
@@ -102,7 +102,7 @@ export const AspectGeneralIcon : React.FC = () => {
                             width: `${SIZE}%`,
                             height: `${SIZE}%`,
                             transform: `translate(${x}%, ${y}%) rotateZ(${deg}deg)`,
-                        }}/>
+                        }} />
                     )
                 })
             }
