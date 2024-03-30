@@ -1,34 +1,38 @@
+import { useState, Dispatch, SetStateAction, createContext } from "react";
 import ControlsDescription from "../controls-description";
-import World from "./world";
 import styles from "../animations.module.scss";
+import WorldDisplay from "./world";
+import Chapters from "./chapters";
+import LocationDetails, { Details } from "./details";
 
-const MapDescription: React.FC = () => {
-    return (
-        <div className="h-full w-[30%] bg-sea-blue-dark">
-
-        </div>
-    )
+export type SelectDetails = {
+    location: string,
+    details: Details[]
 }
 
-const MapDisplay: React.FC = () => {
-    return (
-        <div className="h-full w-full flex relative items-center justify-center">
-            <World />
-        </div>
-    )
-}
+export const SelectionContext = createContext<{
+    selected: SelectDetails | null;
+    setSelected: Dispatch<SetStateAction<SelectDetails | null>>;
+}>({
+    selected: null,
+    setSelected: () => { }
+})
 
 const Map: React.FC = () => {
-    const toggle = false;
+    const [selected, setSelected] = useState<SelectDetails | null>(null);
+
     return (
-        toggle ?
-            <div className="w-full h-full flex items-center justify-center text-[3rem] font-market-deco">
-                In Progress
-            </div> :
-            <div className={`${styles.mapDisplayAnimation} flex flex-col w-full h-full items-end justify-center text-[1.5rem] font-market-deco select-none`}>
-                <MapDisplay />
-                <ControlsDescription tag="map" />
+        <div className={`${styles.mapDisplayAnimation} flex flex-col w-full h-full items-end justify-center text-[1.5rem] font-market-deco select-none relative`}>
+            <div className="absolute z-[1000] top-0 flex items-center justify-center w-[200px] left-[calc(50%-100px)] py-2 text-[2rem]">BETA FEATURE</div>
+            <div className="h-full w-full flex relative items-center justify-center bg-gradient-to-r from-black via-transparent to-black">
+                <SelectionContext.Provider value={{ selected, setSelected }}>
+                    <WorldDisplay />
+                    <Chapters />
+                    <LocationDetails />
+                </SelectionContext.Provider>
             </div>
+            <ControlsDescription tag="map" />
+        </div>
     )
 }
 

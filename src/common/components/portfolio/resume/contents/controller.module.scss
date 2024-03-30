@@ -55,3 +55,43 @@
     height: 60%;
     border: 0.25rem solid white;
 }
+
+.actionUp {
+    width: 60%;
+    height: 60%;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 20%;
+    background: white;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 74%;
+        height: 74%;
+        background: white;
+        bottom: 0;
+        transform: translate(18%, 33%) rotate(45deg);
+        border-radius: 2px;
+    }
+}
+
+.actionDown {
+    width: 60%;
+    height: 60%;
+    border-radius: 4px;
+    position: relative;
+    margin-top: 20%;
+    background: white;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 74%;
+        height: 74%;
+        top: 0;
+        background: white;
+        transform: translate(18%, -33%) rotate(45deg);
+        border-radius: 2px;
+    }
+}

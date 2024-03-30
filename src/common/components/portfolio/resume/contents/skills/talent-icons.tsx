@@ -342,7 +342,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "mh": {
         background: "bg-black",
-        icon: <svg width="70%" height="70%" viewBox="0 0 40 53"><path fill="#9F9F9F" d="M21 22c-6 9-21 3-21-5V5c0-3 2-5 4-5h31c2 0 5 2 5 5 0 4 1 13-1 14-8 5-11 18-11 19H14c0-10 13-7 15-28 0-2-2-4-4-4H13c-6 0-5 7-4 9 2 7 9 5 7 2 0-2-4-7-2-8 6-3 12 7 7 13Zm2 23h5v8H14v-8h3c0 7 6 2 6 0Z" /></svg>
+        icon: <svg width="80%" height="80%" viewBox="0 0 58 75"><path fill="#6FC687" d="M50 75H7l-7-7V25l7-7V5H0V0h12v19l-6 7-1 38 5 4h37l6-5V27l-7-8V0h12v5h-7v13l7 8v39l-8 10ZM22 9c-1 2 1 8 2 9 2 2 9 8 8 14s-5 3-5 1c1-4-5-10-5-10-6-6-5-16-5-16 6-6 6-5 13-6 5 0 8 2 10 5 7 11-8 17-11 13l-3-6c0-2 5-4 5 0 1 3 5 3 5 0 1-5-2-8-6-8s-7 1-8 4ZM11 63V38h37v25H11Z" /></svg>
     },
     "er": {
         background: "bg-black",
@@ -426,7 +426,7 @@ export const CUSTOM_ICONS: { [key: string]: { background: string, icon: JSX.Elem
     },
     "ff": {
         background: "bg-soft-white",
-        icon: <svg width="80%" height="80%" viewBox="0 0 60 40"><defs><linearGradient id="a" x1="30" x2="30" y1="0" y2="40" gradientTransform="matrix(-1 -1 1 -1 31 52)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#9fc8f2" /><stop offset=".3" stop-color="#5499b5" /><stop offset="1" stop-color="#165241" /></linearGradient></defs><path fill="url(#a)" d="m60 0-7 3-1 2c-1 1-15 7-6 5 1 0-18 10-7 7l-7 5-1 1c1 2-4 12-9 14l-9 3c-1 0-5-1-5-3l-2-1c-2 0-3-2-3-3l3-2c3 0 5 0 7-2l1-2c-2 1-4-1-3-1 6-3-2-2-3-2l3-3H7c1-1 0-3 2-3l4-3h-2v-2l-3 1-4 5-2 5c-3 2-2-4 0-6 2-4 5-6 10-7h5l8-3c3-2 11-5 9-3-21 13 5-2 8-3l-12 9L53 0l2 1 5-1ZM17 27c2 0 6-4 4-6-1-1-5 1-6 2h3l-1 4Z" /></svg>
+        icon: <svg width="80%" height="80%" viewBox="0 0 60 40"><defs><linearGradient id="a" x1="30" x2="30" y1="0" y2="40" gradientTransform="matrix(-1 -1 1 -1 31 52)" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#9fc8f2" /><stop offset=".3" stopColor="#5499b5" /><stop offset="1" stopColor="#165241" /></linearGradient></defs><path fill="url(#a)" d="m60 0-7 3-1 2c-1 1-15 7-6 5 1 0-18 10-7 7l-7 5-1 1c1 2-4 12-9 14l-9 3c-1 0-5-1-5-3l-2-1c-2 0-3-2-3-3l3-2c3 0 5 0 7-2l1-2c-2 1-4-1-3-1 6-3-2-2-3-2l3-3H7c1-1 0-3 2-3l4-3h-2v-2l-3 1-4 5-2 5c-3 2-2-4 0-6 2-4 5-6 10-7h5l8-3c3-2 11-5 9-3-21 13 5-2 8-3l-12 9L53 0l2 1 5-1ZM17 27c2 0 6-4 4-6-1-1-5 1-6 2h3l-1 4Z" /></svg>
     },
     "ragnarok": {
         background: "bg-[#9699CD]",

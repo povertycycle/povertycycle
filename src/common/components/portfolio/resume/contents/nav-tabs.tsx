@@ -105,7 +105,7 @@ const NavigationTabs: React.FC<{
 
         const ControllerTabbing: React.FC<{ children: React.ReactNode, onClick: () => void }> = ({ children, onClick }) => {
             return (
-                <button className={`${styles.controllerTab} active:scale-90 px-4 py-[0.15rem] bg-soft-white text-black`} onClick={onClick}>
+                <button className={`${styles.controllerTab} active:scale-90 px-4 py-[0.15rem] bg-white text-black`} onClick={onClick}>
                     {children}
                 </button>
             )

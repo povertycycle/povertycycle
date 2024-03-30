@@ -61,7 +61,7 @@ const JOURNALS: Journal = {
             description: [
                 "Version 2.0 (Next Goal):",
                 "- New design for the website and its contents.",
-                "Version 1.4.1 - Current:",
+                "Version 1.4.2 - Current:",
                 "- New website made with React and NextJS.",
                 "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations, and a new skill talent section. Prototyping map behaviour.",
                 "Version 1.0:",
@@ -176,7 +176,7 @@ const JournalDescription: React.FC<{ active: number }> = ({ active }) => {
                 <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
                     <div className="flex flex-col gap-2 tracking-[0px] h-full absolute w-full">
                         <div className="flex w-full bg-gradient-to-l from-sea-blue-dark/35">
-                            <span className="py-4 px-8 text-center italic font-century-gothic text-[1.5rem] tracking-[1px]">{selectedJournal.flavorText}</span>
+                            <span className="py-4 px-8 text-center italic font-century-gothic text-gold text-[1.5rem] tracking-[1px]">{selectedJournal.flavorText}</span>
                         </div>
                         {
                             selectedJournal.description.map((text: string, index: number) => {

@@ -1,0 +1,12 @@
+.chapterAnimation {
+    animation: chapter-animate 2s ease;
+}
+
+@keyframes chapter-animate {
+    0% { 
+        width: 0;
+    }
+    100% {
+        width: 30%;
+    }
+}

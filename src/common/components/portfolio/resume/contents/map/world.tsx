@@ -1,94 +1,204 @@
-import { WheelEvent, useState, useRef, useEffect } from "react"
+import { WheelEvent, useState, useRef, useEffect, MutableRefObject, Dispatch, SetStateAction, memo } from "react"
+import SVG from "./svg";
+import POIs from "./poi";
+import { Details } from "./details";
+import { SelectDetails } from "./map";
 
-const SVG: React.FC = () => {
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 5;
+const FACTOR = 0.5;
+
+const WorldDisplay = memo(() => {
+    const boundRef = useRef<HTMLDivElement | null>(null);
+    const mapRef = useRef<HTMLDivElement | null>(null);
+    const poiRef = useRef<HTMLDivElement | null>(null);
+
     return (
-        <svg width="100%" height="100%" fill="#BABEC0" viewBox="0 0 1845 855"><path d="m824 87 4 4-6 4-13 4-4 1-5-1-12-1 4-3-9-3 8-1v-1l-8-2 3-3 7-1 6 4 7-3 5 1 7-3 7 1-1 3ZM570 204l4-1-3 3h-2l-5-2-1-2 3-2v3l4 1Zm8-17-5-2-4-3 2-1 6 2 4 3v1h-3Zm-305 3-3 1-7-3v-2l-2-2v-2l-4-1v-3l2-2 4 2 2 1h4v2l1 3 3 3v3Zm334-8 4-2 3 2-3 2 4 1 3-1 4 2-3 4 4-1v7l-3 6h-3l-2-1 2-5-1-1-7 6-3-1 4-3-4-1h-16v-2l4-2-2-2 6-3 8-10 4-4 5-2h2l-1 2-4 4-5 5Zm-354-26h5l-7 7 1 5h-2l-1-3v-5l1-3 2-2 1 1Zm279-45-2-1v-2l3-1h2v1l-3 3Zm-14-3h-3v-2l5-2h6v1l-8 3Zm4-18h2l2 1 3 2 4 2-1 2h3l2 2-5 2-6-2-1-2-6 3-8 3 1-4-7 1 6-3 4-4 5-5h3l-1 2Zm41-10v-3l4-3 4-1 3 2-2 2-1 1-4 2h-4Zm-70-11-4 2-4-2-4 1-4-3 5-1 5-3 3 2 2 1v1l1 2Zm4 149-1-1-2 1-2 2-2-1h-4l-4 1-2 1-3 2 2 1 2-1h11l4-2 1-2v-1Zm-21 8-3 1-1 1-3-1-2 1-2 1-5 2h-3l-2 2 2 2h3l4-1 3-2h3l5-2 6-4v-1l-5 1Zm-9-3 1-2 1-3 4-3 1-4 1 4 4 1 2-2-1-5-1-2-4-1-4-1h-4l-3-1-1-1-1 1 1 2-4 1-4-1-5 1-3 1-5 4-3 2v1l6-4h1l-5 5-3 4-3 4v3l-1 1-1 2 1 3v1h2l1-1 2-1 3-3 2-4v-4l1-3 3-3 2-2 2-2v3l2-4h2l1-3 4 2 3 2-1 3-2 3-3 2-1 2h1l5-3 1 1v4l-1 2 4-2Zm-4-22-2-1 2-2-2-2 2-2h-5v-4l-1-1h-3l-4-1-2 1-2 1-3 1-3 3-6 2-5 2-4 3-1 1 6-2 2 2 4-1 5-2 6-2-3 3 2 1 3 2 5-1 5-1v2h2l2-2Zm-186-14-5-6-2-2-7-3 2-6 3-3-4-3 3-5-2-4 3-3-1-3-2-2 3-5-2-5 3-5-4-1h-7l-4-2-3-6-4-1-5-2-7 1-6-3-3-3-6 2-4 4h-2l-7 1-6 2-7 2 4-4 8-6 7-2v-1l-9 3-8 4-11 4v3l-9 4-7 3-7 2-4 2-11 4-4 2-8 3h-3l-6 1-7 2-6 2-10 2v-1l8-3 7-2 9-3 6-1 5-2 10-4 3-1 5-2 6-5 6-3-7 2v-1l-5 2v-3l-3 2 1-3-7 2h-3l4-3 3-2v-2l-7 1-1-3-1-1 4-4-1-2 6-4 8-3 5-3h4l2 1 7-3h3l5-1 3-3-1-1 6-2h-3l-6 1-3 1-2-1-7 1-4-2 1-2-1-3 9-2 13-3h4l-5 3 10-1 1-3-3-2 1-3v-2l-4-2 7-3h7l9-2 5-3 8-3h5l11-3 3 1 10-3 5 1-1 2 3-1 7 1-2 1 5 1 5-1 6 2 7 1h2l7-1 4 2 3 1 6 1 4 3h3l7-2 7-2 5 1 9-3 8-1v2l5-1 4-2h2l1 5 10-4-4 4 6-1 3-1h5l4 2 7 2 5 1h4l3 3-8 3 6 1 12-1 4-1 2 3 7-2-2-3 4-2h9l2 1 2 3 5-1 5 3 7-1h6l3-3 4-1 5 2-4 5 6-5 3 1 7-6-2-3-3-2 6-6 8-4 4 1 2 2 1 6-6 3 7 1-5 5 9-4 2 4-4 4 1 3 8-4 6-4 5-6h5l6 1 3 3-1 2-5 3v3l-2 3-11 4-6 1-4-2-3 3-7 4-3 3-8 4h-6l-6 3-2 3-6 1-9 5-9 6-5 5-5 7 6 1-2 5v5l7-1 7 2 3 3 2 2 5 2 3 3h8l5 1-4 5-2 6 1 7 4 6 5-2 5-7 3-9-2-4 9-2 7-5 5-4 2-4-1-5-3-4 9-7 1-5 4-9 4-1 7 1 4 1 4-2 3 2 4 4v2h8l-3 5-2 8 4 1 1 3 9-3 7-7 4-2 1 5 3 7 2 8-3 3 4 4 3 3 7 2 3 2v5l3 1 1 2-2 7-4 2-4 2-9 3-8 5-9 1-10-2h-7l-5 1-6 4-8 3-10 8-8 6 5-1 11-8 12-6h8l3 3-6 4v12l5 3 9-1 7-7-1 4 3 3-8 4-12 4-6 2-7 5-4-1 2-5 10-5h-8l-6 1v2l-6 3-6 2-6 2-4 4-2 1-1 3 1 4h2v-2l1 1-1 2-3 1h-3l-4 1h-6l-5 2 9-1 1 1-8 2h-4l1-1-2 2h1l-2 5-6 5v-2h-1l-1-2v4l1 1v2l-3 3-4 5h-1l3-5-2-2 1-5-2 2v4l-3-1 3 2-1 7h1v2l-1 7-5 4-6 2-4 4h-3l-3 3-2 2-7 4-3 3-4 4-2 5v4l1 6 1 4v3l1 7-1 5v2l-2 4-2 1-3-1v-3l-2-1-2-6-2-5v-2l2-4-1-4-3-5-2-1-6 3-1-1-2-3-3-1-6 1-5-1h-4l-3 1 1 2-1 3 1 1-1 1-2-1-2 1h-4l-3-4-5 1-4-1h-3l-5 2-7 4-6 3-3 3-2 3-1 5-1 3 1 2-3 5-2 5-2 9-1 3v3l2 3v5l3 5 1 4 2 3 5 2 2 2 5-1 5-1 4-1 4-1 4-3 1-4 2-5 1-2 4-2 6-1h8l1 1v3l-4 4-1 4v1l-1 3-2 5-1-2h-1v1h1l-1 2-1 3 1 1-1 2-1 4-1 1-1 1-2 2 2 1 1-1 1 1h1l1-1h3l3 1h2l2-1 1-1h1l2 1h1l1-1 3 1h1l1 1 2 2 2 1 1 2-1 2v2l-1 2-1 3v7l-1 1-1 3v1l-1 2v2l1 1 1 3 2 3 3 2 2 3-1 1h3l2 1h3l2-2 4-1 2-2 3 1h-1 4l2 2 2 1 2 2h3l4-4 3-1v-2l1-5 3-3h4l1-2 4 1 5-3 2-2 3-3h2l1 2-1 2v2l-4 1 2 2v4l-3 4 2 5 2-1 2-4-2-3v-5l7-2v-3l2-2 2 4h4l3 4v2h11l3 2 5 1 3-2v-1l7-1h7l-5 2 2 3h4l4 4 1 5h3l2 1 4 3 3 4v3h2l3 3 2 3 7 1 1-1 4-1 6 2 2 1 4 1 6 6 1 2h2l1 3 3 12 4 1v4l-5 5 2 2 10 1v7l5-4 7 2 9 4 3 4-1 3 7-2 11 4 8-1 9 6 7 7 4 2h5l2 2 2 8 1 4-2 11-2 4-8 9-3 7-4 6h-2l-1 4 1 12-1 10-1 5-1 2-1 9-5 8v7l-5 2-1 4h-6l-8 3-4 3-6 2-6 5-4 6-1 5 2 3-1 7v3l-4 4-4 11-4 5-3 3-2 6-3 4-1 4-6 3-4-1-3 1-5-3h-4l-4-3v3l8 5v5l4 3 1 3-4 8-7 3-10 2-6-1 2 4v5l2 3-2 2-5 1-6-2-2 1 3 7 4 2 2-2 3 3-4 2-3 4 1 6v4h-5l-3 3v5l7 4 5 1v6l-5 4v7l-4 2-1 3 5 7 4 3h-6l-2 1-3 3 1 5h-2l-6-2-7-4-8-3-3-4v-4l-5-4-5-11v-6l4-4-9-2 3-6-2-10 6 2-1-13-4-2 1 8-4-1-1-9-2-12 1-4-4-6-2-8h2l1-10 1-10v-10l-3-10v-5l-2-8 2-8-1-12v-28l-1-10-2-9-6-4-1-3-12-6-10-7-5-4-3-5 1-2-5-9-7-11-6-13-2-3-2-5-5-4-4-3 2-3-3-6 1-4 5-4 3-5-2-3-2 3-3-3 1-2-1-5 2-1 1-4 2-4v-3l3-1 4-3-1-2h2v-4l1-2h3l3-4 2-4-2-1 1-4-1-6 1-2v-5l-3-4-1-1-1-4 1-2h-1l-1-2-3-2-3 1-1 2-2 1-1 1-1 1 2 3-1 1-1 1-3 1v-4l-1 1-2-1-1-2-2-1h-4v1l-1-1-3-1-1-2 1-1-1-1-1-2-2-1-2-1v-2l-2-1v2l-1 2-1-2-2-1v-3l1-2-2-1 2-1-2-2-3-3-1-2-2-2-3-3 1-1 1 1v-2l-2-1-1 1h-5l-2-2h-3l-2-1-3-1-3-1-2-1-3-2-6-7-2-2-5-2h-3l-5 3h-3l-3-1-5-2-4-2-4-1-6-3-5-3-1-2-3-1-5-2-2-2-6-4-2-4-1-3 2-1v-2l2-1v-3l-1-3v-2l-2-3-4-7-4-5-2-4-4-2-1-2 2-4-3-1-2-4v-4l-3-1-2-3-2-3v-2l-1-5-1-5 1-2-3-3h-2l-2-1-2 2v3l-1 5 1 3 3 4v2h1v2h1v5l1 1 1 2 2 4 1 6 1 2 1 3-1 4h3l2 3 1 3v1l-3 2h-1l-1-4-3-3-3-3-2-2 1-5v-3l-2-2-4-3v1l-1-2-3-1-3-4 1-1 2 1 3-3 1-3-3-4-3-2-1-4v-4l-1-5v-9l-2-4-2-1v-2h-3l-1-2h-5l-1-1 1-4-3-6v-9l1-2-2-2-1-5 2-5-1-4 4-5 3-6 1-4 5-6 8-12 4-8 2-6 1-3 1-1 6 2-1 6 2-1 3-6 1-5h-1ZM435 50l10-1 3 2 7-2 2 1-2 5 4-2 3-5 4-1 3 1 2 2-2 5-3 4 4 2 5 3-2 2-7 1 1 2-4 2-6-1-6-1h-5l-10 2-11 1h-8v-3l-4-1-4 1-1-5h4l7-1h6l6-1-7-1h-15v-2l12-2h-6l-6-1 8-4 5-2 15-3 2 1-4 2Zm37 0-2-4 2-1h5l2 1-7 4Zm116-2-1 1h-8l-5 1-1-1-2-2 1-2 3-1 8 1 5 3Zm-40 3 7-4 12-2 2 5-3 3 9-1 5-2 7 2 4 3-1 2 8-1 2 3 8 2 2 2 1 6-9 2 8 4 6 1 3 5h7l-4 4-11 7-4-3-3-5-6 1-3 3 3 3 5 3 1 1v6l-4 4-5-2-8-4 3 5 3 3v2l-11-2-8-3-4-3 3-2-5-3-5-2-1 1-13 1-2-2 5-4h8l10-1v-2l3-3 8-5 1-3-1-1-4-3-7-2 3-1-2-4h-3l-2-2-4 2-7 1-14-2-8-1-6-1-2-2 7-2h-6l3-6 7-4 6-2 12-2-6 4v3Zm-47-6 8-1-1 2-6 2 4 3-5 4-9 2h-3l-1-2-6-4 2-2 7 1-1-3 7-3 4 1Zm11 8h-4l2-4 2-3 4-2 6-1h7l7 1-10 5-6 1-8 3Zm-121 6v-2l-6-3 5-2 7-4 8-3v-3l14-1 4 1h10l2 2 1 2-6 1-14 4-9 4-3 2-13 2Zm134-19h-5l-3-1 4-3 7-1 2 2-1 1-4 2Zm-4-8-3 2-6 4-7 1-3-1 3-3h-6l4-3h4l8-2h6v2Zm-41 2 5-1h3l-2 3-5 2-14 1-12 2h-6l1-1 11-3-18 1-4-1 12-5 5-1 8 2 3 2 6 1 1-5 6-2 3 1-2 2-1 2Zm59-5h8l1 2-3 2 3 1 1 1h5l5 1 8-1 8-1 5 1 3 2-1 2-4 1-7 1-4-1-12 1h-13l-9-2 2-3 2-2-2-2-7-1-2-1 4-2h7l2 1Zm-84 0-5 2h-4l-10 2-7 1-3-1 11-4 13-3h5l6-1-6 4Zm86-3h-7l1-2h7l1 1-1 1h-1Zm-66 0-4-1 6-2h6l4 1-3 1-9 1Zm11-4h-6l1-1 5-1h2l3 1-5 1Zm46 2-2-1 1-2 2-1h6l2 2-3 1-6 1Zm-9 0-5-1-4-1h-8l5-2-2-1 2-1h6l7 2v2l-1 2Zm55-8 3 1-6 2-11 3-7 1-7-1-1-2 2-2 4-1h-6l-2-1v-2l5-2 4-1 4-1V9h8l2 2 4 1 5 1-1 3Zm88-14 7 1 5 1-1 1-10 1-9 1-4 1h8l-11 3-6 1-10 3-8 1-3 1h-11l4 1-3 1 1 2-5 2-7 1-4 2-6 1-1 1h7l-2 1-12 3-9-1-11 1-5-1h-7l2-2 8-2 2-3h2l8 2-2-3-5-1 5-2 8-1 3-2-3-1 1-3 9 1h2l8-2h-20l-5-1V9l-3-1 1-1 6-1h4l8-1 7-1h4l2 1 5-2 5-1h51ZM18 379h-1v-5h1l1-1v-2l2 1 1 1h1l1 3-3 1-2 1-1 1Zm-2-10v-2h-1l1-1 2 1 1 1h-1l-2 1Zm-1-4v1l-3-1h3Zm-5-1H8v-2l1-1 1 1 1 2h-1Zm-8-4-2-1 1-1h2l-1 2Zm166-220v-2l2-2 6-3h6v2l-7 3-7 2Zm-35-18-2-1-1-2 6-1 3 1-3 2-3 1Zm6-22 3-1 2 2h3l-1 1-5 1-2-1v-1h-4l3-2 1 1ZM817 3l-7 2h-32l2 1h12l10 1 7-1 2 1-4 3 9-2 17-1h10l2 2-15 3-2 1-12 1h8l-4 3-4 3-1 5 3 3-5 1-7 1 6 3v4h-4l4 5h-9l4 2-1 2-6 1h-5l4 3-1 3-7-3-2 2 5 1 4 3 1 5-8 1-2-2-4-3v3l-5 3h16l-12 5-12 4-13 2h-5l-4 2-8 6-10 4h-3l-6 2-7 1-5 4-1 4-3 3-9 5v4l-3 5-4 6h-7l-5-4-9-1-3-3-1-5-5-8v-3l1-5-4-5 4-5-2-2 7-6 7-2 3-2 2-4-5 1-3 1-4 1-4-2 1-3 3-3h4l8 1-5-3-3-2-5 1-2-2 7-4-1-2-2-4-1-5-4-2 2-2-8-3-8-1-10 1h-10l-3-2-3-3 11-1h7l-14-2-7-2 2-1 16-3 15-2 3-1-8-2 4-2 15-3h5l1-2 9-1 11-1h10l3 2 10-3 7 2h5l6 2-6-3 1-1 13-2h11l6-2h38l20 3ZM447 357l5-1 2 2 4 4 4 3h1l4 1-1 2h4l4 3-1 1-4 1h-15l4-3-2-2h-4l-2-2v-4h-4l-5-1-1-2-7-1-2-1 2-1-5-1-4 4h-3l-1 1-3 1-2-1 3-2 2-2 3-1 3-2h4l1-1h5l4 1 5 2 2 2Zm8 30-3-1-3-2 1-2h4l3 1 3 1 1 2h-4l-2 1Zm88 45-1 1h1-1v1h1v2h-6 2v-1h1v-3h-1 3v-1h1v1Zm-30-50h6v1h1v1l-1 1h-1l-1 1h-1v-1 1l-1-1v1l-1-1-1 1h-1v-1 1h-1v-2h1l-1-1h1v-1h1Zm-25-9h4l4 2h1l1 2h3l-1 2h3l2 2-2 3-2-1h-5l-1 1h-2l-1-1h-2l-2 5-2-1v-2l-3-1h-7l-2 1-3-2 1-2 5 1h4l2-1-2-3v-2l-3-1 1-2h4l4 1 1-1Zm110 462v1l-1-1h1Zm-1-1h1v1l-1-1Zm6-1h1l-1 1v-1Zm-12-1v1l-1-1h1Zm3-1-1-1h-1 1-1v-1h-1 1l1 1h1v-1h2v1l1-1v1h1l-1-1h1v2h-1v1h-1v1h-2 1v1h-3 1-1l-1-1h3v-1h-1 1v-1l-1 1-1-1h3-1Zm2-2Zm-2 0h1-1Zm0 0h-1 1-1 1Zm7 0h2v1h-1v-1 1h1v1l1-1h-1v-1h2v1h1-2 1v1h1-1l-1 1h-4 1l1 1h1-1l1 1h-1v-1l-1 1v-1h-1v1h1-2 1v1h-1l-1-1v-2h1-1l1-1h1v1-1h-1v-1h1-1v-1h2Zm-5-1v1l1-1v1h-2v-1h1Zm-8-1h1-1Zm-19 26-3 2h-3l-3-1-4-1-5-1-8-4-6-3-10-7 5 1 8 5 8 2 1-3-1-4 4-3 4 1 3 3 4 4 8 4 7 2-1 3h-4l-3-2-1 2Zm596-521v3-1l-1-1 1-1Zm-91-34 1-3v-5l1-2 1-5 2-4v-1l-1-4 1-3-2-3 2-2h-3l-5-1-3 3-8 1-5-3-6-1-1 3-3 1-6-4-5 1-4-7-4-3 2-5-4-3 5-7h8l2-5 10 1 5-4 6-2h9l9 5 8 2 6-1 5 1 5-4v-2l-2-5-3-2-3-1-2-2-8-5-6-2-5-4 3-1 4-5-4-3 7-2v-2l-4 1-4 1-3 2h-5l-4 2 1 4 3 2 5-1-1 3-5 1-6 3-3-1v-3l-6-2 1-1 5-2-2-1-8-2-1-2h-4l-2 4-3 5v1l-2 2-2-1v8l-2 2-2 5 3 3v3l5 2v1l-7 1-2 2-4 3-2-3v-1h-3l-3-1-6 2 4 3-2 1h-3l-3-3-1 2 1 3 3 3-2 2 4 3 2 2 1 3-5-2 2 4h-4l3 6h-4l-4-3-3-5-1-4-2-3-3-4-1-1-1-1v-1l-3-2-1-3v-5l1-2-1-1h-1l-2-2-2-2-5-2-3-2-5-2-5-5h1l-2-3-1-2-3-1-1 3-2-2v-3h1l-4-1-4 2 1 3-1 2 2 3 5 3 3 6 6 5h4l2 1-2 1 5 3 4 2 5 3v1l-1 2-3-3-4-1-2 4 4 3-1 3-2 1-2 5-2 1-1-2 1-4 1-1-2-4-2-3-2-1-2-3-3-1-2-2-4-1-5-3-4-4-4-3-2-7h-3l-4-3-2 1-3 3-2 1-5 3-10-1-7 2-1 3 1 4-5 4-7 2v2l-4 3-2 6 2 3-3 3-1 4-4 2-4 4-6 1-5-1-4 3-2 2h-2l-2-3-2-3-5-1-2 1-3-1-2 1 1-5-1-4h-2l-1-3v-4l2-2 1-3 1-4v-2l-1-3v-2l1-4-2-3 7-5 6 1h7l5 2 5-1h8l3-3 1-13-5-7-4-3-8-2v-5l6-1 9 2-2-8 5 3 11-5 2-5 4-1 4-1 2-2 4-9 7-3 4 1 1-2h4l1 1 3-3-1-2-1-3-2-4v-8l2-1 4-1 1-1 4-2v3l-1 2v2l3 1-1 2-2-1-3 5 2 3v2l5 1v2l5-1 2-1 6 2 2 2 3-2 8-3 5-2 5 1 1 2h4l1-3 6-2-1-5-1-4 2-4 4-2 4 4h4v-8l-1 1-4-2-1-4 6-1 5-1 5 1h5l5-4-6-2h-8l-7 2-7 1-4-3-4-2v-5l-3-6 1-3 4-4 8-6 3-1-1-2-6-3-7 2-4 4 1 3-6 5-8 5-2 8 4 4 5 3-3 7-5 1-1 10-2 6-5-1-3 5h-5l-2-5-5-7-4-9-3-3-9 6-6 2-6-3-2-6-2-14 4-4 11-5 8-5 8-8 8-11 7-4 10-7 9-2h6l6-4h7l7-1 14 4-5 1 5 4 4-2 8 3 11 1 18 6 4 3 2 4-4 3-7 1-20-4-3 1 8 4 1 2 2 6 6 2 4 1v-3l-3-2 2-2 11 3 3-1-4-4 8-6 4 1 5 2 1-4-5-3 1-4-4-3 12 2 4 3h-5l1 3 4 2 6-1v-3l7-3 13-5 3 1-3 3h6l2-1 8-1 5-2 6 3 3-3-6-3 1-2 13 2 7 1 18 6 1-2-6-3v-1l-6-1v-2l-5-5-1-1 5-5-1-5 2-1 12 2 2 2v5l3 1 4 4 4 7 7 4v3l-3 8 5 1v-2l4-1v-3l2-3-5-3v-3l-5-1-3-3v-5l-9-5 5-3-4-4h2l5 3 2 5 5 1-5-4 5-2h8l10 3-7-4-5-6 6-1h17l-5-3 1-3 4-1 5-2 9-1v-1h9l5 1 5-3h7l-1-2 1-2 6-2 8 2-3 1h9l4 3 2-1h11l11 2 6 2 2 3-2 1-7 3-1 1 6 1 7 1 3-1 5 4 1-2h18l4 3 18 1-5-4 9 1 6-1 10 3 6 3 1 3 10 4 9 2-3-6 9 3 5-2 10 2 1-1h8l-10-5 2-2 41 4 8 3 16 4 15-1 9 1 7 2 5 4 7 1 4-1h7l9 1 7-1 14 5 3-2-9-3-1-2 15 1h8l16 2 9 3 33 22-2 2h-6l8 3 9 5 5 1 3 3 1 1-10-1-6 4-3 1-2 4-2 4 2 2-12-4-6 5-4-2-2 2-7-1 3 4 1 6 3 2 7 2 9 8-4 1 4 5 4 2-5 3 6 7-6 2 4 6-1 6-6-4-10-9-17-14-6-8v-4l-3-3 6-1v-13l3-5-7-8h-4l3 5-4 6-12-7-9 2v10l7 4-8 1-6 1-5-5h-8l-2 2-15-1-14 2-3 12-5 14 8 1 6 4 6 1v-3h6l12 7 5 5 2 6 5 8 5 10-1 9 2 4-2 8-2 7-1 4-5 3h-3l-5-3-4 5v2h-2l-1 2v2l2 5-1 1-1 1-1 2-3 1-1 2 1 2v1l3 1 4 3 8 8 4 4 3 7v4l-5 1-3 3h-4l-3-3-1-5-5-7 3-1-6-5-3-2v2h-1l-1-1-2-1-2-1 1-3-1-1v-4l-1-1-3-1-4-1-6 1-2 3-5 2 1-3-2-2 2-5-5-3-3 2-4 5-1 4h-5l-1 3 5 5 4 1 2 2 5 2 4-4 6 2h3l2 4-6 2-1 3-4 3-1 5 7 3 5 7 5 5 6 5 1 5-3 2 3 3 4 2 1 6v5h-3l-2 7-3 9-3 7-6 6-7 6h-6l-3 3-2-2-3 3-7 4h-6v7l-4 1-2-5 1-2-8-3-2 2-7 5-3 6-1 5 5 6 7 9 6 4 4 5 4 12v11l-4 4-6 4-4 6-7 6-2-4 1-5-5-3-4-1-3-4-3-6-6-3h-5l1-5h-5v7l-2 9-2 6 1 5h4l3 6 1 5 3 4 4 1 3 3 1 1 4 3 2 5 1 4-1 3 1 2v4l2 2 3 5v3h-4l-6-5-7-5v-3l-4-4-1-6-2-3v-5l-1-3-2-2-1-3-4-4-3-3v4l-2-4 1-4 1-6-1-5 1-5-2-3v-7l-3-4-2-7-2-8-3-6-4 3-5 5-4-1-3-1 1-8-2-6-6-7 1-3-4-1-4-5-2-3-1-3-2-4-3-3-5-1 1 3-1 4-3-2v2l-2-1-2-1-1 3h-3l-7 1 1 5-3 3-7 5-5 7-4 4-5 5v3l-2 1-5 2-3 1-1 5 2 8 1 5-2 6v11l-3 1-2 5 2 2-5 2-2 4-2 2-6-6-3-9-2-7-2-3-4-6-2-8-1-4-6-9-4-12-2-8-1-8-2-6-7 4-4-1-8-8 2-2-2-3-7-5-4-2-2-4-5-5-10 1h-9l-8 1-11-2-6-2h-6l-3-8-3-1-4 1-5 3-7-2-6-5-6-2-4-6-6-9-2 1-4-2-2 3-3-1 1 3v2l3 5 2 5 3 2 1 2 4 3 1 2v2l1 2 1 2 1 2 1 2-1-5 2-3 1-1 2 2v8l1 2h1v2l4-1h8l4-4 3-4 3-4 2-3v5l1 5 3 4 3 3h4l4 2 3 3 1 2 2 1 1 2-2 3-1 2-2 2-2 5-2-1-1 2-1 3 1 4v1h-3l-3 3v3l-2 1h-3l-2 2v2l-3 2-3-1-3 3h-3l-4 2-1 3v2l-5 2-9 3-5 5h-4l-3 3-3 1h-5l-2 1-1 1-1 1-1 1h-3l-1 1h-4l-2-4v-4l-1-1-1-5-2-3h1l-1-3 1-1-1-3v-3l-2-2-1-2-3-3-3-5-2-5-4-5-3-1-4-6-1-4v-4l-3-7-3-3-3-1-2-4v-1l-2-4-1-1-3-5-4-5-3-4h-3l1-4v-6l-1 3-1 5-1 3-1 1-2-2-3-3-5-9v1l3 7 4 6 4 10 3 4 2 3 5 7-1 1 1 5 6 5 1 2 3 6-2 1 2 7 2 7 2 2 3 2 4 8 2 6 3 3 8 6 3 3 4 4 1 2 3 2 2 2v3l-3 2 2 1 2 1 1 3 3 3h3l5-2 6-1 5-2h3l2-1h3l2-1h2l3-1 3-2h2v9l-1 2-2 7-2 7-3 8-5 10-5 7-6 9-6 5-8 6-6 5-6 8-1 3-1 2-4 2-2 3h-2l-1 5-2 3-1 4-2 2-3 8v3l4 3v1l-2 4 1 2-1 3 2 4 2 7 2 1 1 3v22l1 3-2 5-3 4-3 4-6 3-6 3-7 7-2 1-4 4-2 2-1 4 2 5 1 4v2h1v6l-1 3 1 1-1 3-3 2-4 2-7 4-3 2 1 3h1l-1 4-2 4-1 6-1 2-4 4-1 1-3 3-2 3-3 5-7 6-4 4-4 3-6 3h-3l-1 2-3-1-3 1-5-1-4 1-2-1-6 3-4 1-4 2h-2l-2-2h-2l-2-3-1 1v-5l-1-5 1-1v-5l-3-6-2-5-4-9-4-5-2-4-1-6-1-5-2-10 1-8-1-3-2-3-3-5-3-8-1-4-4-6-1-5v-4l1-6 2-6v-2l2-6 1-3 4-4 2-3v-8l-2-3-1-3-1-4v-2l2-2-2-6-1-5-3-4 1-1-1-2-2-5-4-7-6-6-4-5-3-7v-2l1-2 1-5 2-5-1-1 1-7 1-5-2-4-3-1-1-3-1-1v-2l-6 3-2-1-2 2h-5l-3-5-2-4-4-4h-14l-4 2-9 4-3 2-5 2-5-2h-3l-4-1h-4l-6 1-4 2-6 2h-2l-6-3-5-5-5-4-4-4h-1l-4-3-3-3-1-3-1-4-2-4-3-3h-1l-1-2-1-3-1-1-2-1-2-3h-3l-1-2v-1l-2-1v-2l-1-5 1-2-2-5-3-3 2-1 3-4 2-4-1-3 2-3 1-6-1-7v-6l-1-3-3-3v-3l1-3 2-1 2-4-1-2 2-4 4-5 1-1 2-3v-4l2-4 4-2 4-7 3-2 5-1 4-4 3-2 5-5-1-8 2-6 1-3 3-5 6-2 4-3 3-7 2-4h4l3 3h5l6 1h2l5-3 6-2 3-2 6-2 9-1 8-1 3 1 5-2h6l2 1h3l6-3 4 1v3l4-2 1 1-3 3v3l2 2v5l-4 3 1 4h3l2 3 2 1 6 2h2l5 1 7 3 3 5 5 2 8 2 6 4 2-2 3-3-2-5 2-3 3-3 4-1 7 1 2 3h2l2 1 6 1 1 2h7l6 2 5 2 3 1 4-2 2-2 5-1 3 1 2 3 1-2 5 2h4l3-2 1-2Zm520 258 4-1h4l2-1 2 1-2 2-6 2-5 2-4 5-5 1h-1l1-3 3-3 6-3 1-2Zm-252-93-3-6-2-9 2-10 4 3 3 5 3 7v6l-3 2-4 2Zm458 167 1 1h1l1 1 1 1v1h2v1h1l-1 1 1 1 1 1h1v1h1v1h1v1l1 1h1v2l-1 1v-1 1l-1-1h-1l-1-1v-1h-1v-1h-1v-1 1l-1-1h-1v-1h-1v-1h-1v-2h-1v-1h-1v-2h-1v-1l1-1h-1v-1Zm1 0Zm-154 135 3-1 5-1h3l-4 8-4 2-4 5v-2l-7 5-1-1h-3l1-5 2-4v-6l2-3 3 1 4 2Zm48-171 4-2 2 3 2 2-1 3v9h1l1 6-1 3v5l6 3 3 3 3 3-1 1 2 4 1 7 3-1 1 3 2-1-1 7 3 3 2 3 3 5v5l-1 4-2 4v5l-2 6-2 3-4 6-1 3-4 5-5 6-5 3-4 5-4 3-4 6-4 3-4 5-3 4-1 2-4 2-6 1-6 2-4 3-5 2-3-2-2-2 2-3-3 1-7 5-4-2-2-1h-3l-4-2-2-4 2-5v-3l-1-3h-5l3-4 1-4-4 4-6 1 5-3 2-4 4-3 1-5-6 6-5 2-4 5-3-3 2-3-2-5-1-2 1-2-5-4h-4l-4-3-10 1-8 2-7 2h-5l-7 3-5 1-2 4-3 2-5 1h-4l-4-1-4 1h-4l-4 3h-2l-3 2-4 2h-7l-4-4-2-2 1-3 3-1 2-2v-2l2-4 1-4-1-7 1-3 1-4-1-4v-2l-1-3v-5l-1-5-1-2 2 2v-6l2 2 1 3 1-4-2-5v-2l-1-2 2-3 1-2 1-3v-4l4-4-1 4 3-4 5-2 3-3 5-2 3-1 1 1 5-2 3-1 1-1 2-1h3l6-2 4-3 2-3 4-3v-3l1-3 5-6 1 6 3-2-2-3 3-3 2 2 1-5 4-3 2-3 3-1v-2l2 1 1-2 2-1h3l4 3 2 3h4l3 1v-4l3-5 3-1-1-2 3-4 4-2 3 1 5-1v-4l-4-2 3-1 4 2 2 3 5 1h2l3 2 3-2h2l2-1 2 3-2 4-2 2h-2v3l-2 3-3 3v2l4 4 4 2 3 2 3 4h2l2 1 1 2 5 3 4-3 2-3 1-3 2-3 2-6v-3l1-2v-3l1-5 1-1v-2l1-4 2-3v-2l3-3 1 4v4h1v3l2 3v4l-1 2 1 5Zm-218-100h-2v-1h1l1 1Zm81-139-1 5-4-6-2-4 2-7 4-5 3 2v4l-2 11Zm-45 135 4-1 1-5 2-2 7-1 4-5 3-4 2-3 4-3 4-5 3-5h2l3 4 1 2 4 2 4 2v3h-4l2 3-4 2-3 6 4 6-1 3 6 6-6 1-2 4v6l-5 4-1 7-2 10-1-3-7 3-2-4h-4l-2-2-7 2-2-3h-9v-9l-3-2-3-5v-12l3-4 5 2Zm98-206-2 4-3-2-2 1v4l-4-2-1-3 1-4 3 1 1-3 5 2 2 2Zm23-16 3 3-1 4-5 3-10 1-4 7-5-2-2-5-9 1-5 3h-6l7 5 1 11-2 3-4-3-1-6-4-1-4-5 4-2 2-4 3-3 2-5 10-2 6 2v-12l6 3 4-6 2-2-1-8-5-7-1-4 5-2 8 9 3 5-1 7 4 6v6Zm-8-49 2-3 6 7-6 2-1 6-11-4 2 7h-6l-5-6v-5h5l-4-9-2-5 10 7 6 2 4 1Zm-468 12 1-2-2-3-6-2-4-5-3-2-1-2h5l-1-4 4-1 5 1-1-6-2-4h-5l-4-1-5 2-5 2-1 3-5 1-3 7 6 6v4l7 8 4 3 3 5h3l2 2h-4v5l-1 2-1 2v3l3 5 5 1 4 3 8 1 8-1v-2l-2-4v-7l-5-2 1-5h-4v-5l5 1 4-2-4-4-3-3-3 1v5l-2-4-1-2Zm-191 30 1 1-1 4-4-3h-3l-7-4v-3l6 1 6-1 4-1-2 6Zm-29-20v8h-3l-2 2-2-2v-7l-2-4h3l3-2 3 5Zm-83-92 5 4-3 4 1 5-4 5-9 4-7-1 5-7-2-6 6-5 4-2 4-1Zm13-14 5-1h5l-2 5-4 6h5v1l5 7 3 1 3 7 1 2 6 1-1 4-2 2 2 3-5 3h-6l-8 2-3-1-3 3-4-1-4 2-3-1 8-6 4-2-7-1-2-2 5-2-2-3 1-4h7l1-3-3-4-6-1-1-2 2-3-2-1-3 3v-6l-2-3 2-7 4-4h9l-5 6Zm68 95-1 5-3-1-1-4 1-3 3-2 1 5Zm8-78-5-4-1-2 7-2 2 3-3 5Zm25-126-6-1 2-1-3-2 8-1 1 2 6 1-8 2Zm-5-7-9 2-1 3-3 1-1 4h-4l-9-2 3-2-5-2-8-3-3-4 9-2 2 2h5l1-2h6l4 2 13 3Zm19-5-4 3h-10l-11-1-1-1h-5l-4-2 10-1 6 1 3-1 9 1 7 1Zm-19 257h-1v-1h1v1Zm-2-1v-1h1v1h-1Zm54 4 4-1 4 1v1l3-1v2l-8 1v-1l-7-2 1-2 3 2Zm53 2h-1 1Zm-2 0v1h-1v1h-2v1l-1-1h-3v-1l-1-1h1v-1h2v1h1v-1h2l1 1h1Zm537-89-9-2 3 9 10 7 3 4-6-4v5l-5-5-4-6-5-7-3-5-6-8-8-6-7-8 2-3-5-3 2-1 5 4 7 6 5 6 7 6 14 11ZM1449 47h-15l-1-1 1-2h4l8 2 3 1Zm12-9-1 2-7-1-10-2-2-1h9l11 2Zm-22 1h-14l-5 1-12-3-4-4h14l18 2 3 4Zm-322 22-13-1-3-2-8-2-2-3 4-1-2-2 6-5h-4l6-5-2-2 7-3 10-3 12-1 5-2h6l5 2-2 1-11 3-10 2-9 5-3 5-3 5 3 4 10 4-2 1Zm132-37-1-6 2-1 3 1 13 2 2 2-19 2Zm-188-11h-3v1h-4l-4-1 1-1h-8l7-1h5l1 1 2-1h8l-1 1-4 1Zm177 7-11-1-8-2-7-3-6-1 6-3 6-1 9 2 14 4 5 4-8 1Zm260 364-5-2-1-5 3-3 5-2h4l1 2-2 3v4l-5 3Zm70 183h-2l-8-5 6-1 3 2 1 2v2Zm-15-14 2 2 4-1 1 3-7 1-4 1h-3l2-4h4l1-2Zm27 3-8 2-8-1v-2l5-1 3 2 4-1 5-2-1 3Zm-68-11 1-3 11 3 2 5 8 1 7 4-7 2-6-3-5 1-6-1-5-1-7-2-4-1-2 1-10-3-1-3h-5l4-6h7l4 3h3v2l11 1Zm134 0v-5l1-2 1-2 1 2v3l-3 4Zm-40-20-4-1-1-3h5l2 2-2 2Zm22 1-5-3-4-1-4 1h-4l2-4h7l6 2 2 5Zm51 28-6-1-1 2h-8l3-5 4-2-1-7-2-5-11-6h-5l-8-6-2 3h-2l-1-2v-3l-4-3 6-2h4v-2h-9l-2-4-5-1-2-3 7-2 3-2 9 3 1 2 2 11 5 3 5-6 7-4h5l5 2 4 2 6 2 10 4 10 4 4 3 3 3v4l9 4 1 3-5 1 1 4 5 5 3 6h3v3l4 1-2 1 6 3-1 2h-4l-1-1-5-1-5-1-4-4-3-4-3-5-7-3-5 2-3 2v5l-5 2-3-1-6-1-4-5Zm-87-56-4 1-5-1h-10l-5 1-1 5 5 6 4-3 10-2v3l-3-1-2 4-5 2 5 8-1 3 4 7v4l-3 2-2-2 3-5-6 2-1-2 1-2-4-4v-6l-3 2v16l-4 1-2-2 1-5v-7h-3l-1-4 2-4 1-5 3-10 1-3 5-5 5 2 7 1h6l6-5 1 2-5 6Zm24 1h-3l-1 3 3 4-2 1-2-4-2-9 1-5 2-2v3l4 1v8Zm-137 40-4-6-7-5-2-4-5-5-2-5-4-9-5-5-2-6-2-5-5-4-4-5-4-4-6-7-1-3h4l9 1 5 6 5 5 3 2 5 7h6l5 5 3 5 5 3-3 5 4 3h2v4l2 4h4l3 5-2 8v9l-7 1Zm123-88v4l-1 6-3-7-2 3 2 5-1 3-7-4-2-4 1-3-3-3-2 2h-3l-4 4-1-2 2-6 4-2 2-2 3 3 4-2 1-3h4l-1-5 5 3v3l1 3 1 4Zm-17-14-2 4-1 2-4-4 1-2 1-2v-4h3v4l3-6v6l-1 2Zm-36 10 2-4 4-4 3-5 2-6 2 5-3 4-3 4-7 6Zm28-20h4v2l-2 3-4 2v-6l-1-3 3 2Zm19 3-4-2v2l2 4-3 2-1-5h-1l-2-4 4 1-1-3-4-5h6l2 3 2 7Zm-26-7-3-4-3-5 4 1 3 2-1 6Zm-2-39 1-2 1 2v3l2 4v5l-3 3v5l2 5 3 1 2-1 8 3v4l2 1-1 3-4-3-3-3-1 2-4-4-5 1-3-1v-3l1-1-1-2-1 2-3-3-1-3-2-6 3 2-1-10 1-6h3l4 2Zm218 382 5-3v3l-2 3-4 3-7 4-5 3-1 3h-4l-6 3-5 4-8 6-6 3-4 2h-5l-1-3h-5l1-2 6-5 11-6 5-1 5-3 7-3 6-3 6-5 3-2 4-3 5-3v2l-1 3Zm29-26 3-5 1 2-2 5 3 2 3 1 5-3 2 1-5 6-4 3h-4l-3 2-2 3-1 1-5 3-6 5-6 2 1-1-2-1 7-5 1-4-4-3 2-2 5-2 5-5 2-4 1-4 1-2-1-2-1-6v-4l3-1v4l4 1-2 6-1 7Zm-68-204-3 1-1 1-6 3h-3l-5-1-3-2 1-2 5 1 3-1 1-3h1v3h3l2-2 4-3-1-3h4l1 1-1 3-2 4Zm5-5-1-3-1-3-2-2-3-3-4-2 1-1 3 2 2 1 2 2 3 2 2 2v4l-2 1Zm-670 50 2-6v-1l-2-2v-7l-3-3-1 1v1l2 4v8l-2 3 2 5v3l1 2v2l1 1 1-1 2 2-1-4h-1v-1l-1-7Zm-30-48 1 4-1 3 2 4 3 4 1 3 2 2-1 1v1l2 1 1 1h1v-1l-3-7-1-4-4-4 1-2-1-3v-3l-1-1 1-2v-1l-2-6-1 10Zm15-22-1 5 2 2 2-1 4-1v1l4-1-3-3 2-2 3-3v-5l-1-3-3-1-3 1-3 1-3 4v6Zm102 85 1 3-1 3-1 2-1-4-2 2 1 4-1 3-1 2-1 5-3 8-3 8-4 13-3 9-3 7-5 2-5 2-3-1-4-3-1-3v-6l-2-5v-5l1-4 3-1v-2l3-5 1-4-1-3-1-4v-6l2-4 1-4h3l3-2 2-1h2l4-3 5-4 2-4-1-2h2l4-4v-4l2-3 2 3 1 3 1 4 1 8Z" /></svg>
+        <div ref={boundRef} className="w-auto aspect-[41/19] h-full relative overflow-hidden z-[1]">
+            <ZoomProcessor boundRef={boundRef} mapRef={mapRef} poiRef={poiRef} />
+            <Continents mapRef={mapRef} />
+        </div>
     )
-}
+})
 
-const World: React.FC = () => {
-    const MIN_ZOOM = 1;
-    const MAX_ZOOM = 5;
-    const FACTOR = 0.1;
-    const boundRef = useRef<HTMLDivElement>(null);
-    const mapRef = useRef<HTMLDivElement>(null);
-    const zoomRef = useRef<number>(1);
+const ZoomProcessor: React.FC<{
+    mapRef: MutableRefObject<HTMLDivElement | null>,
+    boundRef: MutableRefObject<HTMLDivElement | null>,
+    poiRef: MutableRefObject<HTMLDivElement | null>,
+}> = ({ mapRef, boundRef, poiRef }) => {
+    const wheelRef = useRef<boolean>(false);
+    const [zoom, setZoom] = useState<number>(1);
     const shadowRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<[number, number]>([0, 0]);
 
     const processZoom = (e: WheelEvent<HTMLDivElement>) => {
-        if (!mapRef.current || !boundRef.current) return;
-        let zoom;
-        if (e.deltaY > 0) {
-            zoom = zoomRef.current + FACTOR >= MAX_ZOOM ? MAX_ZOOM : zoomRef.current + FACTOR;
-        } else {
-            zoom = zoomRef.current - FACTOR <= 1 ? 1 : zoomRef.current - FACTOR;
+        if (!mapRef.current || !boundRef.current || !poiRef.current || wheelRef.current) {
+            return;
         }
-        zoomRef.current = Math.round(zoom * 10) / 10;
-        mapRef.current.style.height = `${zoom * 100}%`;
+        const newZoom = zoom + (e.deltaY > 0 ? FACTOR : -FACTOR);
+        if (newZoom < MIN_ZOOM || newZoom > MAX_ZOOM) {
+            return;
+        };
+        wheelRef.current = true;
+        setZoom(newZoom);
+        mapRef.current.style.height = poiRef.current.style.height = `${newZoom * 100}%`;
         const { left, top } = mapRef.current.getBoundingClientRect();
-        const { width, height } = boundRef.current.getBoundingClientRect();
-        let newLeft = left;
-        let newTop = top;
+        const { left: offsetX, top: offsetY, width, height } = boundRef.current.getBoundingClientRect();
+        let newLeft, newTop;
+        if (e.deltaY > 0) {
+            newLeft = Math.round((left - e.clientX) / (1 - FACTOR / newZoom) + (width / 2));
+            newTop = Math.round((top - e.clientY) / (1 - FACTOR / newZoom) + (height / 2));
+        } else {
+            newLeft = left - offsetX + (width * FACTOR / 2);
+            newTop = top - offsetY + (height * FACTOR / 2);
+        }
         if (newLeft > 0) {
             newLeft = 0;
-        } else if (newLeft < -width * (zoomRef.current - 1)) {
-            newLeft = -width * (zoomRef.current - 1);
+        } else if (newLeft < -width * (newZoom - 1)) {
+            newLeft = -width * (newZoom - 1);
         }
-        if (newTop >= 0) {
+        if (newTop > 0) {
             newTop = 0;
-        } else if (newTop < -height * (zoomRef.current - 1)) {
-            newTop = -height * (zoomRef.current - 1);
+        } else if (newTop < -height * (newZoom - 1)) {
+            newTop = -height * (newZoom - 1);
         }
-        mapRef.current.style.left = `${newLeft}px`;
-        mapRef.current.style.top = `${newTop}px`;
+        mapRef.current.style.left = poiRef.current.style.left = `${newLeft}px`;
+        mapRef.current.style.top = poiRef.current.style.top = `${newTop}px`;
+        setTimeout(() => {
+            wheelRef.current = false;
+        }, 300)
     }
 
     const removeDrag = () => {
-        if (!shadowRef.current) return;
-        shadowRef.current.removeEventListener('mousemove', dragging)
+        if (!shadowRef.current || !mapRef.current || !poiRef.current) return;
+        mapRef.current.style.transitionProperty = poiRef.current.style.transitionProperty = "";
+        shadowRef.current.removeEventListener('mousemove', dragging);
     }
 
     const onDrag = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
-        if (!mapRef.current || !anchorRef.current || !shadowRef.current) return;
+        if (!mapRef.current || !anchorRef.current || !poiRef.current || !shadowRef.current) return;
         const { left, top } = mapRef.current.getBoundingClientRect();
         anchorRef.current = [e.clientX - left, e.clientY - top];
+        mapRef.current.style.transitionProperty = poiRef.current.style.transitionProperty = "none";
         shadowRef.current.addEventListener('mousemove', dragging);
         shadowRef.current.addEventListener('mouseleave', removeDrag);
     }
 
     const offDrag = (e: React.MouseEvent<HTMLDivElement>) => {
-        removeDrag()
+        removeDrag();
     }
 
     const dragging = (e: MouseEvent) => {
-        if (!mapRef.current || !zoomRef.current || !boundRef.current) return;
+        if (!mapRef.current || !boundRef.current || !poiRef.current) return;
         const { left: boundLeft, width, top: boundTop, height } = boundRef.current.getBoundingClientRect();
         let newLeft = e.clientX - anchorRef.current[0] - boundLeft;
         let newTop = e.clientY - anchorRef.current[1] - boundTop;
         if (newLeft > 0) {
             newLeft = 0;
-        } else if (newLeft < -width * (zoomRef.current - 1)) {
-            newLeft = -width * (zoomRef.current - 1);
+        } else if (newLeft < -width * (zoom - 1)) {
+            newLeft = -width * (zoom - 1);
         }
         if (newTop >= 0) {
             newTop = 0;
-        } else if (newTop < -height * (zoomRef.current - 1)) {
-            newTop = -height * (zoomRef.current - 1);
+        } else if (newTop < -height * (zoom - 1)) {
+            newTop = -height * (zoom - 1);
         }
-        mapRef.current.style.left = `${newLeft}px`;
-        mapRef.current.style.top = `${newTop}px`;
+        mapRef.current.style.left = poiRef.current.style.left = `${newLeft}px`;
+        mapRef.current.style.top = poiRef.current.style.top = `${newTop}px`;
     }
 
     return (
-        <div ref={boundRef} className="w-auto aspect-[41/19] h-full relative overflow-hidden">
-            <div ref={shadowRef} className="z-[2] absolute h-full w-full cursor-grab" onWheel={processZoom} onMouseDown={onDrag} onMouseUp={offDrag} />
-            <div ref={mapRef} className="absolute aspect-[41/19] p-8 relative" style={{ height: `${100}%` }}>
-                <SVG />
+        <>
+            <div ref={shadowRef} className="z-[2] absolute h-full w-full cursor-grab shadow-[inset_0_0_100px_black,inset_0_0_50px_black]" onWheel={processZoom} onMouseDown={onDrag} onMouseUp={offDrag}>
+                <POIs poiRef={poiRef} />
+            </div>
+            <Zoom zoom={zoom} />
+        </>
+    )
+}
+
+const Zoom: React.FC<{ zoom: number }> = ({ zoom }) => {
+    const SIZE = 24;
+    const LINE_SIZE = 48;
+    return (
+        <div className="absolute z-[3] left-[30%] bottom-[38px] w-[40%] flex items-center justify-center flex flex-col bg-gradient-to-r from-transparent to-transparent via-sea-green-dark">
+            <div className="w-[50%] flex items-center relative" style={{ height: `${LINE_SIZE}px` }}>
+                <div className="w-full h-[2px] bg-white flex justify-between items-center">
+                    {
+                        Array.from({ length: MAX_ZOOM / FACTOR - 1 }).map((_, i: number) => (
+                            <div key={i} className={`bg-white w-[2px]`} style={{
+                                height: `${i % ((MAX_ZOOM - 1) / FACTOR) === 0 ? LINE_SIZE / 2 : (i % 2 === 0 ? LINE_SIZE / 4 : LINE_SIZE / 8)}px`
+                            }} />
+                        ))
+                    }
+                </div>
+                <div className="absolute flex items-center justify-center transition-[left]" style={{
+                    width: `${SIZE}px`,
+                    height: `${SIZE}px`,
+                    transform: `translateX(-${SIZE / 2 + (zoom > (MAX_ZOOM + MIN_ZOOM) / 2 ? 1 : -1)}px)`,
+                    left: `${(zoom - 1) / (MAX_ZOOM - 1) * 100}%`
+                }}>
+                    <div className="bg-white rotate-[45deg] w-full h-full" style={{
+                        transform: `rotate(45deg)`,
+                    }} />
+                    <span className="text-black text-base absolute">{zoom}</span>
+                </div>
             </div>
         </div>
     )
 }
 
-export default World;
+const Continents: React.FC<{ mapRef: MutableRefObject<HTMLDivElement | null> }> = ({ mapRef }) => {
+    return (
+        <div ref={mapRef} className="z-[1] top-0 left-0 absolute aspect-[41/19] relative transition-[height,top,left] h-full">
+            <Grids mapRef={mapRef} />
+            <SVG />
+        </div>
+    )
+};
+
+const Grids: React.FC<{ mapRef: MutableRefObject<HTMLDivElement | null> }> = ({ mapRef }) => {
+    const boxSize = 2;
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const [dimension, setDimension] = useState<[number, number]>([0, 0])
+
+    useEffect(() => {
+        if (!mapRef.current) return;
+        setDimension([mapRef.current.clientWidth, mapRef.current.clientHeight]);
+
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        const context = canvas.getContext('2d');
+        if (!context) return;
+        const width = canvas.width;
+        const height = canvas.height;
+
+        context.clearRect(0, 0, width, height);
+
+        for (let x = boxSize; x <= (100 - boxSize); x += boxSize) {
+            context.beginPath();
+            context.moveTo(x / 100 * width, 0);
+            context.lineTo(x / 100 * width, height);
+            context.strokeStyle = "#1a827c";
+            context.lineWidth = 2;
+            context.stroke();
+        }
+        const yStart = Math.round(boxSize * width / height);
+        for (let y = yStart; y <= (100 - yStart); y += yStart) {
+            context.beginPath();
+            context.moveTo(0, y / 100 * height);
+            context.lineTo(width, y / 100 * height);
+            context.strokeStyle = "#1a827c";
+            context.lineWidth = 2;
+            context.stroke();
+        }
+    }, [mapRef.current])
+
+    return (
+        <canvas className="z-[1] absolute w-full h-full" width={dimension[0]} height={dimension[1]} ref={canvasRef} />
+    )
+}
+
+export default WorldDisplay;

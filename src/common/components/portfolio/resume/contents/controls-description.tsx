@@ -14,6 +14,8 @@ const CONTROLS_STYLES: { [key: string]: string } = {
     "circle": controls.actionCircle,
     "triangle": controls.actionTriangle,
     "square": controls.actionSquare,
+    "up": controls.actionUp,
+    "down": controls.actionDown,
 }
 
 const ActionButton: React.FC<{ tag: string, action: string, onClick?: () => void }> = ({ tag, action, onClick }) => {
@@ -21,8 +23,8 @@ const ActionButton: React.FC<{ tag: string, action: string, onClick?: () => void
         ...(tag === "triangle" ? { "--a": "1.5rem" } as React.CSSProperties : ""),
     }
     return (
-        <div className="text-white flex items-center gap-2 text-[1.75rem]" onClick={onClick}>
-            <div className="active:scale-90 h-[2.5rem] w-[2.5rem] border-[3px] border-white bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer" style={style}>
+        <div className="text-white flex items-center gap-2 text-[1.75rem] whitespace-nowrap" onClick={onClick}>
+            <div className={`${tag === "up" || tag === "down" ? "" : "border-[3px] border-white rounded-full"} active:scale-90 h-[2.5rem] w-[2.5rem] bg-black flex items-center justify-center hover:scale-110 transition-transform cursor-pointer`} style={style}>
                 <div className={CONTROLS_STYLES[tag]} />
             </div>
             <span className="select-none">{action}</span>
@@ -34,7 +36,9 @@ const CONTROLS_ICONS: { [key: string]: (action: string, index: number) => JSX.El
     "X/A": (action: string, index: number) => { return <ActionButton key={index} tag={"cross"} action={action} /> },
     "O/B": (action: string, index: number) => { return <ActionButton key={index} tag={"circle"} action={action} onClick={returnToMainMenu} /> },
     "T/Y": (action: string, index: number) => { return <ActionButton key={index} tag={"triangle"} action={action} /> },
-    "S/X": (action: string, index: number) => { return <ActionButton key={index} tag={"square"} action={action} /> }
+    "S/X": (action: string, index: number) => { return <ActionButton key={index} tag={"square"} action={action} /> },
+    "UP": (action: string, index: number) => { return <ActionButton key={index} tag={"up"} action={action} /> },
+    "DOWN": (action: string, index: number) => { return <ActionButton key={index} tag={"down"} action={action} /> }
 }
 
 const SECTION_CONTROLS: { [key: string]: { control: string, action: string }[] } = {
@@ -50,6 +54,8 @@ const SECTION_CONTROLS: { [key: string]: { control: string, action: string }[] }
     "map": [
         { control: "X/A", action: "Select" },
         { control: "O/B", action: "Back" },
+        { control: "UP", action: "Zoom Out" },
+        { control: "DOWN", action: "Zoom In" },
     ]
 }
 
