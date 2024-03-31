@@ -1,9 +1,35 @@
 .chapterAnimation {
-    animation: chapter-animate 2s ease;
+    animation: chapter-animate 1s ease;
 }
 
 @keyframes chapter-animate {
     0% { 
+        width: 0;
+    }
+    100% {
+        width: 365px;
+    }
+}
+
+.expOptions {
+    animation: exp-option 0.2s ease;
+}
+
+@keyframes exp-option {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.detailsSection {
+    animation: details-section 0.3s ease;
+}
+
+@keyframes details-section {
+    0% {
         width: 0;
     }
     100% {

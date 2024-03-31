@@ -1,8 +1,6 @@
-import { WheelEvent, useState, useRef, useEffect, MutableRefObject, Dispatch, SetStateAction, memo } from "react"
+import { WheelEvent, useState, useRef, useEffect, MutableRefObject, memo } from "react"
 import SVG from "./svg";
 import POIs from "./poi";
-import { Details } from "./details";
-import { SelectDetails } from "./map";
 
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 5;

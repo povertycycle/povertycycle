@@ -61,7 +61,7 @@ const JOURNALS: Journal = {
             description: [
                 "Version 2.0 (Next Goal):",
                 "- New design for the website and its contents.",
-                "Version 1.4.2 - Current:",
+                "Version 1.4.3 - Current:",
                 "- New website made with React and NextJS.",
                 "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations, and a new skill talent section. Prototyping map behaviour.",
                 "Version 1.0:",

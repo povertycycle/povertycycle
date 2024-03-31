@@ -30,11 +30,25 @@ const CharacterStatus: React.FC = () => {
                         ))
                     }
                 </div>
-                <div className="h-full aspect-square border-2 border-white rounded-[4px] text-[2rem] flex justify-center items-center">
+                <div className="h-full aspect-square border-2 border-white rounded-[4px] text-[2rem] leading-[2rem] flex justify-center items-center relative">
+                    {/* <ExperienceBar currentExp={365 - remainingDays} /> */}
                     <span>{getAge()}</span>
                 </div>
             </div>
         </div>
+    )
+}
+
+const ExperienceBar: React.FC<{ currentExp: number }> = ({ currentExp }) => {
+    const threshold = 365 / 4;
+
+    return (
+        <>
+            <div className="absolute h-[6px] bg-gold left-0 top-0" style={{ width: currentExp >= threshold ? "100%" : `${currentExp / threshold * 100}%` }} />
+            <div className="absolute w-[6px] bg-gold right-0 top-0" style={{ height: currentExp >= threshold * 2 ? "100%" : `${(currentExp - threshold) / threshold * 100}%` }} />
+            <div className="absolute h-[6px] bg-gold right-0 bottom-0" style={{ width: currentExp >= threshold * 3 ? "100%" : `${(currentExp - threshold * 2) / threshold * 100}%` }} />
+            <div className="absolute w-[6px] bg-gold bottom-0 left-0" style={{ height: currentExp >= threshold * 4 ? "100%" : `${(currentExp - threshold * 3) / threshold * 100}%` }} />
+        </>
     )
 }
 
