@@ -60,12 +60,12 @@ const JOURNALS: Journal = {
             flavorText: "One can always learn something from one's past mistakes.",
             description: [
                 "Version 2.0 (Next Goal):",
-                "- New design for the website and its contents.",
-                "Version 1.4.3 - Current:",
-                "- New website made with React and NextJS.",
-                "- Improved main menu, redesigned content page, reworked math behaviors of the quadratic equations, and a new skill talent section. Prototyping map behaviour.",
+                "New design for the website and its contents.",
+                "Version 1.5.0 - Current:",
+                "New website made with React and NextJS. An improved version of the main menu and a full re-design of the content page.",
+                "A new skill, map, and settings sections, as well as a reworked math for the quadratic equations.",
                 "Version 1.0:",
-                "- Personal website (old) launched using github pages with React and NodeJS.",
+                "Personal website (old) launched using github pages with React and NodeJS.",
             ]
         }
     },
@@ -75,14 +75,14 @@ const JOURNALS: Journal = {
             heading: "Upcoming changes and to-do list",
             flavorText: "The best one can do for oneself is to keep learning and improving.",
             description: [
-                "- Complete the Map contents.",
-                "- Complete the Inventory contents.",
-                "- Complete the Gallery contents.",
-                "- Controller supports for website.",
-                "- Mobile supports for website.",
-                "- Design new icons for skills section.",
-                "- Convert into canvas to draw background animations.",
-                "- Compose background music for the website's ambience."
+                "Complete the Map contents",
+                "Complete the Inventory contents",
+                "Complete the Options contents",
+                "Controller supports for website",
+                "Mobile supports for website",
+                "Design new icons for skills section",
+                "Convert into canvas to draw background animations",
+                "Compose background music for the website's ambience"
             ]
         }
     },
@@ -126,14 +126,14 @@ const JournalOptions: React.FC<{ active: number, setActive: Dispatch<SetStateAct
     return (
         <div className={`${styles.codexAnimation} gap-2 p-8 h-full w-[30%] bg-gradient-to-r from-black flex`} onAnimationEnd={handleScrollHeight}>
             <div ref={scrollRef} className={`flex flex-col gap-2 h-full w-full overflow-y-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
-                <div className="w-[90%] h-full absolute flex flex-col gap-[2px]">
+                <div className="w-[90%] h-full absolute flex flex-col gap-[2px] text-[1.25rem]">
                     {
                         Object.values(JOURNALS).map((journal, index: number) => {
                             const handleChangeActive = () => {
                                 setActive(index);
                             }
                             return (
-                                <div className={`flex select-none cursor-pointer rounded-[0.25rem] gap-8 px-4 py-1 transition-transform from-60% ${active == index ? "skew-x-[-10deg] bg-gradient-to-r from-default-white text-black translate-x-[2rem]" : "bg-gradient-to-r from-sea-blue-dark/35 hover:from-sea-blue-dark/75 hover:skew-x-[-10deg] hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
+                                <div className={`flex select-none cursor-pointer rounded-[0.25rem] gap-4 px-4 py-1 transition-transform from-60% ${active == index ? "skew-x-[-10deg] bg-gradient-to-r from-default-white text-black translate-x-[2rem]" : "bg-gradient-to-r from-sea-blue-dark/35 hover:from-sea-blue-dark/75 hover:skew-x-[-10deg] hover:translate-x-[2rem]"}`} key={index} onClick={handleChangeActive}>
                                     <span className="w-[3rem]">{index.toString().padStart(3, "0")}</span>
                                     <span>{journal.title}</span>
                                 </div>
@@ -167,7 +167,7 @@ const JournalDescription: React.FC<{ active: number }> = ({ active }) => {
 
     return (
         <div className={`${styles.codexAnimation} gap-4 px-4 pt-8 pb-4 h-full w-full bg-gradient-to-l from-black/75 flex flex-col select-none`} onAnimationEnd={handleScrollHeight}>
-            <div className="w-full items-center text-center text-[2.25rem] bg-gradient-to-l via-sea-blue-dark/25 flex flex-col gap-2">
+            <div className="w-full items-center text-center text-[2rem] bg-gradient-to-l via-sea-blue-dark/25 flex flex-col gap-2">
                 <div className="w-full h-[2px] bg-gradient-to-l via-white/70" />
                 {selectedJournal.heading}
                 <div className="w-full h-[2px] bg-gradient-to-l via-white/70" />
@@ -175,14 +175,14 @@ const JournalDescription: React.FC<{ active: number }> = ({ active }) => {
             <div className="flex flex gap-4 h-full w-full">
                 <div ref={scrollRef} className={`flex flex-col w-full h-full gap-4 overflow-scroll relative ${styles.overflowContainer}`} onScroll={handleScroll}>
                     <div className="flex flex-col gap-2 tracking-[0px] h-full absolute w-full">
-                        <div className="flex w-full bg-gradient-to-l from-sea-blue-dark/35">
-                            <span className="py-4 px-8 text-center italic font-century-gothic text-gold text-[1.5rem] tracking-[1px]">{selectedJournal.flavorText}</span>
+                        <div className="flex w-full bg-gradient-to-l from-sea-blue-dark/35 items-center justify-center">
+                            <span className="py-4 px-8 text-center italic font-century-gothic text-gold text-[1.25rem] leading-[2rem] tracking-[1px]">{selectedJournal.flavorText}</span>
                         </div>
                         {
                             selectedJournal.description.map((text: string, index: number) => {
                                 return (
-                                    <div key={index} className="flex w-full  bg-gradient-to-l from-sea-blue-dark/35">
-                                        <span className="py-4 text-[1.25rem] px-8">{text}</span>
+                                    <div key={index} className="flex w-full bg-gradient-to-l from-sea-blue-dark/35 justify-end text-end whitespace-preline">
+                                        <span className="py-4 text-[1.125rem] px-8">{text}</span>
                                     </div>
                                 )
                             })

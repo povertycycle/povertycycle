@@ -139,16 +139,7 @@ $rapture-fluorescent: #97fffa;
 }
 
 .raptureBeacon {
-    width: 1rem;
-    height: 1rem;
-    top: 11%;
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
 	animation: pulse 12s infinite ease-in-out;
-    justify-content: center;
     box-shadow: 
         0 0 10px 0px white,
         0 0 15px 2px white,
@@ -208,8 +199,6 @@ $rapture-fluorescent: #97fffa;
 }
 
 .tower {
-    position: absolute;
-    bottom: 0;
     animation-name: rise-up;
     animation-timing-function: ease;
 }
@@ -217,10 +206,8 @@ $rapture-fluorescent: #97fffa;
 @keyframes rise-up {
     0% {
         transform: translateY(150%);
-        opacity: 0;
     }
     100% {
         transform: translateY(0%);
-        opacity: 1;
     }
 }

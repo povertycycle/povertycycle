@@ -1,10 +1,9 @@
 import styles from "./index.module.scss";
-import { useContext, useEffect, useState } from "react";
-import { RaptureContext } from "../../global-context";
+import { memo } from "react";
 import { pSBC } from "@/common/utils/psbc";
 import { GRADIENTS, MAX_Z_INDEX } from "./buildings";
 
-const FISH_COLORS : string[] = [
+const FISH_COLORS: string[] = [
     "#FF6F1D",
     "#D38565",
     "#8F0380",
@@ -17,23 +16,18 @@ const FISH_COLORS : string[] = [
     "#B8D3DA",
 ]
 
-const Fishes : React.FC = () => {
-    const [schools, setSchools] = useState<number>(0);
-    const { dive } = useContext(RaptureContext);
+type FishesProps = {
+    fishes: number
+}
 
-    useEffect(() => {
-        setTimeout(() => {
-            if (dive) setSchools(Math.round(window.innerWidth / 192));
-        }, 5000);
-    }, [dive]);
-    
+const Fishes = memo(({ fishes }: FishesProps) => {
     const Fish = () => {
         const direction = Math.random() >= 0.5 ? true : false;
         const z = 6 + Math.round(Math.random() * 4);
         const opacity = 0.5 + z / 10;
         const top = 25 + Math.random() * 40;
         const scale = 0.2 + z / 30;
-        const delay = Math.random() * 5; 
+        const delay = Math.random() * 5;
         const duration = (Math.random() * 240) + 90;
         const fish = Math.round(Math.random() * Math.round(window.innerWidth / 384)) + 1;
         const baseColor = GRADIENTS[z - (2 * (z - MAX_Z_INDEX / 2))];
@@ -41,13 +35,13 @@ const Fishes : React.FC = () => {
         const ambientOcclusion = pSBC(-0.7, rimColor, false, true);
 
         return (
-            <div className={styles.fishSchool} 
+            <div className={styles.fishSchool}
                 style={{
                     top: `${top}%`,
                     animationDelay: `${delay}s`,
                     animationDuration: `${duration}s`,
                     zIndex: z,
-                    opacity: opacity, 
+                    opacity: opacity,
                     ...(direction ? {
                         left: "-5%",
                         animationName: styles.swim,
@@ -58,7 +52,7 @@ const Fishes : React.FC = () => {
                 }}>
                 {
                     Array.from({ length: fish }, (_, index: number) => (
-                        <div key={"fish-" + index} className={styles.fish} 
+                        <div key={"fish-" + index} className={styles.fish}
                             style={{
                                 marginLeft: `${Math.random() * z * (Math.random() < 0.5 ? -1 : 1) / 4}rem`,
                                 marginTop: `${Math.random() * z * (Math.random() < 0.5 ? -1 : 1) / 4}rem`,
@@ -89,12 +83,16 @@ const Fishes : React.FC = () => {
     return (
         <div className={"z-[1] absolute h-full w-full"}>
             {
-                Array.from({ length: schools }, (_, index: number) => (
+                Array.from({ length: fishes }, (_, index: number) => (
                     <Fish key={index} />
                 ))
             }
         </div>
     )
+}, arePropsEqual)
+
+function arePropsEqual(oldProps: FishesProps, newProps: FishesProps) {
+    return (oldProps.fishes === newProps.fishes);
 }
 
 export default Fishes;

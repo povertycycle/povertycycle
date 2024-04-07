@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navigation from "./navigation/navigation";
 import Resume from "./resume/resume";
 import { GamepadContext, RaptureContext } from "./global-context";
+import { DEFAULT_DESKTOP, DEFAULT_MOBILE, UserSettings } from "./config";
 
-const Directory : React.FC = () => {
+const Directory: React.FC = () => {
     const [dive, setDive] = useState<boolean>(false);
-    const value = { dive, setDive };
+    const [userSettings, setUserSettings] = useState<UserSettings>(DEFAULT_DESKTOP);
+    const value = { dive, setDive, userSettings, setUserSettings };
     const [gamepad, setGamepad] = useState<Gamepad | null>(null);
     const gamepadValue = { gamepad, setGamepad };
+
+    useEffect(() => {
+        if (window.innerWidth <= 640) {
+            setUserSettings(DEFAULT_MOBILE)
+        }
+    }, [])
 
     return (
         <GamepadContext.Provider value={gamepadValue}>

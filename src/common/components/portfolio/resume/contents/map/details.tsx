@@ -42,20 +42,20 @@ const ExperienceDetails: React.FC = () => {
                     {ICONS[selected.icon]}
                 </div>
             }
-            <div className={`flex gap-4 py-2 items-center text-[1.75rem] leading-[1.75rem] w-full overflow-hidden `}>
+            <div className={`flex gap-4 py-2 items-center text-[1.5rem] leading-[1.75rem] w-full overflow-hidden `}>
                 {selected.title}
             </div>
-            {selected.job && <div className="text-[1.5rem] leading-[1.5rem]">{selected.job}</div>}
+            {selected.job && <div className="text-[1.25rem] leading-[1.25rem]">{selected.job}</div>}
             {
                 selected.city &&
-                <div className="text-[1.25rem] leading-[1.25rem] flex justify-between">
+                <div className="text-[1.125rem] leading-[1.125rem] tracking-[0.5px] flex justify-between">
                     <span>{selected.city}</span>
                     {selected.timeStart && selected.timeEnd && <span>{`${selected.timeStart} - ${selected.timeEnd}`}</span>}
                 </div>
             }
             {
                 selected.description &&
-                <div className={`text-[1.25rem] leading-[1.25rem] gap-4 py-2 border-y-4 border-gold tracking-[1px] font-century-gothic flex flex-col w-full overflow-scroll whitespace-normal max-h-[240px] ${globalStyles.overflowContainer}`}>
+                <div className={`text-[1.125rem] leading-[1.125rem] gap-4 py-2 border-y-4 border-gold tracking-[1px] font-century-gothic flex flex-col w-full overflow-scroll whitespace-normal max-h-[240px] ${globalStyles.overflowContainer}`}>
                     {
                         selected.description.map((desc: string, i: number) => (
                             <span key={i}>{desc}</span>
@@ -83,7 +83,7 @@ const TechStack: React.FC<{ stack: string[] }> = ({ stack }) => {
     }
 
     return (
-        <div ref={scrollRef} onWheel={scrollHorizontal} className={`scroll-smooth flex gap-4 text-[2.25rem] overflow-x-scroll overflow-y-hidden relative ${globalStyles.overflowContainer}`} style={{ maxHeight: `${SIZE}px` }}>
+        <div ref={scrollRef} onWheel={scrollHorizontal} className={`scroll-smooth flex gap-4 text-[2rem] overflow-x-scroll overflow-y-hidden relative ${globalStyles.overflowContainer}`} style={{ maxHeight: `${SIZE}px` }}>
             {
                 stack.map((icon: string, i: number) => {
                     const custom = CUSTOM_ICONS[icon];

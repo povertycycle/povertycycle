@@ -1,18 +1,12 @@
-import { useState, useEffect, useContext } from "react";
 import styles from "./index.module.scss";
-import { RaptureContext } from "../../global-context";
+import { memo } from "react";
 
-const Bubbles : React.FC = () => {
-    const [bubbles, setBubbles] = useState<number>(0);
-    const { dive } = useContext(RaptureContext);
+type BubbleProps = { bubbles: boolean }
 
-    useEffect(() => {
-        if (dive) setBubbles(Math.round(window.innerWidth / 100));
-    }, [dive]);
-
+const Bubbles = memo(({ bubbles }: BubbleProps) => {
     const Bubble = () => {
         const radius = Math.round(Math.random() * 10) + 1;
-        const left = Math.floor(Math.random() * 100); 
+        const left = Math.floor(Math.random() * 100);
         const delay = Math.round(Math.random() * 20);
         const duration = Math.round(Math.random() * 20) + 1;
         return (
@@ -22,19 +16,23 @@ const Bubbles : React.FC = () => {
                 height: `${radius}px`,
                 animationDelay: `${delay}s`,
                 animationDuration: `${duration}s`,
-            }}/>
+            }} />
         )
     }
 
     return (
         <div className="w-full h-full absolute z-[2] overflow-hidden">
             {
-                Array.from({ length: bubbles }, (_, index: number) => (
+                bubbles && Array.from({ length: 20 }, (_, index: number) => (
                     <Bubble key={index} />
                 ))
             }
         </div>
     )
+}, arePropsEqual)
+
+function arePropsEqual(oldProps: BubbleProps, newProps: BubbleProps) {
+    return oldProps.bubbles === newProps.bubbles;
 }
 
 export default Bubbles;

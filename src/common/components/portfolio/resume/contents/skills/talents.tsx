@@ -336,7 +336,7 @@ const Branches: React.FC<{ tree: number[] }> = ({ tree }) => {
             context.beginPath();
             context.moveTo(x1, y1);
             context.lineTo(x2, y2);
-            context.strokeStyle = taken ? "#b19d62" : "#606060";
+            context.strokeStyle = taken ? "#E5B80B" : "#606060";
             context.lineWidth = 2;
             context.stroke();
 
@@ -346,7 +346,7 @@ const Branches: React.FC<{ tree: number[] }> = ({ tree }) => {
             context.moveTo(x2 - arrowSize * Math.cos(angle - Math.PI / 6), y2 - arrowSize * Math.sin(angle - Math.PI / 6));
             context.lineTo(x2, y2);
             context.lineTo(x2 - arrowSize * Math.cos(angle + Math.PI / 6), y2 - arrowSize * Math.sin(angle + Math.PI / 6));
-            context.fillStyle = taken ? "#b19d62" : "#606060";
+            context.fillStyle = taken ? "#E5B80B" : "#606060";
             context.fill();
         }
 
