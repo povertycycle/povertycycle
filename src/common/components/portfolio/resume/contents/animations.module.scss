@@ -88,6 +88,21 @@
     }
 }
 
+.inventoryAnimation {
+    animation: inventory-animation 1s ease-in-out;
+}
+
+@keyframes inventory-animation {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
 .settingsAnimation {
     animation: build-settings 1s ease-in-out;
 }

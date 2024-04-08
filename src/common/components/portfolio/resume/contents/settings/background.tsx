@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { GraphicOptions } from "../../../config";
 import { RaptureContext } from "../../../global-context";
 import { OPTION_LABEL_STYLE, SettingsContext } from "./context";
-import styles from "../animations.module.scss";
 
 const GRAPHICS_MAP: GraphicOptions[] = [
     {
@@ -68,7 +67,7 @@ const BackgroundSettings: React.FC = () => {
     }
 
     return (
-        <div className={`flex flex-col gap-4 ${styles.settingsAnimation}`}>
+        <div className={`flex flex-col gap-4`}>
             <span className="text-[2rem] bg-gradient-to-r px-4 py-1 from-sea-blue-dark rounded-l-[2px]">Background</span>
             <div className="flex flex-col gap-2 w-full px-4">
                 <SettingsContext.Provider value={{ settings, setSettings }}>

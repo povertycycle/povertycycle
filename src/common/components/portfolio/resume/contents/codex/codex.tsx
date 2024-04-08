@@ -36,6 +36,7 @@ const JOURNALS: Journal = {
                 "This personal website was designed and developed as a love-letter for the games and the cinemas. It incorporated a number of different styles and concepts to help enrich the experience it meant to provide.",
                 "The rain, bubbles, fishes, and buildings were generated randomly with quadratic equations. Main menu icons, controller buttons, and some of the skill icons were made purely with CSS; the repository stores no .jpg or .png files. Icons in the talent trees are from remixicon, fontawesome, vectorlogo, various other sources, or are self made with SVGs.",
                 "All the contents were dynamically rendered from a list of arrays and objects of the contents; all components were rendered through loops and recursion while the contents were passed as lists.",
+                "The website uses custom-made libraries with only psbc.js (PimpTrizkit) and js-gradient.ts were outsourced.",
                 "Skill trees took elements and inspired from WoW's talent trees."
             ]
         }
@@ -61,9 +62,9 @@ const JOURNALS: Journal = {
             description: [
                 "Version 2.0 (Next Goal):",
                 "New design for the website and its contents.",
-                "Version 1.5.0 - Current:",
+                "Version 1.6.0 - Current:",
                 "New website made with React and NextJS. An improved version of the main menu and a full re-design of the content page.",
-                "A new skill, map, and settings sections, as well as a reworked math for the quadratic equations.",
+                "A new skill, map, inventory, and settings sections, as well as a reworked math for the quadratic equations.",
                 "Version 1.0:",
                 "Personal website (old) launched using github pages with React and NodeJS.",
             ]

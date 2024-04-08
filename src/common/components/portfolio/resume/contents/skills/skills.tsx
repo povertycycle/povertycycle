@@ -6,7 +6,7 @@ import AspectDisplay from "./aspects";
 import TalentsDisplay from "./talents";
 import PatchNotesDisplay from "./patch-notes";
 
-const SkillDisplay : React.FC = () => {
+const SkillDisplay: React.FC = () => {
     const { activeTab } = useContext(AspectsContext);
 
     return (
@@ -27,11 +27,11 @@ const SkillDisplay : React.FC = () => {
     )
 }
 
-const AspectsNavigator : React.FC = () => {
+const AspectsNavigator: React.FC = () => {
     const { activeTab, setActiveTab } = useContext(AspectsContext);
 
     return (
-        <div className={`w-full flex gap-4 px-8 h-full overflow-hidden ${styles.aspectsNavAnimation}`}>
+        <div className={`absolute z-[2] left-0 bottom-0 w-full flex gap-4 px-8 h-full overflow-hidden ${styles.aspectsNavAnimation}`}>
             {
                 (Object.values(SkillTab) as SkillTab[]).map((tab: SkillTab, index: number) => {
                     const changeTab = () => {
@@ -48,7 +48,7 @@ const AspectsNavigator : React.FC = () => {
     )
 }
 
-const Skills : React.FC = () => {
+const Skills: React.FC = () => {
     const [activeTab, setActiveTab] = useState<SkillTab>(SkillTab.ASPECTS);
     const [aspect, setAspect] = useState<AspectType | undefined>();
     const value = { activeTab, setActiveTab, aspect, setAspect };
@@ -57,7 +57,7 @@ const Skills : React.FC = () => {
         <AspectsContext.Provider value={value}>
             <div className={`flex flex-col w-full h-full items-end justify-center text-[1.5rem] font-market-deco select-none`}>
                 <SkillDisplay />
-                <div className="flex gap-2 w-full items-between justify-start">
+                <div className="flex gap-2 w-full items-between justify-end relative">
                     <AspectsNavigator />
                     <ControlsDescription tag="skills" />
                 </div>

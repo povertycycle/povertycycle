@@ -2,12 +2,15 @@ import { useState } from "react";
 import { LayeredBorder } from "@/common/components/utils/borders";
 import { NAV_HEIGHT, NAV_ID } from "../nav-tabs";
 import { SETTINGS_ID } from "./settings";
+import { CONTROLS_ID } from "../controls-description";
 
 function collapseNav(show: boolean) {
     const div = document.getElementById(NAV_ID) as HTMLDivElement;
     div.style.height = `${show ? NAV_HEIGHT : 0}rem`;
     const settings = document.getElementById(SETTINGS_ID) as HTMLDivElement;
     settings.style.height = `${show ? 100 : 0}%`;
+    const controls = document.getElementById(CONTROLS_ID) as HTMLDivElement;
+    controls.style.width = `${show ? 100 : 0}%`
 }
 
 const FullscreenSettings: React.FC = () => {
@@ -28,7 +31,6 @@ const FullscreenSettings: React.FC = () => {
                 </LayeredBorder>
             </div>
         </div>
-
     )
 }
 

@@ -1,9 +1,8 @@
-import { useContext, useState } from "react";
-import { RaptureContext } from "../../../global-context";
-import styles from "../animations.module.scss";
-import { AudioOptions } from "../../../config";
-import { AudioSettingsContext, OPTION_LABEL_STYLE } from "./context";
 import jsgradient from "@/common/utils/js-gradient";
+import { useContext, useState } from "react";
+import { AudioOptions } from "../../../config";
+import { RaptureContext } from "../../../global-context";
+import { AudioSettingsContext, OPTION_LABEL_STYLE } from "./context";
 
 const SoundSettings: React.FC = () => {
     const { userSettings, setUserSettings } = useContext(RaptureContext);
@@ -15,7 +14,7 @@ const SoundSettings: React.FC = () => {
     }
 
     return (
-        <div className={`flex flex-col gap-4 ${styles.settingsAnimation}`}>
+        <div className={`flex flex-col gap-4`}>
             <span className="text-[2rem] bg-gradient-to-r px-4 py-1 from-sea-blue-dark rounded-l-[2px]">Audio</span>
             <div className="flex flex-col gap-2 w-full px-4">
                 <AudioSettingsContext.Provider value={{ settings, setSettings }}>

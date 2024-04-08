@@ -166,7 +166,7 @@ const Playtime: React.FC = () => {
     return (
         <div className="group/tips absolute left-0 bottom-0 p-1 flex gap-1 whitespace-nowrap text-base tracking-[0.5px]">
             <span className="group-hover/tips:opacity-0 transition-opacity">Hours Played: {PLAYTIME} Hrs</span>
-            <div className="left-[4px] bg-gradient-to-r from-black to-transparent h-full absolute top-0 flex items-center font-century-gothic group-hover/tips:w-[480px] w-0 overflow-hidden transition-width">Time spent researching, designing, and developing the website</div>
+            <div className="left-[4px] bg-gradient-to-r from-black to-transparent h-full absolute top-0 flex items-center font-century-gothic group-hover/tips:w-[480px] w-0 overflow-hidden transition-width">Time spent researching, designing, and developing the websites</div>
         </div>
     )
 }

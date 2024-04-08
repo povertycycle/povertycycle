@@ -9,6 +9,8 @@ const returnToMainMenu = () => {
     });
 }
 
+export const CONTROLS_ID = "3co1tZsXzTLMqV32iJ5gBSdazRlwS2cY";
+
 const CONTROLS_STYLES: { [key: string]: string } = {
     "cross": controls.actionCross,
     "circle": controls.actionCircle,
@@ -56,17 +58,27 @@ const SECTION_CONTROLS: { [key: string]: { control: string, action: string }[] }
         { control: "O/B", action: "Back" },
         { control: "UP", action: "Zoom Out" },
         { control: "DOWN", action: "Zoom In" },
+    ],
+    "inventory": [
+        { control: "X/A", action: "Select" },
+        { control: "O/B", action: "Back" },
+    ],
+    "settings": [
+        { control: "X/A", action: "Select" },
+        { control: "O/B", action: "Back" },
     ]
 }
 
 const ControlsDescription: React.FC<{ tag: string }> = ({ tag }) => {
     return (
-        <div className={`w-full bg-gradient-to-l from-black to transparent flex gap-4 justify-end py-2 px-16 ${styles.controlsAnimation}`}>
-            {
-                SECTION_CONTROLS[tag].map((control, index: number) => {
-                    return CONTROLS_ICONS[control.control](control.action, index);
-                })
-            }
+        <div id={CONTROLS_ID} className={`bg-gradient-to-l from-black to transparent flex overflow-hidden transition-width shrink-0 ${styles.controlsAnimation}`} style={{ width: "100%" }}>
+            <div className="w-full h-full flex gap-4 justify-end py-2 px-8">
+                {
+                    SECTION_CONTROLS[tag].map((control, index: number) => {
+                        return CONTROLS_ICONS[control.control](control.action, index);
+                    })
+                }
+            </div>
         </div>
     )
 }
