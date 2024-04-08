@@ -76,9 +76,6 @@ const JOURNALS: Journal = {
             heading: "Upcoming changes and to-do list",
             flavorText: "The best one can do for oneself is to keep learning and improving.",
             description: [
-                "Complete the Map contents",
-                "Complete the Inventory contents",
-                "Complete the Options contents",
                 "Controller supports for website",
                 "Mobile supports for website",
                 "Design new icons for skills section",
