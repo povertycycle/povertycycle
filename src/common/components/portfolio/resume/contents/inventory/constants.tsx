@@ -1,4 +1,4 @@
-import { FEVA } from "./items";
+import { FEVA, Pokemon } from "./items";
 
 export type Inventory = {
     name: string,
@@ -26,5 +26,15 @@ export const INVENTORY: Inventory[] = [
             name: "Autonomy Robotics Cognition Lab",
             link: "https://robotics.umd.edu/facilities/autonomy-robotics-cognition-lab",
         }
+    },
+    {
+        name: "Pokemon Game & TCG Database",
+        item: (full?: boolean) => (<Pokemon full={full} />),
+        version: "0.0.1",
+        redirect: "https://povertycycle.github.io/pokemon/",
+        description: [
+            "Pokemon game and trading card game database viewer"
+        ],
+        affiliation: null,
     }
 ];

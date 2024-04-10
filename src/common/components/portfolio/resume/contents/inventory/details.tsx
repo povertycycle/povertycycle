@@ -24,7 +24,7 @@ const InventoryDetails: React.FC<{ selected: number }> = ({ selected }) => {
                             </div>
                             <div className="h-[2px] bg-gold" />
                             <div className={`w-full h-0 grow overflow-y-scroll ${styles.overflowContainer}`}>
-                                <div className="w-full flex flex-col items-end h-full gap-4 font-century-gothic text-[1.125rem] leading-[1.125rem] tracking-[1px]">
+                                <div className="w-full flex flex-col h-full gap-4 font-century-gothic text-[1.125rem] leading-[1.125rem] tracking-[1px]">
                                     {
                                         item.description.map((desc: string, i: number) => (
                                             <span key={i}>
