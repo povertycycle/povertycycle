@@ -263,7 +263,7 @@ const TalentTree = memo(({ category, setDetails }: { category: TalentType, setDe
                     tree.map((id: number, index: number) => {
                         const talentData = TALENTS[id];
                         return (
-                            talentData && <Talent key={index} talent={talentData} color={color} setDetails={setDetails} />
+                            talentData && <TalentImage key={index} talent={talentData} color={color} setDetails={setDetails} />
                         )
                     })
                 }
@@ -272,7 +272,7 @@ const TalentTree = memo(({ category, setDetails }: { category: TalentType, setDe
     )
 });
 
-const Talent: React.FC<{ talent: Talent, color: string, setDetails: Dispatch<SetStateAction<DetailsPayload | null>> }> = ({ talent, color, setDetails }) => {
+const TalentImage: React.FC<{ talent: Talent, color: string, setDetails: Dispatch<SetStateAction<DetailsPayload | null>> }> = ({ talent, color, setDetails }) => {
     const ref = useRef<HTMLDivElement>(null);
     const enter = () => {
         if (ref.current) {
