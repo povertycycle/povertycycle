@@ -30,10 +30,12 @@ export const INVENTORY: Inventory[] = [
     {
         name: "Pokemon Game & TCG Database",
         item: (full?: boolean) => (<Pokemon full={full} />),
-        version: "0.0.1",
+        version: "0.4.0",
         redirect: "https://povertycycle.github.io/pokemon/",
         description: [
-            "Pokemon game and trading card game database viewer"
+            "Pokemon game and trading card game database viewer.",
+            "v0.4.0 offers pokemons and items database.",
+            "Hours played: 249hrs"
         ],
         affiliation: null,
     }
