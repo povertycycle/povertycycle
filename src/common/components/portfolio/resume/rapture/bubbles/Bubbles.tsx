@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "../index.module.scss";
 import { memo, useEffect, useState } from "react";
 
 type BubbleProps = { bubbles: boolean }

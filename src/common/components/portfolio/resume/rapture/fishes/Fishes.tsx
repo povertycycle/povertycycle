@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "../index.module.scss";
 import { memo } from "react";
 import { pSBC } from "@/common/utils/psbc";
 import { GRADIENTS, MAX_Z_INDEX } from "../constants";
