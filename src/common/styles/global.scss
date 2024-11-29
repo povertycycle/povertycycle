@@ -10,6 +10,17 @@
 }
 
 @layer components {
+    .navigation__icon {
+        @apply border-[3px] sm:border-4 border-soft-white overflow-hidden aspect-square h-[56px] sm:h-[72px]
+    }
+    .navigation__icon--square {
+        @apply navigation__icon rounded-[8px]
+    }
+    .navigation__icon--circle {
+        @apply navigation__icon rounded-full
+    }
+
+
     .aspect-bg-white {
         @apply bg-white transition-colors duration-200
     }
@@ -34,4 +45,14 @@ body {
     background-color: black; 
     scroll-behavior: smooth; 
     touch-action: none;
+}
+
+@media only screen and (max-width: 768px) {
+    [data-mobiletext] > span {
+        display: none;
+    }
+    
+    [data-mobiletext]::before {
+        content: attr(data-mobiletext);
+    }
 }

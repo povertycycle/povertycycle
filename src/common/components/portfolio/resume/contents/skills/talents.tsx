@@ -193,11 +193,8 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected }: { id: num
 
     return (
         <div className="group/listed w-full relative flex flex-col cursor-pointer px-4" onClick={activate}>
-            <div className={`${active ? "w-[80%]" : "w-0 group-hover/listed:w-full"} ${color[1]} overflow-hidden shrink-0 rounded-[0.25rem] relative z-[1] flex justify-end transition-width duration-400 bg-gradient-to-r`} style={{ height: `${HEIGHT}rem`, paddingTop: `${BORDER}rem`, paddingBottom: `${BORDER}rem` }}>
-                <div className={`${active ? "w-0" : "w-full"} rounded-[0.25rem] h-full bg-gradient-to-r from-sea-blue-darker from-75% transition-width duration-400`} style={{ marginLeft: `${BORDER}rem` }} />
-            </div>
-            <div className="absolute z-[2] text-base flex items-center justify-between px-4" style={{ height: `${HEIGHT}rem`, width: `calc(100% - 4rem)` }}>
-                <span>{talent.name}</span>
+            <div className="group/listed z-[2] text-base flex items-center justify-between px-4" style={{ height: `${HEIGHT}rem`, width: `calc(100% - 4rem)` }}>
+                <span className="group-hover/listed:translate-x-4 transition-transform">{talent.name}</span>
                 <div className="h-full flex justify-end gap-4">
                     <span>{`${talent.experience} ${talent.experience > 1 ? "years" : "year"}`}</span>
                     <div className="flex skew-x-[-30deg] gap-1 h-full items-center">
@@ -209,7 +206,7 @@ const ListedTalent = memo(({ id, active, talent, color, setSelected }: { id: num
                     </div>
                 </div>
             </div>
-            <div className={`${active ? "h-full" : "h-0"} w-full px-8 overflow-hidden tracking-[1px]`}>
+            <div className={`${active ? "max-h-[384px]" : "max-h-0"} duration-[400ms] transition-[max-height] w-full px-8 overflow-hidden tracking-[1px]`}>
                 <div className="w-full h-full flex flex-col gap-2 justify-center py-4">
                     <div className="w-full flex gap-4">
                         <IconImage active={talent.ability.active} taken={talent.rank > 0} icon={talent.icon} color={color[2]} />

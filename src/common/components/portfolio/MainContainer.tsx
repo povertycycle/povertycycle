@@ -1,9 +1,8 @@
 import styles from "./index.module.scss";
-import Directory from "./directory";
-import Raindrops from "./navigation/raindrops";
-import { useEffect } from "react";
+import Directory from "./navigation/directory/Directory";
+import Raindrops from "./navigation/raindrops/Raindrops";
 
-const Portfolio : React.FC = () => {
+const MainContainer: React.FC = () => {
     return (
         <div className={`${styles.portfolioContainer} w-screen flex flex-col overflow-scroll`}>
             <Raindrops />
@@ -12,4 +11,4 @@ const Portfolio : React.FC = () => {
     )
 }
 
-export default Portfolio;
+export default MainContainer;

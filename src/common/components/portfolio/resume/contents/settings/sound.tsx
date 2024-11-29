@@ -1,7 +1,7 @@
+import { RaptureContext } from "@/common/contexts/global-context";
+import { AudioOptions } from "@/common/interfaces/user";
 import jsgradient from "@/common/utils/js-gradient";
 import { useContext, useState } from "react";
-import { AudioOptions } from "../../../config";
-import { RaptureContext } from "../../../global-context";
 import { AudioSettingsContext, OPTION_LABEL_STYLE } from "./context";
 
 const SoundSettings: React.FC = () => {

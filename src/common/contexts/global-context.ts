@@ -1,5 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from "react";
-import { DEFAULT_DESKTOP, UserSettings } from "./config";
+import { UserSettings } from "../interfaces/user";
+import { DEFAULT_DESKTOP } from "../constants/configs";
 
 type RaptureContextProps = {
     dive: boolean,

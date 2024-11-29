@@ -31,7 +31,7 @@ const AspectsNavigator: React.FC = () => {
     const { activeTab, setActiveTab } = useContext(AspectsContext);
 
     return (
-        <div className={`absolute z-[2] left-0 bottom-0 w-full flex gap-4 px-8 h-full overflow-hidden ${styles.aspectsNavAnimation}`}>
+        <div className={`absolute z-[2] left-0 bottom-0 w-fit flex gap-4 px-8 h-full overflow-hidden ${styles.aspectsNavAnimation}`}>
             {
                 (Object.values(SkillTab) as SkillTab[]).map((tab: SkillTab, index: number) => {
                     const changeTab = () => {

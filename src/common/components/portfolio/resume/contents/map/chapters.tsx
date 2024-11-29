@@ -18,6 +18,7 @@ const Chapters: React.FC = () => {
                 { done: false, desc: "Find a job with a STEM OPT" },
                 { done: true, desc: "Get a job post-graduation" },
                 { done: null, desc: "Get a job and settle overseas" },
+                { done: null, desc: "Try to stay alive" },
                 { done: null, desc: "??????????" }
             ]
         }

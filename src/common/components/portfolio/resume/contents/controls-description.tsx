@@ -71,8 +71,8 @@ const SECTION_CONTROLS: { [key: string]: { control: string, action: string }[] }
 
 const ControlsDescription: React.FC<{ tag: string }> = ({ tag }) => {
     return (
-        <div id={CONTROLS_ID} className={`bg-gradient-to-l from-black to transparent flex overflow-hidden transition-width shrink-0 ${styles.controlsAnimation}`} style={{ width: "100%" }}>
-            <div className="w-full h-full flex gap-4 justify-end py-2 px-8">
+        <div id={CONTROLS_ID} className={`bg-gradient-to-l justify-end from-black to transparent flex overflow-hidden transition-width shrink-0 ${styles.controlsAnimation}`} style={{ width: "100%" }}>
+            <div className="w-fit h-full flex gap-4 justify-end py-2 px-8">
                 {
                     SECTION_CONTROLS[tag].map((control, index: number) => {
                         return CONTROLS_ICONS[control.control](control.action, index);

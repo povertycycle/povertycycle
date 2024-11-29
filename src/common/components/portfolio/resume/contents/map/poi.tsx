@@ -95,7 +95,7 @@ const LOCATIONS = [
                 timeStart: "Sep 2018",
                 timeEnd: "Dec 2019",
                 description: [
-                    "Developed an Alexa skill related to crpytocurrency (Bitcoin) with Javascript and AWS Lambda. The purpose of the skill was to educate people about bitcoins through educational quizzes.",
+                    "Helps students with homeworks, exams, and concept problems for specified subject. Regularly meet to discuss events and suggestion for improvements in the Tutoring Center.",
                 ],
                 stack: [
                     "eng",
@@ -154,10 +154,14 @@ const LOCATIONS = [
                 timeStart: "Sep 2023",
                 timeEnd: "Current",
                 description: [
-                    "Closely works with a small team of four Full-stack developers and a UI/UX designer on the ideation, design, and production of the envisioned web application: a personalized platform for content creators.",
-                    "The back-end is developed using Java (Spring Boot) while the Front-end uses Next.js (React.js), Typescript, and pure JavaScript. CSS, SCSS, Tailwind, and DaisyUI were used for the styling, and MySQL and Firebase for the database management.",
-                    "Designs and develops maintainable, clean, and optimized architecture, code structures, databases, API services, user interfaces, and custom libraries based on the design on Figma. Refactors and redesigns products to meet the requirements from clients.",
-                    "Initiates meetings to discuss tech improvements, sprint planning, code reviews, and progress to ensure the cohesiveness and minimum quality for both the work environment and the product itself.",
+                    "Coordinates the code architecture and development of the front end using React.js (Next.js), Typescript, and pure Javascript.",
+                    "Established a code standard and guidelines for the team to ensure maintainability, cleanliness, and optimization.",
+                    "Coordinates multiple database designs (MySQL) and RESTful API responses (Spring Boot) for the website in collaboration with the other full-stack developers.",
+                    "Develops and performs quality control for UI/UX designs under the guidelines given by the main UI/UX designer.",
+                    "Performs quality control on the website and maintains the team’s adherence to the development timeline.",
+                    "Chairs core team meetings involving different departments and coordinates sprint plannings with the development team.",
+                    "Mentors junior with established standards and guidelines to ensure team's cohesion and peak performances.",
+                    "The website serves as a personalized platform for content creators that allows them to express their creativity and share their works with their supporters. The framework comprises of Java (Spring Boot) for the back end server, and Next.js (React.js, SCSS, TailwindCSS) for the front end. Databases used are Firebase and MySQL, while the UI/UX designs are conceptualized in Figma."
                 ],
                 stack: [
                     "java",
@@ -190,9 +194,15 @@ const LOCATIONS = [
                 timeStart: "Jan 2021",
                 timeEnd: "Jun 2022",
                 description: [
-                    "Designed and developed databases, RESTful API endpoints, unit testing and monitoring activities with Golang--in the development, staging, and production environments--CI/CD pipeline, JIRA ticketing systems, and Confluence documentation. Internally used application manages data and responses to and from MySQL databases, and utilized configurations and secrets which were stored within the Google Secret Manager. Implemented app's stability and health through alerting systems from error logging via DataDog, Scalyr, NewRelic, and PagerDuty.",
-                    "Closely worked with teams of frontend engineers and product managers to deliver new features every months and to improve upon the stability of the existing products for an internal application. Discussed and studied the proposed design via Figma to develop the database design and API endpoints.",
-                    "Participated in daily scrum and sprint meetings to discuss about new features to be added, bugs to be fixed, and tools to be tested. Recorded addition or changes made to a feature through API and Tech documentation. Last but not least, researched ways to improve on existing features, algorithms, custom libraries, and database structures for increasing efficiency and code cleanliness."
+                    "Developed and designed databases, RESTful API endpoints, unit testing, and integration testing for the internal teams.",
+                    "Conformed to AGILE methodology standards through the usage of JIRA ticketing system, CI/CD pipelines, and Confluence documentations.",
+                    "Collaborated with front-end team and product managers to deliver and improve upon new and existing features.",
+                    "Implemented monitoring systems for the analytics and app’s health with Scalyr, Datadog, and NewRelic.",
+                    "Suggested and employed new improvements for the overall development workflow of the internal teams.",
+                    "Internally used application was designed and developed using Golang to manage data and responses, from and to MySQL databases. Configuration and secrets were stored within the GSM—Google Secret Manager—and the app's stability and health were monitored through logging via Datadog, Scalyr, and New Relic. Any incoming errors passed the threshold were notified through PagerDuty.",
+                    "We, the back-end and front-end teams, implemented new features every month in collaboration with the product managers while still maintaining the stability of the existing products. Any discussions were conducted through Google Meet and Slack channels. The proposed designs in Figma were studied closely and translated for a proper database and RESTful API endpoint designs.",
+                    "Day to day discussions includes that of new features to be added, important bugs to be fixed, and existing tools to be tested. Any addition or changes made during the sprint planning were recorded in the 'API and Tech' documentation. Any improvements or suggestions that would be helpful for the whole tribes and teams were placed in a larger biweekly discussions.",
+                    "Lastly, my work also includes researches to find improvements on the code algorithms and database structures, and to find methods of implementations on features new to the team."
                 ],
                 stack: [
                     "go",

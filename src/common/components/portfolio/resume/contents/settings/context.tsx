@@ -1,5 +1,6 @@
+import { DEFAULT_DESKTOP } from "@/common/constants/configs";
+import { AudioOptions, GraphicOptions } from "@/common/interfaces/user";
 import { createContext, Dispatch, SetStateAction } from "react";
-import { AudioOptions, DEFAULT_DESKTOP, GraphicOptions } from "../../../config";
 
 export const OPTION_LABEL_STYLE = "py-2 whitespace-nowrap w-[240px] shrink-0";
 

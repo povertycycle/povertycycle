@@ -1,4 +1,4 @@
-import { RaptureContext } from "../global-context";
+import { RaptureContext } from "@/common/contexts/global-context";
 import ContentPanel from "./contents/content-panel";
 import NavigationTabs from "./contents/nav-tabs";
 import { useContext, useState, useEffect } from "react";

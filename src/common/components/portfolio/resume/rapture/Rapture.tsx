@@ -1,8 +1,8 @@
+import { RaptureContext } from "@/common/contexts/global-context";
 import { useContext } from "react";
-import { RaptureContext } from "../global-context";
-import Bubbles from "./rapture/bubbles";
-import Buildings from "./rapture/buildings";
-import Fishes from "./rapture/fishes";
+import Bubbles from "./Bubbles";
+import Buildings from "./buildings/Buildings";
+import Fishes from "./Fishes";
 
 const Rapture: React.FC = () => {
     const { dive, userSettings } = useContext(RaptureContext);

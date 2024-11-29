@@ -1,11 +1,11 @@
 import Loading from '@/common/components/loading'
-import Portfolio from '@/common/components/portfolio/portfolio'
+import MainContainer from '@/common/components/portfolio/MainContainer'
 import { Suspense } from 'react'
 
 export default function Page() {
     return (
-        <Suspense fallback={<Loading />}> 
-            <Portfolio />
+        <Suspense fallback={<Loading />}>
+            <MainContainer />
         </Suspense>
     )
 }

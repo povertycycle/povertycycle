@@ -1,28 +1,12 @@
-export type GraphicOptions = {
-    bubbles: boolean,
-    fishes: number,
-    buildings: number,
-    effects: number,
-    overall: number,
-}
-
-export type AudioOptions = {
-    audio: boolean,
-    volume: number,
-}
-
-export type UserSettings = {
-    graphicOptions: GraphicOptions,
-    audioOptions: AudioOptions,
-}
+import { UserSettings } from "../interfaces/user"
 
 export const DEFAULT_MOBILE: UserSettings = {
     graphicOptions: {
         bubbles: true,
         fishes: 4,
         buildings: 10,
-        effects: 2,
-        overall: 2
+        effects: 3,
+        overall: 3
     },
     audioOptions: {
         audio: false,

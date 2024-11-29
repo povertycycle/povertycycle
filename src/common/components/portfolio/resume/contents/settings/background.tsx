@@ -1,6 +1,6 @@
+import { RaptureContext } from "@/common/contexts/global-context";
+import { GraphicOptions } from "@/common/interfaces/user";
 import { useContext, useState } from "react";
-import { GraphicOptions } from "../../../config";
-import { RaptureContext } from "../../../global-context";
 import { OPTION_LABEL_STYLE, SettingsContext } from "./context";
 
 const GRAPHICS_MAP: GraphicOptions[] = [

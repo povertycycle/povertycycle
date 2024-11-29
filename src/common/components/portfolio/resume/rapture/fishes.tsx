@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import { memo } from "react";
 import { pSBC } from "@/common/utils/psbc";
-import { GRADIENTS, MAX_Z_INDEX } from "./buildings";
+import { GRADIENTS, MAX_Z_INDEX } from "./constants";
 
 const FISH_COLORS: string[] = [
     "#FF6F1D",
