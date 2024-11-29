@@ -4,7 +4,7 @@
 import Contents from "./contents";
 import Rapture from "./rapture/Rapture";
 
-const Resume: React.FC = () => {
+const RootResume: React.FC = () => {
     return (
         <div className="w-full h-dvh sm:h-screen overflow-hidden relative">
             <Rapture />
@@ -13,4 +13,4 @@ const Resume: React.FC = () => {
     )
 }
 
-export default Resume;
+export default RootResume;
