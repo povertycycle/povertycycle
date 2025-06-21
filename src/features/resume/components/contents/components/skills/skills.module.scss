@@ -1,0 +1,31 @@
+.skillsAnim {
+    animation: build-skills-display 0.5s ease-in-out;
+}
+
+@keyframes build-skills-display {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.aspectAnim {
+    animation: build-aspect-navigator 1s ease-in-out;
+}
+
+@keyframes build-aspect-navigator {
+    0% {
+        opacity: 0;
+        color: transparent;
+    }
+    50% {
+        opacity: 0;
+        color: transparent;
+    }
+    100% {
+        opacity: 1;
+        color: white;
+    }
+}

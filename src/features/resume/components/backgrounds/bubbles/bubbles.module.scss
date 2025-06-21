@@ -1,0 +1,39 @@
+.bubble {
+    box-shadow: 0 0 20px white, inset 0 0 5px white;
+    animation-name: bubble;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.bubble2 {
+    animation-name: sideways;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes sideways {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10vw);
+    }
+}

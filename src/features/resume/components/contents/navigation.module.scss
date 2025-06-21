@@ -1,0 +1,51 @@
+.tabAnim {
+    animation: build-nav-tab 1s ease-in-out;
+}
+
+@keyframes build-nav-tab {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.controllerTab {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 639px) {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+
+    @media screen and (min-width: 640px) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        scale: 1.02;
+    }
+}
+
+.statusAnim {
+    animation: build-status 1s ease-in-out;
+}
+
+@keyframes build-status {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

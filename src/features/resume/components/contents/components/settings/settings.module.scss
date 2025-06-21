@@ -1,0 +1,12 @@
+.settingsAnim {
+    animation: build-settings 1s ease-in-out;
+}
+
+@keyframes build-settings {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

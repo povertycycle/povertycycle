@@ -1,11 +1,11 @@
-import Loading from '@/common/components/loading'
-import MainContainer from '@/common/components/portfolio/MainContainer'
-import { Suspense } from 'react'
+import { RootPageLoader } from "@/components/Loaders";
+import { MainContainer } from "@/features/main-page/MainContainer";
+import { Suspense } from "react";
 
 export default function Page() {
     return (
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<RootPageLoader />}>
             <MainContainer />
         </Suspense>
-    )
+    );
 }

@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    width: fit-content;
+    padding: 0 12px;
+
+    @media (max-width: 639px) {
+        gap: 24px;
+        animation: slide-up-mobile 2s ease;
+    }
+    @media (min-width: 640px) {
+        gap: 48px;
+        animation: slide-up 2s ease;
+    }
+
+    & > button {
+        transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0.4;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:active {
+            scale: 0.9;
+        }
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0.3;
+        transform: translateY(256px);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up-mobile {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-32px);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
